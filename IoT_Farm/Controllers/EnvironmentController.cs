@@ -1,4 +1,4 @@
-﻿using IoT_Farm.Services.Implement;
+﻿using IoT_Farm.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IoT_Farm.Controllers
@@ -7,8 +7,8 @@ namespace IoT_Farm.Controllers
     [ApiController]
     public class EnvironmentController : ControllerBase
     {
-        private readonly EnvironmentService _environmentService;
-        public EnvironmentController(EnvironmentService environmentService)
+        private readonly IEnvironmentService _environmentService;
+        public EnvironmentController(IEnvironmentService environmentService)
         {
             _environmentService = environmentService;
         }
@@ -44,6 +44,23 @@ namespace IoT_Farm.Controllers
             if (data == null)
                 return NotFound("No data available.");
 
+            return Ok(data);
+        }
+        /// <summary>
+        /// Lấy thống kê trung bình nhiệt độ, độ ẩm, độ sáng, chất lượng không khí theo khu vực
+        /// </summary>
+        [HttpGet("statistics")]
+        public async Task<IActionResult> GetStatistics(
+       [FromQuery] string region, // Khu vực
+       [FromQuery] DateTime? from = null, // Ngày bắt đầu
+       [FromQuery] DateTime? to = null, // Ngày kết thúc
+       [FromQuery] string type = "all" // "temperature", "humidity", "all"
+   )
+        {
+            DateTime startDate = from ?? DateTime.UtcNow.Date.AddDays(-6);
+            DateTime endDate = to ?? DateTime.UtcNow;
+
+            var data = await _environmentService.GetStatistics(region, startDate, endDate, type);
             return Ok(data);
         }
     }

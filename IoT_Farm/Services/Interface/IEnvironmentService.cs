@@ -10,6 +10,7 @@ namespace IoT_Farm.Services.Interface
         Task<List<EnvironmentData>> GetAllEnvironmentData();
         Task<List<EnvironmentData>> GetEnvironmentDataByArea(string areaId);
         Task<EnvironmentData?> GetLatestEnvironmentData();
+        Task<object> GetStatistics(string region, DateTime? from, DateTime? to, string? type);
 
     }
 }

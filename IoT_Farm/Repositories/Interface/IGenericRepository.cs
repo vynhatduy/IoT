@@ -7,5 +7,6 @@
         Task AddAsync(T entity);
         Task<bool> UpdateAsync(string id, T entity);
         Task<bool> DeleteAsync(string id);
+        Task<List<T>> FindAsync(object filter);
     }
 }

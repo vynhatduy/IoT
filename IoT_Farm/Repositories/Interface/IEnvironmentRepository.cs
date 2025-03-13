@@ -6,5 +6,6 @@ namespace IoT_Farm.Repositories.Interface
     {
         Task<List<EnvironmentData>> GetByAreaAsync(string areaId);
         Task<EnvironmentData?> GetLatestAsync();
+        Task<object> GetData(string region, DateTime from, DateTime to, string type);
     }
 }

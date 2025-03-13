@@ -1,6 +1,7 @@
 ﻿
 using Dapper;
 using IoT_Farm.Helpers;
+using MongoDB.Driver;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
@@ -40,5 +41,22 @@ namespace IoT_Farm.Datas.Adapter
 
         public async Task DeleteAsync(string id) =>
             await _dbConnection.ExecuteAsync($"DELETE FROM {_tableName} WHERE Id = @Id", new { Id = id });
+
+
+        public async Task<List<T>> FindByExpressionAsync(Expression<Func<T, bool>> filter)
+        {
+            var sqlBuilder = new SqlExpressionBuilder<T>();
+            var whereClause = sqlBuilder.BuildWhereClause(filter);
+            var query = $"SELECT * FROM {_tableName} WHERE {whereClause}";
+
+            return (await _dbConnection.QueryAsync<T>(query)).ToList();
+        }
+
+        public Task<List<T>> FindByFilterDefinitionAsync(FilterDefinition<T> filter)
+        {
+            throw new NotImplementedException("SQL does not support FilterDefinition<T>");
+        }
+
     }
+
 }

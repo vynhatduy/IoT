@@ -1,6 +1,6 @@
 ﻿using DotNetEnv;
 using IoT_Farm.Datas;
-using IoT_Farm.Services.Implement;
+using IoT_Farm.Services.Interface;
 using MQTTnet;
 using System.Text;
 using System.Text.Json;
@@ -11,8 +11,8 @@ namespace IoT_Farm.Services.MQTT
         private readonly ILogger<MQTTService> _logger;
         private readonly IMqttClient _mqttClient;
         private readonly MqttClientOptions _mqttOptions;
-        private readonly EnvironmentService _environmentService;
-        public MQTTService(ILogger<MQTTService> logger, EnvironmentService environmentService)
+        private readonly IEnvironmentService _environmentService;
+        public MQTTService(ILogger<MQTTService> logger, IEnvironmentService environmentService)
         {
             _logger = logger;
             _environmentService = environmentService;

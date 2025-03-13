@@ -48,9 +48,9 @@ builder.Services.AddScoped(typeof(IDatabaseAdapter<>), typeof(SqlDbAdapter<>));
 builder.Services.AddSingleton<TokenBlacklistService>();
 builder.Services.AddSingleton<IMQTTService, MQTTService>();
 builder.Services.AddHostedService<MQTTService>();
-builder.Services.AddSingleton(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddSingleton<IEnvironmentRepository, EnvironmentRepository>();
-builder.Services.AddSingleton<EnvironmentService>();
+builder.Services.AddSingleton<IEnvironmentService, EnvironmentService>();
 // Cấu hình JWT
 var jwtSecretKey = Encoding.UTF8.GetBytes(Env.GetString("JWT_SecretKey"));
 var issuer = Env.GetString("JWT_Issuer");

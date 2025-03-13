@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using MongoDB.Driver;
+using System.Linq.Expressions;
 
 namespace IoT_Farm.Datas.Adapter
 {
@@ -10,5 +11,8 @@ namespace IoT_Farm.Datas.Adapter
         Task AddAsync(T item);
         Task UpdateAsync(string id, T item);
         Task DeleteAsync(string id);
+        Task<List<T>> FindByFilterDefinitionAsync(FilterDefinition<T> filter);
+        Task<List<T>> FindByExpressionAsync(Expression<Func<T, bool>> filter);
+
     }
 }

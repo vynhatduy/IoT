@@ -14,7 +14,8 @@ namespace IoT_Farm.Datas.Adapter
         }
         public async Task<T> FindOneAsync(Expression<Func<T, bool>> filter) =>
             await _collection.Find(filter).FirstOrDefaultAsync();
-
+        public async Task<List<T>> FindAsync(FilterDefinition<T> filter) =>
+            await _collection.Find(filter).ToListAsync();
         public async Task AddAsync(T item) =>
             await _collection.InsertOneAsync(item);
 
@@ -30,5 +31,11 @@ namespace IoT_Farm.Datas.Adapter
 
         public async Task UpdateAsync(string id, T item) =>
             await _collection.ReplaceOneAsync(Builders<T>.Filter.Eq("_id", new ObjectId(id)), item);
+        public async Task<List<T>> FindByFilterDefinitionAsync(FilterDefinition<T> filter) =>
+        await _collection.Find(filter).ToListAsync();
+
+        public async Task<List<T>> FindByExpressionAsync(Expression<Func<T, bool>> filter) =>
+            await _collection.Find(filter).ToListAsync();
+
     }
 }
