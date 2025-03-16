@@ -1,0 +1,20 @@
+# Node modules và build output
+node_modules/
+dist/
+build/
+
+# Cache và log
+.npm
+.yarn
+.pnpm-store
+.cache
+*.log
+*.tmp
+
+# Test coverage
+coverage/
+
+# Editor & IDE
+.vscode/*
+.idea/
+*.iml

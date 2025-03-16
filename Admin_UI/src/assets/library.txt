@@ -1,0 +1,2 @@
+import { purple, red } from '@mui/material/colors';
+const primary = red[500];
