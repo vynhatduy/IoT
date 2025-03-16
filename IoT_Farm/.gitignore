@@ -1,0 +1,24 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bin/
+obj/
+
+# Visual Studio specific files
+.vs/
+*.suo
+*.user
+*.rsuser
+*.cache
+*.dbmdl
+*.sln.docstates
+*.pidb
+*.svclog
+
+# Test results
+TestResults/
+*.coverage
+*.coveragexml
+*.trx
