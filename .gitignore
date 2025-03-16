@@ -3,6 +3,26 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Ignore node_modules và build chính của project
+node_modules/
+dist/
+
+# Ignore Admin_Farm và các thư mục con của nó
+Admin_Farm/dist/
+Admin_Farm/node_modules/
+
+# Ignore các file phổ biến khác
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# Ignore log và cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache
+
 # User-specific files
 *.rsuser
 *.suo
