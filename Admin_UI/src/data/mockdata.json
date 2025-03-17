@@ -1,0 +1,41 @@
+{
+    "dataText": [
+      {
+        "card": "1",
+        "title": "Nhiệt độ",
+        "count": 30,
+        "previousValue": 32,
+        "percentage": 6.25,
+        "color": "warning",
+        "extra": "example"
+      },
+      {
+        "card": "2",
+        "title": "Độ ẩm",
+        "count": 50,
+        "previousValue": 45,
+        "percentage": 11.11,
+        "color": "warning",
+        "extra": "example"
+      },
+      {
+        "card": "3",
+        "title": "Ánh sáng",
+        "count": 70,
+        "previousValue": 65,
+        "percentage": 7.69,
+        "color": "primary",
+        "extra": "example"
+      },
+      {
+        "card": "4",
+        "title": "Nhiệt độ",
+        "count": 30,
+        "previousValue": 35,
+        "percentage": 14.29,
+        "color": "warning",
+        "extra": "example"
+      }
+    ]
+  }
+  

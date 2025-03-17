@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { Typography } from '@mui/material';
 const cauHinhThietBi = () => {
     return (
-        <div>
-            <h1>cauHinhChiTiet</h1>
-        </div>
+        <Typography>
+            CAU HINH THIET BI
+        </Typography>
     );
 };
 
