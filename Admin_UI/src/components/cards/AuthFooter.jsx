@@ -1,5 +1,5 @@
 // material-ui
-import  TeamDevelop  from '../../common/team-develop';
+import  TeamDevelop  from '../team-develop';
 
 // ==============================|| FOOTER - AUTHENTICATION ||============================== //
 

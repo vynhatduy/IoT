@@ -18,7 +18,7 @@ export default function NavGroup({ item }) {
       case 'collapse':
         return (
           <Typography key={menuItem.id} variant="caption" color="error" sx={{ p: 2.5 }}>
-            collapse - only available in paid version
+            
           </Typography>
         );
       case 'item':
@@ -41,7 +41,7 @@ export default function NavGroup({ item }) {
             <Typography variant="subtitle2" color="textSecondary">
               {item.title}
             </Typography>
-            only available in paid version
+            {/* only available in paid version */}
           </Box>
         )
       }

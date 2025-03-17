@@ -17,7 +17,13 @@ const monthlyData1 = [76, 85, 101, 98, 87, 105, 91, 114, 94, 86, 115, 35];
 const weeklyData1 = [31, 40, 28, 51, 42, 109, 100];
 
 const monthlyData2 = [110, 60, 150, 35, 60, 36, 26, 45, 65, 52, 53, 41];
-const weeklyData2 = [11, 32, 45, 32, 34, 52, 41];
+const weeklyData2 = [32, 34, 52, 11, 32, 45, 41];
+
+const monthlyData3 = [110, 60, 36, 26, 45, 65, 52, 150, 35, 60, 53, 41];
+const weeklyData3 = [304, 52, 41,11, 32, 45, 32];
+
+const monthlyData4 = [60, 36, 26, 45, 65, 110, 60, 150, 35, 52, 53, 41];
+const weeklyData4 = [11, 52, 41, 32, 45, 32, 34];
 
 function Legend({ items, onToggle }) {
   return (
@@ -52,7 +58,8 @@ export default function IncomeAreaChart({ view }) {
   const labels = view === 'monthly' ? monthlyLabels : weeklyLabels;
   const data1 = view === 'monthly' ? monthlyData1 : weeklyData1;
   const data2 = view === 'monthly' ? monthlyData2 : weeklyData2;
-
+  const data3 = view === 'monthly' ? monthlyData3 : weeklyData3;
+  const data4 = view === 'monthly' ? monthlyData4 : weeklyData4;
   const line = theme.palette.divider;
 
   const toggleVisibility = (label) => {
@@ -62,7 +69,7 @@ export default function IncomeAreaChart({ view }) {
   const visibleSeries = [
     {
       data: data1,
-      label: 'Page views',
+      label: 'Nhiệt độ',
       showMark: false,
       area: true,
       id: 'Germany',
@@ -71,11 +78,29 @@ export default function IncomeAreaChart({ view }) {
     },
     {
       data: data2,
-      label: 'Sessions',
+      label: 'Độ ẩm',
       showMark: false,
       area: true,
       id: 'UK',
       color: theme.palette.primary[700] || '',
+      visible: visibility['Sessions']
+    },
+    {
+      data: data3,
+      label: 'Ánh sáng',
+      showMark: false,
+      area: true,
+      id: 'VN',
+      color: theme.palette.primary[400] || '',
+      visible: visibility['Sessions']
+    },
+    {
+      data: data4,
+      label: 'Không khí',
+      showMark: false,
+      area: true,
+      id: 'JP',
+      color: theme.palette.primary[100] || '',
       visible: visibility['Sessions']
     }
   ];
@@ -117,6 +142,14 @@ export default function IncomeAreaChart({ view }) {
           </linearGradient>
           <linearGradient id="myGradient2" gradientTransform="rotate(90)">
             <stop offset="10%" stopColor={alpha(theme.palette.primary[700], 0.4)} />
+            <stop offset="90%" stopColor={alpha(theme.palette.background.default, 0.4)} />
+          </linearGradient>
+          <linearGradient id="myGradient2" gradientTransform="rotate(90)">
+            <stop offset="10%" stopColor={alpha(theme.palette.primary[400], 0.4)} />
+            <stop offset="90%" stopColor={alpha(theme.palette.background.default, 0.4)} />
+          </linearGradient>
+          <linearGradient id="myGradient2" gradientTransform="rotate(90)">
+            <stop offset="10%" stopColor={alpha(theme.palette.primary[100], 0.4)} />
             <stop offset="90%" stopColor={alpha(theme.palette.background.default, 0.4)} />
           </linearGradient>
         </defs>

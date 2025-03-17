@@ -17,7 +17,7 @@ import Typography from '@mui/material/Typography';
 import AnalyticEcommerce from 'components/cards/AnalyticEcommerce';
 // import MonthlyBarChart from 'common/contentNavbar/MonthlyBarChart';
 // import ReportAreaChart from 'common/contentNavbar/ReportAreaChart';
-import UniqueVisitorCard from '../components/contentDashboard/UniqueVisitorCard'
+import UniqueVisitorCard from '../components/contentDashboard/UniqueVisitorCard';
 // import SaleReportCard from "common/contentNavbar/SaleReportCard";
 // import OrdersTable from "../common/contentNavbar/OrdersTable";
 
@@ -48,40 +48,81 @@ const actionSX = {
   transform: 'none'
 };
 
+const dataText = [
+  {
+    card: "1",
+    title: "Nhiệt độ",
+    count: 30,
+    previousValue: 32, // Nhiệt độ cũ cao hơn nhiệt độ hiện tại
+    percentage: 6.25, // Phần trăm thay đổi: (32-30)/32*100 = 6.25%
+    color: "warning",
+    extra: "example",
+  },
+  {
+    card: "2",
+    title: "Độ ẩm",
+    count: 50,
+    previousValue: 45, // Độ ẩm cũ thấp hơn độ ẩm hiện tại
+    percentage: 11.11, // Phần trăm thay đổi: (50-45)/45*100 = 11.11%
+    color: "warning",
+    extra: "example",
+  },
+  {
+    card: "3",
+    title: "Ánh sáng",
+    count: 70,
+    previousValue: 65, // Ánh sáng cũ thấp hơn ánh sáng hiện tại
+    percentage: 7.69, // Phần trăm thay đổi: (70-65)/65*100 = 7.69%
+    color: "primary",
+    extra: "example",
+  },
+  {
+    card: "4",
+    title: "Nhiệt độ",
+    count: 30,
+    previousValue: 35, // Nhiệt độ cũ cao hơn nhiệt độ hiện tại
+    percentage: 14.29, // Phần trăm thay đổi: (35-30)/35*100 = 14.29%
+    color: "warning",
+    extra: "example",
+  }
+];
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
 export default function DashboardDefault() {
   return (
+
     <Grid container rowSpacing={4.5} columnSpacing={2.75}>
-      {/* row 1 */}
       <Grid sx={{ mb: -2.25 }} size={12}>
         <Typography variant="h5">Bảng điều khiển</Typography>
       </Grid>
-      <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-        <AnalyticEcommerce title="Nhiệt độ" count="..." percentage={59.3}  color="warning" extra="..." />
-      </Grid>
-      <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-        <AnalyticEcommerce title="Độ ẩm" count="..." percentage={70.5} color="warning" extra="..." />
-      </Grid>
-      <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-        <AnalyticEcommerce title="Ánh sáng" count="..." percentage={27.4}  isLoss  extra="..." />
-      </Grid>
-      <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-        <AnalyticEcommerce title="Không khí" count="..." percentage={27.4}  color="warning" extra="..." />
-      </Grid>
-      <Grid sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} size={{ md: 8 }} />
+      {dataText.map((item, key) => {
+        const isloss = item.previousValue > item.count;
+        return(
+        <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+          <AnalyticEcommerce
+          key={key.card}
+          title={item.title}
+          count={item.count}
+          percentage={item.percentage}
+          color={item.color}
+          extra={item.extra}
+          isloss={isloss}
+          />
+        </Grid>
+        )
+      })}
       {/* row 2 */}
       <Grid size={{ xs: 12, md: 7, lg: 12 }}>
         <UniqueVisitorCard />
       </Grid>
       {/* <Grid size={{ xs: 12, md: 5, lg: 4 }}> */}
-        {/* <Grid container alignItems="center" justifyContent="space-between">
+      {/* <Grid container alignItems="center" justifyContent="space-between">
           <Grid>
             <Typography variant="h5">Income Overview</Typography>
           </Grid>
           <Grid />
         </Grid> */}
-        {/* <MainCard sx={{ mt: 2 }} content={false}>
+      {/* <MainCard sx={{ mt: 2 }} content={false}>
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack sx={{ gap: 2 }}>
               <Typography variant="h6" color="text.secondary">

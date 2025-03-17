@@ -12,13 +12,13 @@ const TeamDevelop = () => {
         <Typography variant="subtitle2" color="secondary">
           &copy; Created by TechTrio team, consisting of members: {''}
           <Link href="https://codedthemes.com/" target="_blank" underline="hover">
-            Lê Hà Hiếu Nghĩa
+            Hồ Văn Hưng
           </Link>
           <Link href="https://codedthemes.com/" target="_blank" underline="hover" padding={1}>
             Vy Nhật Duy
           </Link>
           <Link href="https://codedthemes.com/" target="_blank" underline="hover">
-            Hồ Văn Hưng
+            Lê Hà Hiếu Nghĩa
           </Link>
         </Typography>
 
