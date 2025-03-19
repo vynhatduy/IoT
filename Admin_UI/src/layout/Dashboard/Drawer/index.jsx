@@ -25,6 +25,7 @@ export default function MainDrawer({ window }) {
 
   // header content
   const drawerContent = useMemo(() => <DrawerContent />, []);
+
   const drawerHeader = useMemo(() => <DrawerHeader open={drawerOpen} />, [drawerOpen]);
 
   return (

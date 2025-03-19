@@ -10,27 +10,43 @@ import { useGetMenuMaster } from 'api/menu';
 
 // ==============================|| DRAWER CONTENT - NAVIGATION GROUP ||============================== //
 export default function NavGroup({ item }) {
+  
   const { menuMaster } = useGetMenuMaster();
   const drawerOpen = menuMaster.isDashboardDrawerOpened;
 
-  const navCollapse = item.children?.map((menuItem) => {
-    switch (menuItem.type) {
-      case 'collapse':
-        return (
-          <Typography key={menuItem.id} variant="caption" color="error" sx={{ p: 2.5 }}>
-            
-          </Typography>
-        );
-      case 'item':
-        return <NavItem key={menuItem.id} item={menuItem} level={1} />;
-      default:
-        return (
-          <Typography key={menuItem.id} variant="h6" color="error" align="center">
-            Fix - Group Collapse or Items
-          </Typography>
-        );
-    }
-  });
+  if (!Array.isArray(item.children) || item.children.length === 0) {
+    console.warn(`NavGroup: item "${item.title}" has no valid children.`);
+    return null;
+  }
+
+  // Hàm đệ quy để hiển thị toàn bộ menu
+  const renderMenuItems = (menuItems, level = 1) => {
+    return menuItems.map((menuItem) => {
+      console.log("menu item: ", menuItem);
+
+      switch (menuItem.type) {
+        case 'collapse':
+        case 'group':
+          return (
+            <Box key={menuItem.id} sx={{ pl: level * 1 }}>
+              <Typography variant="subtitle1" sx={{ color: 'text.primary', fontWeight: 'bold' }}>
+                {menuItem.title}
+              </Typography>
+              <List sx={{ pl: 1 }}>{renderMenuItems(menuItem.children || [], level + 1)}</List>
+            </Box>
+          );
+        case 'item':
+          return <NavItem key={menuItem.id} item={menuItem} level={level} />;
+        default:
+          console.warn(`Unknown menu type "${menuItem.type}" for item "${menuItem.title}"`);
+          return (
+            <Typography key={menuItem.id} variant="h6" color="error" align="center">
+              Unknown menu type - Fix me!
+            </Typography>
+          );
+      }
+    });
+  };
 
   return (
     <List
@@ -41,17 +57,14 @@ export default function NavGroup({ item }) {
             <Typography variant="subtitle2" color="textSecondary">
               {item.title}
             </Typography>
-            {/* only available in paid version */}
           </Box>
         )
       }
       sx={{ mb: drawerOpen ? 1.5 : 0, py: 0, zIndex: 0 }}
     >
-      {navCollapse}
+      {renderMenuItems(item.children)}
     </List>
   );
 }
 
 NavGroup.propTypes = { item: PropTypes.object };
-
-

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-const giamSatCamera = () => {
+const quyTrinhHoatDong = () => {
     return (
         <Typography>
-            GIAM SAT CAMERA
+            QUY TRINH HOAT DONG
         </Typography>
     );
 };
 
-export default giamSatCamera;
+export default quyTrinhHoatDong;

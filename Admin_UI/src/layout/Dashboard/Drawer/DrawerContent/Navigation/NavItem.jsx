@@ -19,9 +19,10 @@ import { handlerDrawerOpen, useGetMenuMaster } from 'api/menu';
 // ==============================|| NAVIGATION - LIST ITEM ||============================== //
 
 export default function NavItem({ item, level, isParents = false, setSelectedID }) {
+  const { pathname } = useLocation();
   const { menuMaster } = useGetMenuMaster();
   const drawerOpen = menuMaster.isDashboardDrawerOpened;
-
+ 
   const downLG = useMediaQuery((theme) => theme.breakpoints.down('lg'));
 
   let itemTarget = '_self';
@@ -50,11 +51,9 @@ export default function NavItem({ item, level, isParents = false, setSelectedID 
   );
 
 
+  // const isSelected = !!matchPath({ path: item?.link ? item.link : item.url, end: false }, pathname);
+  const isSelected = !!matchPath(item?.link || item.url, pathname);
 
-
-  
-  const { pathname } = useLocation();
-  const isSelected = !!matchPath({ path: item?.link ? item.link : item.url, end: false }, pathname);
 
   const textColor = 'text.primary';
   const iconSelectedColor = 'primary.main';
