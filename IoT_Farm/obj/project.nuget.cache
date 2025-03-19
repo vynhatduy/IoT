@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vi35N3AUqOs=",
+  "dgSpecHash": "b4MeXFNquQA=",
   "success": true,
-  "projectFilePath": "D:\\Learn\\IoT\\IoT_Farm\\IoT_Farm.csproj",
+  "projectFilePath": "D:\\Learn\\IoT\\IoT_Farm\\IoT_Farm\\IoT_Farm.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vynha\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\vynha\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",

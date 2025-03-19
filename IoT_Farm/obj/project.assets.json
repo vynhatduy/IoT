@@ -7718,11 +7718,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Learn\\IoT\\IoT_Farm\\IoT_Farm.csproj",
+      "projectUniqueName": "D:\\Learn\\IoT\\IoT_Farm\\IoT_Farm\\IoT_Farm.csproj",
       "projectName": "IoT_Farm",
-      "projectPath": "D:\\Learn\\IoT\\IoT_Farm\\IoT_Farm.csproj",
+      "projectPath": "D:\\Learn\\IoT\\IoT_Farm\\IoT_Farm\\IoT_Farm.csproj",
       "packagesPath": "C:\\Users\\vynha\\.nuget\\packages\\",
-      "outputPath": "D:\\Learn\\IoT\\IoT_Farm\\obj\\",
+      "outputPath": "D:\\Learn\\IoT\\IoT_Farm\\IoT_Farm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
