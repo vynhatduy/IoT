@@ -2,7 +2,7 @@
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 import AnalyticEcommerce from 'components/cards/AnalyticEcommerce';
-import UniqueVisitorCard from '../components/contentDashboard/UniqueVisitorCard';
+import UniqueVisitorCard from '../components/cards/UniqueVisitorCard';
 import mockData from "../data/mockdata.json"
 
 

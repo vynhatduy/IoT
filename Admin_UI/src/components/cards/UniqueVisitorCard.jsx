@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 
 // project imports
 import MainCard from 'components/MainCard';
-import IncomeAreaChart from "./IncomeAreaChart";
+import IncomeAreaChart from "../contentDashboard/IncomeAreaChart";
 
 // ==============================|| DEFAULT - UNIQUE VISITOR ||============================== //
 
