@@ -1,10 +1,12 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Box,Typography } from '@mui/material';
+import StyleBackground from '../themes/stylePage/backgroundPage';
 const lienHeHoTro = () => {
     return (
-        <Typography>
-            LIEN HE VA HO TRO
-        </Typography>
+        <Box>
+        <Typography>LIEN HE HO TRO</Typography>
+        <StyleBackground></StyleBackground>
+      </Box>
     );
 };
 

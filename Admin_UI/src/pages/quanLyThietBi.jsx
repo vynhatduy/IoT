@@ -1,10 +1,13 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Box,Typography } from '@mui/material';
+import StyleBackground from '../themes/stylePage/backgroundPage';
+
 const quanLyThietBi = () => {
   return (
-    <Typography>
-      QUAN LY THIET BI
-    </Typography>
+    <Box>
+      <Typography>QUAN LY THIET BI</Typography>
+      <StyleBackground></StyleBackground>
+    </Box>
   );
 };
 

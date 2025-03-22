@@ -1,11 +1,16 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import StyleBackground from '../themes/stylePage/backgroundPage';
+
 const thongBaoCanhBao = () => {
-    return (
-        <Typography>
-            THONG BAO CANH BAO
-        </Typography>
-    );
+  return (
+    <Box>
+      <Typography>THONG BAO CANH BAO</Typography>
+      <StyleBackground>
+
+      </StyleBackground>
+    </Box>
+  );
 };
 
 export default thongBaoCanhBao;

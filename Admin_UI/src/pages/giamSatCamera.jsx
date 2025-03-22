@@ -1,10 +1,13 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Box,Typography } from '@mui/material';
+import StyleBackground from '../themes/stylePage/backgroundPage';
+
 const giamSatCamera = () => {
     return (
-        <Typography>
-            GIAM SAT CAMERA
-        </Typography>
+        <Box>
+        <Typography>GIAM SAT CAMERA</Typography>
+        <StyleBackground></StyleBackground>
+      </Box>
     );
 };
 
