@@ -13,20 +13,25 @@ namespace IoT_Farm.Services.Implement
             _repository = repository;
         }
 
-        public async Task SaveEnvironmentData(EnvironmentData data)
+        public async Task<bool> SaveEnvironmentData(EnvironmentData data)
         {
-            await _repository.AddAsync(data);
+            return await _repository.AddAsync(data);
         }
 
         public async Task<EnvironmentData> GetEnvironmentDataById(string id)
         {
             return await _repository.GetByIdAsync(id);
+
         }
+
 
         public async Task<bool> UpdateEnvironmentData(string id, EnvironmentData data)
         {
+
+
             return await _repository.UpdateAsync(id, data);
         }
+
 
         public async Task<bool> DeleteEnvironmentData(string id)
         {
@@ -35,7 +40,8 @@ namespace IoT_Farm.Services.Implement
 
         public async Task<List<EnvironmentData>> GetAllEnvironmentData()
         {
-            return (await _repository.GetAllAsync()).ToList();
+            var result = await _repository.GetAllAsync();
+            return result.ToList();
         }
 
         public async Task<List<EnvironmentData>> GetEnvironmentDataByArea(string areaId)
@@ -47,5 +53,10 @@ namespace IoT_Farm.Services.Implement
         {
             return await _repository.GetLatestAsync();
         }
+        public async Task<List<EnvironmentData>> GetEnvironmentDataByArea(DateTime from, DateTime to, string area)
+        {
+            return await _repository.GetEnvironmentDataByArea(from, to, area);
+        }
+
     }
 }

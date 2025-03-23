@@ -37,6 +37,32 @@
   },
   {
     "ContainingType": "IoT_Farm.Controllers.EnvironmentController",
+    "Method": "GetEnvironmentData",
+    "RelativePath": "api/environment/dataByArea",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "from",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "area",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IoT_Farm.Controllers.EnvironmentController",
     "Method": "GetLatestData",
     "RelativePath": "api/environment/latest",
     "HttpMethod": "GET",

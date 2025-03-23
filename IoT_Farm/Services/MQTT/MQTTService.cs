@@ -1,6 +1,6 @@
 ﻿using DotNetEnv;
 using IoT_Farm.Datas;
-using IoT_Farm.Services.Implement;
+using IoT_Farm.Services.Interface;
 using MQTTnet;
 using System.Text;
 using System.Text.Json;
@@ -8,14 +8,14 @@ namespace IoT_Farm.Services.MQTT
 {
     public class MQTTService : IMQTTService, IHostedService
     {
+        private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<MQTTService> _logger;
         private readonly IMqttClient _mqttClient;
         private readonly MqttClientOptions _mqttOptions;
-        private readonly EnvironmentService _environmentService;
-        public MQTTService(ILogger<MQTTService> logger, EnvironmentService environmentService)
+        public MQTTService(ILogger<MQTTService> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
-            _environmentService = environmentService;
+            _serviceProvider = serviceProvider;
 
             Env.Load();
             var mqttTopic = Env.GetString("MQTT_TOPIC");
@@ -106,6 +106,9 @@ namespace IoT_Farm.Services.MQTT
         {
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var environmentService = scope.ServiceProvider.GetRequiredService<IEnvironmentService>();
+
                 string topic = e.ApplicationMessage.Topic;
                 string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
 
@@ -113,15 +116,17 @@ namespace IoT_Farm.Services.MQTT
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
                 var data = JsonSerializer.Deserialize<EnvironmentData>(payload, options);
-                _logger.LogInformation($"[SAVE DATA] data environment {data}");
                 if (data != null)
                 {
-                    await _environmentService.SaveEnvironmentData(data);
-                    _logger.LogInformation($"Saved data from {topic} to MongoDB.");
-                }
-                else
-                {
-                    _logger.LogWarning("Received invalid JSON format.");
+                    bool isSaved = await environmentService.SaveEnvironmentData(data);
+                    if (isSaved)
+                    {
+                        _logger.LogInformation($"Saved data from {topic} to MongoDB.");
+                    }
+                    else
+                    {
+                        _logger.LogError($"Failed to save data from {topic} to MongoDB.");
+                    }
                 }
             }
             catch (Exception ex)
