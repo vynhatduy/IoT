@@ -1,4 +1,4 @@
-﻿using IoT_Farm.Services.Implement;
+﻿using IoT_Farm.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IoT_Farm.Controllers
@@ -7,8 +7,8 @@ namespace IoT_Farm.Controllers
     [ApiController]
     public class EnvironmentController : ControllerBase
     {
-        private readonly EnvironmentService _environmentService;
-        public EnvironmentController(EnvironmentService environmentService)
+        private readonly IEnvironmentService _environmentService;
+        public EnvironmentController(IEnvironmentService environmentService)
         {
             _environmentService = environmentService;
         }
@@ -41,6 +41,15 @@ namespace IoT_Farm.Controllers
         public async Task<IActionResult> GetLatestData()
         {
             var data = await _environmentService.GetLatestEnvironmentData();
+            if (data == null)
+                return NotFound("No data available.");
+
+            return Ok(data);
+        }
+        [HttpGet("dataByArea")]
+        public async Task<IActionResult> GetEnvironmentData(DateTime from, DateTime to, string area)
+        {
+            var data = await _environmentService.GetEnvironmentDataByArea(from, to, area);
             if (data == null)
                 return NotFound("No data available.");
 
