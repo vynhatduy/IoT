@@ -87,7 +87,7 @@ export default function AuthRegister() {
                     name="firstname"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="John"
+                    placeholder="Le"
                     fullWidth
                     error={Boolean(touched.firstname && errors.firstname)}
                   />
@@ -110,7 +110,7 @@ export default function AuthRegister() {
                     name="lastname"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="Doe"
+                    placeholder="Nghia"
                     inputProps={{}}
                   />
                 </Stack>
@@ -131,7 +131,7 @@ export default function AuthRegister() {
                     name="company"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="Demo Inc."
+                    placeholder="Techtrio"
                     inputProps={{}}
                   />
                 </Stack>
@@ -153,7 +153,7 @@ export default function AuthRegister() {
                     name="email"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="demo@company.com"
+                    placeholder="Lenghiadev81@gmail.com"
                     inputProps={{}}
                   />
                 </Stack>

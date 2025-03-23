@@ -1,10 +1,14 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Box,Typography } from '@mui/material';
+import StyleBackground from '../themes/stylePage/backgroundPage';
 const cauHinhThietBi = () => {
     return (
-        <Typography>
-            CAU HINH THIET BI
-        </Typography>
+        <Box>
+        <Typography>CAU HINH THIET BI</Typography>
+        <StyleBackground>
+          
+        </StyleBackground>
+      </Box>
     );
 };
 

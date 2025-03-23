@@ -3,19 +3,18 @@ import { lazy } from 'react';
 // project imports
 import Loadable from 'components/Loadable';
 import DashboardLayout from '../layout/Dashboard/mainLayout';
-import cauHinhThietBi from '../pages/cauHinhThietBi';
-import quanLyThietBi from '../pages/quanLyThietBi';
-import path from 'path';
+import DashboardDefault from '../pages/bangDieuKhien';
+import CauHinhThietBi from '../pages/cauHinhThietBi';
+import GiamSatCamera from '../pages/giamSatCamera';
+import LienHeHoTro from '../pages/lienHeVaHoTro';
+import QuanLyThietBi from '../pages/quanLyThietBi';
+import ThongKeChiTiet from '../pages/thongKeChiTiet';
+import ThongSoMoiTruong from '../pages/thongSoMoiTruong';
+import QuyTrinhHoatDong from '../pages/quyTrinhHoatDong';
+import ThongBaoCanhBao from '../pages/thongBaoCanhBao';
+
 // render- Dashboard
-const DashboardDefault = Loadable(lazy(() => import('../pages/bangDieuKhien')));
-
-// render - color
-// const Color = Loadable(lazy(() => import('pages/component-overview/color')));
-// const Typography = Loadable(lazy(() => import('pages/component-overview/typography')));
-// const Shadow = Loadable(lazy(() => import('pages/component-overview/shadows')));
-
-// render - sample page
-// const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
+const DashboardDefaults = Loadable(lazy(() => import('../pages/bangDieuKhien')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -25,50 +24,59 @@ const MainRoutes = {
   children: [
     {
       path: '/',
-      element: <DashboardDefault />
+      element: <DashboardDefaults />
     },
+    // {
+    //   path: 'dashboard',
+    //   children: [
+    //     {
+    //       path: 'default',
+    //       element: <DashboardDefault />
+    //     }
+    //   ]
+    // },
     {
-      path: 'dashboard',
+      path: '/navigation',
       children: [
         {
-          path: 'default',
-          element: <DashboardDefault />
-        }
+          path: 'cau-hinh-thiet-bi',
+          element: <CauHinhThietBi />
+        },
+        {
+          path: 'thong-ke-chi-tiet',
+          element: <ThongKeChiTiet /> 
+        },
+        {
+          path: 'giam-sat-camera',
+          element: <GiamSatCamera /> 
+        },
+        {
+          path: 'lien-he-ho-tro',
+          element: <LienHeHoTro /> 
+        },
       ]
     },
     {
-      path: '/deviceManagement',
-      chidlren: [
+      path: '/manage',
+      children: [
         {
-          path: 'deviceManagement',
-          element: <quanLyThietBi /> 
+          path: 'quan-ly-thiet-bi',
+          element: <QuanLyThietBi />
         },
         {
-          path: '.',
-          element: <cauHinhThietBi />
+          path: 'thong-so-moi-truong',
+          element: <ThongSoMoiTruong /> 
         },
         {
-          path: '.',
-          element: <cauHinhThietBi />
+          path: 'thong-bao-canh-bao',
+          element: <ThongBaoCanhBao /> 
         },
         {
-          path: '.',
-          element: <cauHinhThietBi />
-        }
+          path: 'quy-trinh-hoat-dong',
+          element: <QuyTrinhHoatDong /> 
+        },
       ]
-    },
-    {
-      // path: 'color',
-      // element: <Color />
-    },
-    // {
-    //   path: 'shadow',
-    //   element: <Shadow />
-    // },
-    // {
-    //   path: 'sample-page',
-    //   element: <SamplePage />
-    // }
+    }
   ]
 };
 

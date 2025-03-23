@@ -6,6 +6,6 @@
       "allowSyntheticDefaultImports": true,
       "checkJs": true,
     },
-    "include": ["vite.config.mjs"]
+    "include": ["vite.config.js"]
     
     }

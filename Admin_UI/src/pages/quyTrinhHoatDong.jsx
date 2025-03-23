@@ -1,14 +1,13 @@
 import React from 'react';
-import { Box,Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import StyleBackground from '../themes/stylePage/backgroundPage';
-
-const quanLyThietBi = () => {
+const quyTrinhHoatDong = () => {
   return (
     <Box>
-      <Typography>QUAN LY THIET BI</Typography>
+      <Typography>QUY TRINH HOAT DONG</Typography>
       <StyleBackground></StyleBackground>
     </Box>
   );
 };
 
-export default quanLyThietBi;
+export default quyTrinhHoatDong;

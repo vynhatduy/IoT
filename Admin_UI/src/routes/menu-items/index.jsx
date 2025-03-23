@@ -2,10 +2,13 @@
 // import dashboard from '../../layout/nav';
 import dashboard from './nav'
 import pages from './authentication';
+import deviceManagement from './deviceManagement';
+import navigation from './navigation';
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-  items: [dashboard, pages]
+  items: [dashboard,navigation,deviceManagement,pages],
+
 };
 
 export default menuItems;
