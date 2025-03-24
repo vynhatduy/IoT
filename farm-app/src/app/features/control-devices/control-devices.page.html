@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true" mode="ios">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-title class="center">
+        <ion-list lines="none">
+          <ion-item>
+            <ion-select
+              aria-label="Sensor Location"
+              (ionChange)="onSensorLocationChange($event)"
+              value="0"
+              interface="action-sheet"
+              color="primary"
+            >
+              <ion-select-option value="1">KV1</ion-select-option>
+              <ion-select-option value="0">KV2</ion-select-option>
+              <ion-select-option value="2">KV3</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngIf="locations && locations.devices">
+        <ion-card *ngFor="let device of locations.devices" color="danger">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-toggle
+                [checked]="sensorData.Status[device.order]"
+                (ionChange)="controlDevice(device, !sensorData.Status[device.order])"
+                color="tertiary"
+              ></ion-toggle>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <strong>{{device.name}}</strong>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-card-content>
+    <ion-list *ngIf="!locations">
+      <ion-item lines="none">Data is not available</ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>
