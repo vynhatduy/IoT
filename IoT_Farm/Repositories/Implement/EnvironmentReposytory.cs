@@ -21,10 +21,10 @@ namespace IoT_Farm.Repositories.Implement
             return result;
         }
 
-        public async Task<EnvironmentData?> GetLatestAsync()
+        public async Task<EnvironmentData?> GetLatestAsync(string area)
         {
             var result = await _databaseAdapter.FindOneAsync(
-                filter: _ => true,
+                filter: d => d.Area == area,
                 sort: q => q.OrderByDescending(d => d.Timestamp)
             );
 

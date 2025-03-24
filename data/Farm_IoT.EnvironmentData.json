@@ -1,6502 +1,2752 @@
-[
-  {
-    "_id": {
-      "$oid": "b8c3fcd16343557e6da83b7b"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.5,
-    "Humidity": 90,
-    "Brightness": 59,
-    "AirQuality": 394,
-    "Timestamp": {
-      "$date": "2025-03-06T13:23:40.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "15038d5742e179ee0cc4693b"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.5,
-    "Humidity": 51,
-    "Brightness": 88,
-    "AirQuality": 300,
-    "Timestamp": {
-      "$date": "2025-03-11T14:57:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "af9c02f28bdcae118b14687b"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.3,
-    "Humidity": 90,
-    "Brightness": 53,
-    "AirQuality": 484,
-    "Timestamp": {
-      "$date": "2025-03-06T05:52:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ee838221272ab91616d3d4e1"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 24.1,
-    "Humidity": 84,
-    "Brightness": 89,
-    "AirQuality": 479,
-    "Timestamp": {
-      "$date": "2025-03-06T14:43:25.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "edc19159245a68217bf1e674"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 29.2,
-    "Humidity": 61,
-    "Brightness": 59,
-    "AirQuality": 467,
-    "Timestamp": {
-      "$date": "2025-03-07T23:29:25.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ee9ab886e5d59237f17bb74a"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.5,
-    "Humidity": 85,
-    "Brightness": 61,
-    "AirQuality": 435,
-    "Timestamp": {
-      "$date": "2025-03-09T10:31:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "cb6e052a8a668fa652861396"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 26.5,
-    "Humidity": 62,
-    "Brightness": 79,
-    "AirQuality": 427,
-    "Timestamp": {
-      "$date": "2025-03-11T09:16:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5e0ae77f70395f501841aff7"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.6,
-    "Humidity": 80,
-    "Brightness": 74,
-    "AirQuality": 432,
-    "Timestamp": {
-      "$date": "2025-03-03T19:36:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c2d4a527423565b13252dc9a"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.6,
-    "Humidity": 85,
-    "Brightness": 62,
-    "AirQuality": 432,
-    "Timestamp": {
-      "$date": "2025-03-06T07:20:59.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d45ca76590a03598c1117449"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 23.4,
-    "Humidity": 60,
-    "Brightness": 73,
-    "AirQuality": 422,
-    "Timestamp": {
-      "$date": "2025-03-08T20:46:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "864898f64af72c499fc68473"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.2,
-    "Humidity": 61,
-    "Brightness": 68,
-    "AirQuality": 322,
-    "Timestamp": {
-      "$date": "2025-03-03T11:57:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "be75f4b7ca10a9ba9c275971"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.5,
-    "Humidity": 80,
-    "Brightness": 73,
-    "AirQuality": 395,
-    "Timestamp": {
-      "$date": "2025-03-03T15:26:53.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3f5553e959da6836acc26ea0"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 26.4,
-    "Humidity": 59,
-    "Brightness": 95,
-    "AirQuality": 419,
-    "Timestamp": {
-      "$date": "2025-03-11T13:40:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "313b5c6a9e6ac17c523c49f8"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.3,
-    "Humidity": 79,
-    "Brightness": 93,
-    "AirQuality": 488,
-    "Timestamp": {
-      "$date": "2025-03-12T02:36:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e9aee0c03cf387a512431a1f"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.9,
-    "Humidity": 79,
-    "Brightness": 73,
-    "AirQuality": 484,
-    "Timestamp": {
-      "$date": "2025-03-10T08:14:30.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0e8bb105ddb0723ef22de4cc"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.6,
-    "Humidity": 74,
-    "Brightness": 92,
-    "AirQuality": 351,
-    "Timestamp": {
-      "$date": "2025-03-11T06:26:32.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "abc3de84bf3323d11a38868c"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.2,
-    "Humidity": 60,
-    "Brightness": 62,
-    "AirQuality": 453,
-    "Timestamp": {
-      "$date": "2025-03-09T19:21:51.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9b0c08b7ee3145299c58a878"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.8,
-    "Humidity": 64,
-    "Brightness": 75,
-    "AirQuality": 369,
-    "Timestamp": {
-      "$date": "2025-03-08T10:22:40.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "dd806b48e5e796c5dcd8ac43"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 20.8,
-    "Humidity": 64,
-    "Brightness": 51,
-    "AirQuality": 449,
-    "Timestamp": {
-      "$date": "2025-03-13T01:22:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b08a8a44e74a691f3816c629"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.6,
-    "Humidity": 57,
-    "Brightness": 56,
-    "AirQuality": 451,
-    "Timestamp": {
-      "$date": "2025-03-04T14:40:36.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7e92af480d7b3aa5d9246d50"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.7,
-    "Humidity": 89,
-    "Brightness": 51,
-    "AirQuality": 337,
-    "Timestamp": {
-      "$date": "2025-03-07T18:31:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b6223d228d72005d6423d2af"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.0,
-    "Humidity": 79,
-    "Brightness": 81,
-    "AirQuality": 444,
-    "Timestamp": {
-      "$date": "2025-03-11T11:32:22.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b930d43853fcccdad12a2422"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.0,
-    "Humidity": 65,
-    "Brightness": 67,
-    "AirQuality": 330,
-    "Timestamp": {
-      "$date": "2025-03-05T22:09:52.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "fdcb3f80f173349920336632"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.0,
-    "Humidity": 86,
-    "Brightness": 56,
-    "AirQuality": 464,
-    "Timestamp": {
-      "$date": "2025-03-10T21:47:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "96c7e9270592814bfb647c9c"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 24.4,
-    "Humidity": 88,
-    "Brightness": 89,
-    "AirQuality": 304,
-    "Timestamp": {
-      "$date": "2025-03-09T00:54:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4618d147a59094d7199dd1c6"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.6,
-    "Humidity": 85,
-    "Brightness": 65,
-    "AirQuality": 369,
-    "Timestamp": {
-      "$date": "2025-03-04T18:12:53.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f5c3ba71b97b882653647b06"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.6,
-    "Humidity": 78,
-    "Brightness": 84,
-    "AirQuality": 478,
-    "Timestamp": {
-      "$date": "2025-03-09T21:33:19.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "30490c9abc1251526faba643"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.4,
-    "Humidity": 88,
-    "Brightness": 87,
-    "AirQuality": 481,
-    "Timestamp": {
-      "$date": "2025-03-10T21:20:20.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3751bb6fec1c728ff81bd3e1"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.3,
-    "Humidity": 57,
-    "Brightness": 94,
-    "AirQuality": 376,
-    "Timestamp": {
-      "$date": "2025-03-10T22:14:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "45e9a7c32a964ec41541cb3a"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 30.0,
-    "Humidity": 61,
-    "Brightness": 76,
-    "AirQuality": 483,
-    "Timestamp": {
-      "$date": "2025-03-08T08:45:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d0ae65698bbea5fd9fe795c8"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.6,
-    "Humidity": 70,
-    "Brightness": 70,
-    "AirQuality": 431,
-    "Timestamp": {
-      "$date": "2025-03-10T20:09:41.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8fdef7bb65e9d3c409e43c42"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 29.1,
-    "Humidity": 56,
-    "Brightness": 97,
-    "AirQuality": 387,
-    "Timestamp": {
-      "$date": "2025-03-09T19:54:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3e6be37eb23a313bbdb6948d"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.1,
-    "Humidity": 83,
-    "Brightness": 95,
-    "AirQuality": 466,
-    "Timestamp": {
-      "$date": "2025-03-07T16:33:59.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6c40cebb28a613a2a219ce5f"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.2,
-    "Humidity": 75,
-    "Brightness": 77,
-    "AirQuality": 327,
-    "Timestamp": {
-      "$date": "2025-03-04T06:02:55.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "25750bb88fbfb16890478eaf"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.2,
-    "Humidity": 52,
-    "Brightness": 66,
-    "AirQuality": 354,
-    "Timestamp": {
-      "$date": "2025-03-07T12:36:11.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f4d017d92f7b829be69ad24e"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.4,
-    "Humidity": 64,
-    "Brightness": 95,
-    "AirQuality": 427,
-    "Timestamp": {
-      "$date": "2025-03-08T11:59:21.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7ba10355e11cab33f4b93d64"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 20.0,
-    "Humidity": 74,
-    "Brightness": 86,
-    "AirQuality": 339,
-    "Timestamp": {
-      "$date": "2025-03-09T05:33:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "883cf0098fdda6a58ea140b3"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.8,
-    "Humidity": 80,
-    "Brightness": 78,
-    "AirQuality": 356,
-    "Timestamp": {
-      "$date": "2025-03-11T23:41:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "cb31a20198242397051ceef2"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.5,
-    "Humidity": 51,
-    "Brightness": 89,
-    "AirQuality": 411,
-    "Timestamp": {
-      "$date": "2025-03-08T01:31:32.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "337a8e7f11935d9db80c32ae"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 27.5,
-    "Humidity": 88,
-    "Brightness": 90,
-    "AirQuality": 365,
-    "Timestamp": {
-      "$date": "2025-03-11T03:11:14.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "869fb460ec2cbdceb3dedc39"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 29.2,
-    "Humidity": 80,
-    "Brightness": 78,
-    "AirQuality": 437,
-    "Timestamp": {
-      "$date": "2025-03-08T08:29:36.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "99b8220a7e5a4f5eae085e19"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.3,
-    "Humidity": 62,
-    "Brightness": 92,
-    "AirQuality": 364,
-    "Timestamp": {
-      "$date": "2025-03-04T12:41:22.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b6d2acdc3ca4dc0d67fa3550"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.2,
-    "Humidity": 89,
-    "Brightness": 71,
-    "AirQuality": 440,
-    "Timestamp": {
-      "$date": "2025-03-04T02:12:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "480acbec7f80e2fc36630798"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 20.8,
-    "Humidity": 62,
-    "Brightness": 75,
-    "AirQuality": 310,
-    "Timestamp": {
-      "$date": "2025-03-13T08:40:55.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3acdd6fff1fa3527fb7451c2"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.4,
-    "Humidity": 55,
-    "Brightness": 64,
-    "AirQuality": 490,
-    "Timestamp": {
-      "$date": "2025-03-09T01:27:09.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "bbe3d057d3393d3f92a726af"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.3,
-    "Humidity": 79,
-    "Brightness": 90,
-    "AirQuality": 492,
-    "Timestamp": {
-      "$date": "2025-03-08T03:20:19.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9f9020948ea6c918d32fd123"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.8,
-    "Humidity": 79,
-    "Brightness": 59,
-    "AirQuality": 340,
-    "Timestamp": {
-      "$date": "2025-03-10T19:25:53.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "35de479a6621cb949066caee"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.5,
-    "Humidity": 52,
-    "Brightness": 54,
-    "AirQuality": 388,
-    "Timestamp": {
-      "$date": "2025-03-10T23:39:42.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f218dea9182cafeb29f87279"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.2,
-    "Humidity": 66,
-    "Brightness": 82,
-    "AirQuality": 384,
-    "Timestamp": {
-      "$date": "2025-03-10T04:46:52.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "36871f567436a622224d25c5"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 26.0,
-    "Humidity": 54,
-    "Brightness": 68,
-    "AirQuality": 489,
-    "Timestamp": {
-      "$date": "2025-03-08T10:11:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2699c0948307300f2503401c"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.6,
-    "Humidity": 58,
-    "Brightness": 72,
-    "AirQuality": 457,
-    "Timestamp": {
-      "$date": "2025-03-08T23:35:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6dc1cc33f396f3df9603d86d"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.2,
-    "Humidity": 66,
-    "Brightness": 73,
-    "AirQuality": 411,
-    "Timestamp": {
-      "$date": "2025-03-08T20:36:35.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e0c65ffced2ddbbc92c9a99d"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.3,
-    "Humidity": 68,
-    "Brightness": 70,
-    "AirQuality": 351,
-    "Timestamp": {
-      "$date": "2025-03-09T17:16:45.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "de649187cf0c2e5c94d0a42e"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.6,
-    "Humidity": 87,
-    "Brightness": 56,
-    "AirQuality": 381,
-    "Timestamp": {
-      "$date": "2025-03-06T18:35:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "fa86155c51321de1e33cb364"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.4,
-    "Humidity": 72,
-    "Brightness": 88,
-    "AirQuality": 336,
-    "Timestamp": {
-      "$date": "2025-03-11T16:39:43.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a34ab8823be346760f2bb37a"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.9,
-    "Humidity": 74,
-    "Brightness": 50,
-    "AirQuality": 351,
-    "Timestamp": {
-      "$date": "2025-03-09T15:40:21.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1784ffb43a8691c5bda08c2e"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.4,
-    "Humidity": 59,
-    "Brightness": 92,
-    "AirQuality": 305,
-    "Timestamp": {
-      "$date": "2025-03-10T19:59:22.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2c8cbdefb7be4674e16b2e33"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.8,
-    "Humidity": 74,
-    "Brightness": 96,
-    "AirQuality": 384,
-    "Timestamp": {
-      "$date": "2025-03-11T01:19:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2579a0731f17b01067950353"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.2,
-    "Humidity": 61,
-    "Brightness": 84,
-    "AirQuality": 443,
-    "Timestamp": {
-      "$date": "2025-03-11T05:02:52.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "cece865dd8414bd8a81dc721"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.3,
-    "Humidity": 64,
-    "Brightness": 66,
-    "AirQuality": 498,
-    "Timestamp": {
-      "$date": "2025-03-07T13:00:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "da934c6d7adeab84a03badf8"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.3,
-    "Humidity": 73,
-    "Brightness": 53,
-    "AirQuality": 348,
-    "Timestamp": {
-      "$date": "2025-03-07T02:28:20.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "10807cea0ab3073b6e10259c"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.5,
-    "Humidity": 77,
-    "Brightness": 54,
-    "AirQuality": 387,
-    "Timestamp": {
-      "$date": "2025-03-12T09:28:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7ac7d892456b9ea1e36b16bd"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.7,
-    "Humidity": 80,
-    "Brightness": 94,
-    "AirQuality": 351,
-    "Timestamp": {
-      "$date": "2025-03-05T01:13:15.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d27d79996b01639165fa73a3"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 29.5,
-    "Humidity": 67,
-    "Brightness": 76,
-    "AirQuality": 346,
-    "Timestamp": {
-      "$date": "2025-03-06T19:32:06.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7d4fb3987fd937e9c09d1e49"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.0,
-    "Humidity": 56,
-    "Brightness": 58,
-    "AirQuality": 359,
-    "Timestamp": {
-      "$date": "2025-03-07T21:52:56.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "21f714a9ccba287deef23044"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.8,
-    "Humidity": 66,
-    "Brightness": 54,
-    "AirQuality": 346,
-    "Timestamp": {
-      "$date": "2025-03-04T09:13:24.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1d1239c62ef510512962f99d"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 30.0,
-    "Humidity": 74,
-    "Brightness": 75,
-    "AirQuality": 369,
-    "Timestamp": {
-      "$date": "2025-03-10T16:42:31.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "350c25e8577a678614bb0539"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.8,
-    "Humidity": 53,
-    "Brightness": 84,
-    "AirQuality": 312,
-    "Timestamp": {
-      "$date": "2025-03-08T19:04:43.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "439888b3daf31288ac7ebd63"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 29.9,
-    "Humidity": 52,
-    "Brightness": 91,
-    "AirQuality": 481,
-    "Timestamp": {
-      "$date": "2025-03-09T22:27:42.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "886b2e0bb1b005db88207304"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.8,
-    "Humidity": 87,
-    "Brightness": 76,
-    "AirQuality": 370,
-    "Timestamp": {
-      "$date": "2025-03-07T07:57:03.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d52d2423803d2233fac1321e"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.0,
-    "Humidity": 78,
-    "Brightness": 75,
-    "AirQuality": 389,
-    "Timestamp": {
-      "$date": "2025-03-06T06:09:52.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3bd920ecd1766aa713060127"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.2,
-    "Humidity": 71,
-    "Brightness": 53,
-    "AirQuality": 404,
-    "Timestamp": {
-      "$date": "2025-03-13T02:09:09.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "336867e704a7ce3729db3100"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 28.1,
-    "Humidity": 71,
-    "Brightness": 98,
-    "AirQuality": 385,
-    "Timestamp": {
-      "$date": "2025-03-07T19:43:14.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "239baa21f6217f25eadb3924"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.9,
-    "Humidity": 86,
-    "Brightness": 74,
-    "AirQuality": 474,
-    "Timestamp": {
-      "$date": "2025-03-08T11:26:32.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "48a4bf4d3dd817090744c28a"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.4,
-    "Humidity": 77,
-    "Brightness": 73,
-    "AirQuality": 459,
-    "Timestamp": {
-      "$date": "2025-03-05T21:48:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a0b0043f5d32b4f672e0aa43"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.3,
-    "Humidity": 57,
-    "Brightness": 82,
-    "AirQuality": 417,
-    "Timestamp": {
-      "$date": "2025-03-11T07:08:07.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "bdcafefd12c1f5c177c4f7cc"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.1,
-    "Humidity": 88,
-    "Brightness": 57,
-    "AirQuality": 451,
-    "Timestamp": {
-      "$date": "2025-03-07T15:13:31.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1fa23ed2e111cb2a7554979e"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.0,
-    "Humidity": 60,
-    "Brightness": 94,
-    "AirQuality": 452,
-    "Timestamp": {
-      "$date": "2025-03-06T16:54:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "11f7a91643403feb515743a3"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 28.7,
-    "Humidity": 74,
-    "Brightness": 68,
-    "AirQuality": 319,
-    "Timestamp": {
-      "$date": "2025-03-06T10:39:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e10dad2c14390204c9a78c11"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.6,
-    "Humidity": 58,
-    "Brightness": 64,
-    "AirQuality": 378,
-    "Timestamp": {
-      "$date": "2025-03-11T08:09:19.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6fb5c38839a71b8fa94358fd"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 22.9,
-    "Humidity": 87,
-    "Brightness": 56,
-    "AirQuality": 452,
-    "Timestamp": {
-      "$date": "2025-03-12T17:47:58.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "81e000a333c3f049cfc70947"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.8,
-    "Humidity": 80,
-    "Brightness": 54,
-    "AirQuality": 442,
-    "Timestamp": {
-      "$date": "2025-03-08T03:32:04.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3c4d63ef005eeb811c23a1db"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.3,
-    "Humidity": 63,
-    "Brightness": 86,
-    "AirQuality": 439,
-    "Timestamp": {
-      "$date": "2025-03-07T22:24:52.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "995baddad28eb156ae2c933b"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.6,
-    "Humidity": 80,
-    "Brightness": 99,
-    "AirQuality": 403,
-    "Timestamp": {
-      "$date": "2025-03-09T21:35:40.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "66496ecd526c9e50c388c493"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.9,
-    "Humidity": 79,
-    "Brightness": 68,
-    "AirQuality": 331,
-    "Timestamp": {
-      "$date": "2025-03-12T09:18:53.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8bd2bede13b11da3b27db2b0"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.4,
-    "Humidity": 67,
-    "Brightness": 53,
-    "AirQuality": 338,
-    "Timestamp": {
-      "$date": "2025-03-10T11:41:57.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9362ba329f2d03d08ceb0e8d"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.8,
-    "Humidity": 60,
-    "Brightness": 55,
-    "AirQuality": 356,
-    "Timestamp": {
-      "$date": "2025-03-10T21:58:36.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "dbbc4b3d2ab7ae9889d5baa8"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.1,
-    "Humidity": 64,
-    "Brightness": 97,
-    "AirQuality": 347,
-    "Timestamp": {
-      "$date": "2025-03-11T05:46:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5494fb467c404625d16ab890"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.3,
-    "Humidity": 88,
-    "Brightness": 61,
-    "AirQuality": 492,
-    "Timestamp": {
-      "$date": "2025-03-10T06:06:51.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8b990c2945485220e00e8ebf"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 29.5,
-    "Humidity": 71,
-    "Brightness": 61,
-    "AirQuality": 467,
-    "Timestamp": {
-      "$date": "2025-03-08T12:49:20.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "eac44cf99edeafdec1855191"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.1,
-    "Humidity": 62,
-    "Brightness": 84,
-    "AirQuality": 381,
-    "Timestamp": {
-      "$date": "2025-03-03T21:29:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1379c121bf90bbdcd92f4ca9"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.0,
-    "Humidity": 78,
-    "Brightness": 83,
-    "AirQuality": 324,
-    "Timestamp": {
-      "$date": "2025-03-09T02:02:11.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0de74e4eb713c7e639fcc4ad"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.8,
-    "Humidity": 74,
-    "Brightness": 72,
-    "AirQuality": 310,
-    "Timestamp": {
-      "$date": "2025-03-07T00:07:41.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "bd2b88f21a1a08fd624dd762"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.7,
-    "Humidity": 89,
-    "Brightness": 67,
-    "AirQuality": 337,
-    "Timestamp": {
-      "$date": "2025-03-03T10:41:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8faf76c4387dadcebe74078e"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.1,
-    "Humidity": 84,
-    "Brightness": 76,
-    "AirQuality": 308,
-    "Timestamp": {
-      "$date": "2025-03-13T07:15:21.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7045552cb8e70d976acf0f4a"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.6,
-    "Humidity": 81,
-    "Brightness": 81,
-    "AirQuality": 308,
-    "Timestamp": {
-      "$date": "2025-03-07T11:08:22.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "955405d6d9228444a3667eb9"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.8,
-    "Humidity": 88,
-    "Brightness": 89,
-    "AirQuality": 448,
-    "Timestamp": {
-      "$date": "2025-03-12T19:21:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3749956e9f50ffabb6c9d708"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.0,
-    "Humidity": 58,
-    "Brightness": 55,
-    "AirQuality": 388,
-    "Timestamp": {
-      "$date": "2025-03-03T16:14:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d167cad249343c72ca36dd98"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.9,
-    "Humidity": 73,
-    "Brightness": 71,
-    "AirQuality": 472,
-    "Timestamp": {
-      "$date": "2025-03-06T15:27:55.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b9c33c617ab0a1163b7629e4"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.3,
-    "Humidity": 76,
-    "Brightness": 53,
-    "AirQuality": 464,
-    "Timestamp": {
-      "$date": "2025-03-09T21:08:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e7fbf5e5317395df74f52b80"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.6,
-    "Humidity": 76,
-    "Brightness": 62,
-    "AirQuality": 447,
-    "Timestamp": {
-      "$date": "2025-03-09T02:06:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ce67ce3bc171b148b1f3eaf2"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.3,
-    "Humidity": 83,
-    "Brightness": 92,
-    "AirQuality": 389,
-    "Timestamp": {
-      "$date": "2025-03-13T01:21:27.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7ba915528c0ae02f09586aa1"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.6,
-    "Humidity": 68,
-    "Brightness": 92,
-    "AirQuality": 479,
-    "Timestamp": {
-      "$date": "2025-03-12T13:35:17.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f83740dbc65827600914ab75"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.9,
-    "Humidity": 87,
-    "Brightness": 51,
-    "AirQuality": 409,
-    "Timestamp": {
-      "$date": "2025-03-07T03:07:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2c67bf97594180f2ba841a30"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.1,
-    "Humidity": 71,
-    "Brightness": 90,
-    "AirQuality": 357,
-    "Timestamp": {
-      "$date": "2025-03-04T03:12:52.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9c6c7599a143830bfeeae213"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 29.1,
-    "Humidity": 75,
-    "Brightness": 88,
-    "AirQuality": 379,
-    "Timestamp": {
-      "$date": "2025-03-13T03:52:42.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c0e77695f4480318b1a1c8e6"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 29.8,
-    "Humidity": 79,
-    "Brightness": 71,
-    "AirQuality": 492,
-    "Timestamp": {
-      "$date": "2025-03-04T17:24:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "26c2dc82bc569360a834339c"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.0,
-    "Humidity": 86,
-    "Brightness": 60,
-    "AirQuality": 333,
-    "Timestamp": {
-      "$date": "2025-03-05T19:40:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3bb68ed4e279314f38264c25"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 26.1,
-    "Humidity": 66,
-    "Brightness": 85,
-    "AirQuality": 350,
-    "Timestamp": {
-      "$date": "2025-03-07T12:55:54.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "93d6694fd8767ab7792b5d02"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.5,
-    "Humidity": 57,
-    "Brightness": 52,
-    "AirQuality": 359,
-    "Timestamp": {
-      "$date": "2025-03-10T14:31:37.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4dd8f44da6dd64646cd204b2"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 29.5,
-    "Humidity": 60,
-    "Brightness": 81,
-    "AirQuality": 352,
-    "Timestamp": {
-      "$date": "2025-03-07T11:16:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0cd2c3c6d45e55285fb84110"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.6,
-    "Humidity": 66,
-    "Brightness": 100,
-    "AirQuality": 377,
-    "Timestamp": {
-      "$date": "2025-03-08T20:12:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1a80fd9eb76a0c0049832770"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.0,
-    "Humidity": 75,
-    "Brightness": 54,
-    "AirQuality": 328,
-    "Timestamp": {
-      "$date": "2025-03-09T19:33:51.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f588f9b2ae8ecb92965ecb98"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.3,
-    "Humidity": 53,
-    "Brightness": 73,
-    "AirQuality": 410,
-    "Timestamp": {
-      "$date": "2025-03-11T15:21:15.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "199e8f2313c0baf87a2720e7"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 29.7,
-    "Humidity": 59,
-    "Brightness": 56,
-    "AirQuality": 425,
-    "Timestamp": {
-      "$date": "2025-03-10T19:41:52.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5cc87e7a6e41f4aae8f0d898"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.0,
-    "Humidity": 63,
-    "Brightness": 84,
-    "AirQuality": 447,
-    "Timestamp": {
-      "$date": "2025-03-13T06:03:27.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6e284f4924154360a77dae07"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.6,
-    "Humidity": 52,
-    "Brightness": 93,
-    "AirQuality": 318,
-    "Timestamp": {
-      "$date": "2025-03-08T04:43:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "be8051d3aa9330b4274ced1c"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.6,
-    "Humidity": 61,
-    "Brightness": 87,
-    "AirQuality": 480,
-    "Timestamp": {
-      "$date": "2025-03-13T07:48:07.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9901e1082e4fc47ff8ee0e29"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 28.6,
-    "Humidity": 53,
-    "Brightness": 80,
-    "AirQuality": 302,
-    "Timestamp": {
-      "$date": "2025-03-09T14:35:26.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "fdb09973aa423bc184377800"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.6,
-    "Humidity": 52,
-    "Brightness": 70,
-    "AirQuality": 367,
-    "Timestamp": {
-      "$date": "2025-03-07T06:35:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "fd1b3154f5a8b03971ccc45b"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.5,
-    "Humidity": 83,
-    "Brightness": 74,
-    "AirQuality": 377,
-    "Timestamp": {
-      "$date": "2025-03-06T23:42:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6f6f02935c65efa6443da2be"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.5,
-    "Humidity": 86,
-    "Brightness": 96,
-    "AirQuality": 401,
-    "Timestamp": {
-      "$date": "2025-03-05T11:35:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "860f9d1a7054d0e660d3edda"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.8,
-    "Humidity": 62,
-    "Brightness": 57,
-    "AirQuality": 322,
-    "Timestamp": {
-      "$date": "2025-03-11T12:29:41.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "648047ec0f9dc05ffd1e05ee"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.8,
-    "Humidity": 55,
-    "Brightness": 67,
-    "AirQuality": 349,
-    "Timestamp": {
-      "$date": "2025-03-12T01:18:58.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4cfe779faa3b939ff2813ed5"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.3,
-    "Humidity": 51,
-    "Brightness": 64,
-    "AirQuality": 487,
-    "Timestamp": {
-      "$date": "2025-03-13T07:54:40.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6eb309c7dc120728fa0a5e42"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.2,
-    "Humidity": 72,
-    "Brightness": 85,
-    "AirQuality": 460,
-    "Timestamp": {
-      "$date": "2025-03-04T03:36:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7e1d020c876d981e55301fe0"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 22.0,
-    "Humidity": 83,
-    "Brightness": 67,
-    "AirQuality": 482,
-    "Timestamp": {
-      "$date": "2025-03-13T10:06:03.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7d31f6b5f4792859fdf5b645"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.6,
-    "Humidity": 50,
-    "Brightness": 71,
-    "AirQuality": 337,
-    "Timestamp": {
-      "$date": "2025-03-10T00:35:11.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "70f7fde8dc9a47f2b035475f"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 20.3,
-    "Humidity": 63,
-    "Brightness": 68,
-    "AirQuality": 472,
-    "Timestamp": {
-      "$date": "2025-03-08T12:48:44.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4d9711314f1b04de4205cd04"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.8,
-    "Humidity": 50,
-    "Brightness": 63,
-    "AirQuality": 450,
-    "Timestamp": {
-      "$date": "2025-03-10T09:01:50.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c32c6b9ff2255739d0395011"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.3,
-    "Humidity": 87,
-    "Brightness": 100,
-    "AirQuality": 389,
-    "Timestamp": {
-      "$date": "2025-03-05T05:47:19.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7bac53c7869976fc62c8a3e1"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 29.4,
-    "Humidity": 78,
-    "Brightness": 61,
-    "AirQuality": 456,
-    "Timestamp": {
-      "$date": "2025-03-12T01:05:50.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c71a52bc493cede842cefae5"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.7,
-    "Humidity": 79,
-    "Brightness": 92,
-    "AirQuality": 494,
-    "Timestamp": {
-      "$date": "2025-03-05T04:43:22.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d23c6b83ecc84bcf0a204f7c"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.0,
-    "Humidity": 72,
-    "Brightness": 84,
-    "AirQuality": 458,
-    "Timestamp": {
-      "$date": "2025-03-07T22:11:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8892c0e5677c16fc7ddbb202"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.8,
-    "Humidity": 70,
-    "Brightness": 64,
-    "AirQuality": 491,
-    "Timestamp": {
-      "$date": "2025-03-10T17:44:19.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "dac05a1b9b055f5aa2fdfffc"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.6,
-    "Humidity": 85,
-    "Brightness": 71,
-    "AirQuality": 364,
-    "Timestamp": {
-      "$date": "2025-03-12T01:17:17.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "cb689d7eebaeef1e4961871a"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.7,
-    "Humidity": 89,
-    "Brightness": 93,
-    "AirQuality": 468,
-    "Timestamp": {
-      "$date": "2025-03-11T14:41:11.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "842fe7ebecca956db338da3c"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.8,
-    "Humidity": 77,
-    "Brightness": 80,
-    "AirQuality": 310,
-    "Timestamp": {
-      "$date": "2025-03-05T10:05:44.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a54e3ea37ef41fca76ced3f1"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.0,
-    "Humidity": 71,
-    "Brightness": 96,
-    "AirQuality": 359,
-    "Timestamp": {
-      "$date": "2025-03-10T17:23:43.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "288ea5af7442d8afe9187132"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.7,
-    "Humidity": 66,
-    "Brightness": 68,
-    "AirQuality": 452,
-    "Timestamp": {
-      "$date": "2025-03-04T09:24:19.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0c927bfcc6cbbaa745f82073"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.1,
-    "Humidity": 77,
-    "Brightness": 98,
-    "AirQuality": 328,
-    "Timestamp": {
-      "$date": "2025-03-07T21:40:54.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e4c3e102ac30cda490ff38a2"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.6,
-    "Humidity": 50,
-    "Brightness": 76,
-    "AirQuality": 372,
-    "Timestamp": {
-      "$date": "2025-03-11T04:11:44.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2245b4081e49121d0c8270f6"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.5,
-    "Humidity": 88,
-    "Brightness": 70,
-    "AirQuality": 399,
-    "Timestamp": {
-      "$date": "2025-03-06T07:29:25.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b08c5c5cbb17beac18ef193e"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.7,
-    "Humidity": 50,
-    "Brightness": 52,
-    "AirQuality": 396,
-    "Timestamp": {
-      "$date": "2025-03-08T20:13:19.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "031ad7ec6a02a8681bb23bca"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.2,
-    "Humidity": 60,
-    "Brightness": 78,
-    "AirQuality": 362,
-    "Timestamp": {
-      "$date": "2025-03-08T10:29:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ad4f090a8a7f1b2b0ddb620d"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.7,
-    "Humidity": 86,
-    "Brightness": 80,
-    "AirQuality": 418,
-    "Timestamp": {
-      "$date": "2025-03-05T09:06:44.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "78e751df112d1a999419ea06"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.9,
-    "Humidity": 65,
-    "Brightness": 68,
-    "AirQuality": 432,
-    "Timestamp": {
-      "$date": "2025-03-06T16:34:13.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a9f799e714754b702881e575"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.8,
-    "Humidity": 51,
-    "Brightness": 83,
-    "AirQuality": 359,
-    "Timestamp": {
-      "$date": "2025-03-06T17:44:14.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "77debb17786cbcf097dffaa2"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.4,
-    "Humidity": 56,
-    "Brightness": 74,
-    "AirQuality": 485,
-    "Timestamp": {
-      "$date": "2025-03-09T02:02:44.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1eb16d7e3ccf8ce3f04d26b1"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.1,
-    "Humidity": 90,
-    "Brightness": 61,
-    "AirQuality": 431,
-    "Timestamp": {
-      "$date": "2025-03-10T00:41:32.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6df2169ba605544600fe530a"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.0,
-    "Humidity": 56,
-    "Brightness": 70,
-    "AirQuality": 362,
-    "Timestamp": {
-      "$date": "2025-03-06T20:58:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "502981c0ab4f7daf42ac24eb"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.5,
-    "Humidity": 88,
-    "Brightness": 61,
-    "AirQuality": 493,
-    "Timestamp": {
-      "$date": "2025-03-04T17:46:22.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1cd6c7f687b54bbb1ff1b017"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.5,
-    "Humidity": 56,
-    "Brightness": 73,
-    "AirQuality": 363,
-    "Timestamp": {
-      "$date": "2025-03-07T06:02:04.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5c30fe4bbf48753a3b6ae8e6"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.2,
-    "Humidity": 56,
-    "Brightness": 55,
-    "AirQuality": 396,
-    "Timestamp": {
-      "$date": "2025-03-10T00:37:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9dadba60adae2f86df0a2b95"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.9,
-    "Humidity": 74,
-    "Brightness": 83,
-    "AirQuality": 418,
-    "Timestamp": {
-      "$date": "2025-03-11T12:56:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "abc5abc74c4d5b2f9dc6ca29"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.9,
-    "Humidity": 50,
-    "Brightness": 63,
-    "AirQuality": 399,
-    "Timestamp": {
-      "$date": "2025-03-09T08:55:25.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "193863d1b79e287d27c2e64e"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.2,
-    "Humidity": 58,
-    "Brightness": 87,
-    "AirQuality": 447,
-    "Timestamp": {
-      "$date": "2025-03-05T18:40:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "031f3900cec134fcbc75627f"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.4,
-    "Humidity": 87,
-    "Brightness": 100,
-    "AirQuality": 405,
-    "Timestamp": {
-      "$date": "2025-03-10T17:11:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e89a0fff9172926c979e38e2"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.5,
-    "Humidity": 51,
-    "Brightness": 62,
-    "AirQuality": 452,
-    "Timestamp": {
-      "$date": "2025-03-09T22:28:02.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7d43017db6d8996b4ff3ccbd"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 20.0,
-    "Humidity": 82,
-    "Brightness": 65,
-    "AirQuality": 452,
-    "Timestamp": {
-      "$date": "2025-03-07T12:51:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7870f1173fc42a93776f73e3"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.8,
-    "Humidity": 87,
-    "Brightness": 59,
-    "AirQuality": 475,
-    "Timestamp": {
-      "$date": "2025-03-09T03:18:06.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6fa6201abdc4bdba795146f4"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 22.9,
-    "Humidity": 69,
-    "Brightness": 90,
-    "AirQuality": 399,
-    "Timestamp": {
-      "$date": "2025-03-06T09:29:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6dbf4545d994615a6e616b9f"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 29.6,
-    "Humidity": 87,
-    "Brightness": 67,
-    "AirQuality": 324,
-    "Timestamp": {
-      "$date": "2025-03-13T07:22:13.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "972fbfd6b1c2b063b854bdb7"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.8,
-    "Humidity": 56,
-    "Brightness": 91,
-    "AirQuality": 424,
-    "Timestamp": {
-      "$date": "2025-03-12T23:08:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "08221eecc56d57a3aab859de"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.2,
-    "Humidity": 65,
-    "Brightness": 53,
-    "AirQuality": 390,
-    "Timestamp": {
-      "$date": "2025-03-08T16:31:09.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ca73505d294bcd62870e4d5c"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 26.5,
-    "Humidity": 87,
-    "Brightness": 66,
-    "AirQuality": 397,
-    "Timestamp": {
-      "$date": "2025-03-05T23:46:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6415919949cc593249efd294"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.7,
-    "Humidity": 67,
-    "Brightness": 82,
-    "AirQuality": 408,
-    "Timestamp": {
-      "$date": "2025-03-10T14:45:20.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e2ce809920fae1ec2b6dad88"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.7,
-    "Humidity": 54,
-    "Brightness": 96,
-    "AirQuality": 341,
-    "Timestamp": {
-      "$date": "2025-03-04T09:55:55.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "fab2da1a0f9f24568501b37a"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.9,
-    "Humidity": 61,
-    "Brightness": 77,
-    "AirQuality": 336,
-    "Timestamp": {
-      "$date": "2025-03-06T03:09:02.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "faccaf2b96e42ce971d04d52"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.5,
-    "Humidity": 60,
-    "Brightness": 64,
-    "AirQuality": 305,
-    "Timestamp": {
-      "$date": "2025-03-05T01:50:31.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3ffa05638d3a4734d3be7134"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.4,
-    "Humidity": 66,
-    "Brightness": 57,
-    "AirQuality": 355,
-    "Timestamp": {
-      "$date": "2025-03-07T07:37:51.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "07ce2c0ced3a77649d686ad4"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.3,
-    "Humidity": 88,
-    "Brightness": 84,
-    "AirQuality": 408,
-    "Timestamp": {
-      "$date": "2025-03-08T04:29:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a3a4fdae976d1e727d3765f3"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.6,
-    "Humidity": 56,
-    "Brightness": 67,
-    "AirQuality": 369,
-    "Timestamp": {
-      "$date": "2025-03-10T19:42:15.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "64f9b083c18c64fcbe9dcecd"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.2,
-    "Humidity": 85,
-    "Brightness": 97,
-    "AirQuality": 480,
-    "Timestamp": {
-      "$date": "2025-03-11T15:09:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d829a201797cecf445f89208"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.3,
-    "Humidity": 63,
-    "Brightness": 92,
-    "AirQuality": 383,
-    "Timestamp": {
-      "$date": "2025-03-09T21:17:06.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "07f164c00d8dcfefbdb0782c"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 30.0,
-    "Humidity": 75,
-    "Brightness": 98,
-    "AirQuality": 465,
-    "Timestamp": {
-      "$date": "2025-03-05T00:25:44.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4497bbfb302a2173aec022a7"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.2,
-    "Humidity": 50,
-    "Brightness": 95,
-    "AirQuality": 386,
-    "Timestamp": {
-      "$date": "2025-03-09T18:04:43.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d7c8c50b8ff238ca9a9fd568"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.1,
-    "Humidity": 53,
-    "Brightness": 60,
-    "AirQuality": 397,
-    "Timestamp": {
-      "$date": "2025-03-05T10:49:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "86db6dbaa33d7aef9ab6b5e1"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.4,
-    "Humidity": 61,
-    "Brightness": 80,
-    "AirQuality": 437,
-    "Timestamp": {
-      "$date": "2025-03-06T07:08:51.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3193c817f4ede8bcae9c7499"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.7,
-    "Humidity": 67,
-    "Brightness": 50,
-    "AirQuality": 436,
-    "Timestamp": {
-      "$date": "2025-03-06T10:01:13.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b4eab1a27059e216eb113118"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.2,
-    "Humidity": 79,
-    "Brightness": 63,
-    "AirQuality": 355,
-    "Timestamp": {
-      "$date": "2025-03-10T02:49:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "900144cbc232a8678e7b0a2a"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.1,
-    "Humidity": 57,
-    "Brightness": 53,
-    "AirQuality": 340,
-    "Timestamp": {
-      "$date": "2025-03-11T03:22:08.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4d6d1622d1707ff06d753e93"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 20.5,
-    "Humidity": 52,
-    "Brightness": 91,
-    "AirQuality": 322,
-    "Timestamp": {
-      "$date": "2025-03-06T21:10:38.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f170ad0fb3ec2c034646248c"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.9,
-    "Humidity": 66,
-    "Brightness": 87,
-    "AirQuality": 410,
-    "Timestamp": {
-      "$date": "2025-03-06T03:46:50.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "bb16de0c81f26f942d840770"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.5,
-    "Humidity": 72,
-    "Brightness": 77,
-    "AirQuality": 439,
-    "Timestamp": {
-      "$date": "2025-03-04T19:20:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "67154d5ddf9eab3574ee3177"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.8,
-    "Humidity": 70,
-    "Brightness": 85,
-    "AirQuality": 424,
-    "Timestamp": {
-      "$date": "2025-03-05T08:16:26.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7b7f450072052c27cde28627"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.1,
-    "Humidity": 70,
-    "Brightness": 79,
-    "AirQuality": 321,
-    "Timestamp": {
-      "$date": "2025-03-06T01:46:27.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "fedf91d3d8350c8e6bebedfc"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 29.2,
-    "Humidity": 79,
-    "Brightness": 97,
-    "AirQuality": 395,
-    "Timestamp": {
-      "$date": "2025-03-03T20:12:15.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1d8355d49bb85e64c050fe00"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.2,
-    "Humidity": 63,
-    "Brightness": 97,
-    "AirQuality": 449,
-    "Timestamp": {
-      "$date": "2025-03-05T02:07:04.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "222b9d5f00099de486f2384b"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.8,
-    "Humidity": 66,
-    "Brightness": 83,
-    "AirQuality": 397,
-    "Timestamp": {
-      "$date": "2025-03-10T08:13:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "92555273a79d44d2f68c9763"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.2,
-    "Humidity": 85,
-    "Brightness": 55,
-    "AirQuality": 476,
-    "Timestamp": {
-      "$date": "2025-03-06T02:58:09.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1bfe217c4f15dbae1ea34eff"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.2,
-    "Humidity": 89,
-    "Brightness": 77,
-    "AirQuality": 345,
-    "Timestamp": {
-      "$date": "2025-03-10T22:08:54.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f0f4d2ece3dd69fcff226f34"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.9,
-    "Humidity": 87,
-    "Brightness": 51,
-    "AirQuality": 462,
-    "Timestamp": {
-      "$date": "2025-03-04T07:30:06.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f9f03b21e49252124bb904ea"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.2,
-    "Humidity": 67,
-    "Brightness": 52,
-    "AirQuality": 444,
-    "Timestamp": {
-      "$date": "2025-03-11T10:30:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "da0b2d5e4579d4ca8db75e5c"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.5,
-    "Humidity": 76,
-    "Brightness": 92,
-    "AirQuality": 455,
-    "Timestamp": {
-      "$date": "2025-03-09T13:00:37.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7bc3c55a3230c7e7dcb6a6e2"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 22.3,
-    "Humidity": 81,
-    "Brightness": 73,
-    "AirQuality": 481,
-    "Timestamp": {
-      "$date": "2025-03-12T21:15:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "30221bed0146d20cec050505"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 29.9,
-    "Humidity": 56,
-    "Brightness": 98,
-    "AirQuality": 366,
-    "Timestamp": {
-      "$date": "2025-03-10T01:37:25.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "331530be72599ff1b1ed8d88"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 23.2,
-    "Humidity": 59,
-    "Brightness": 52,
-    "AirQuality": 305,
-    "Timestamp": {
-      "$date": "2025-03-12T18:52:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "73120aeb03a3adaa56b388e2"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 24.2,
-    "Humidity": 84,
-    "Brightness": 76,
-    "AirQuality": 302,
-    "Timestamp": {
-      "$date": "2025-03-11T11:36:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0d1ac2c9310842dcec3e14d7"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.8,
-    "Humidity": 61,
-    "Brightness": 69,
-    "AirQuality": 445,
-    "Timestamp": {
-      "$date": "2025-03-08T17:46:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5830ef38f46b519f7382d779"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.2,
-    "Humidity": 67,
-    "Brightness": 64,
-    "AirQuality": 334,
-    "Timestamp": {
-      "$date": "2025-03-09T13:01:50.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ec3ad14d3e061c0f7fc5a2a4"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.3,
-    "Humidity": 66,
-    "Brightness": 75,
-    "AirQuality": 351,
-    "Timestamp": {
-      "$date": "2025-03-07T04:54:14.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7474279135c2a4310818adca"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.2,
-    "Humidity": 76,
-    "Brightness": 58,
-    "AirQuality": 330,
-    "Timestamp": {
-      "$date": "2025-03-10T02:57:09.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "56720f308f7c1c4621f896c4"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 23.2,
-    "Humidity": 53,
-    "Brightness": 68,
-    "AirQuality": 482,
-    "Timestamp": {
-      "$date": "2025-03-09T06:05:21.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "475b0a7b01125a926d11a02d"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.1,
-    "Humidity": 65,
-    "Brightness": 53,
-    "AirQuality": 376,
-    "Timestamp": {
-      "$date": "2025-03-08T13:44:31.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0ffcd19bbe86f4302347c033"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.4,
-    "Humidity": 73,
-    "Brightness": 88,
-    "AirQuality": 336,
-    "Timestamp": {
-      "$date": "2025-03-06T07:11:54.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1daa5eb1e5ce40d388ed6b3a"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.0,
-    "Humidity": 83,
-    "Brightness": 58,
-    "AirQuality": 476,
-    "Timestamp": {
-      "$date": "2025-03-12T09:42:21.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2b85fef4fcbc78165c390129"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.0,
-    "Humidity": 63,
-    "Brightness": 61,
-    "AirQuality": 441,
-    "Timestamp": {
-      "$date": "2025-03-12T22:14:15.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "34770def32ed3c915b730924"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 24.2,
-    "Humidity": 62,
-    "Brightness": 54,
-    "AirQuality": 360,
-    "Timestamp": {
-      "$date": "2025-03-05T13:48:57.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2329987391477de842abea06"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.4,
-    "Humidity": 85,
-    "Brightness": 82,
-    "AirQuality": 377,
-    "Timestamp": {
-      "$date": "2025-03-06T02:00:50.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "566f26b936d9c46c1e7ae5f5"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 20.7,
-    "Humidity": 84,
-    "Brightness": 82,
-    "AirQuality": 426,
-    "Timestamp": {
-      "$date": "2025-03-11T15:33:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "78d2202b95ffe103ba827fa3"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.5,
-    "Humidity": 53,
-    "Brightness": 92,
-    "AirQuality": 383,
-    "Timestamp": {
-      "$date": "2025-03-09T05:08:20.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1462c5b59a51651caf3f3950"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.9,
-    "Humidity": 84,
-    "Brightness": 85,
-    "AirQuality": 372,
-    "Timestamp": {
-      "$date": "2025-03-11T11:45:40.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3f961b87208fb9bb61611bf5"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.1,
-    "Humidity": 79,
-    "Brightness": 64,
-    "AirQuality": 346,
-    "Timestamp": {
-      "$date": "2025-03-06T19:25:32.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0b9c98f01bc5f714f3519f07"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.2,
-    "Humidity": 87,
-    "Brightness": 64,
-    "AirQuality": 410,
-    "Timestamp": {
-      "$date": "2025-03-08T21:58:26.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "71b837abb9703e3235ce2435"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.1,
-    "Humidity": 68,
-    "Brightness": 90,
-    "AirQuality": 378,
-    "Timestamp": {
-      "$date": "2025-03-05T01:17:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "033e578c511cd76a4d8a7ee1"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.1,
-    "Humidity": 73,
-    "Brightness": 68,
-    "AirQuality": 426,
-    "Timestamp": {
-      "$date": "2025-03-05T00:09:45.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2e7cbdff3575c50b2c37999b"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.7,
-    "Humidity": 58,
-    "Brightness": 81,
-    "AirQuality": 348,
-    "Timestamp": {
-      "$date": "2025-03-07T14:19:33.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6c6536aa6e567a2021b3f5ff"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.8,
-    "Humidity": 78,
-    "Brightness": 84,
-    "AirQuality": 483,
-    "Timestamp": {
-      "$date": "2025-03-08T13:24:45.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5c2ec152a914954362d51e65"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.9,
-    "Humidity": 85,
-    "Brightness": 64,
-    "AirQuality": 387,
-    "Timestamp": {
-      "$date": "2025-03-12T20:24:08.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "908b3c15d2a56055a4594031"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 24.3,
-    "Humidity": 72,
-    "Brightness": 69,
-    "AirQuality": 458,
-    "Timestamp": {
-      "$date": "2025-03-07T19:30:25.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "588c623d3b9abd3321b87c25"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 29.9,
-    "Humidity": 54,
-    "Brightness": 80,
-    "AirQuality": 388,
-    "Timestamp": {
-      "$date": "2025-03-08T13:50:36.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "30c3da0a9ff2dce888eb9d3c"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 29.0,
-    "Humidity": 76,
-    "Brightness": 92,
-    "AirQuality": 457,
-    "Timestamp": {
-      "$date": "2025-03-08T04:13:13.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7acc182ad3eee7170f2822f7"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.2,
-    "Humidity": 59,
-    "Brightness": 89,
-    "AirQuality": 441,
-    "Timestamp": {
-      "$date": "2025-03-10T16:32:56.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "39e354cb49bfe2c7e1bd450a"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.4,
-    "Humidity": 70,
-    "Brightness": 59,
-    "AirQuality": 340,
-    "Timestamp": {
-      "$date": "2025-03-09T06:19:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a1f4e6f692ba82003221f59e"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 29.0,
-    "Humidity": 60,
-    "Brightness": 58,
-    "AirQuality": 423,
-    "Timestamp": {
-      "$date": "2025-03-06T23:46:53.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3718384112b045c3c5bbf3f3"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.6,
-    "Humidity": 81,
-    "Brightness": 70,
-    "AirQuality": 379,
-    "Timestamp": {
-      "$date": "2025-03-13T05:07:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1707eebd80b86ca049dabfe6"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 29.2,
-    "Humidity": 75,
-    "Brightness": 78,
-    "AirQuality": 495,
-    "Timestamp": {
-      "$date": "2025-03-11T10:46:53.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3089ed22ebf34e1167cc7503"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.0,
-    "Humidity": 57,
-    "Brightness": 98,
-    "AirQuality": 416,
-    "Timestamp": {
-      "$date": "2025-03-06T01:29:25.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "826d83ebb2537145ca953e45"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.7,
-    "Humidity": 61,
-    "Brightness": 73,
-    "AirQuality": 378,
-    "Timestamp": {
-      "$date": "2025-03-06T09:45:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5147915e948f99151dcedc69"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.4,
-    "Humidity": 86,
-    "Brightness": 78,
-    "AirQuality": 422,
-    "Timestamp": {
-      "$date": "2025-03-03T16:45:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "fbe615bb01b1a6bbb24736b7"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.2,
-    "Humidity": 53,
-    "Brightness": 89,
-    "AirQuality": 475,
-    "Timestamp": {
-      "$date": "2025-03-12T20:18:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ce65fa998598314e60e9144d"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.1,
-    "Humidity": 55,
-    "Brightness": 51,
-    "AirQuality": 410,
-    "Timestamp": {
-      "$date": "2025-03-09T11:56:46.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b6ec2aa21d10de70768c7433"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.0,
-    "Humidity": 67,
-    "Brightness": 74,
-    "AirQuality": 330,
-    "Timestamp": {
-      "$date": "2025-03-07T20:20:17.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c33692bfbb7205021282d51c"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.8,
-    "Humidity": 60,
-    "Brightness": 76,
-    "AirQuality": 482,
-    "Timestamp": {
-      "$date": "2025-03-06T22:16:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "278ff3203b3911094a6c5a4e"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.7,
-    "Humidity": 56,
-    "Brightness": 65,
-    "AirQuality": 410,
-    "Timestamp": {
-      "$date": "2025-03-12T07:17:47.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5ebd5452c109235aacd0a319"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.2,
-    "Humidity": 64,
-    "Brightness": 90,
-    "AirQuality": 419,
-    "Timestamp": {
-      "$date": "2025-03-10T00:23:24.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e03e186ba2d6a579fa1c233f"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.8,
-    "Humidity": 77,
-    "Brightness": 60,
-    "AirQuality": 363,
-    "Timestamp": {
-      "$date": "2025-03-08T22:56:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6c1885d3eb9777571b0da24b"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.5,
-    "Humidity": 52,
-    "Brightness": 90,
-    "AirQuality": 398,
-    "Timestamp": {
-      "$date": "2025-03-04T05:27:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b63cc24cc92f5df7476ce064"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 27.7,
-    "Humidity": 86,
-    "Brightness": 60,
-    "AirQuality": 351,
-    "Timestamp": {
-      "$date": "2025-03-06T19:32:26.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e38788f306ac675fe01dda32"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.6,
-    "Humidity": 83,
-    "Brightness": 85,
-    "AirQuality": 373,
-    "Timestamp": {
-      "$date": "2025-03-10T16:33:41.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d35e0b7ce11c28d4c2bfc19f"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.4,
-    "Humidity": 81,
-    "Brightness": 97,
-    "AirQuality": 370,
-    "Timestamp": {
-      "$date": "2025-03-06T00:29:45.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5c6d5c0948ec99139db8718b"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 28.7,
-    "Humidity": 65,
-    "Brightness": 59,
-    "AirQuality": 404,
-    "Timestamp": {
-      "$date": "2025-03-10T04:47:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5f620ec3a8338a3342c772cf"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.6,
-    "Humidity": 70,
-    "Brightness": 66,
-    "AirQuality": 353,
-    "Timestamp": {
-      "$date": "2025-03-05T05:15:32.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6f09a288048127636084f3d6"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 20.5,
-    "Humidity": 77,
-    "Brightness": 87,
-    "AirQuality": 499,
-    "Timestamp": {
-      "$date": "2025-03-06T15:37:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1a38239370b96cab6badbdd6"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.9,
-    "Humidity": 86,
-    "Brightness": 85,
-    "AirQuality": 368,
-    "Timestamp": {
-      "$date": "2025-03-07T13:04:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4662735990f5160f2334cded"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.6,
-    "Humidity": 77,
-    "Brightness": 87,
-    "AirQuality": 334,
-    "Timestamp": {
-      "$date": "2025-03-13T05:21:32.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "fd02d162a817c888cd18211b"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.5,
-    "Humidity": 69,
-    "Brightness": 96,
-    "AirQuality": 470,
-    "Timestamp": {
-      "$date": "2025-03-03T11:22:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d5ecaf5a890c812ab21bbdfe"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 22.1,
-    "Humidity": 52,
-    "Brightness": 87,
-    "AirQuality": 383,
-    "Timestamp": {
-      "$date": "2025-03-11T05:49:41.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e8d1fc705c5e1159f128f147"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 26.4,
-    "Humidity": 86,
-    "Brightness": 86,
-    "AirQuality": 420,
-    "Timestamp": {
-      "$date": "2025-03-07T23:31:46.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "646c9798ce7d4fb35f05d474"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.8,
-    "Humidity": 67,
-    "Brightness": 72,
-    "AirQuality": 473,
-    "Timestamp": {
-      "$date": "2025-03-11T10:57:20.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "01ec378c4419282b049a960d"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.5,
-    "Humidity": 80,
-    "Brightness": 96,
-    "AirQuality": 418,
-    "Timestamp": {
-      "$date": "2025-03-07T08:02:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "559a7b2967fbb486601934ae"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.8,
-    "Humidity": 59,
-    "Brightness": 82,
-    "AirQuality": 438,
-    "Timestamp": {
-      "$date": "2025-03-04T20:23:54.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9f6d794f4c19b35c8b19ef0e"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.2,
-    "Humidity": 89,
-    "Brightness": 72,
-    "AirQuality": 469,
-    "Timestamp": {
-      "$date": "2025-03-11T08:52:07.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c75d7a2b6eb6dfa306169e31"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.1,
-    "Humidity": 88,
-    "Brightness": 82,
-    "AirQuality": 316,
-    "Timestamp": {
-      "$date": "2025-03-06T16:12:37.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a7d49d0496dc5ca4fd6b7a91"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.6,
-    "Humidity": 64,
-    "Brightness": 91,
-    "AirQuality": 337,
-    "Timestamp": {
-      "$date": "2025-03-09T18:36:14.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "281dfc0e8ab78ea949aa901e"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.2,
-    "Humidity": 80,
-    "Brightness": 90,
-    "AirQuality": 458,
-    "Timestamp": {
-      "$date": "2025-03-08T05:40:01.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4afffc0a2bf9d0694322c455"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.3,
-    "Humidity": 78,
-    "Brightness": 65,
-    "AirQuality": 448,
-    "Timestamp": {
-      "$date": "2025-03-11T20:35:06.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "cccd2280049decc5ff75fad3"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 20.1,
-    "Humidity": 85,
-    "Brightness": 56,
-    "AirQuality": 500,
-    "Timestamp": {
-      "$date": "2025-03-09T18:25:33.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "326231696166c3312548d82b"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 29.0,
-    "Humidity": 68,
-    "Brightness": 73,
-    "AirQuality": 408,
-    "Timestamp": {
-      "$date": "2025-03-12T11:45:06.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0cf2d5c6f9df4fa45f9e0572"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.1,
-    "Humidity": 89,
-    "Brightness": 98,
-    "AirQuality": 368,
-    "Timestamp": {
-      "$date": "2025-03-10T06:37:30.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3bc2b29ea0b870c15def5b66"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.3,
-    "Humidity": 76,
-    "Brightness": 60,
-    "AirQuality": 370,
-    "Timestamp": {
-      "$date": "2025-03-12T03:37:24.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8438773449ff2f3af26db909"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.3,
-    "Humidity": 64,
-    "Brightness": 96,
-    "AirQuality": 402,
-    "Timestamp": {
-      "$date": "2025-03-10T11:46:14.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "805538a5f73cd7d46bfd998b"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.2,
-    "Humidity": 67,
-    "Brightness": 95,
-    "AirQuality": 350,
-    "Timestamp": {
-      "$date": "2025-03-11T04:46:07.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "496474f1c6dc3f9656a50411"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.0,
-    "Humidity": 89,
-    "Brightness": 52,
-    "AirQuality": 472,
-    "Timestamp": {
-      "$date": "2025-03-13T06:06:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f68d2385adaf6008e7b1d9ef"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 26.2,
-    "Humidity": 54,
-    "Brightness": 66,
-    "AirQuality": 470,
-    "Timestamp": {
-      "$date": "2025-03-06T00:10:26.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "439851863c0b37e90f9f4705"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.3,
-    "Humidity": 77,
-    "Brightness": 86,
-    "AirQuality": 369,
-    "Timestamp": {
-      "$date": "2025-03-09T14:27:21.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ddbcd1dcfa085c63c859d2b7"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 26.1,
-    "Humidity": 65,
-    "Brightness": 85,
-    "AirQuality": 479,
-    "Timestamp": {
-      "$date": "2025-03-11T04:22:31.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "653761d5d1267256e22e272d"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.2,
-    "Humidity": 57,
-    "Brightness": 88,
-    "AirQuality": 434,
-    "Timestamp": {
-      "$date": "2025-03-10T16:15:40.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b98e0a5de23ac872c7a2fa8b"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 27.9,
-    "Humidity": 59,
-    "Brightness": 71,
-    "AirQuality": 320,
-    "Timestamp": {
-      "$date": "2025-03-06T16:44:38.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c2891af4364e0c77ad5c6025"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.8,
-    "Humidity": 57,
-    "Brightness": 82,
-    "AirQuality": 431,
-    "Timestamp": {
-      "$date": "2025-03-11T11:35:46.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "79f5fe49fff686738d8cd7d8"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 22.2,
-    "Humidity": 51,
-    "Brightness": 83,
-    "AirQuality": 377,
-    "Timestamp": {
-      "$date": "2025-03-10T13:11:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5140bfef21fe0549469b86b8"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.0,
-    "Humidity": 70,
-    "Brightness": 95,
-    "AirQuality": 382,
-    "Timestamp": {
-      "$date": "2025-03-13T04:21:44.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4327c59899ffa99f8c88de2d"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.8,
-    "Humidity": 54,
-    "Brightness": 78,
-    "AirQuality": 453,
-    "Timestamp": {
-      "$date": "2025-03-05T18:26:37.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d53a4989d055f9fe7fd79073"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.3,
-    "Humidity": 89,
-    "Brightness": 73,
-    "AirQuality": 430,
-    "Timestamp": {
-      "$date": "2025-03-12T20:04:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ab2de88859f88a85002a617e"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.8,
-    "Humidity": 52,
-    "Brightness": 53,
-    "AirQuality": 447,
-    "Timestamp": {
-      "$date": "2025-03-12T01:34:56.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4fd5f65a8a92ae5873ca627a"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.2,
-    "Humidity": 55,
-    "Brightness": 50,
-    "AirQuality": 382,
-    "Timestamp": {
-      "$date": "2025-03-08T19:08:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1d0685ad80d69c81250f7c26"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 28.4,
-    "Humidity": 89,
-    "Brightness": 53,
-    "AirQuality": 307,
-    "Timestamp": {
-      "$date": "2025-03-06T05:07:08.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5f11a3b12ef1435504aa30ba"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.8,
-    "Humidity": 77,
-    "Brightness": 54,
-    "AirQuality": 451,
-    "Timestamp": {
-      "$date": "2025-03-07T01:18:56.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c537ada38e088481c229f7ce"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.0,
-    "Humidity": 64,
-    "Brightness": 74,
-    "AirQuality": 305,
-    "Timestamp": {
-      "$date": "2025-03-13T03:31:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "068225cf680c1288fb97bffe"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.7,
-    "Humidity": 61,
-    "Brightness": 78,
-    "AirQuality": 409,
-    "Timestamp": {
-      "$date": "2025-03-05T07:38:44.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2a2e90146390ebd8fce7b59c"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.0,
-    "Humidity": 59,
-    "Brightness": 75,
-    "AirQuality": 306,
-    "Timestamp": {
-      "$date": "2025-03-09T09:35:14.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a792b96963320cb11d59e5ec"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.3,
-    "Humidity": 74,
-    "Brightness": 94,
-    "AirQuality": 326,
-    "Timestamp": {
-      "$date": "2025-03-11T11:48:11.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1d6cb83c9f0ecf5a03048aae"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.6,
-    "Humidity": 67,
-    "Brightness": 58,
-    "AirQuality": 481,
-    "Timestamp": {
-      "$date": "2025-03-05T00:32:27.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9ce7abe19fa2ba3d13e6df31"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.2,
-    "Humidity": 60,
-    "Brightness": 66,
-    "AirQuality": 433,
-    "Timestamp": {
-      "$date": "2025-03-10T14:51:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "52d94a3ee989b2825d4021b6"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.4,
-    "Humidity": 85,
-    "Brightness": 81,
-    "AirQuality": 336,
-    "Timestamp": {
-      "$date": "2025-03-10T07:23:43.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2894010d1f21e22d0297f8e2"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.6,
-    "Humidity": 88,
-    "Brightness": 89,
-    "AirQuality": 465,
-    "Timestamp": {
-      "$date": "2025-03-13T04:17:42.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b0c2fc41f99fb22ebab4e20d"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 24.5,
-    "Humidity": 87,
-    "Brightness": 71,
-    "AirQuality": 421,
-    "Timestamp": {
-      "$date": "2025-03-13T00:54:13.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0632e71e0ea3d6d3b86ed82c"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 27.6,
-    "Humidity": 66,
-    "Brightness": 93,
-    "AirQuality": 301,
-    "Timestamp": {
-      "$date": "2025-03-04T20:55:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f5da0afb2ac7fd94cef220fc"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 26.7,
-    "Humidity": 69,
-    "Brightness": 86,
-    "AirQuality": 479,
-    "Timestamp": {
-      "$date": "2025-03-10T21:46:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0727cfff1da88e33aed62fa7"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.0,
-    "Humidity": 86,
-    "Brightness": 69,
-    "AirQuality": 353,
-    "Timestamp": {
-      "$date": "2025-03-10T18:25:22.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "eec2e83a8d3f8fd7eecef7d3"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 23.6,
-    "Humidity": 54,
-    "Brightness": 67,
-    "AirQuality": 395,
-    "Timestamp": {
-      "$date": "2025-03-05T16:28:59.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d76807075f0ae05dff176481"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.3,
-    "Humidity": 64,
-    "Brightness": 61,
-    "AirQuality": 342,
-    "Timestamp": {
-      "$date": "2025-03-12T14:02:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d9457938705fbab56264eb28"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.4,
-    "Humidity": 71,
-    "Brightness": 66,
-    "AirQuality": 451,
-    "Timestamp": {
-      "$date": "2025-03-07T07:27:32.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "12db8a8ebee91da984f3485b"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.2,
-    "Humidity": 83,
-    "Brightness": 74,
-    "AirQuality": 328,
-    "Timestamp": {
-      "$date": "2025-03-12T18:11:58.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c4d2b983d705d25bec0ec0f6"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 26.9,
-    "Humidity": 55,
-    "Brightness": 80,
-    "AirQuality": 333,
-    "Timestamp": {
-      "$date": "2025-03-09T12:27:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "62fb6ccb910e9bea7f18d169"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.9,
-    "Humidity": 86,
-    "Brightness": 95,
-    "AirQuality": 378,
-    "Timestamp": {
-      "$date": "2025-03-08T16:30:17.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9226e45767e63c70ec9867dc"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.6,
-    "Humidity": 80,
-    "Brightness": 87,
-    "AirQuality": 382,
-    "Timestamp": {
-      "$date": "2025-03-09T21:42:30.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e035a910e0bf15ae881d0dd6"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.6,
-    "Humidity": 79,
-    "Brightness": 94,
-    "AirQuality": 354,
-    "Timestamp": {
-      "$date": "2025-03-08T09:09:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f37363ad5787930ace6cf665"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.9,
-    "Humidity": 88,
-    "Brightness": 66,
-    "AirQuality": 363,
-    "Timestamp": {
-      "$date": "2025-03-07T03:44:06.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "39e9870653e60d597dc62ff9"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.2,
-    "Humidity": 71,
-    "Brightness": 63,
-    "AirQuality": 364,
-    "Timestamp": {
-      "$date": "2025-03-12T18:57:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f1fddb781a22ae9d9c43ab01"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.3,
-    "Humidity": 54,
-    "Brightness": 61,
-    "AirQuality": 466,
-    "Timestamp": {
-      "$date": "2025-03-06T21:33:59.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "057c08285e9eee692815bc96"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.3,
-    "Humidity": 63,
-    "Brightness": 95,
-    "AirQuality": 436,
-    "Timestamp": {
-      "$date": "2025-03-09T16:34:45.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "dc73922911a08178b1ada69f"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.3,
-    "Humidity": 85,
-    "Brightness": 66,
-    "AirQuality": 463,
-    "Timestamp": {
-      "$date": "2025-03-12T07:19:35.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "febbcb8b95c906198b2b4e1e"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.4,
-    "Humidity": 77,
-    "Brightness": 68,
-    "AirQuality": 495,
-    "Timestamp": {
-      "$date": "2025-03-07T08:16:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b2150d2a0bfd563a1abd0dc2"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.1,
-    "Humidity": 68,
-    "Brightness": 51,
-    "AirQuality": 300,
-    "Timestamp": {
-      "$date": "2025-03-10T21:12:15.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "faee38f63ea106faea9a5abf"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.5,
-    "Humidity": 86,
-    "Brightness": 71,
-    "AirQuality": 342,
-    "Timestamp": {
-      "$date": "2025-03-03T20:29:46.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b673f6bea886dfaab0c6caaf"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.6,
-    "Humidity": 56,
-    "Brightness": 50,
-    "AirQuality": 326,
-    "Timestamp": {
-      "$date": "2025-03-08T02:17:01.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "30faf27dec1392b4755b91a8"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.3,
-    "Humidity": 88,
-    "Brightness": 88,
-    "AirQuality": 310,
-    "Timestamp": {
-      "$date": "2025-03-11T05:45:55.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "33c8a503e89b4e87a61ad385"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 27.0,
-    "Humidity": 73,
-    "Brightness": 54,
-    "AirQuality": 428,
-    "Timestamp": {
-      "$date": "2025-03-11T07:47:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "bcdeaf90a196b79d4d42141d"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.0,
-    "Humidity": 61,
-    "Brightness": 75,
-    "AirQuality": 321,
-    "Timestamp": {
-      "$date": "2025-03-07T00:22:26.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "04c8b1ecc6dae58092505c36"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.6,
-    "Humidity": 90,
-    "Brightness": 94,
-    "AirQuality": 423,
-    "Timestamp": {
-      "$date": "2025-03-11T22:39:22.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b4c4bef819136172585b6863"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.8,
-    "Humidity": 90,
-    "Brightness": 63,
-    "AirQuality": 491,
-    "Timestamp": {
-      "$date": "2025-03-04T19:15:43.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e1b6f554a92c187a4ac683ce"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.2,
-    "Humidity": 75,
-    "Brightness": 66,
-    "AirQuality": 386,
-    "Timestamp": {
-      "$date": "2025-03-06T21:08:56.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "59c3c292139cdf93b470b637"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.8,
-    "Humidity": 85,
-    "Brightness": 88,
-    "AirQuality": 395,
-    "Timestamp": {
-      "$date": "2025-03-05T01:09:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "120f3fd61146f84a14b24860"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 23.4,
-    "Humidity": 60,
-    "Brightness": 67,
-    "AirQuality": 301,
-    "Timestamp": {
-      "$date": "2025-03-12T04:18:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1d453829281329f0e59bbe75"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 28.5,
-    "Humidity": 59,
-    "Brightness": 62,
-    "AirQuality": 398,
-    "Timestamp": {
-      "$date": "2025-03-08T00:13:54.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "bd6c2f015b6f3c68585408fe"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 23.2,
-    "Humidity": 78,
-    "Brightness": 59,
-    "AirQuality": 382,
-    "Timestamp": {
-      "$date": "2025-03-12T08:50:27.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "235508e44371a555631e5159"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.6,
-    "Humidity": 55,
-    "Brightness": 88,
-    "AirQuality": 326,
-    "Timestamp": {
-      "$date": "2025-03-09T21:56:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0587318bca44773d817e943c"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.9,
-    "Humidity": 58,
-    "Brightness": 72,
-    "AirQuality": 456,
-    "Timestamp": {
-      "$date": "2025-03-11T21:29:03.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8fb54d0a35863e7aaf5a3925"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 28.3,
-    "Humidity": 88,
-    "Brightness": 56,
-    "AirQuality": 473,
-    "Timestamp": {
-      "$date": "2025-03-10T20:43:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "852532cf56ff89b6b4d7db28"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.3,
-    "Humidity": 85,
-    "Brightness": 100,
-    "AirQuality": 306,
-    "Timestamp": {
-      "$date": "2025-03-08T04:14:36.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2386a7631e4d0ce1f53fd230"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.6,
-    "Humidity": 63,
-    "Brightness": 87,
-    "AirQuality": 380,
-    "Timestamp": {
-      "$date": "2025-03-05T01:14:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7df551a810b48edebc7b3d53"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 29.5,
-    "Humidity": 77,
-    "Brightness": 57,
-    "AirQuality": 457,
-    "Timestamp": {
-      "$date": "2025-03-07T14:37:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3f33c0ad06eb439ef67dfaca"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.9,
-    "Humidity": 61,
-    "Brightness": 74,
-    "AirQuality": 390,
-    "Timestamp": {
-      "$date": "2025-03-09T10:53:17.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "030f9ef1b7f7050df4aa2712"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 23.0,
-    "Humidity": 76,
-    "Brightness": 56,
-    "AirQuality": 497,
-    "Timestamp": {
-      "$date": "2025-03-10T00:37:38.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2a241d1bbdf49043e5ee2c4a"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.4,
-    "Humidity": 90,
-    "Brightness": 91,
-    "AirQuality": 314,
-    "Timestamp": {
-      "$date": "2025-03-11T18:50:09.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "381801fdd0dd4dca2ae74e1c"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.6,
-    "Humidity": 78,
-    "Brightness": 79,
-    "AirQuality": 428,
-    "Timestamp": {
-      "$date": "2025-03-07T12:59:09.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ad877054999c2741a3dd2bca"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.4,
-    "Humidity": 51,
-    "Brightness": 72,
-    "AirQuality": 464,
-    "Timestamp": {
-      "$date": "2025-03-04T21:44:19.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "16a22257b03cb6585e7eaf72"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 20.0,
-    "Humidity": 56,
-    "Brightness": 74,
-    "AirQuality": 422,
-    "Timestamp": {
-      "$date": "2025-03-05T12:35:20.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e8e116b70adffbdc847bda06"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.1,
-    "Humidity": 88,
-    "Brightness": 67,
-    "AirQuality": 381,
-    "Timestamp": {
-      "$date": "2025-03-09T11:40:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c0c4194ec943c852b5f29980"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.9,
-    "Humidity": 81,
-    "Brightness": 95,
-    "AirQuality": 424,
-    "Timestamp": {
-      "$date": "2025-03-04T06:00:17.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b6ab7821b409f7cfd9348403"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 26.6,
-    "Humidity": 63,
-    "Brightness": 55,
-    "AirQuality": 325,
-    "Timestamp": {
-      "$date": "2025-03-08T01:04:13.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5e45f0c25be6c4a3c00a6d47"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 24.0,
-    "Humidity": 56,
-    "Brightness": 86,
-    "AirQuality": 405,
-    "Timestamp": {
-      "$date": "2025-03-05T23:31:24.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9eed52334b1c6bfc43a8b167"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.3,
-    "Humidity": 62,
-    "Brightness": 65,
-    "AirQuality": 494,
-    "Timestamp": {
-      "$date": "2025-03-12T13:45:15.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1f805b78c96c23e4a4e018f1"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 29.1,
-    "Humidity": 58,
-    "Brightness": 50,
-    "AirQuality": 337,
-    "Timestamp": {
-      "$date": "2025-03-05T14:32:50.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f0a6b53b2b1662926530ca4f"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.0,
-    "Humidity": 76,
-    "Brightness": 70,
-    "AirQuality": 310,
-    "Timestamp": {
-      "$date": "2025-03-06T18:23:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8f51545487c354caf7e583b9"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.8,
-    "Humidity": 52,
-    "Brightness": 58,
-    "AirQuality": 356,
-    "Timestamp": {
-      "$date": "2025-03-06T01:00:55.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "134934a813de1f31dfb87c30"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 24.9,
-    "Humidity": 54,
-    "Brightness": 83,
-    "AirQuality": 490,
-    "Timestamp": {
-      "$date": "2025-03-06T09:09:09.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3a4b64b0891a1430427d227b"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 26.3,
-    "Humidity": 71,
-    "Brightness": 61,
-    "AirQuality": 311,
-    "Timestamp": {
-      "$date": "2025-03-06T02:02:08.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "49f1b2b12afd131d96a8fc79"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.0,
-    "Humidity": 58,
-    "Brightness": 54,
-    "AirQuality": 353,
-    "Timestamp": {
-      "$date": "2025-03-06T10:41:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "70217e99c4fe8ad01157d8cc"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.0,
-    "Humidity": 77,
-    "Brightness": 95,
-    "AirQuality": 415,
-    "Timestamp": {
-      "$date": "2025-03-08T20:34:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "038ae28f58fa2dbfa0127c70"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.2,
-    "Humidity": 88,
-    "Brightness": 80,
-    "AirQuality": 429,
-    "Timestamp": {
-      "$date": "2025-03-04T03:22:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "808e80d388b51cfac0ed336d"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.8,
-    "Humidity": 61,
-    "Brightness": 74,
-    "AirQuality": 400,
-    "Timestamp": {
-      "$date": "2025-03-11T18:31:11.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c7d5c0137806e1f4022756f4"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.8,
-    "Humidity": 52,
-    "Brightness": 64,
-    "AirQuality": 403,
-    "Timestamp": {
-      "$date": "2025-03-12T00:13:02.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3316dd13d963f6a962ad4be3"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 20.7,
-    "Humidity": 53,
-    "Brightness": 92,
-    "AirQuality": 316,
-    "Timestamp": {
-      "$date": "2025-03-04T20:36:11.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d66f0d98f1faedaa30f5473e"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.6,
-    "Humidity": 64,
-    "Brightness": 82,
-    "AirQuality": 490,
-    "Timestamp": {
-      "$date": "2025-03-05T14:16:55.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "71cb4877d64de76b214cf2a4"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.1,
-    "Humidity": 77,
-    "Brightness": 51,
-    "AirQuality": 379,
-    "Timestamp": {
-      "$date": "2025-03-08T17:49:53.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8eb06d8edf41f10f348fbb88"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.9,
-    "Humidity": 69,
-    "Brightness": 89,
-    "AirQuality": 430,
-    "Timestamp": {
-      "$date": "2025-03-05T21:28:02.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e30e09868ede4f4971a0a54e"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 20.3,
-    "Humidity": 82,
-    "Brightness": 67,
-    "AirQuality": 359,
-    "Timestamp": {
-      "$date": "2025-03-10T07:33:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "afbd215880a9e8c51894e4f7"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.3,
-    "Humidity": 89,
-    "Brightness": 77,
-    "AirQuality": 350,
-    "Timestamp": {
-      "$date": "2025-03-04T21:05:46.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b09b081c3aa5988bab73c3b6"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.6,
-    "Humidity": 67,
-    "Brightness": 58,
-    "AirQuality": 409,
-    "Timestamp": {
-      "$date": "2025-03-09T11:16:27.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "cde5a2913027701e4f6900e0"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 29.5,
-    "Humidity": 70,
-    "Brightness": 99,
-    "AirQuality": 399,
-    "Timestamp": {
-      "$date": "2025-03-05T00:39:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ba54a91a91a59a6ad155d53f"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 29.8,
-    "Humidity": 73,
-    "Brightness": 78,
-    "AirQuality": 313,
-    "Timestamp": {
-      "$date": "2025-03-08T18:30:07.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7db6419799df3794530ef698"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 20.9,
-    "Humidity": 83,
-    "Brightness": 91,
-    "AirQuality": 495,
-    "Timestamp": {
-      "$date": "2025-03-11T03:56:08.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9b7ce835ab1bc78ef169fe8d"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 24.3,
-    "Humidity": 84,
-    "Brightness": 71,
-    "AirQuality": 338,
-    "Timestamp": {
-      "$date": "2025-03-07T14:18:11.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8fa750ab2825e95872c536e2"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 26.9,
-    "Humidity": 90,
-    "Brightness": 78,
-    "AirQuality": 470,
-    "Timestamp": {
-      "$date": "2025-03-05T01:44:11.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9a16495abbb2bfcceb2ae013"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.8,
-    "Humidity": 52,
-    "Brightness": 63,
-    "AirQuality": 412,
-    "Timestamp": {
-      "$date": "2025-03-13T00:55:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8349702210a8c4c7e5bb05ef"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.5,
-    "Humidity": 76,
-    "Brightness": 69,
-    "AirQuality": 474,
-    "Timestamp": {
-      "$date": "2025-03-13T03:46:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6812897ff02f7c0956eb3b62"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.5,
-    "Humidity": 50,
-    "Brightness": 52,
-    "AirQuality": 302,
-    "Timestamp": {
-      "$date": "2025-03-12T02:19:11.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9855458ad6436480063db80c"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.4,
-    "Humidity": 78,
-    "Brightness": 59,
-    "AirQuality": 352,
-    "Timestamp": {
-      "$date": "2025-03-11T22:14:15.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4985feba4e3bccb23392c674"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.4,
-    "Humidity": 80,
-    "Brightness": 80,
-    "AirQuality": 389,
-    "Timestamp": {
-      "$date": "2025-03-07T22:48:04.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ee0108391cc5484b1e0a6c67"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.3,
-    "Humidity": 78,
-    "Brightness": 87,
-    "AirQuality": 437,
-    "Timestamp": {
-      "$date": "2025-03-10T20:44:49.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9ef22aa450e7bf194744f844"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 20.1,
-    "Humidity": 61,
-    "Brightness": 70,
-    "AirQuality": 416,
-    "Timestamp": {
-      "$date": "2025-03-04T08:03:06.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "5a9effa71fcbf4a0e539cc59"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.2,
-    "Humidity": 83,
-    "Brightness": 55,
-    "AirQuality": 301,
-    "Timestamp": {
-      "$date": "2025-03-12T17:34:45.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c26b09101953980b840e9689"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.4,
-    "Humidity": 80,
-    "Brightness": 92,
-    "AirQuality": 382,
-    "Timestamp": {
-      "$date": "2025-03-03T21:12:57.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "3fdd19485dec9eab2e53c838"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.2,
-    "Humidity": 60,
-    "Brightness": 95,
-    "AirQuality": 314,
-    "Timestamp": {
-      "$date": "2025-03-11T15:28:55.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d4d398015ab8b2dc2da3e3ee"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.6,
-    "Humidity": 74,
-    "Brightness": 73,
-    "AirQuality": 351,
-    "Timestamp": {
-      "$date": "2025-03-05T12:08:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1e2a80b226a441bdcdad77c9"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.9,
-    "Humidity": 63,
-    "Brightness": 88,
-    "AirQuality": 435,
-    "Timestamp": {
-      "$date": "2025-03-11T23:43:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4c5c30d837a9cdcbea6bc6d8"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.5,
-    "Humidity": 58,
-    "Brightness": 100,
-    "AirQuality": 373,
-    "Timestamp": {
-      "$date": "2025-03-06T00:30:08.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c7fdc0df79562c07c6d0a551"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.5,
-    "Humidity": 52,
-    "Brightness": 66,
-    "AirQuality": 357,
-    "Timestamp": {
-      "$date": "2025-03-05T05:26:04.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c09a4c8e586e552d6515d3fa"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.5,
-    "Humidity": 69,
-    "Brightness": 78,
-    "AirQuality": 445,
-    "Timestamp": {
-      "$date": "2025-03-06T21:20:58.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0d856d35961453e48b810cee"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.3,
-    "Humidity": 62,
-    "Brightness": 75,
-    "AirQuality": 368,
-    "Timestamp": {
-      "$date": "2025-03-03T12:11:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "380e186947034991cc63b755"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.9,
-    "Humidity": 90,
-    "Brightness": 61,
-    "AirQuality": 465,
-    "Timestamp": {
-      "$date": "2025-03-05T11:15:35.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c9e5d1b3074021457277ec62"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.4,
-    "Humidity": 61,
-    "Brightness": 91,
-    "AirQuality": 387,
-    "Timestamp": {
-      "$date": "2025-03-05T20:44:53.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9b74a3a072a8f89ba111a86c"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.4,
-    "Humidity": 90,
-    "Brightness": 98,
-    "AirQuality": 349,
-    "Timestamp": {
-      "$date": "2025-03-09T15:52:32.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d5e5a1d15e3fdeea1693e31a"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.2,
-    "Humidity": 63,
-    "Brightness": 95,
-    "AirQuality": 458,
-    "Timestamp": {
-      "$date": "2025-03-05T15:16:46.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2e5a463a81b206bde0c10e44"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.0,
-    "Humidity": 78,
-    "Brightness": 68,
-    "AirQuality": 412,
-    "Timestamp": {
-      "$date": "2025-03-11T02:00:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "17d1e0241b1075b393da6025"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 24.3,
-    "Humidity": 81,
-    "Brightness": 78,
-    "AirQuality": 381,
-    "Timestamp": {
-      "$date": "2025-03-03T12:48:06.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d2d1bda6a060f98091da62c7"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.2,
-    "Humidity": 76,
-    "Brightness": 82,
-    "AirQuality": 497,
-    "Timestamp": {
-      "$date": "2025-03-05T10:26:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1e5e2bef33a76dd8703a204e"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.0,
-    "Humidity": 65,
-    "Brightness": 62,
-    "AirQuality": 445,
-    "Timestamp": {
-      "$date": "2025-03-08T05:37:50.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e968e7bcc4f3b6279feaab13"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.8,
-    "Humidity": 51,
-    "Brightness": 89,
-    "AirQuality": 309,
-    "Timestamp": {
-      "$date": "2025-03-11T21:56:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "84359fc2e24f4cfd4e3f42ab"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.4,
-    "Humidity": 84,
-    "Brightness": 78,
-    "AirQuality": 357,
-    "Timestamp": {
-      "$date": "2025-03-06T07:19:32.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d044a0d6114a6bffc9219311"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.1,
-    "Humidity": 50,
-    "Brightness": 95,
-    "AirQuality": 331,
-    "Timestamp": {
-      "$date": "2025-03-04T04:29:51.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "eac5668e4f0676a971f3be45"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.5,
-    "Humidity": 80,
-    "Brightness": 69,
-    "AirQuality": 390,
-    "Timestamp": {
-      "$date": "2025-03-12T09:46:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8f32c6a42aa384ca81c62b4a"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 27.7,
-    "Humidity": 80,
-    "Brightness": 83,
-    "AirQuality": 429,
-    "Timestamp": {
-      "$date": "2025-03-11T15:05:37.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "07d407c5041786b894b2f578"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.1,
-    "Humidity": 71,
-    "Brightness": 50,
-    "AirQuality": 440,
-    "Timestamp": {
-      "$date": "2025-03-11T01:17:04.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "823894fe374738a9cd045748"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.3,
-    "Humidity": 77,
-    "Brightness": 73,
-    "AirQuality": 480,
-    "Timestamp": {
-      "$date": "2025-03-10T17:08:45.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "66fdf248267a501a4d37df49"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.4,
-    "Humidity": 55,
-    "Brightness": 93,
-    "AirQuality": 314,
-    "Timestamp": {
-      "$date": "2025-03-10T16:11:56.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b2ee4a80102ab30688983e83"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.2,
-    "Humidity": 87,
-    "Brightness": 83,
-    "AirQuality": 397,
-    "Timestamp": {
-      "$date": "2025-03-13T05:03:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f3a889338975cbeed83919b0"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 23.0,
-    "Humidity": 90,
-    "Brightness": 100,
-    "AirQuality": 471,
-    "Timestamp": {
-      "$date": "2025-03-12T10:06:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "098c8570cc563e774640ad0b"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.9,
-    "Humidity": 80,
-    "Brightness": 94,
-    "AirQuality": 404,
-    "Timestamp": {
-      "$date": "2025-03-12T05:41:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f3c9971b598df8adc305d776"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 20.2,
-    "Humidity": 74,
-    "Brightness": 100,
-    "AirQuality": 417,
-    "Timestamp": {
-      "$date": "2025-03-07T10:37:24.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2199a4b6b15ff12689c028a8"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.4,
-    "Humidity": 54,
-    "Brightness": 63,
-    "AirQuality": 399,
-    "Timestamp": {
-      "$date": "2025-03-04T11:13:31.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "62f02d306f8809670178c5be"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.4,
-    "Humidity": 80,
-    "Brightness": 74,
-    "AirQuality": 331,
-    "Timestamp": {
-      "$date": "2025-03-12T13:49:19.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "adbb93a34d35b251d07f7663"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 26.7,
-    "Humidity": 82,
-    "Brightness": 69,
-    "AirQuality": 440,
-    "Timestamp": {
-      "$date": "2025-03-12T16:44:00.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "80efc76c31b62f5d230b3167"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.4,
-    "Humidity": 68,
-    "Brightness": 67,
-    "AirQuality": 368,
-    "Timestamp": {
-      "$date": "2025-03-11T22:05:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a5562ce09dde6d925f217719"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 20.5,
-    "Humidity": 82,
-    "Brightness": 52,
-    "AirQuality": 426,
-    "Timestamp": {
-      "$date": "2025-03-06T23:20:09.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2980b6d8f590dece9525221f"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.5,
-    "Humidity": 90,
-    "Brightness": 82,
-    "AirQuality": 391,
-    "Timestamp": {
-      "$date": "2025-03-10T00:38:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "dccf327833c315adccc03483"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.2,
-    "Humidity": 66,
-    "Brightness": 94,
-    "AirQuality": 482,
-    "Timestamp": {
-      "$date": "2025-03-10T03:34:06.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "41f5a5be145d207cbef22328"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.1,
-    "Humidity": 55,
-    "Brightness": 59,
-    "AirQuality": 424,
-    "Timestamp": {
-      "$date": "2025-03-07T14:03:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b78a633141174bccb5f5e1c8"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.5,
-    "Humidity": 61,
-    "Brightness": 72,
-    "AirQuality": 320,
-    "Timestamp": {
-      "$date": "2025-03-13T10:02:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8b3c5bbf025a1951845f3c1b"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 23.4,
-    "Humidity": 67,
-    "Brightness": 70,
-    "AirQuality": 364,
-    "Timestamp": {
-      "$date": "2025-03-10T09:09:51.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9830c9267abba96266ddca6a"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 21.0,
-    "Humidity": 69,
-    "Brightness": 68,
-    "AirQuality": 482,
-    "Timestamp": {
-      "$date": "2025-03-11T20:25:20.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b2a57c60043683b75b99bcbe"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.5,
-    "Humidity": 66,
-    "Brightness": 71,
-    "AirQuality": 487,
-    "Timestamp": {
-      "$date": "2025-03-11T20:52:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "29350513e01a35243055e237"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.9,
-    "Humidity": 52,
-    "Brightness": 71,
-    "AirQuality": 349,
-    "Timestamp": {
-      "$date": "2025-03-08T22:06:36.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "304e318431e4aa0a0a3c5cac"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.6,
-    "Humidity": 89,
-    "Brightness": 50,
-    "AirQuality": 487,
-    "Timestamp": {
-      "$date": "2025-03-11T12:51:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e480b1af7956d1bfa02bdd3a"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.4,
-    "Humidity": 72,
-    "Brightness": 72,
-    "AirQuality": 399,
-    "Timestamp": {
-      "$date": "2025-03-08T14:23:43.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ce204cbd4f013ea83bd979a4"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.6,
-    "Humidity": 87,
-    "Brightness": 66,
-    "AirQuality": 393,
-    "Timestamp": {
-      "$date": "2025-03-11T10:48:30.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4dbf40da52081861d6197446"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 22.2,
-    "Humidity": 62,
-    "Brightness": 69,
-    "AirQuality": 418,
-    "Timestamp": {
-      "$date": "2025-03-09T00:53:40.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "db0858b85dbb683a3c3b1bd1"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.5,
-    "Humidity": 81,
-    "Brightness": 54,
-    "AirQuality": 417,
-    "Timestamp": {
-      "$date": "2025-03-06T14:03:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "765f1b557cbc3a84e8b61676"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 29.1,
-    "Humidity": 75,
-    "Brightness": 55,
-    "AirQuality": 499,
-    "Timestamp": {
-      "$date": "2025-03-06T12:55:51.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b410e0d9d51257e2e3827828"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 26.1,
-    "Humidity": 72,
-    "Brightness": 75,
-    "AirQuality": 462,
-    "Timestamp": {
-      "$date": "2025-03-09T03:18:15.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b01af7f131f6e912bfb177e3"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 29.2,
-    "Humidity": 87,
-    "Brightness": 81,
-    "AirQuality": 342,
-    "Timestamp": {
-      "$date": "2025-03-03T21:26:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b6f84228ea38e7488d4ff9f8"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 29.0,
-    "Humidity": 70,
-    "Brightness": 90,
-    "AirQuality": 443,
-    "Timestamp": {
-      "$date": "2025-03-08T01:44:51.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1434928997f79d1b30013ba1"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.1,
-    "Humidity": 81,
-    "Brightness": 62,
-    "AirQuality": 448,
-    "Timestamp": {
-      "$date": "2025-03-09T00:04:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "978be1dab657aef42753463b"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.6,
-    "Humidity": 71,
-    "Brightness": 89,
-    "AirQuality": 348,
-    "Timestamp": {
-      "$date": "2025-03-03T16:48:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1c9651206f4a543200eddd56"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.6,
-    "Humidity": 60,
-    "Brightness": 89,
-    "AirQuality": 328,
-    "Timestamp": {
-      "$date": "2025-03-04T08:28:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4c955bf10d176c6c2cd152d8"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 29.4,
-    "Humidity": 50,
-    "Brightness": 64,
-    "AirQuality": 381,
-    "Timestamp": {
-      "$date": "2025-03-11T17:56:57.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "004a60bc48e6e2fb3a2bdcc2"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.6,
-    "Humidity": 62,
-    "Brightness": 83,
-    "AirQuality": 401,
-    "Timestamp": {
-      "$date": "2025-03-10T03:27:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ca7ff70c41e6970e77dcf277"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.3,
-    "Humidity": 84,
-    "Brightness": 96,
-    "AirQuality": 420,
-    "Timestamp": {
-      "$date": "2025-03-09T20:56:57.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "08de497c42316cc4443876aa"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.4,
-    "Humidity": 55,
-    "Brightness": 84,
-    "AirQuality": 376,
-    "Timestamp": {
-      "$date": "2025-03-07T02:23:42.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9cf5c468224018517ab38967"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.5,
-    "Humidity": 73,
-    "Brightness": 98,
-    "AirQuality": 369,
-    "Timestamp": {
-      "$date": "2025-03-10T18:12:45.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "235ed147e85f3e3ed141640e"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.7,
-    "Humidity": 86,
-    "Brightness": 72,
-    "AirQuality": 458,
-    "Timestamp": {
-      "$date": "2025-03-10T17:39:36.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "7e2e7147785302d446a03f16"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 20.5,
-    "Humidity": 90,
-    "Brightness": 77,
-    "AirQuality": 423,
-    "Timestamp": {
-      "$date": "2025-03-11T14:08:29.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8f292ab36e9f82681110e1a8"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.7,
-    "Humidity": 83,
-    "Brightness": 81,
-    "AirQuality": 390,
-    "Timestamp": {
-      "$date": "2025-03-08T01:38:27.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0c0e9a2d1554038dcb7e177f"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 29.2,
-    "Humidity": 59,
-    "Brightness": 65,
-    "AirQuality": 325,
-    "Timestamp": {
-      "$date": "2025-03-07T13:52:53.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "afdca005deabdd1f6313138b"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.5,
-    "Humidity": 84,
-    "Brightness": 53,
-    "AirQuality": 409,
-    "Timestamp": {
-      "$date": "2025-03-07T11:46:02.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "d8923f8d5eead87c5408e23f"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.8,
-    "Humidity": 53,
-    "Brightness": 99,
-    "AirQuality": 384,
-    "Timestamp": {
-      "$date": "2025-03-05T17:54:47.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "1844ede3d3d34a3f43f16f11"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.1,
-    "Humidity": 87,
-    "Brightness": 89,
-    "AirQuality": 500,
-    "Timestamp": {
-      "$date": "2025-03-05T04:34:09.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "edc034aeb3c9372ba9b0e517"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 27.6,
-    "Humidity": 62,
-    "Brightness": 60,
-    "AirQuality": 473,
-    "Timestamp": {
-      "$date": "2025-03-05T01:12:07.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9d3ad86b5a43c814100e0770"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.9,
-    "Humidity": 56,
-    "Brightness": 87,
-    "AirQuality": 477,
-    "Timestamp": {
-      "$date": "2025-03-13T10:16:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c2d2d27216a8b3cccc52f0ae"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.3,
-    "Humidity": 70,
-    "Brightness": 61,
-    "AirQuality": 478,
-    "Timestamp": {
-      "$date": "2025-03-06T23:13:35.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "628c824dba8ef0a4ad7cf9c3"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.8,
-    "Humidity": 67,
-    "Brightness": 67,
-    "AirQuality": 422,
-    "Timestamp": {
-      "$date": "2025-03-10T13:29:44.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "71e10ea5f7b46972b6149488"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.0,
-    "Humidity": 83,
-    "Brightness": 98,
-    "AirQuality": 496,
-    "Timestamp": {
-      "$date": "2025-03-04T20:00:16.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8e767859e44e8b4e1f5aef22"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 21.4,
-    "Humidity": 62,
-    "Brightness": 94,
-    "AirQuality": 457,
-    "Timestamp": {
-      "$date": "2025-03-09T10:29:59.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2ec53865d4487afa1d63474f"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 29.8,
-    "Humidity": 89,
-    "Brightness": 75,
-    "AirQuality": 345,
-    "Timestamp": {
-      "$date": "2025-03-11T10:26:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "dea68883bc356df205c8d4c7"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 24.6,
-    "Humidity": 83,
-    "Brightness": 66,
-    "AirQuality": 337,
-    "Timestamp": {
-      "$date": "2025-03-12T00:18:46.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ea0b9d98fa2f7c15f08ee4f1"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 20.9,
-    "Humidity": 72,
-    "Brightness": 63,
-    "AirQuality": 427,
-    "Timestamp": {
-      "$date": "2025-03-10T11:23:38.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f7ed820f6543790981d24449"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.7,
-    "Humidity": 68,
-    "Brightness": 94,
-    "AirQuality": 354,
-    "Timestamp": {
-      "$date": "2025-03-04T08:52:24.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "64e77b1e6eb502d15e743c81"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.5,
-    "Humidity": 52,
-    "Brightness": 77,
-    "AirQuality": 319,
-    "Timestamp": {
-      "$date": "2025-03-09T04:34:22.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "15ad10692e5dc53f7b6bf7be"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.8,
-    "Humidity": 67,
-    "Brightness": 99,
-    "AirQuality": 499,
-    "Timestamp": {
-      "$date": "2025-03-13T05:25:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9d68b4cde733127b06720206"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.3,
-    "Humidity": 60,
-    "Brightness": 87,
-    "AirQuality": 497,
-    "Timestamp": {
-      "$date": "2025-03-13T07:59:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ef38d6e3c918c43cf336ed16"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.9,
-    "Humidity": 62,
-    "Brightness": 58,
-    "AirQuality": 447,
-    "Timestamp": {
-      "$date": "2025-03-09T03:43:08.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "92602d0a6a8437be36f35bd7"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 29.8,
-    "Humidity": 61,
-    "Brightness": 83,
-    "AirQuality": 336,
-    "Timestamp": {
-      "$date": "2025-03-07T23:28:58.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "14167873e7a4303776ed023d"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.1,
-    "Humidity": 56,
-    "Brightness": 95,
-    "AirQuality": 350,
-    "Timestamp": {
-      "$date": "2025-03-09T14:15:33.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "333c932efcd4253a6e9ed1aa"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 28.5,
-    "Humidity": 88,
-    "Brightness": 52,
-    "AirQuality": 354,
-    "Timestamp": {
-      "$date": "2025-03-05T00:49:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b1c4e9c5ad0e79c142c0823d"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 27.0,
-    "Humidity": 83,
-    "Brightness": 55,
-    "AirQuality": 320,
-    "Timestamp": {
-      "$date": "2025-03-03T23:11:41.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "29334b187c53fc7d0cdc87ca"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 26.8,
-    "Humidity": 82,
-    "Brightness": 56,
-    "AirQuality": 470,
-    "Timestamp": {
-      "$date": "2025-03-08T22:44:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "956c47431c718e9ce2a3f8fd"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 24.0,
-    "Humidity": 52,
-    "Brightness": 64,
-    "AirQuality": 494,
-    "Timestamp": {
-      "$date": "2025-03-08T01:29:24.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a044f09e8ccb9ec236f4b634"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.5,
-    "Humidity": 65,
-    "Brightness": 91,
-    "AirQuality": 417,
-    "Timestamp": {
-      "$date": "2025-03-07T05:07:47.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "01cc2c9c9797ad60db84080c"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.9,
-    "Humidity": 73,
-    "Brightness": 89,
-    "AirQuality": 353,
-    "Timestamp": {
-      "$date": "2025-03-10T00:18:23.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b1a3b1ce18d58bb36260f2b9"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 29.0,
-    "Humidity": 54,
-    "Brightness": 73,
-    "AirQuality": 458,
-    "Timestamp": {
-      "$date": "2025-03-04T10:34:20.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9f68b331f71631caacd3d464"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.3,
-    "Humidity": 63,
-    "Brightness": 80,
-    "AirQuality": 355,
-    "Timestamp": {
-      "$date": "2025-03-06T22:15:40.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "22712c6e260af5e2ccbfc2e4"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.8,
-    "Humidity": 79,
-    "Brightness": 57,
-    "AirQuality": 304,
-    "Timestamp": {
-      "$date": "2025-03-04T16:43:35.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "302aa219b94e8cb4a41c8f36"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.6,
-    "Humidity": 60,
-    "Brightness": 62,
-    "AirQuality": 339,
-    "Timestamp": {
-      "$date": "2025-03-07T09:18:30.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f4beecd28b5a97bb4a6f7d7a"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.5,
-    "Humidity": 88,
-    "Brightness": 77,
-    "AirQuality": 360,
-    "Timestamp": {
-      "$date": "2025-03-12T00:08:10.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "e57b1e47598cc95a7a3a685e"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 24.5,
-    "Humidity": 89,
-    "Brightness": 85,
-    "AirQuality": 339,
-    "Timestamp": {
-      "$date": "2025-03-10T11:27:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c9b171b5dc94e6146b93e915"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.8,
-    "Humidity": 50,
-    "Brightness": 94,
-    "AirQuality": 483,
-    "Timestamp": {
-      "$date": "2025-03-08T00:12:21.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "74e9855f749bbb5ce2442ccd"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.3,
-    "Humidity": 66,
-    "Brightness": 93,
-    "AirQuality": 435,
-    "Timestamp": {
-      "$date": "2025-03-10T22:14:24.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "de716c7f7e5c7d90c31d88d5"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.1,
-    "Humidity": 78,
-    "Brightness": 80,
-    "AirQuality": 370,
-    "Timestamp": {
-      "$date": "2025-03-06T01:03:48.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "69e0100def1ce72d8d910b34"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.1,
-    "Humidity": 63,
-    "Brightness": 75,
-    "AirQuality": 427,
-    "Timestamp": {
-      "$date": "2025-03-07T09:01:57.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9cdd846205f2f7c929b5dca2"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.7,
-    "Humidity": 55,
-    "Brightness": 53,
-    "AirQuality": 403,
-    "Timestamp": {
-      "$date": "2025-03-12T01:45:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "bfbe5f567aad5554d0ac3cf2"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.0,
-    "Humidity": 90,
-    "Brightness": 59,
-    "AirQuality": 486,
-    "Timestamp": {
-      "$date": "2025-03-08T18:54:46.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4d5beea6ada8a6c59bd6f54e"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 25.1,
-    "Humidity": 81,
-    "Brightness": 85,
-    "AirQuality": 338,
-    "Timestamp": {
-      "$date": "2025-03-09T15:22:08.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "df62a9366705b2759932e221"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.8,
-    "Humidity": 74,
-    "Brightness": 65,
-    "AirQuality": 345,
-    "Timestamp": {
-      "$date": "2025-03-07T21:17:38.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "52095fc083a898daa6d8ee57"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 20.5,
-    "Humidity": 51,
-    "Brightness": 59,
-    "AirQuality": 380,
-    "Timestamp": {
-      "$date": "2025-03-09T03:24:01.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "a62a76ec1f150708c6d48a24"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 26.1,
-    "Humidity": 61,
-    "Brightness": 91,
-    "AirQuality": 385,
-    "Timestamp": {
-      "$date": "2025-03-07T08:55:05.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f3133d67e6d50695537d4c56"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.5,
-    "Humidity": 54,
-    "Brightness": 80,
-    "AirQuality": 374,
-    "Timestamp": {
-      "$date": "2025-03-13T04:41:55.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "b492111afa4bacd9407fb3e2"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.6,
-    "Humidity": 62,
-    "Brightness": 77,
-    "AirQuality": 343,
-    "Timestamp": {
-      "$date": "2025-03-08T05:45:15.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "cca4eaa258a1f32601bbb2ac"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 21.0,
-    "Humidity": 81,
-    "Brightness": 81,
-    "AirQuality": 394,
-    "Timestamp": {
-      "$date": "2025-03-03T17:31:14.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "85510a58b44ca5b5702b0597"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 27.7,
-    "Humidity": 81,
-    "Brightness": 82,
-    "AirQuality": 493,
-    "Timestamp": {
-      "$date": "2025-03-06T08:32:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "82480a77f4efa4271310b9cf"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 27.6,
-    "Humidity": 55,
-    "Brightness": 74,
-    "AirQuality": 399,
-    "Timestamp": {
-      "$date": "2025-03-06T06:02:47.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8bd8525c6b5beb3e9f575897"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.6,
-    "Humidity": 62,
-    "Brightness": 53,
-    "AirQuality": 335,
-    "Timestamp": {
-      "$date": "2025-03-11T05:45:42.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "ed610710c5c42af43f596ddd"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 24.7,
-    "Humidity": 71,
-    "Brightness": 83,
-    "AirQuality": 335,
-    "Timestamp": {
-      "$date": "2025-03-08T08:52:35.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "2019c9eb2220998cd19c0386"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 26.5,
-    "Humidity": 77,
-    "Brightness": 80,
-    "AirQuality": 447,
-    "Timestamp": {
-      "$date": "2025-03-12T17:23:40.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "9fd7b2161ed8e4afa7f4aa54"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 22.1,
-    "Humidity": 63,
-    "Brightness": 64,
-    "AirQuality": 395,
-    "Timestamp": {
-      "$date": "2025-03-09T19:43:58.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "25c9feb12c808e259a79a896"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 21.5,
-    "Humidity": 77,
-    "Brightness": 71,
-    "AirQuality": 351,
-    "Timestamp": {
-      "$date": "2025-03-05T03:21:47.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f590d84b1d1c36f529ccf5dc"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 25.5,
-    "Humidity": 73,
-    "Brightness": 88,
-    "AirQuality": 491,
-    "Timestamp": {
-      "$date": "2025-03-09T17:04:39.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8b9cea249231e1247cc712c4"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 29.5,
-    "Humidity": 65,
-    "Brightness": 89,
-    "AirQuality": 485,
-    "Timestamp": {
-      "$date": "2025-03-10T16:08:02.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "687bb6d908cc63fb276f4bef"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 23.3,
-    "Humidity": 56,
-    "Brightness": 100,
-    "AirQuality": 497,
-    "Timestamp": {
-      "$date": "2025-03-07T19:09:28.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "185fcfa75baefc121f587ed9"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.9,
-    "Humidity": 69,
-    "Brightness": 65,
-    "AirQuality": 395,
-    "Timestamp": {
-      "$date": "2025-03-09T14:25:25.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "82510a5fdbabc2e74261649f"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.8,
-    "Humidity": 61,
-    "Brightness": 70,
-    "AirQuality": 372,
-    "Timestamp": {
-      "$date": "2025-03-03T15:36:14.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "c9d9f7251debd7db7dae4885"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 23.2,
-    "Humidity": 64,
-    "Brightness": 76,
-    "AirQuality": 485,
-    "Timestamp": {
-      "$date": "2025-03-10T08:56:18.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "253f79de48123793c95e32c1"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 28.5,
-    "Humidity": 65,
-    "Brightness": 67,
-    "AirQuality": 391,
-    "Timestamp": {
-      "$date": "2025-03-11T09:34:13.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "cc155dd70001b2e4ca70016c"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 25.9,
-    "Humidity": 54,
-    "Brightness": 58,
-    "AirQuality": 391,
-    "Timestamp": {
-      "$date": "2025-03-11T06:39:46.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "684676108f7f90fe985b9c3c"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 29.7,
-    "Humidity": 76,
-    "Brightness": 97,
-    "AirQuality": 464,
-    "Timestamp": {
-      "$date": "2025-03-11T22:23:41.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "65f2735d5efd8f681b3b0f95"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 25.9,
-    "Humidity": 61,
-    "Brightness": 69,
-    "AirQuality": 407,
-    "Timestamp": {
-      "$date": "2025-03-03T14:32:25.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4682f176a256e7b0288a7f3a"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 29.5,
-    "Humidity": 71,
-    "Brightness": 65,
-    "AirQuality": 472,
-    "Timestamp": {
-      "$date": "2025-03-07T22:32:50.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "f3dcc982a25cb57a2dd344bc"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 26.4,
-    "Humidity": 71,
-    "Brightness": 96,
-    "AirQuality": 410,
-    "Timestamp": {
-      "$date": "2025-03-13T09:42:37.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "53a94874bab43d2796f6a3a1"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 23.4,
-    "Humidity": 51,
-    "Brightness": 86,
-    "AirQuality": 302,
-    "Timestamp": {
-      "$date": "2025-03-12T03:40:07.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "4a0617ba858f115c1d85924a"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.1,
-    "Humidity": 72,
-    "Brightness": 67,
-    "AirQuality": 351,
-    "Timestamp": {
-      "$date": "2025-03-05T00:00:02.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "403e7965895e0d33240a0ccb"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.5,
-    "Humidity": 78,
-    "Brightness": 66,
-    "AirQuality": 368,
-    "Timestamp": {
-      "$date": "2025-03-13T05:34:36.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "bdd7cb9f0cf0b16d59c44006"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 26.0,
-    "Humidity": 61,
-    "Brightness": 52,
-    "AirQuality": 315,
-    "Timestamp": {
-      "$date": "2025-03-08T04:10:55.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "aa24501def3545caa83f4e23"
-    },
-    "SensorLocation": "KV2",
-    "Temperature": 22.9,
-    "Humidity": 50,
-    "Brightness": 93,
-    "AirQuality": 388,
-    "Timestamp": {
-      "$date": "2025-03-11T20:36:34.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "aeed9f35afdd8c5c042de6f5"
-    },
-    "SensorLocation": "KV3",
-    "Temperature": 28.4,
-    "Humidity": 88,
-    "Brightness": 62,
-    "AirQuality": 369,
-    "Timestamp": {
-      "$date": "2025-03-05T06:01:12.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "060a9cbdcc03fe8202de67b0"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 28.9,
-    "Humidity": 60,
-    "Brightness": 99,
-    "AirQuality": 354,
-    "Timestamp": {
-      "$date": "2025-03-12T17:58:30.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "0fbd020dab89be2c28b85b4a"
-    },
-    "SensorLocation": "KV1",
-    "Temperature": 24.8,
-    "Humidity": 74,
-    "Brightness": 56,
-    "AirQuality": 478,
-    "Timestamp": {
-      "$date": "2025-03-08T22:35:58.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "8cceac6efdaa0ba2c388f89e"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 27.4,
-    "Humidity": 68,
-    "Brightness": 88,
-    "AirQuality": 417,
-    "Timestamp": {
-      "$date": "2025-03-11T02:11:37.388452Z"
-    }
-  },
-  {
-    "_id": {
-      "$oid": "6497a6bc50328452970bed13"
-    },
-    "SensorLocation": "KV4",
-    "Temperature": 22.4,
-    "Humidity": 56,
-    "Brightness": 96,
-    "AirQuality": 450,
-    "Timestamp": {
-      "$date": "2025-03-13T04:22:24.388452Z"
-    }
+[{
+  "_id": "5367984652748",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 25.6,
+  "Humidity": 58,
+  "Brightness": 83,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T00:00:00.000Z"
   }
-]
+},
+{
+  "_id": "6784921356083",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.1,
+  "Humidity": 75,
+  "Brightness": 67,
+  "AirQuality": 185,
+  "Timestamp": {
+    "$date": "2025-03-24T01:00:00.000Z"
+  }
+},
+{
+  "_id": "3490526718925",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.2,
+  "Humidity": 72,
+  "Brightness": 45,
+  "AirQuality": 176,
+  "Timestamp": {
+    "$date": "2025-03-24T02:00:00.000Z"
+  }
+},
+{
+  "_id": "8793452167034",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 24.3,
+  "Humidity": 61,
+  "Brightness": 92,
+  "AirQuality": 123,
+  "Timestamp": {
+    "$date": "2025-03-24T03:00:00.000Z"
+  }
+},
+{
+  "_id": "1259087463459",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 22.7,
+  "Humidity": 69,
+  "Brightness": 58,
+  "AirQuality": 140,
+  "Timestamp": {
+    "$date": "2025-03-24T04:00:00.000Z"
+  }
+},
+{
+  "_id": "3762158496702",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 21.8,
+  "Humidity": 74,
+  "Brightness": 40,
+  "AirQuality": 132,
+  "Timestamp": {
+    "$date": "2025-03-24T05:00:00.000Z"
+  }
+},
+{
+  "_id": "6590281435792",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 24.1,
+  "Humidity": 67,
+  "Brightness": 30,
+  "AirQuality": 127,
+  "Timestamp": {
+    "$date": "2025-03-24T06:00:00.000Z"
+  }
+},
+{
+  "_id": "7589023471654",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.3,
+  "Humidity": 70,
+  "Brightness": 60,
+  "AirQuality": 144,
+  "Timestamp": {
+    "$date": "2025-03-24T07:00:00.000Z"
+  }
+},
+{
+  "_id": "9845016372851",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 65,
+  "Brightness": 90,
+  "AirQuality": 162,
+  "Timestamp": {
+    "$date": "2025-03-24T08:00:00.000Z"
+  }
+},
+{
+  "_id": "5628374019265",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.5,
+  "Humidity": 63,
+  "Brightness": 95,
+  "AirQuality": 174,
+  "Timestamp": {
+    "$date": "2025-03-24T09:00:00.000Z"
+  }
+},
+{
+  "_id": "7628195046723",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 60,
+  "Brightness": 85,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T10:00:00.000Z"
+  }
+},
+{
+  "_id": "4520983765891",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.5,
+  "Humidity": 72,
+  "Brightness": 70,
+  "AirQuality": 150,
+  "Timestamp": {
+    "$date": "2025-03-24T11:00:00.000Z"
+  }
+},
+{
+  "_id": "3021845769832",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 26.1,
+  "Humidity": 74,
+  "Brightness": 65,
+  "AirQuality": 142,
+  "Timestamp": {
+    "$date": "2025-03-24T12:00:00.000Z"
+  }
+},
+{
+  "_id": "5691032846751",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 24.7,
+  "Humidity": 76,
+  "Brightness": 50,
+  "AirQuality": 136,
+  "Timestamp": {
+    "$date": "2025-03-24T13:00:00.000Z"
+  }
+},
+{
+  "_id": "8703291465872",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 22.9,
+  "Humidity": 78,
+  "Brightness": 42,
+  "AirQuality": 130,
+  "Timestamp": {
+    "$date": "2025-03-24T14:00:00.000Z"
+  }
+},
+{
+  "_id": "1098273654892",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 21.6,
+  "Humidity": 80,
+  "Brightness": 35,
+  "AirQuality": 125,
+  "Timestamp": {
+    "$date": "2025-03-24T15:00:00.000Z"
+  }
+},
+{
+  "_id": "3462810976523",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 20.9,
+  "Humidity": 82,
+  "Brightness": 30,
+  "AirQuality": 120,
+  "Timestamp": {
+    "$date": "2025-03-24T16:00:00.000Z"
+  }
+},
+{
+  "_id": "6725981345092",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 22.4,
+  "Humidity": 79,
+  "Brightness": 28,
+  "AirQuality": 118,
+  "Timestamp": {
+    "$date": "2025-03-24T17:00:00.000Z"
+  }
+},
+{
+  "_id": "5098372164589",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 24.5,
+  "Humidity": 75,
+  "Brightness": 40,
+  "AirQuality": 122,
+  "Timestamp": {
+    "$date": "2025-03-24T18:00:00.000Z"
+  }
+},
+{
+  "_id": "7864023856123",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 26.2,
+  "Humidity": 72,
+  "Brightness": 55,
+  "AirQuality": 130,
+  "Timestamp": {
+    "$date": "2025-03-24T19:00:00.000Z"
+  }
+},
+{
+  "_id": "9082371658432",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.7,
+  "Humidity": 70,
+  "Brightness": 65,
+  "AirQuality": 138,
+  "Timestamp": {
+    "$date": "2025-03-24T20:00:00.000Z"
+  }
+},
+{
+  "_id": "3725981023674",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.4,
+  "Humidity": 68,
+  "Brightness": 72,
+  "AirQuality": 144,
+  "Timestamp": {
+    "$date": "2025-03-24T21:00:00.000Z"
+  }
+},
+{
+  "_id": "7590832146753",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 26.9,
+  "Humidity": 65,
+  "Brightness": 80,
+  "AirQuality": 150,
+  "Timestamp": {
+    "$date": "2025-03-24T22:00:00.000Z"
+  }
+},
+{
+  "_id": "8503947261852",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 25.3,
+  "Humidity": 62,
+  "Brightness": 88,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T23:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f4c77c6f8471c557d18f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 296,
+  "Timestamp": {
+    "$date": "2025-03-24T05:59:35.683Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f5037c6f8471c557d190"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 266,
+  "Timestamp": {
+    "$date": "2025-03-24T06:00:35.699Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f53f7c6f8471c557d191"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 249,
+  "Timestamp": {
+    "$date": "2025-03-24T06:01:35.700Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f57b7c6f8471c557d192"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 237,
+  "Timestamp": {
+    "$date": "2025-03-24T06:02:35.682Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f5b77c6f8471c557d1e5"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 227,
+  "Timestamp": {
+    "$date": "2025-03-24T06:03:35.657Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f5f37c6f8471c557d203"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 220,
+  "Timestamp": {
+    "$date": "2025-03-24T06:04:35.664Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f62f7c6f8471c557d204"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 213,
+  "Timestamp": {
+    "$date": "2025-03-24T06:05:35.658Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f66b5770dfa410f2b4aa"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 204,
+  "Timestamp": {
+    "$date": "2025-03-24T06:06:35.691Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f6a75770dfa410f2b4cb"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 26.8,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 199,
+  "Timestamp": {
+    "$date": "2025-03-24T06:07:35.679Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f7970b34c964427e4d0a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 35,
+  "Brightness": 0,
+  "AirQuality": 184,
+  "Timestamp": {
+    "$date": "2025-03-24T06:11:35.793Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f7d30b34c964427e4d0b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 182,
+  "Timestamp": {
+    "$date": "2025-03-24T06:12:35.747Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f80f0b34c964427e4d0c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 179,
+  "Timestamp": {
+    "$date": "2025-03-24T06:13:35.735Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f84b0b34c964427e4d0d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 177,
+  "Timestamp": {
+    "$date": "2025-03-24T06:14:35.756Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f8870b34c964427e4d0e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 175,
+  "Timestamp": {
+    "$date": "2025-03-24T06:15:35.755Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f8c30b34c964427e4d0f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 173,
+  "Timestamp": {
+    "$date": "2025-03-24T06:16:35.755Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f8ff0b34c964427e4d10"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 173,
+  "Timestamp": {
+    "$date": "2025-03-24T06:17:35.737Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f93b0b34c964427e4d11"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 173,
+  "Timestamp": {
+    "$date": "2025-03-24T06:18:35.741Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f9770b34c964427e4d12"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 172,
+  "Timestamp": {
+    "$date": "2025-03-24T06:19:35.753Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f9b30b34c964427e4d13"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 170,
+  "Timestamp": {
+    "$date": "2025-03-24T06:20:35.799Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f9ef0b34c964427e4d14"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 169,
+  "Timestamp": {
+    "$date": "2025-03-24T06:21:35.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fa2b0b34c964427e4d15"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 168,
+  "Timestamp": {
+    "$date": "2025-03-24T06:22:35.763Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fa670b34c964427e4d16"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 166,
+  "Timestamp": {
+    "$date": "2025-03-24T06:23:35.953Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0faa30b34c964427e4d17"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 166,
+  "Timestamp": {
+    "$date": "2025-03-24T06:24:35.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fadf0b34c964427e4d18"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 166,
+  "Timestamp": {
+    "$date": "2025-03-24T06:25:35.781Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fb1b0b34c964427e4d19"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 166,
+  "Timestamp": {
+    "$date": "2025-03-24T06:26:35.744Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fb570b34c964427e4d1a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 165,
+  "Timestamp": {
+    "$date": "2025-03-24T06:27:35.928Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fb930b34c964427e4d1b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 165,
+  "Timestamp": {
+    "$date": "2025-03-24T06:28:35.825Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fbcf0b34c964427e4d1c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T06:29:35.857Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fc0b0b34c964427e4d1d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 163,
+  "Timestamp": {
+    "$date": "2025-03-24T06:30:35.747Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fc470b34c964427e4d1e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 164,
+  "Timestamp": {
+    "$date": "2025-03-24T06:31:35.896Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fc840b34c964427e4d1f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T06:32:36.261Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fcc00b34c964427e4d20"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 161,
+  "Timestamp": {
+    "$date": "2025-03-24T06:33:36.043Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fcfc0b34c964427e4d21"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.2,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 161,
+  "Timestamp": {
+    "$date": "2025-03-24T06:34:36.052Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fd370b34c964427e4d22"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T06:35:35.916Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fd730b34c964427e4d23"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T06:36:35.912Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fdaf0b34c964427e4d24"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:37:35.917Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fdeb0b34c964427e4d25"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:38:35.938Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fe270b34c964427e4d26"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:39:35.934Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fe630b34c964427e4d65"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T06:40:35.923Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fe9f0b34c964427e4d66"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:41:35.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fedb0b34c964427e4da7"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:42:35.937Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0ff180b34c964427e4da8"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:43:36.063Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0ff530b34c964427e4deb"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:44:35.922Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0ff8f0b34c964427e4dec"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:45:35.949Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0ffcb0b34c964427e4ded"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:46:35.947Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e100080b34c964427e4dee"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:47:36.046Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e100430b34c964427e4def"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T06:48:35.926Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1007f0b34c964427e4df0"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:49:35.939Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e100bb0b34c964427e4df1"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:50:35.908Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e100f70b34c964427e4df2"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 152,
+  "Timestamp": {
+    "$date": "2025-03-24T06:51:35.924Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e101340b34c964427e4df3"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T06:52:36.001Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1016f0b34c964427e4df4"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T06:53:35.994Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e101ab0b34c964427e4df5"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T06:54:35.930Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e101e70b34c964427e4df6"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T06:55:35.971Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e102230b34c964427e4df7"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T06:56:35.929Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1025f0b34c964427e4df8"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T06:57:35.934Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1029b0b34c964427e4e99"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T06:58:35.945Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e102d80b34c964427e4e9a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T06:59:36.077Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e103130b34c964427e4e9b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:00:35.964Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1034f0b34c964427e4e9c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:01:35.939Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1038c0b34c964427e4e9d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:02:36.094Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e103c70b34c964427e4e9e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:03:35.917Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e104030b34c964427e4e9f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:04:35.939Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e104400b34c964427e4ea0"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:05:36.131Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1047c0b34c964427e4ef9"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:06:36.080Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e104b70b34c964427e4efa"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:07:35.969Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e104f40b34c964427e4efb"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:08:36.085Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e105300b34c964427e4efc"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:09:36.016Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1056b0b34c964427e4efd"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:10:35.956Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e105a70b34c964427e4efe"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:11:35.980Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e105e40b34c964427e4eff"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:12:36.074Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e106200b34c964427e4f00"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:13:36.079Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1065b0b34c964427e4f01"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T07:14:35.971Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e106970b34c964427e4f02"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:15:35.969Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e106d40b34c964427e4f65"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 29,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:16:36.024Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1070f0b34c964427e4f66"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:17:35.983Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1074b0b34c964427e4fcb"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:18:35.996Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e107870b34c964427e4fcc"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:19:35.952Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e107c30b34c964427e4fcd"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:20:35.957Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e107ff0b34c964427e4fce"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:21:35.996Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1083b0b34c964427e4fcf"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T07:22:35.955Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e108770b34c964427e4fd0"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:23:35.955Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e108b40b34c964427e4fd1"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:24:36.037Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e108f00b34c964427e4fd2"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:25:36.136Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1092b0b34c964427e4fd3"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:26:35.975Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e109670b34c964427e4fd4"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:27:35.982Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e109a30b34c964427e4fd5"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:28:35.957Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e109df0b34c964427e4fd6"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:29:35.944Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10a1c0b34c964427e4fd7"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:30:36.098Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10a570b34c964427e4fd8"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:31:35.960Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10a930b34c964427e4fd9"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:32:35.967Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10acf0b34c964427e4fda"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:33:35.961Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10b0b0b34c964427e4fdb"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:34:35.969Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10b470b34c964427e4fdc"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:35:35.968Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10b830b34c964427e4fdd"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:36:35.964Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10bbf0b34c964427e4fde"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:37:35.968Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10bfb0b34c964427e4fdf"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:38:35.958Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10c380b34c964427e4fe0"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:39:36.074Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10c740b34c964427e4fe1"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:40:36.009Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10ecc713b792fb0a4498b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:50:36.130Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10f07713b792fb0a4498c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T07:51:35.972Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10f43713b792fb0a4498d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:52:35.982Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10f7f713b792fb0a4498e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:53:35.980Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10fbb713b792fb0a4498f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:54:35.980Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10ff7713b792fb0a44990"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T07:55:35.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11033713b792fb0a44991"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 165,
+  "Timestamp": {
+    "$date": "2025-03-24T07:56:35.955Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1106f713b792fb0a44992"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 50,
+  "Brightness": 0,
+  "AirQuality": 161,
+  "Timestamp": {
+    "$date": "2025-03-24T07:57:35.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e110ab713b792fb0a44993"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 39,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:58:35.967Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e110e7713b792fb0a44994"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 40,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:59:35.941Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11123713b792fb0a44995"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 39,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:00:35.964Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1115f713b792fb0a44a1c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 37,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:01:35.941Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1119b713b792fb0a44a1d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 37,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:02:35.966Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e111d8713b792fb0a44a1e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:03:36.001Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11213713b792fb0a44a1f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:04:35.965Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11250713b792fb0a44a20"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:05:36.005Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1128b713b792fb0a44a21"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:06:35.968Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e112c8713b792fb0a44a22"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:07:36.046Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11303713b792fb0a44a23"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:08:35.968Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1133f713b792fb0a44a24"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:09:35.966Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1137b713b792fb0a44a25"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:10:35.986Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e113b7713b792fb0a44a26"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:11:35.981Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e113f4713b792fb0a44a27"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:12:36.072Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11430713b792fb0a44a28"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.1,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:13:36.012Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1146c713b792fb0a44a29"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T08:14:36.211Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e114a8713b792fb0a44a2a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T08:15:36.156Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e114e4713b792fb0a44a2b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.1,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T08:16:36.027Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11520713b792fb0a44a2c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:17:36.054Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1155c713b792fb0a44a2d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:18:36.042Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11598713b792fb0a44a2e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:19:36.051Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e115d4713b792fb0a44a2f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T08:20:36.068Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11610713b792fb0a44a30"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:21:36.058Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1164c713b792fb0a44a31"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:22:36.146Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11688713b792fb0a44a32"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:23:36.065Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e116c4713b792fb0a44a33"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:24:36.075Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11700713b792fb0a44a34"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:25:36.053Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1173c713b792fb0a44a35"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:26:36.069Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11778713b792fb0a44a36"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:27:36.056Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e117b4713b792fb0a44a37"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:28:36.192Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e117f0713b792fb0a44a38"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:29:36.060Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1182c713b792fb0a44a39"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:30:36.113Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11868713b792fb0a44a3a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:31:36.156Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e118a4713b792fb0a44a3b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:32:36.047Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e118e0713b792fb0a44a3c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 152,
+  "Timestamp": {
+    "$date": "2025-03-24T08:33:36.064Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1191c713b792fb0a44a3d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:34:36.094Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11958713b792fb0a44a3e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:35:36.042Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11994713b792fb0a44a3f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:36:36.156Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e119d0713b792fb0a44a40"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:37:36.133Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11a0c713b792fb0a44a41"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:38:36.067Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11a48713b792fb0a44a42"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:39:36.095Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11a84713b792fb0a44a43"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:40:36.071Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11ac0713b792fb0a44a44"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:41:36.131Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11afc713b792fb0a44a45"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T08:42:36.078Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11b38713b792fb0a44a46"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T08:43:36.064Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11b74713b792fb0a44a47"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 161,
+  "Timestamp": {
+    "$date": "2025-03-24T08:44:36.045Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11bb0713b792fb0a44a48"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:45:36.187Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11bec713b792fb0a44a49"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:46:36.069Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11c28713b792fb0a44a4a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T08:47:36.135Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11c64713b792fb0a44a4b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:48:36.066Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11ca0713b792fb0a44a4c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T08:49:36.482Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11cdc713b792fb0a44a4d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:50:36.310Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11d18713b792fb0a44a4e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:51:36.354Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11d54713b792fb0a44a4f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:52:36.313Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11d95713b792fb0a44a50"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:53:41.622Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11dd1713b792fb0a44a51"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:54:41.343Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11e0d713b792fb0a44a52"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:55:41.316Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11e49713b792fb0a44a53"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:56:41.321Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11e85713b792fb0a44a54"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:57:41.409Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11ec1713b792fb0a44a55"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:58:41.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11efd713b792fb0a44a56"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:59:41.561Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11f39713b792fb0a44a57"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T09:00:41.446Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e12065713b792fb0a44a58"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T09:05:41.390Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e120a1713b792fb0a44a59"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T09:06:41.427Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e120dd713b792fb0a44a5a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T09:07:41.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e12155f06a055d0dfa2247"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T09:09:41.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e12191f06a055d0dfa2248"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T09:10:41.377Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e121cdf06a055d0dfa2249"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T09:11:41.551Z"
+  }
+}]

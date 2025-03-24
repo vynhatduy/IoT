@@ -5,7 +5,7 @@ namespace IoT_Farm.Repositories.Interface
     public interface IEnvironmentRepository : IGenericRepository<EnvironmentData>
     {
         Task<List<EnvironmentData>> GetByAreaAsync(string areaId);
-        Task<EnvironmentData?> GetLatestAsync();
+        Task<EnvironmentData?> GetLatestAsync(string area);
         Task<List<EnvironmentData>> GetEnvironmentDataByArea(DateTime from, DateTime to, string area);
         Task<bool> AddAsync(EnvironmentData data);
         Task<List<EnvironmentData>> GetEnvironmentDataByDate(DateTime date, string area);

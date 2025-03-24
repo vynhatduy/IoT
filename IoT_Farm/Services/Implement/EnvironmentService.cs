@@ -50,9 +50,9 @@ namespace IoT_Farm.Services.Implement
             return await _repository.GetByAreaAsync(areaId);
         }
 
-        public async Task<EnvironmentData?> GetLatestEnvironmentData()
+        public async Task<EnvironmentData?> GetLatestEnvironmentData(string area)
         {
-            return await _repository.GetLatestAsync();
+            return await _repository.GetLatestAsync(area);
         }
         public async Task<List<EnvironmentData>> GetEnvironmentDataByArea(DateTime from, DateTime to, string area)
         {
