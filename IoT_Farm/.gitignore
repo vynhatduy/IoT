@@ -14,6 +14,13 @@ debug/
 release/
 TestResults/
 
+Obj/
+Bin/
+Out/
+Debug/
+Release/
+TestResults/
+
 # Build
 *.exe
 *.dll
