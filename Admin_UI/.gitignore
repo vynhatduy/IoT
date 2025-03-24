@@ -1,25 +1,23 @@
-# Node modules và build output
+# Node.js
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+pnpm-lock.yaml
+
+# Build
 dist/
-build/
+out/
+.cache/
+*.tsbuildinfo
 
-# Cache và log
-.npm
-.yarn
-.pnpm-store
-.cache
-*.log
-*.tmp
-
-# Test coverage
-coverage/
-
-# Editor & IDE
-.vscode/*
+# Editor & OS
 .idea/
-*.iml
+.vscode/
+.DS_Store
+Thumbs.db
 
-
-.env
-
-package-log.json
+# Env
+.env*
+!.env.example
