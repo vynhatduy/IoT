@@ -12,11 +12,7 @@ export default function datePicker() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['DatePicker', 'DatePicker']}>
         <DatePicker label="Ngày bắt đầu" defaultValue={dayjs('2024-01-01')} />
-        <DatePicker
-          label="Ngày kết thúc"
-          value={value}
-          onChange={(newValue) => setValue(newValue)}
-        />
+        <DatePicker label="Ngày kết thúc" value={value} onChange={(newValue) => setValue(newValue)} />
       </DemoContainer>
     </LocalizationProvider>
   );

@@ -1,7 +1,6 @@
 ﻿using IoT_Farm.Datas;
 using IoT_Farm.Datas.Adapter;
 using IoT_Farm.Repositories.Interface;
-using MongoDB.Driver;
 
 namespace IoT_Farm.Repositories.Implement
 {
@@ -36,19 +35,10 @@ namespace IoT_Farm.Repositories.Implement
         {
             try
             {
-                from = from.Date;
-                to = to.Date.AddDays(1).AddTicks(-1);
-                var filter = Builders<EnvironmentData>.Filter.And(
-                    Builders<EnvironmentData>.Filter.Eq(d => d.Area, area),
-                    Builders<EnvironmentData>.Filter.Gte(d => d.Timestamp, from),
-                    Builders<EnvironmentData>.Filter.Lte(d => d.Timestamp, to)
-                );
 
-                // Query the data using the filter
-                var result = await _adapter.GetEnvironmentDataAsync(filter);
 
-                // Sort by Timestamp and return the result as a list
-                return result.OrderBy(d => d.Timestamp).ToList();
+                var result = await _adapter.GetEnvironmentDataByFilter(from, to, area);
+                return result;
             }
             catch (Exception ex)
             {
@@ -57,6 +47,20 @@ namespace IoT_Farm.Repositories.Implement
             }
         }
 
+        public async Task<List<EnvironmentData>> GetEnvironmentDataByDate(DateTime date, string area)
+        {
+            try
+            {
+
+                var result = await _adapter.GetEnvironmentDataByDate(date, area);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting environment data: {ex.Message}");
+                return null;
+            }
+        }
 
         public async Task<bool> AddAsync(EnvironmentData data)
         {
@@ -70,6 +74,19 @@ namespace IoT_Farm.Repositories.Implement
             {
                 Console.WriteLine($"Error adding environment data: {ex.Message}");
                 return false;
+            }
+        }
+        public async Task<(double Humidity, double AirQuality, double Temperature, double Brightness)> GetAverageEnvironmentData(DateTime date)
+        {
+            try
+            {
+                var result = await _adapter.GetAverageEnvironmentData(date);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error adding environment data: {ex.Message}");
+                return default;
             }
         }
     }

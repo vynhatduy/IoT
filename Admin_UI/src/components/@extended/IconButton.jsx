@@ -6,8 +6,8 @@ import MuiIconButton from '@mui/material/IconButton';
 import { alpha, styled } from '@mui/material/styles';
 
 // project imports
-import getColors from 'utils/getColors';
-import getShadow from 'utils/getShadow';
+import getColors from '../../utils/getColors';
+import getShadow from '../../utils/getShadow';
 
 function getColorStyle({ variant, theme, color }) {
   const colors = getColors(theme, color);

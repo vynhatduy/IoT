@@ -6,11 +6,10 @@ import Box from '@mui/material/Box';
 
 // project import
 import NavItem from './NavItem';
-import { useGetMenuMaster } from 'api/menu';
+import { useGetMenuMaster } from '../../../../../api/menu';
 
 // ==============================|| DRAWER CONTENT - NAVIGATION GROUP ||============================== //
 export default function NavGroup({ item }) {
-  
   const { menuMaster } = useGetMenuMaster();
   const drawerOpen = menuMaster.isDashboardDrawerOpened;
 
@@ -22,7 +21,7 @@ export default function NavGroup({ item }) {
   // Hàm đệ quy để hiển thị toàn bộ menu
   const renderMenuItems = (menuItems, level = 1) => {
     return menuItems.map((menuItem) => {
-      console.log("menu item: ", menuItem);
+      console.log('menu item: ', menuItem);
 
       switch (menuItem.type) {
         case 'collapse':

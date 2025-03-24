@@ -1,53 +1,34 @@
 import { useState } from 'react';
 
-// material-ui
+// Material UI
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-// project imports
-import MainCard from 'components/MainCard';
-import IncomeAreaChart from "../contentDashboard/IncomeAreaChart";
-
-// ==============================|| DEFAULT - UNIQUE VISITOR ||============================== //
+// Project Imports
+import MainCard from '../../components/MainCard';
+import IncomeAreaChart from '../contentDashboard/IncomeAreaChart';
+import useDailyEnvironmentData from '../../service/useDailyEnvironmentData';
+import SelectArea from '../../components/button/selectArea';
 
 export default function UniqueVisitorCard() {
-  const [view, setView] = useState('monthly'); // 'monthly' or 'weekly'
+  const [area, setArea] = useState('');
+  const today = new Date().toISOString().split('T')[0];
+  const { data, loading, error } = useDailyEnvironmentData(area ? today : null, area);
 
   return (
     <>
       <Grid container alignItems="center" justifyContent="space-between">
-        <Grid>
-          <Typography variant="h5">Thống kê chung</Typography>
-        </Grid>
-        <Grid>
-          <Stack direction="row" sx={{ alignItems: 'center' }}>
-            <Button
-              size="small"
-              onClick={() => setView('monthly')}
-              color={view === 'monthly' ? 'primary' : 'secondary'}
-              variant={view === 'monthly' ? 'outlined' : 'text'}
-            >
-              Tháng
-            </Button>
-            <Button
-              size="small"
-              onClick={() => setView('weekly')}
-              color={view === 'weekly' ? 'primary' : 'secondary'}
-              variant={view === 'weekly' ? 'outlined' : 'text'}
-            >
-              Tuần
-            </Button>
-          </Stack>
+        <Grid item>
+          <Typography variant="h5">Thống kê</Typography>
+          <SelectArea sx={{ margin: '10px 0px' }} onChange={(value) => setArea(value)} />
         </Grid>
       </Grid>
-      <Grid>
+      <Grid item xs={12}>
         <MainCard content={true} sx={{ mt: 2 }}>
-          <Box >
-            <IncomeAreaChart view={view} />
-          </Box>
+          <Box>{loading ? 'Đang tải dữ liệu...' : <IncomeAreaChart data={data || []} />}</Box>
         </MainCard>
       </Grid>
     </>

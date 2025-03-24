@@ -215,4 +215,3 @@ D:\Learn\IoT\IoT_Farm\IoT_Farm\obj\Debug\net8.0\refint\IoT_Farm.dll
 D:\Learn\IoT\IoT_Farm\IoT_Farm\obj\Debug\net8.0\IoT_Farm.pdb
 D:\Learn\IoT\IoT_Farm\IoT_Farm\obj\Debug\net8.0\IoT_Farm.genruntimeconfig.cache
 D:\Learn\IoT\IoT_Farm\IoT_Farm\obj\Debug\net8.0\ref\IoT_Farm.dll
-D:\Learn\IoT\IoT_Farm\IoT_Farm\bin\Debug\net8.0\Datas\demoData.json

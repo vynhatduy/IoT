@@ -2,6 +2,7 @@ using DotNetEnv;
 using IoT_Farm.Datas.Adapter;
 using IoT_Farm.Repositories.Implement;
 using IoT_Farm.Repositories.Interface;
+using IoT_Farm.Services;
 using IoT_Farm.Services.Implement;
 using IoT_Farm.Services.Interface;
 using IoT_Farm.Services.MQTT;
@@ -48,10 +49,23 @@ builder.Services.AddScoped(typeof(IDatabaseAdapter<>), typeof(SqlDbAdapter<>));
 builder.Services.AddSingleton<TokenBlacklistService>();
 builder.Services.AddScoped<IEnvironmentRepository, EnvironmentRepository>();
 builder.Services.AddScoped<IEnvironmentService, EnvironmentService>();
+
+builder.Services.AddScoped<IAreaRepository, AreaRepository>();
+builder.Services.AddScoped<IAreaService, AreaService>();
+
 builder.Services.AddScoped<EnvironmentDataAdapter>();
 
-builder.Services.AddSingleton<IMQTTService, MQTTService>();
-builder.Services.AddHostedService<MQTTService>();
+// Try to register MQTT Service, but catch any errors
+try
+{
+    builder.Services.AddSingleton<IMQTTService, MQTTService>();
+    builder.Services.AddHostedService<MQTTService>();
+    Console.WriteLine("✅ MQTT Service initialized successfully.");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"⚠️ Warning: MQTT Service failed to start. Error: {ex.Message}");
+}
 
 // Configure JWT
 var jwtSecretKey = Encoding.UTF8.GetBytes(Env.GetString("JWT_SecretKey"));
@@ -88,6 +102,24 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var FE_URL = Env.GetString("FE_URL");
+
+builder.Services.AddSignalR();
+builder.Services.AddCors(otp =>
+{
+    otp.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins(FE_URL)
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+    otp.AddPolicy("AllowAll",
+        policy => policy.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader());
+});
+
 // Build the app
 var app = builder.Build();
 
@@ -103,5 +135,10 @@ app.UseMiddleware<BlacklistMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-
+app.UseCors("AllowAll");
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapHub<MyHub>("/ws");
+});
 app.Run();

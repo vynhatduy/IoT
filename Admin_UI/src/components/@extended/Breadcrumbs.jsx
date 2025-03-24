@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import MuiBreadcrumbs from '@mui/material/Breadcrumbs';
 
 // project imports
-import MainCard from 'components/MainCard';
+import MainCard from '../../components/MainCard';
 // import navigation from 'assets/menu-items';
 
 // assets

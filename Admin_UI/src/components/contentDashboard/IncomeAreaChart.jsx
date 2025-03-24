@@ -1,30 +1,16 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-// material-ui
+// Material UI
 import { alpha, useTheme } from '@mui/material/styles';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
+// Biểu đồ
 import { LineChart } from '@mui/x-charts/LineChart';
 
-// Sample data
-const monthlyLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const weeklyLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-
-const monthlyData1 = [76, 85, 101, 98, 87, 105, 91, 114, 94, 86, 115, 35];
-const weeklyData1 = [31, 40, 28, 51, 42, 109, 100];
-
-const monthlyData2 = [110, 60, 150, 35, 60, 36, 26, 45, 65, 52, 53, 41];
-const weeklyData2 = [32, 34, 52, 11, 32, 45, 41];
-
-const monthlyData3 = [110, 60, 36, 26, 45, 65, 52, 150, 35, 60, 53, 41];
-const weeklyData3 = [304, 52, 41,11, 32, 45, 32];
-
-const monthlyData4 = [60, 36, 26, 45, 65, 110, 60, 150, 35, 52, 53, 41];
-const weeklyData4 = [11, 52, 41, 32, 45, 32, 34];
-
+// Component hiển thị Legend
 function Legend({ items, onToggle }) {
   return (
     <Stack direction="row" sx={{ gap: 2, alignItems: 'center', justifyContent: 'center', mt: 2.5, mb: 1.5 }}>
@@ -45,120 +31,74 @@ function Legend({ items, onToggle }) {
   );
 }
 
-// ==============================|| INCOME AREA CHART ||============================== //
-
-export default function IncomeAreaChart({ view }) {
+// ==============================|| BIỂU ĐỒ THỐNG KÊ MÔI TRƯỜNG ||============================== //
+export default function IncomeAreaChart({ data }) {
   const theme = useTheme();
 
+  // Format lại dữ liệu thành từng giờ
+  const formattedData = data.map((item) => ({
+    hour: new Date(item.timestamp).getHours() + ':00',
+    temperature: item.temperature,
+    humidity: item.humidity,
+    airQuality: item.airQuality,
+    brightness: item.brightness
+  }));
+
+  // Trạng thái hiển thị
   const [visibility, setVisibility] = useState({
-    'Page views': true,
-    Sessions: true
+    'Nhiệt độ': true,
+    'Độ ẩm': true,
+    'Ánh sáng': true,
+    'Không khí': true
   });
 
-  const labels = view === 'monthly' ? monthlyLabels : weeklyLabels;
-  const data1 = view === 'monthly' ? monthlyData1 : weeklyData1;
-  const data2 = view === 'monthly' ? monthlyData2 : weeklyData2;
-  const data3 = view === 'monthly' ? monthlyData3 : weeklyData3;
-  const data4 = view === 'monthly' ? monthlyData4 : weeklyData4;
-  const line = theme.palette.divider;
+  // Màu sắc cho từng loại dữ liệu
+  const colorMap = {
+    'Nhiệt độ': theme.palette.error.main, // Đỏ
+    'Độ ẩm': theme.palette.primary.main, // Xanh dương
+    'Ánh sáng': theme.palette.warning.main, // Vàng
+    'Không khí': theme.palette.success.main // Xanh lá
+  };
 
+  // Tạo dữ liệu hiển thị trên biểu đồ
+  const visibleSeries = [
+    { key: 'temperature', label: 'Nhiệt độ', color: colorMap['Nhiệt độ'], visible: visibility['Nhiệt độ'] },
+    { key: 'humidity', label: 'Độ ẩm', color: colorMap['Độ ẩm'], visible: visibility['Độ ẩm'] },
+    { key: 'brightness', label: 'Ánh sáng', color: colorMap['Ánh sáng'], visible: visibility['Ánh sáng'] },
+    { key: 'airQuality', label: 'Không khí', color: colorMap['Không khí'], visible: visibility['Không khí'] }
+  ];
+
+  // Toggle hiển thị từng đường trong biểu đồ
   const toggleVisibility = (label) => {
     setVisibility((prev) => ({ ...prev, [label]: !prev[label] }));
   };
 
-  const visibleSeries = [
-    {
-      data: data1,
-      label: 'Nhiệt độ',
-      showMark: false,
-      area: true,
-      id: 'Germany',
-      color: theme.palette.primary.main || '',
-      visible: visibility['Page views']
-    },
-    {
-      data: data2,
-      label: 'Độ ẩm',
-      showMark: false,
-      area: true,
-      id: 'UK',
-      color: theme.palette.primary[700] || '',
-      visible: visibility['Sessions']
-    },
-    {
-      data: data3,
-      label: 'Ánh sáng',
-      showMark: false,
-      area: true,
-      id: 'VN',
-      color: theme.palette.primary[400] || '',
-      visible: visibility['Sessions']
-    },
-    {
-      data: data4,
-      label: 'Không khí',
-      showMark: false,
-      area: true,
-      id: 'JP',
-      color: theme.palette.primary[100] || '',
-      visible: visibility['Sessions']
-    }
-  ];
-
-  const axisFonstyle = { fontSize: 10, fill: theme.palette.text.secondary };
-
   return (
     <>
       <LineChart
-        grid={{ horizontal: true }}
-        xAxis={[{ scaleType: 'point', data: labels, disableLine: true, tickLabelStyle: axisFonstyle }]}
-        yAxis={[{ disableLine: true, disableTicks: true, tickLabelStyle: axisFonstyle }]}
+        xAxis={[{ scaleType: 'point', data: formattedData.map((item) => item.hour) }]}
+        yAxis={[{ label: 'Giá trị đo' }]}
         height={450}
         margin={{ top: 40, bottom: 20, right: 20 }}
         series={visibleSeries
           .filter((series) => series.visible)
           .map((series) => ({
             type: 'line',
-            data: series.data,
+            data: formattedData.map((item) => item[series.key]),
             label: series.label,
-            showMark: series.showMark,
-            area: series.area,
-            id: series.id,
             color: series.color,
             stroke: series.color,
             strokeWidth: 2
           }))}
         slotProps={{ legend: { hidden: true } }}
         sx={{
-          '& .MuiAreaElement-series-Germany': { fill: "url('#myGradient1')", strokeWidth: 2, opacity: 0.8 },
-          '& .MuiAreaElement-series-UK': { fill: "url('#myGradient2')", strokeWidth: 2, opacity: 0.8 },
-          '& .MuiChartsAxis-directionX .MuiChartsAxis-tick': { stroke: line }
+          '& .MuiChartsAxis-directionX .MuiChartsAxis-tick': { stroke: theme.palette.divider }
         }}
-      >
-        <defs>
-          <linearGradient id="myGradient1" gradientTransform="rotate(90)">
-            <stop offset="10%" stopColor={alpha(theme.palette.primary.main, 0.4)} />
-            <stop offset="90%" stopColor={alpha(theme.palette.background.default, 0.4)} />
-          </linearGradient>
-          <linearGradient id="myGradient2" gradientTransform="rotate(90)">
-            <stop offset="10%" stopColor={alpha(theme.palette.primary[700], 0.4)} />
-            <stop offset="90%" stopColor={alpha(theme.palette.background.default, 0.4)} />
-          </linearGradient>
-          <linearGradient id="myGradient2" gradientTransform="rotate(90)">
-            <stop offset="10%" stopColor={alpha(theme.palette.primary[400], 0.4)} />
-            <stop offset="90%" stopColor={alpha(theme.palette.background.default, 0.4)} />
-          </linearGradient>
-          <linearGradient id="myGradient2" gradientTransform="rotate(90)">
-            <stop offset="10%" stopColor={alpha(theme.palette.primary[100], 0.4)} />
-            <stop offset="90%" stopColor={alpha(theme.palette.background.default, 0.4)} />
-          </linearGradient>
-        </defs>
-      </LineChart>
+      />
       <Legend items={visibleSeries} onToggle={toggleVisibility} />
     </>
   );
 }
 
 Legend.propTypes = { items: PropTypes.array, onToggle: PropTypes.func };
-
-IncomeAreaChart.propTypes = { view: PropTypes.oneOf(['monthly', 'weekly']) };
+IncomeAreaChart.propTypes = { data: PropTypes.array.isRequired };

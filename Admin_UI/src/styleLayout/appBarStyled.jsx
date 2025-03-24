@@ -3,9 +3,7 @@ import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 
 // project imports
-import { DRAWER_WIDTH } from 'config';
-
-
+import { DRAWER_WIDTH } from '../config';
 
 const AppBarStyled = styled(AppBar, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme }) => ({
   zIndex: theme.zIndex.drawer + 1,

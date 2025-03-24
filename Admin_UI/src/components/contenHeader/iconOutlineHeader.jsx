@@ -8,10 +8,10 @@ import Toolbar from '@mui/material/Toolbar';
 // project imports
 import AppBarStyled from '../../styleLayout/appBarStyled';
 import HeaderContent from '../../layout/header';
-import IconButton from 'components/@extended/IconButton';
+import IconButton from '../../components/@extended/IconButton';
 
-import { handlerDrawerOpen, useGetMenuMaster } from 'api/menu';
-import { DRAWER_WIDTH, MINI_DRAWER_WIDTH } from 'config';
+import { handlerDrawerOpen, useGetMenuMaster } from '../../api/menu';
+import { DRAWER_WIDTH, MINI_DRAWER_WIDTH } from '../../config';
 
 // assets
 import MenuFoldOutlined from '@ant-design/icons/MenuFoldOutlined';

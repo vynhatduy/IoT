@@ -24,11 +24,7 @@ namespace IoT_Farm.Datas
         public double Humidity { get; set; }
         public double Brightness { get; set; }
         public double AirQuality { get; set; }
-        private DateTime _timestamp = DateTime.UtcNow.AddHours(7);
-        public DateTime Timestamp
-        {
-            get => _timestamp;
-            set => _timestamp = (value == DateTime.MinValue ? DateTime.UtcNow.AddHours(7) : value);
-        }
+        [BsonElement("Timestamp")]
+        public DateTime Timestamp { get; set; } = DateTime.Now;
     }
 }

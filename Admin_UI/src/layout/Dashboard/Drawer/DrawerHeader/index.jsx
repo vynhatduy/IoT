@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 // project imports
 import DrawerHeaderStyled from './DrawerHeaderStyled';
-import Logo from 'assets/logo';
+import Logo from '../../../../assets/logo';
 
 // ==============================|| DRAWER HEADER ||============================== //
 

@@ -14,7 +14,7 @@ namespace IoT_Farm.Datas.Adapter
 
         public async Task<List<T>> GetAsync(Expression<Func<T, bool>>? filter = null)
         {
-            return await _collection.Find(filter ?? (_ => true)).ToListAsync();
+            return await _collection.Find(filter ?? (_ => true)).Limit(1000).ToListAsync();
         }
 
         public async Task<T?> FindOneAsync(Expression<Func<T, bool>> filter, Func<IQueryable<T>, IOrderedQueryable<T>>? sort = null)

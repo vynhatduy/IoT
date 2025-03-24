@@ -58,5 +58,13 @@ namespace IoT_Farm.Services.Implement
             return await _repository.GetEnvironmentDataByArea(from, to, area);
         }
 
+        public async Task<List<EnvironmentData>> GetEnvironmentDataByDate(DateTime date, string area)
+        {
+            return await _repository.GetEnvironmentDataByDate(date, area);
+        }
+        public async Task<(double Humidity, double AirQuality, double Temperature, double Brightness)> GetAverageEnvironmentData(DateTime date)
+        {
+            return await _repository.GetAverageEnvironmentData(date);
+        }
     }
 }

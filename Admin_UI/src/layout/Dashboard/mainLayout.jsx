@@ -9,10 +9,10 @@ import Box from '@mui/material/Box';
 import Drawer from './Drawer';
 import Header from '../../components/contenHeader/iconOutlineHeader';
 import Footer from '../footer';
-import Loader from 'common/Loader';
-import Breadcrumbs from 'components/@extended/Breadcrumbs';
+import Loader from '../../common/Loader';
+import Breadcrumbs from '../../components/@extended/Breadcrumbs';
 
-import { handlerDrawerOpen, useGetMenuMaster } from 'api/menu';
+import { handlerDrawerOpen, useGetMenuMaster } from '../../api/menu';
 
 // ==============================|| MAIN LAYOUT ||============================== //
 

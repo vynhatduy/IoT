@@ -1,6 +1,6 @@
 // project imports
-import getColors from 'utils/getColors';
-import getShadow from 'utils/getShadow';
+import getColors from '../../utils/getColors';
+import getShadow from '../../utils/getShadow';
 
 // ==============================|| OVERRIDES - INPUT BORDER & SHADOWS ||============================== //
 

@@ -76,7 +76,18 @@ namespace IoT_Farm.Services.MQTT
         public async Task StartAsync(CancellationToken cancellationToken)
         {
             _logger.LogInformation("Starting MQTT service...");
-            await _mqttClient.ConnectAsync(_mqttOptions, cancellationToken);
+            try
+            {
+                using var timeoutCts = new CancellationTokenSource(TimeSpan.FromSeconds(10));
+                using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, timeoutCts.Token);
+
+                await _mqttClient.ConnectAsync(_mqttOptions, linkedCts.Token);
+                _logger.LogInformation("MQTT service started successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to start MQTT service: {ex.Message}");
+            }
         }
 
         public async Task StopAsync(CancellationToken cancellationToken)

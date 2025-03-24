@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 
 // project imports
-import Loadable from 'components/Loadable';
+import Loadable from '../components/Loadable';
 import DashboardLayout from '../layout/Dashboard/mainLayout';
 import DashboardDefault from '../pages/bangDieuKhien';
 import CauHinhThietBi from '../pages/cauHinhThietBi';
@@ -44,16 +44,16 @@ const MainRoutes = {
         },
         {
           path: 'thong-ke-chi-tiet',
-          element: <ThongKeChiTiet /> 
+          element: <ThongKeChiTiet />
         },
         {
           path: 'giam-sat-camera',
-          element: <GiamSatCamera /> 
+          element: <GiamSatCamera />
         },
         {
           path: 'lien-he-ho-tro',
-          element: <LienHeHoTro /> 
-        },
+          element: <LienHeHoTro />
+        }
       ]
     },
     {
@@ -65,16 +65,16 @@ const MainRoutes = {
         },
         {
           path: 'thong-so-moi-truong',
-          element: <ThongSoMoiTruong /> 
+          element: <ThongSoMoiTruong />
         },
         {
           path: 'thong-bao-canh-bao',
-          element: <ThongBaoCanhBao /> 
+          element: <ThongBaoCanhBao />
         },
         {
           path: 'quy-trinh-hoat-dong',
-          element: <QuyTrinhHoatDong /> 
-        },
+          element: <QuyTrinhHoatDong />
+        }
       ]
     }
   ]
