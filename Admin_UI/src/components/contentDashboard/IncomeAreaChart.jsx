@@ -77,7 +77,7 @@ export default function IncomeAreaChart({ data }) {
     <>
       <LineChart
         xAxis={[{ scaleType: 'point', data: formattedData.map((item) => item.hour) }]}
-        yAxis={[{ label: 'Giá trị đo' }]}
+        yAxis={[{ label: 'Giá trị đo',}]}
         height={450}
         margin={{ top: 40, bottom: 20, right: 20 }}
         series={visibleSeries
@@ -93,6 +93,7 @@ export default function IncomeAreaChart({ data }) {
         slotProps={{ legend: { hidden: true } }}
         sx={{
           '& .MuiChartsAxis-directionX .MuiChartsAxis-tick': { stroke: theme.palette.divider }
+          
         }}
       />
       <Legend items={visibleSeries} onToggle={toggleVisibility} />

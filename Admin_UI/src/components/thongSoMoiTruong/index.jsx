@@ -16,10 +16,10 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import dayjs from 'dayjs';
 import { useTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import PageContent from './PageContent';
+import PageContent from './pageContent';
 
 const NAVIGATION = [
-  { segment: '', title: 'Weather' },
+  { segment: '', title: 'Thời tiết' },
   { segment: 'orders', title: 'Orders' },
 ];
 

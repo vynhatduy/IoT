@@ -10,7 +10,7 @@ export default function PageContent() {
       <Grid size={{ xs: 12, sm: 6, md: 4 }}>
         <Card variant="outlined">
           <CardContent>
-            <Typography variant="caption">Temperature</Typography>
+            <Typography variant="caption">Nhiệt độ</Typography>
             <Typography variant="h4">24°C</Typography>
           </CardContent>
         </Card>
@@ -18,7 +18,7 @@ export default function PageContent() {
       <Grid size={{ xs: 12, sm: 6, md: 4 }}>
         <Card variant="outlined">
           <CardContent>
-            <Typography variant="caption">Precipitation</Typography>
+            <Typography variant="caption">Độ ẩm</Typography>
             <Typography variant="h4">5%</Typography>
           </CardContent>
         </Card>
@@ -26,7 +26,7 @@ export default function PageContent() {
       <Grid size={{ xs: 12, sm: 6, md: 4 }}>
         <Card variant="outlined">
           <CardContent>
-            <Typography variant="caption">Wind</Typography>
+            <Typography variant="caption">Gió</Typography>
             <Typography variant="h4">18km/h</Typography>
           </CardContent>
         </Card>

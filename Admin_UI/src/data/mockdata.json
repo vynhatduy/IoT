@@ -45,12 +45,28 @@
     { "id": "KV4", "name": "Khu Vực 4" },
     { "id": "KV5", "name": "Khu Vực 5" }
   ],
-  
- "weather": [
-  { "id": "nhietdo", "name": "Nhiệt độ", "icon": "🌡️", "description": "Đo nhiệt độ môi trường", "unit": "°C" },
-  { "id": "doam", "name": "Độ Ẩm", "icon": "💧", "description": "Đo độ ẩm không khí", "unit": "%" },
-  { "id": "anhsang", "name": "Ánh Sáng", "icon": "☀️", "description": "Đo cường độ ánh sáng", "unit": "lux" },
-  { "id": "khongkhi", "name": "Không Khí", "icon": "🌬️", "description": "Đo chất lượng không khí", "unit": "ppm" }
-]
 
+  "weather": [
+    { "id": "nhietdo", "name": "Nhiệt độ", "icon": "🌡️", "description": "Đo nhiệt độ môi trường", "unit": "°C" },
+    { "id": "doam", "name": "Độ Ẩm", "icon": "💧", "description": "Đo độ ẩm không khí", "unit": "%" },
+    { "id": "anhsang", "name": "Ánh Sáng", "icon": "☀️", "description": "Đo cường độ ánh sáng", "unit": "lux" },
+    { "id": "khongkhi", "name": "Không Khí", "icon": "🌬️", "description": "Đo chất lượng không khí", "unit": "ppm" }
+  ],
+  "createtableconfig": [
+    {
+      "title": [
+        "STT",
+        "TÊN",
+        "lOẠI",
+        "KHU VỰC",
+        "SỐ THIẾT BỊ",
+        "TỪ THIẾT BỊ",
+        "ĐẾN GIÁ TRỊ",
+        "TỪ NGÀY",
+        "ĐẾN NGÀY",
+        "TÌNH TRẠNG",
+        "THAO TÁC"
+      ]
+    }
+  ]
 }

@@ -6,8 +6,8 @@ import dayjs from 'dayjs';
 import StyleBackground from '../themes/stylePage/backgroundPage';
 import SelectArea from '../components/button/selectArea';
 import CustomDatePicker from '../components/CustomDatePicker';
-import SelectWeather from '../components/button/selectWeather';
-import BtnDownload from '../components/button/download';
+// import SelectWeather from '../components/button/selectWeather';
+import { DownloadButtons } from '../components/button/download';
 import useEnvironmentData from '../service/useEnvironmentData';
 import ChartComponent from '../components/ChartComponent';
 
@@ -54,13 +54,12 @@ const ThongKeChiTiet = () => {
           <Stack direction="row" spacing={2} alignItems="center">
             <CustomDatePicker label="Ngày bắt đầu" value={from} onChange={setFrom} />
             <CustomDatePicker label="Ngày kết thúc" value={to} onChange={setTo} />
-
-            <BtnDownload onClick={handleDownload} />
+            <DownloadButtons onClick={handleDownload} />
           </Stack>
         </Box>
 
         {/* Hiển thị dữ liệu và biểu đồ */}
-        <Box sx={{ width: '100%', height: '300px', backgroundColor: blue[300], marginTop: '10px', padding: 2 }}>
+        <Box sx={{marginTop: '10px', padding: 2 }}>
           {data.length === 0 ? (
             <Typography>Chưa có dữ liệu, vui lòng tải dữ liệu.</Typography>
           ) : (
