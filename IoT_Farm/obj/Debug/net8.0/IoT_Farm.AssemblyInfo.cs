@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IoT_Farm")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2dbd49af48ca565d195058ae6b98d9c6a7bff6d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee43e45e87c392bcfb12b9334320c90c8a8c69d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("IoT_Farm")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IoT_Farm")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
