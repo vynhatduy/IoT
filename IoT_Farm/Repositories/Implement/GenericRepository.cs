@@ -1,7 +1,5 @@
 ﻿using IoT_Farm.Datas.Adapter;
 using IoT_Farm.Repositories.Interface;
-using MongoDB.Driver;
-using System.Linq.Expressions;
 
 namespace IoT_Farm.Repositories.Implement
 {
@@ -40,20 +38,6 @@ namespace IoT_Farm.Repositories.Implement
             await _databaseAdapter.DeleteAsync(id);
             return true;
         }
-        public async Task<List<T>> FindAsync(object filter)
-        {
-            if (filter is FilterDefinition<T> mongoFilter)
-            {
-                return await _databaseAdapter.FindByFilterDefinitionAsync(mongoFilter);
-            }
-            else if (filter is Expression<Func<T, bool>> sqlFilter)
-            {
-                return await _databaseAdapter.FindByExpressionAsync(sqlFilter);
-            }
-            else
-            {
-                throw new ArgumentException("Unsupported filter type");
-            }
-        }
+
     }
 }
