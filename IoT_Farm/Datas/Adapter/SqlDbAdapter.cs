@@ -42,21 +42,45 @@ namespace IoT_Farm.Datas.Adapter
         public async Task DeleteAsync(string id) =>
             await _dbConnection.ExecuteAsync($"DELETE FROM {_tableName} WHERE Id = @Id", new { Id = id });
 
-
-        public async Task<List<T>> FindByExpressionAsync(Expression<Func<T, bool>> filter)
+        public Task<List<T>> GetAsync(Expression<Func<T, bool>>? filter = null)
         {
-            var sqlBuilder = new SqlExpressionBuilder<T>();
-            var whereClause = sqlBuilder.BuildWhereClause(filter);
-            var query = $"SELECT * FROM {_tableName} WHERE {whereClause}";
-
-            return (await _dbConnection.QueryAsync<T>(query)).ToList();
+            throw new NotImplementedException();
         }
 
-        public Task<List<T>> FindByFilterDefinitionAsync(FilterDefinition<T> filter)
+        public Task<T?> FindOneAsync(Expression<Func<T, bool>> filter, Func<IQueryable<T>, IOrderedQueryable<T>>? sort = null)
         {
-            throw new NotImplementedException("SQL does not support FilterDefinition<T>");
+            throw new NotImplementedException();
         }
 
+        public Task UpdateOneAsync(FilterDefinition<T> filter, UpdateDefinition<T> update, UpdateOptions options)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<UpdateResult> IDatabaseAdapter<T>.UpdateOneAsync(FilterDefinition<T> filter, UpdateDefinition<T> update, UpdateOptions options)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<TOutput>> AggregateAsync<TOutput>(PipelineDefinition<T, TOutput> pipeline)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> ExistsAsync(FilterDefinition<T> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task InsertOneAsync(T document)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T?> FindOneAsync(FilterDefinition<T> filter)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

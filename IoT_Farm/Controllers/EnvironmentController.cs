@@ -46,22 +46,29 @@ namespace IoT_Farm.Controllers
 
             return Ok(data);
         }
-        /// <summary>
-        /// Lấy thống kê trung bình nhiệt độ, độ ẩm, độ sáng, chất lượng không khí theo khu vực
-        /// </summary>
-        [HttpGet("statistics")]
-        public async Task<IActionResult> GetStatistics(
-       [FromQuery] string region, // Khu vực
-       [FromQuery] DateTime? from = null, // Ngày bắt đầu
-       [FromQuery] DateTime? to = null, // Ngày kết thúc
-       [FromQuery] string type = "all" // "temperature", "humidity", "all"
-   )
+        [HttpGet("dataByArea")]
+        public async Task<IActionResult> GetEnvironmentData(DateTime from, DateTime to, string area)
         {
-            DateTime startDate = from ?? DateTime.UtcNow.Date.AddDays(-6);
-            DateTime endDate = to ?? DateTime.UtcNow;
+            var data = await _environmentService.GetEnvironmentDataByArea(from, to, area);
+            if (data == null)
+                return NotFound("No data available.");
 
-            var data = await _environmentService.GetStatistics(region, startDate, endDate, type);
             return Ok(data);
+        }
+        [HttpGet("dataByDate")]
+        public async Task<IActionResult> GetEnvironmentDataByDate(DateTime date, string area)
+        {
+            var data = await _environmentService.GetEnvironmentDataByDate(date, area);
+            if (data == null)
+                return NotFound("No data available.");
+
+            return Ok(data);
+        }
+        [HttpGet("totalDataByDate")]
+        public async Task<IActionResult> GetTotalEnvironmentDataByDate(DateTime date)
+        {
+            var data = await _environmentService.GetAverageEnvironmentData(date);
+            return Ok(new { Humidity = data.Humidity, Temperature = data.Temperature, Brightness = data.Brightness, AirQuality = data.AirQuality });
         }
     }
 }

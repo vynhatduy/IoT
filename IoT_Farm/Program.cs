@@ -2,6 +2,7 @@ using DotNetEnv;
 using IoT_Farm.Datas.Adapter;
 using IoT_Farm.Repositories.Implement;
 using IoT_Farm.Repositories.Interface;
+using IoT_Farm.Services;
 using IoT_Farm.Services.Implement;
 using IoT_Farm.Services.Interface;
 using IoT_Farm.Services.MQTT;
@@ -13,20 +14,20 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Load biến môi trường
+// Load environment variables
 Env.Load();
 
-// Lấy giá trị cấu hình từ biến môi trường
+// Get configuration values from environment variables
 var databaseName = Env.GetString("DatabaseName") ?? "IoT_Farm";
 var sqlConnection = Env.GetString("SQLConnection") ?? "your-default-sql-connection";
 var mongoConnection = Env.GetString("MongoDBConnection") ?? "mongodb://localhost:27017";
 var dbType = Env.GetString("DatabaseType") ?? "mongo";
 
-// Tạo kết nối MongoDB
+// Create MongoDB connection
 var mongoClient = new MongoClient(mongoConnection);
 var mongoDatabase = mongoClient.GetDatabase(databaseName);
 
-// Đăng ký MongoDB Client nếu dùng Mongo
+// Register MongoDB Client if using Mongo
 if (dbType == "mongo")
 {
     builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(mongoConnection));
@@ -37,21 +38,36 @@ if (dbType == "mongo")
     });
 }
 
-// Đăng ký DatabaseAdapterFactory
+// Register DatabaseAdapterFactory
 builder.Services.AddSingleton(new DatabaseAdapterFactory(mongoDatabase, sqlConnection, dbType));
 
-// Đăng ký IDatabaseAdapter<> theo cách Open Generic
+// Register IDatabaseAdapter<> as Open Generic
 builder.Services.AddScoped(typeof(IDatabaseAdapter<>), typeof(MongoDbAdapter<>));
 builder.Services.AddScoped(typeof(IDatabaseAdapter<>), typeof(SqlDbAdapter<>));
 
-// Đăng ký các service khác
+// Register other services
 builder.Services.AddSingleton<TokenBlacklistService>();
-builder.Services.AddSingleton<IMQTTService, MQTTService>();
-builder.Services.AddHostedService<MQTTService>();
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddSingleton<IEnvironmentRepository, EnvironmentRepository>();
-builder.Services.AddSingleton<IEnvironmentService, EnvironmentService>();
-// Cấu hình JWT
+builder.Services.AddScoped<IEnvironmentRepository, EnvironmentRepository>();
+builder.Services.AddScoped<IEnvironmentService, EnvironmentService>();
+
+builder.Services.AddScoped<IAreaRepository, AreaRepository>();
+builder.Services.AddScoped<IAreaService, AreaService>();
+
+builder.Services.AddScoped<EnvironmentDataAdapter>();
+
+// Try to register MQTT Service, but catch any errors
+try
+{
+    builder.Services.AddSingleton<IMQTTService, MQTTService>();
+    builder.Services.AddHostedService<MQTTService>();
+    Console.WriteLine("✅ MQTT Service initialized successfully.");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"⚠️ Warning: MQTT Service failed to start. Error: {ex.Message}");
+}
+
+// Configure JWT
 var jwtSecretKey = Encoding.UTF8.GetBytes(Env.GetString("JWT_SecretKey"));
 var issuer = Env.GetString("JWT_Issuer");
 var audience = Env.GetString("JWT_Audience");
@@ -73,23 +89,41 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// Đăng ký repository và service
-builder.Services.AddScoped(typeof(GenericRepository<>));
+// Register repository and service
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
-// Thêm AutoMapper
+// Add AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
 
-// Đăng ký API Controller và Swagger
+// Register API Controller and Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Tạo app
+var FE_URL = Env.GetString("FE_URL");
+
+builder.Services.AddSignalR();
+builder.Services.AddCors(otp =>
+{
+    otp.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins(FE_URL)
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+    otp.AddPolicy("AllowAll",
+        policy => policy.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader());
+});
+
+// Build the app
 var app = builder.Build();
 
-// Cấu hình middleware
+// Configure middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -101,6 +135,10 @@ app.UseMiddleware<BlacklistMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-
-// Chạy ứng dụng
+app.UseCors("AllowAll");
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapHub<MyHub>("/ws");
+});
 app.Run();

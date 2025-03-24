@@ -1,0 +1,56 @@
+{
+  "dataText": [
+    {
+      "card": "1",
+      "title": "Nhiệt độ",
+      "count": 30,
+      "previousValue": 32,
+      "percentage": 6.25,
+      "color": "warning",
+      "extra": "example"
+    },
+    {
+      "card": "2",
+      "title": "Độ ẩm",
+      "count": 50,
+      "previousValue": 45,
+      "percentage": 11.11,
+      "color": "warning",
+      "extra": "example"
+    },
+    {
+      "card": "3",
+      "title": "Ánh sáng",
+      "count": 70,
+      "previousValue": 65,
+      "percentage": 7.69,
+      "color": "primary",
+      "extra": "example"
+    },
+    {
+      "card": "4",
+      "title": "Nhiệt độ",
+      "count": 30,
+      "previousValue": 35,
+      "percentage": 14.29,
+      "color": "warning",
+      "extra": "example"
+    }
+  ],
+
+  "area": [
+    { "id": "KV1", "name": "Khu Vực 1" },
+    { "id": "KV2", "name": "Khu Vực 2" },
+    { "id": "KV3", "name": "Khu Vực 3" },
+    { "id": "KV4", "name": "Khu Vực 4" },
+    { "id": "KV5", "name": "Khu Vực 5" }
+  ],
+  
+ "weather": [
+  { "id": "nhietdo", "name": "Nhiệt độ", "icon": "🌡️", "description": "Đo nhiệt độ môi trường", "unit": "°C" },
+  { "id": "doam", "name": "Độ Ẩm", "icon": "💧", "description": "Đo độ ẩm không khí", "unit": "%" },
+  { "id": "anhsang", "name": "Ánh Sáng", "icon": "☀️", "description": "Đo cường độ ánh sáng", "unit": "lux" },
+  { "id": "khongkhi", "name": "Không Khí", "icon": "🌬️", "description": "Đo chất lượng không khí", "unit": "ppm" }
+]
+
+}

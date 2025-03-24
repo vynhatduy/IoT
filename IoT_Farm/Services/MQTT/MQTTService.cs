@@ -8,14 +8,14 @@ namespace IoT_Farm.Services.MQTT
 {
     public class MQTTService : IMQTTService, IHostedService
     {
+        private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<MQTTService> _logger;
         private readonly IMqttClient _mqttClient;
         private readonly MqttClientOptions _mqttOptions;
-        private readonly IEnvironmentService _environmentService;
-        public MQTTService(ILogger<MQTTService> logger, IEnvironmentService environmentService)
+        public MQTTService(ILogger<MQTTService> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
-            _environmentService = environmentService;
+            _serviceProvider = serviceProvider;
 
             Env.Load();
             var mqttTopic = Env.GetString("MQTT_TOPIC");
@@ -76,7 +76,18 @@ namespace IoT_Farm.Services.MQTT
         public async Task StartAsync(CancellationToken cancellationToken)
         {
             _logger.LogInformation("Starting MQTT service...");
-            await _mqttClient.ConnectAsync(_mqttOptions, cancellationToken);
+            try
+            {
+                using var timeoutCts = new CancellationTokenSource(TimeSpan.FromSeconds(10));
+                using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, timeoutCts.Token);
+
+                await _mqttClient.ConnectAsync(_mqttOptions, linkedCts.Token);
+                _logger.LogInformation("MQTT service started successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to start MQTT service: {ex.Message}");
+            }
         }
 
         public async Task StopAsync(CancellationToken cancellationToken)
@@ -106,6 +117,9 @@ namespace IoT_Farm.Services.MQTT
         {
             try
             {
+                using var scope = _serviceProvider.CreateScope();
+                var environmentService = scope.ServiceProvider.GetRequiredService<IEnvironmentService>();
+
                 string topic = e.ApplicationMessage.Topic;
                 string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
 
@@ -113,15 +127,17 @@ namespace IoT_Farm.Services.MQTT
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
                 var data = JsonSerializer.Deserialize<EnvironmentData>(payload, options);
-                _logger.LogInformation($"[SAVE DATA] data environment {data}");
                 if (data != null)
                 {
-                    await _environmentService.SaveEnvironmentData(data);
-                    _logger.LogInformation($"Saved data from {topic} to MongoDB.");
-                }
-                else
-                {
-                    _logger.LogWarning("Received invalid JSON format.");
+                    bool isSaved = await environmentService.SaveEnvironmentData(data);
+                    if (isSaved)
+                    {
+                        _logger.LogInformation($"Saved data from {topic} to MongoDB.");
+                    }
+                    else
+                    {
+                        _logger.LogError($"Failed to save data from {topic} to MongoDB.");
+                    }
                 }
             }
             catch (Exception ex)

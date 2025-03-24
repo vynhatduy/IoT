@@ -1,0 +1,51 @@
+# Visual Studio & ASP.NET Core
+.vscode/
+*.vs/
+*.user
+*.suo
+*.sln.cache
+*.ncb
+*.dbmdl
+*.VC.db
+obj/
+bin/
+out/
+debug/
+release/
+TestResults/
+
+# Build
+*.exe
+*.dll
+*.pdb
+*.log
+*.cache
+*.csproj.user
+*.csproj.filters
+*.nuget.props
+*.nuget.targets
+project.lock.json
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+
+# Configuration
+appsettings*.json
+secrets.json
+.env
+
+# Database
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# Logs
+logs/
+*.log
+
+# IDE & OS
+*.DS_Store
+Thumbs.db
