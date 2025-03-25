@@ -26,15 +26,6 @@ const MainRoutes = {
       path: '/',
       element: <DashboardDefaults />
     },
-    // {
-    //   path: 'dashboard',
-    //   children: [
-    //     {
-    //       path: 'default',
-    //       element: <DashboardDefault />
-    //     }
-    //   ]
-    // },
     {
       path: '/navigation',
       children: [

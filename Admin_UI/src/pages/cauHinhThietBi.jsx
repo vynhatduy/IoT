@@ -9,10 +9,8 @@ const cauHinhThietBi = () => {
     <Box>
       <Typography>CAU HINH THIET BI</Typography>
       <StyleBackground>
-        {/* <CreateConfig> */}
         <CreateButtons />
         <TableComponent />
-        {/* </CreateConfig> */}
       </StyleBackground>
     </Box>
   );

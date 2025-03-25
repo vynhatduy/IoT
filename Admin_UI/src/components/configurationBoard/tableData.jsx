@@ -45,8 +45,7 @@ const TableComponent = () => {
     }
   ];
 
-  const handleClick = (event) =>{
-    console.log('Nhấn chuột', event)
+  const handleClick = () =>{
     alert("Đang phát triển")
   };
   return (

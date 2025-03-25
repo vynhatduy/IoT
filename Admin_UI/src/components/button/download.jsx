@@ -15,14 +15,13 @@ export const DownloadButtons = ({ onClick }) => {
 };
 
 export const handleButtonClick = (event) => {
-  console.log(" Button clicked!", event);
   alert("Đang phát triển");
 };
 
 // Component button
 export const CreateButtons = ({ onClick = handleButtonClick }) => {
   return (
-    <Stack direction="row" sx={{ width: "600px", height: 50 }}>
+    <Stack direction="row" sx={{ height: 50 }}>
       <Button variant="contained" onClick={onClick} sx={{ width: 150 }}>
         Tạo cấu hình
       </Button>

@@ -27,9 +27,9 @@ const NAVIGATION = [
 function CustomPageToolbar({ status }) {
   return (
     <PageHeaderToolbar>
-      <p>Current status: {status}</p>
+      <p>Trạng thái hiện tại: {status}</p>
       <Button startIcon={<FileDownloadIcon />} color="inherit">
-        Export
+        Xuất
       </Button>
 
       <DateRangePicker

@@ -6,7 +6,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 const CustomDatePicker = ({ label, value, onChange }) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker label={label} value={value} onChange={onChange} />
+      <DatePicker size={{ xs: 12, md: 7, lg: 12 }} label={label} value={value} onChange={onChange} />
     </LocalizationProvider>
   );
 };
