@@ -50,7 +50,7 @@ export class MapPage implements OnInit {
 
     this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-    // Tạo các marker
+    // Create markers
     this.areas.forEach((area) => {
       this.addMarker(
         area.latitude,
