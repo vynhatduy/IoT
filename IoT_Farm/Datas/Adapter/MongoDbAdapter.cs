@@ -72,5 +72,6 @@ namespace IoT_Farm.Datas.Adapter
         {
             return await _collection.Find(filter).FirstOrDefaultAsync();
         }
+
     }
 }
