@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import API from './useAPI';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -9,12 +9,12 @@ export default function useDailyEnvironmentData(date, area) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!date || !area) return; // Nếu không có `date` hoặc `area` thì không fetch
+    if (!date || !area) return;
 
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`${API_URL}environment/dataByDate`, {
+        const response = await API.get(`environment/dataByDate`, {
           params: { date, area }
         });
         setData(response.data);
