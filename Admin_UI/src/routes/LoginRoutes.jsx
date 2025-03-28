@@ -1,31 +1,27 @@
 import { lazy } from 'react';
+import { Navigate } from 'react-router-dom';
 
-// project imports
-import AuthLayout from '../layout/Auth';
+// Import layout dành cho authentication (nếu có)
 import Loadable from '../components/Loadable';
 
-// jwt auth
+// Lazy load pages
 const LoginPage = Loadable(lazy(() => import('../components/auth-accout/Login')));
 const RegisterPage = Loadable(lazy(() => import('../components/auth-accout/Register')));
-
-// ==============================|| AUTH ROUTING ||============================== //
 
 const LoginRoutes = {
   path: '/',
   children: [
     {
-      path: '/',
-      element: <AuthLayout />,
-      children: [
-        {
-          path: '/login',
-          element: <LoginPage />
-        },
-        {
-          path: '/register',
-          element: <RegisterPage />
-        }
-      ]
+      path: 'login',
+      element: <LoginPage />
+    },
+    {
+      path: 'register',
+      element: <RegisterPage />
+    },
+    {
+      path: '*',
+      element: <Navigate to="/login" replace />
     }
   ]
 };
