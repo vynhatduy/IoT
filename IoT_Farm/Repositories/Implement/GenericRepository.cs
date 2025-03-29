@@ -29,7 +29,6 @@ namespace IoT_Farm.Repositories.Implement
             await _databaseAdapter.UpdateAsync(id, entity);
             return true;
         }
-
         public async Task<bool> DeleteAsync(string id)
         {
             var existingEntity = await _databaseAdapter.GetByIdAsync(id);

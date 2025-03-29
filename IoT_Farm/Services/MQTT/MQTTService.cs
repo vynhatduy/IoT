@@ -4,6 +4,7 @@ using IoT_Farm.Services.Interface;
 using MQTTnet;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 namespace IoT_Farm.Services.MQTT
 {
     public class MQTTService : IMQTTService, IHostedService
@@ -124,9 +125,17 @@ namespace IoT_Farm.Services.MQTT
                 string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
 
                 _logger.LogInformation($"[MQTT RECEIVED] Topic: {topic} | Payload: {payload}");
-                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
+                // Regex kiểm tra topic có dạng "KhuVuc/KV000-KV009/data"
+                if (!Regex.IsMatch(topic, @"^KhuVuc/KV00[0-9]/data$"))
+                {
+                    _logger.LogWarning($"Ignored topic: {topic}");
+                    return;
+                }
+
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                 var data = JsonSerializer.Deserialize<EnvironmentData>(payload, options);
+
                 if (data != null)
                 {
                     bool isSaved = await environmentService.SaveEnvironmentData(data);
@@ -145,5 +154,35 @@ namespace IoT_Farm.Services.MQTT
                 _logger.LogError($"Error processing MQTT message: {ex.Message}");
             }
         }
+        public async Task PublishAsync(string topic, string message)
+        {
+
+            var payload = new MqttApplicationMessageBuilder()
+                .WithTopic(topic)
+                .WithPayload(message)
+                .WithQualityOfServiceLevel(MQTTnet.Protocol.MqttQualityOfServiceLevel.AtLeastOnce)
+                .WithRetainFlag()
+                .Build();
+
+            if (!_mqttClient.IsConnected)
+            {
+                await StartAsync(CancellationToken.None);
+
+                if (!_mqttClient.IsConnected)
+                {
+                    throw new Exception("MQTT Client is still not connected after retry.");
+                }
+            }
+
+            try
+            {
+                await _mqttClient.PublishAsync(payload);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Failed to publish message: {ex.Message}");
+            }
+        }
+
     }
 }

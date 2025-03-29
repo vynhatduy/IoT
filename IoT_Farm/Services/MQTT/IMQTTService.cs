@@ -7,5 +7,6 @@ namespace IoT_Farm.Services.MQTT
         Task StartAsync(CancellationToken cancellationToken);
         Task StopAsync(CancellationToken cancellationToken);
         Task HandleReceivedMessage(MqttApplicationMessageReceivedEventArgs e);
+        Task PublishAsync(string topic, string message);
     }
 }

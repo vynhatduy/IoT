@@ -9,8 +9,8 @@ using IoT_Farm.Services.MQTT;
 using IoT_Farm.Services.Token;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -68,9 +68,10 @@ catch (Exception ex)
 }
 
 // Configure JWT
-var jwtSecretKey = Encoding.UTF8.GetBytes(Env.GetString("JWT_SecretKey"));
+var secretKey = Convert.FromBase64String(Env.GetString("JWT_SecretKey"));
 var issuer = Env.GetString("JWT_Issuer");
 var audience = Env.GetString("JWT_Audience");
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -83,7 +84,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = issuer,
             ValidAudience = audience,
-            IssuerSigningKey = new SymmetricSecurityKey(jwtSecretKey)
+            IssuerSigningKey = new SymmetricSecurityKey(secretKey),
+            ClockSkew = TimeSpan.Zero
+
         };
     });
 
@@ -91,9 +94,16 @@ builder.Services.AddAuthorization();
 
 // Register repository and service
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IJwtService, JwtService>();
+
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
+
+builder.Services.AddScoped<IDeviceControlRepository, DeviceControlRepository>();
+builder.Services.AddScoped<IDeviceControlService, DeviceControlService>();
 // Add AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
 
@@ -120,6 +130,41 @@ builder.Services.AddCors(otp =>
                        .AllowAnyHeader());
 });
 
+// login bear token in swagger
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "IoT Farm API",
+        Version = "v1"
+    });
+
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        In = ParameterLocation.Header,
+        Description = "Nhập token theo format: Bearer {your_token}"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference=new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
+});
+
+
 // Build the app
 var app = builder.Build();
 
@@ -131,14 +176,22 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseMiddleware<BlacklistMiddleware>();
+
+app.UseRouting();
+
+app.UseCors("AllowAll");
+
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers();
-app.UseCors("AllowAll");
-app.UseRouting();
+
+app.UseMiddleware<BlacklistMiddleware>();
 app.UseEndpoints(endpoints =>
 {
+    endpoints.MapControllers();
     endpoints.MapHub<MyHub>("/ws");
 });
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.Run();

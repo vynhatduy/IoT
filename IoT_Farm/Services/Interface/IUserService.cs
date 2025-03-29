@@ -12,5 +12,8 @@ namespace IoT_Farm.Services.Interface
         Task<ResultModel> CreateAdminAsync(UserRequestModel model);
         Task<ResultModel> UpdateAsync(string id, UserRequestModel model);
         Task<ResultModel> DeleteAsync(string id);
+        Task<ResultModel> Login(LoginRequestModel model);
+        Task<ResultModel> RefreshToken(string accessToken, string refreshToken);
+
     }
 }
