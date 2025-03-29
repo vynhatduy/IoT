@@ -22,7 +22,7 @@ export default function SelectArea({ onChange }) {
   if (error) return <Alert severity="error">Lỗi tải dữ liệu: {error}</Alert>;
 
   return (
-    <FormControl sx={{ minWidth: 120 }}>
+    <FormControl fullWidth sx={{ minWidth: 120 }}>
       <InputLabel id="select-area-label">Khu vực</InputLabel>
       <Select labelId="select-area-label" id="select-area" value={area} onChange={handleChange} label="Khu vực">
         {areas.map((item) => (

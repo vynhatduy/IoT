@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 // project imports
-import MainRoutes from './Nav';
-import LoginRoutes from './LoginRoutes';
+import MainRoutes from './nav';
+import LoginRoutes from './loginRoutes';
 
 // ==============================|| ROUTING RENDER ||============================== //
 

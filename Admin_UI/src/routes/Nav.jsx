@@ -26,15 +26,6 @@ const MainRoutes = {
       path: '/',
       element: <DashboardDefaults />
     },
-    // {
-    //   path: 'dashboard',
-    //   children: [
-    //     {
-    //       path: 'default',
-    //       element: <DashboardDefault />
-    //     }
-    //   ]
-    // },
     {
       path: '/navigation',
       children: [
@@ -62,10 +53,6 @@ const MainRoutes = {
         {
           path: 'quan-ly-thiet-bi',
           element: <QuanLyThietBi />
-        },
-        {
-          path: 'thong-so-moi-truong',
-          element: <ThongSoMoiTruong />
         },
         {
           path: 'thong-bao-canh-bao',

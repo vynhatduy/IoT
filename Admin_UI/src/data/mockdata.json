@@ -68,5 +68,12 @@
         "THAO TÁC"
       ]
     }
-  ]
+  ],
+  "device": [
+  { "id": "den", "name": "Đèn", "icon": "💡", "description": "Điều khiển đèn chiếu sáng", "unit": "W" },
+  { "id": "maysuoi", "name": "Máy Sưởi", "icon": "🔥", "description": "Điều khiển máy sưởi", "unit": "W" },
+  { "id": "quat", "name": "Quạt", "icon": "🌀", "description": "Điều khiển quạt gió", "unit": "RPM" },
+  { "id": "maybom", "name": "Máy Bơm", "icon": "💧", "description": "Điều khiển máy bơm nước", "unit": "L/min" }
+]
+
 }
