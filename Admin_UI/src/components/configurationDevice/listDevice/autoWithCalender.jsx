@@ -11,7 +11,7 @@ import {
   TextField 
 } from '@mui/material';
 
-const TableComponent = () => {
+const ListCalender = () => {
   const headers = [
     'STT',
     'TÊN',
@@ -136,4 +136,4 @@ const TableComponent = () => {
   );
 };
 
-export default TableComponent;
+export default ListCalender;

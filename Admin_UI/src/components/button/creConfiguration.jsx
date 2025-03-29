@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Stack, Button, Dialog } from '@mui/material';
-import Index from '../configurationDevice/index';
+// import Index from '../configurationDevice/newConfig/weather';
+import Index from '../configurationDevice/newConfig';
 const CreateButtonConfig = () => {
   const [open, setOpen] = useState(false);
   const handOpend = () => setOpen(true);
