@@ -1,0 +1,2752 @@
+[{
+  "_id": "5367984652748",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 25.6,
+  "Humidity": 58,
+  "Brightness": 83,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T00:00:00.000Z"
+  }
+},
+{
+  "_id": "6784921356083",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.1,
+  "Humidity": 75,
+  "Brightness": 67,
+  "AirQuality": 185,
+  "Timestamp": {
+    "$date": "2025-03-24T01:00:00.000Z"
+  }
+},
+{
+  "_id": "3490526718925",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.2,
+  "Humidity": 72,
+  "Brightness": 45,
+  "AirQuality": 176,
+  "Timestamp": {
+    "$date": "2025-03-24T02:00:00.000Z"
+  }
+},
+{
+  "_id": "8793452167034",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 24.3,
+  "Humidity": 61,
+  "Brightness": 92,
+  "AirQuality": 123,
+  "Timestamp": {
+    "$date": "2025-03-24T03:00:00.000Z"
+  }
+},
+{
+  "_id": "1259087463459",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 22.7,
+  "Humidity": 69,
+  "Brightness": 58,
+  "AirQuality": 140,
+  "Timestamp": {
+    "$date": "2025-03-24T04:00:00.000Z"
+  }
+},
+{
+  "_id": "3762158496702",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 21.8,
+  "Humidity": 74,
+  "Brightness": 40,
+  "AirQuality": 132,
+  "Timestamp": {
+    "$date": "2025-03-24T05:00:00.000Z"
+  }
+},
+{
+  "_id": "6590281435792",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 24.1,
+  "Humidity": 67,
+  "Brightness": 30,
+  "AirQuality": 127,
+  "Timestamp": {
+    "$date": "2025-03-24T06:00:00.000Z"
+  }
+},
+{
+  "_id": "7589023471654",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.3,
+  "Humidity": 70,
+  "Brightness": 60,
+  "AirQuality": 144,
+  "Timestamp": {
+    "$date": "2025-03-24T07:00:00.000Z"
+  }
+},
+{
+  "_id": "9845016372851",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 65,
+  "Brightness": 90,
+  "AirQuality": 162,
+  "Timestamp": {
+    "$date": "2025-03-24T08:00:00.000Z"
+  }
+},
+{
+  "_id": "5628374019265",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.5,
+  "Humidity": 63,
+  "Brightness": 95,
+  "AirQuality": 174,
+  "Timestamp": {
+    "$date": "2025-03-24T09:00:00.000Z"
+  }
+},
+{
+  "_id": "7628195046723",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 60,
+  "Brightness": 85,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T10:00:00.000Z"
+  }
+},
+{
+  "_id": "4520983765891",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.5,
+  "Humidity": 72,
+  "Brightness": 70,
+  "AirQuality": 150,
+  "Timestamp": {
+    "$date": "2025-03-24T11:00:00.000Z"
+  }
+},
+{
+  "_id": "3021845769832",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 26.1,
+  "Humidity": 74,
+  "Brightness": 65,
+  "AirQuality": 142,
+  "Timestamp": {
+    "$date": "2025-03-24T12:00:00.000Z"
+  }
+},
+{
+  "_id": "5691032846751",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 24.7,
+  "Humidity": 76,
+  "Brightness": 50,
+  "AirQuality": 136,
+  "Timestamp": {
+    "$date": "2025-03-24T13:00:00.000Z"
+  }
+},
+{
+  "_id": "8703291465872",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 22.9,
+  "Humidity": 78,
+  "Brightness": 42,
+  "AirQuality": 130,
+  "Timestamp": {
+    "$date": "2025-03-24T14:00:00.000Z"
+  }
+},
+{
+  "_id": "1098273654892",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 21.6,
+  "Humidity": 80,
+  "Brightness": 35,
+  "AirQuality": 125,
+  "Timestamp": {
+    "$date": "2025-03-24T15:00:00.000Z"
+  }
+},
+{
+  "_id": "3462810976523",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 20.9,
+  "Humidity": 82,
+  "Brightness": 30,
+  "AirQuality": 120,
+  "Timestamp": {
+    "$date": "2025-03-24T16:00:00.000Z"
+  }
+},
+{
+  "_id": "6725981345092",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 22.4,
+  "Humidity": 79,
+  "Brightness": 28,
+  "AirQuality": 118,
+  "Timestamp": {
+    "$date": "2025-03-24T17:00:00.000Z"
+  }
+},
+{
+  "_id": "5098372164589",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 24.5,
+  "Humidity": 75,
+  "Brightness": 40,
+  "AirQuality": 122,
+  "Timestamp": {
+    "$date": "2025-03-24T18:00:00.000Z"
+  }
+},
+{
+  "_id": "7864023856123",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 26.2,
+  "Humidity": 72,
+  "Brightness": 55,
+  "AirQuality": 130,
+  "Timestamp": {
+    "$date": "2025-03-24T19:00:00.000Z"
+  }
+},
+{
+  "_id": "9082371658432",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.7,
+  "Humidity": 70,
+  "Brightness": 65,
+  "AirQuality": 138,
+  "Timestamp": {
+    "$date": "2025-03-24T20:00:00.000Z"
+  }
+},
+{
+  "_id": "3725981023674",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.4,
+  "Humidity": 68,
+  "Brightness": 72,
+  "AirQuality": 144,
+  "Timestamp": {
+    "$date": "2025-03-24T21:00:00.000Z"
+  }
+},
+{
+  "_id": "7590832146753",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 26.9,
+  "Humidity": 65,
+  "Brightness": 80,
+  "AirQuality": 150,
+  "Timestamp": {
+    "$date": "2025-03-24T22:00:00.000Z"
+  }
+},
+{
+  "_id": "8503947261852",
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 25.3,
+  "Humidity": 62,
+  "Brightness": 88,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T23:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f4c77c6f8471c557d18f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 296,
+  "Timestamp": {
+    "$date": "2025-03-24T05:59:35.683Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f5037c6f8471c557d190"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 266,
+  "Timestamp": {
+    "$date": "2025-03-24T06:00:35.699Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f53f7c6f8471c557d191"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 249,
+  "Timestamp": {
+    "$date": "2025-03-24T06:01:35.700Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f57b7c6f8471c557d192"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 237,
+  "Timestamp": {
+    "$date": "2025-03-24T06:02:35.682Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f5b77c6f8471c557d1e5"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 227,
+  "Timestamp": {
+    "$date": "2025-03-24T06:03:35.657Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f5f37c6f8471c557d203"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 220,
+  "Timestamp": {
+    "$date": "2025-03-24T06:04:35.664Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f62f7c6f8471c557d204"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 213,
+  "Timestamp": {
+    "$date": "2025-03-24T06:05:35.658Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f66b5770dfa410f2b4aa"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 204,
+  "Timestamp": {
+    "$date": "2025-03-24T06:06:35.691Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f6a75770dfa410f2b4cb"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 26.8,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 199,
+  "Timestamp": {
+    "$date": "2025-03-24T06:07:35.679Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f7970b34c964427e4d0a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 35,
+  "Brightness": 0,
+  "AirQuality": 184,
+  "Timestamp": {
+    "$date": "2025-03-24T06:11:35.793Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f7d30b34c964427e4d0b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 182,
+  "Timestamp": {
+    "$date": "2025-03-24T06:12:35.747Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f80f0b34c964427e4d0c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 179,
+  "Timestamp": {
+    "$date": "2025-03-24T06:13:35.735Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f84b0b34c964427e4d0d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 177,
+  "Timestamp": {
+    "$date": "2025-03-24T06:14:35.756Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f8870b34c964427e4d0e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 175,
+  "Timestamp": {
+    "$date": "2025-03-24T06:15:35.755Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f8c30b34c964427e4d0f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 173,
+  "Timestamp": {
+    "$date": "2025-03-24T06:16:35.755Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f8ff0b34c964427e4d10"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 173,
+  "Timestamp": {
+    "$date": "2025-03-24T06:17:35.737Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f93b0b34c964427e4d11"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 173,
+  "Timestamp": {
+    "$date": "2025-03-24T06:18:35.741Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f9770b34c964427e4d12"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 172,
+  "Timestamp": {
+    "$date": "2025-03-24T06:19:35.753Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f9b30b34c964427e4d13"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 170,
+  "Timestamp": {
+    "$date": "2025-03-24T06:20:35.799Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0f9ef0b34c964427e4d14"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 169,
+  "Timestamp": {
+    "$date": "2025-03-24T06:21:35.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fa2b0b34c964427e4d15"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 168,
+  "Timestamp": {
+    "$date": "2025-03-24T06:22:35.763Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fa670b34c964427e4d16"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 166,
+  "Timestamp": {
+    "$date": "2025-03-24T06:23:35.953Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0faa30b34c964427e4d17"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 166,
+  "Timestamp": {
+    "$date": "2025-03-24T06:24:35.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fadf0b34c964427e4d18"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 166,
+  "Timestamp": {
+    "$date": "2025-03-24T06:25:35.781Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fb1b0b34c964427e4d19"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 166,
+  "Timestamp": {
+    "$date": "2025-03-24T06:26:35.744Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fb570b34c964427e4d1a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 165,
+  "Timestamp": {
+    "$date": "2025-03-24T06:27:35.928Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fb930b34c964427e4d1b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 165,
+  "Timestamp": {
+    "$date": "2025-03-24T06:28:35.825Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fbcf0b34c964427e4d1c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T06:29:35.857Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fc0b0b34c964427e4d1d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 163,
+  "Timestamp": {
+    "$date": "2025-03-24T06:30:35.747Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fc470b34c964427e4d1e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 164,
+  "Timestamp": {
+    "$date": "2025-03-24T06:31:35.896Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fc840b34c964427e4d1f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.1,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T06:32:36.261Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fcc00b34c964427e4d20"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 161,
+  "Timestamp": {
+    "$date": "2025-03-24T06:33:36.043Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fcfc0b34c964427e4d21"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.2,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 161,
+  "Timestamp": {
+    "$date": "2025-03-24T06:34:36.052Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fd370b34c964427e4d22"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T06:35:35.916Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fd730b34c964427e4d23"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T06:36:35.912Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fdaf0b34c964427e4d24"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:37:35.917Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fdeb0b34c964427e4d25"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:38:35.938Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fe270b34c964427e4d26"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:39:35.934Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fe630b34c964427e4d65"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T06:40:35.923Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fe9f0b34c964427e4d66"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:41:35.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0fedb0b34c964427e4da7"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:42:35.937Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0ff180b34c964427e4da8"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:43:36.063Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0ff530b34c964427e4deb"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:44:35.922Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0ff8f0b34c964427e4dec"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:45:35.949Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e0ffcb0b34c964427e4ded"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:46:35.947Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e100080b34c964427e4dee"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:47:36.046Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e100430b34c964427e4def"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 27.6,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T06:48:35.926Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1007f0b34c964427e4df0"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:49:35.939Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e100bb0b34c964427e4df1"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T06:50:35.908Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e100f70b34c964427e4df2"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 152,
+  "Timestamp": {
+    "$date": "2025-03-24T06:51:35.924Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e101340b34c964427e4df3"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T06:52:36.001Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1016f0b34c964427e4df4"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T06:53:35.994Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e101ab0b34c964427e4df5"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T06:54:35.930Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e101e70b34c964427e4df6"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T06:55:35.971Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e102230b34c964427e4df7"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T06:56:35.929Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1025f0b34c964427e4df8"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T06:57:35.934Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1029b0b34c964427e4e99"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T06:58:35.945Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e102d80b34c964427e4e9a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T06:59:36.077Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e103130b34c964427e4e9b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:00:35.964Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1034f0b34c964427e4e9c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:01:35.939Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1038c0b34c964427e4e9d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:02:36.094Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e103c70b34c964427e4e9e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:03:35.917Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e104030b34c964427e4e9f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:04:35.939Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e104400b34c964427e4ea0"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:05:36.131Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1047c0b34c964427e4ef9"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:06:36.080Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e104b70b34c964427e4efa"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:07:35.969Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e104f40b34c964427e4efb"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:08:36.085Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e105300b34c964427e4efc"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:09:36.016Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1056b0b34c964427e4efd"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:10:35.956Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e105a70b34c964427e4efe"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:11:35.980Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e105e40b34c964427e4eff"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:12:36.074Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e106200b34c964427e4f00"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:13:36.079Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1065b0b34c964427e4f01"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T07:14:35.971Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e106970b34c964427e4f02"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:15:35.969Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e106d40b34c964427e4f65"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 29,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:16:36.024Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1070f0b34c964427e4f66"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 30,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:17:35.983Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1074b0b34c964427e4fcb"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:18:35.996Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e107870b34c964427e4fcc"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:19:35.952Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e107c30b34c964427e4fcd"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:20:35.957Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e107ff0b34c964427e4fce"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:21:35.996Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1083b0b34c964427e4fcf"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.5,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T07:22:35.955Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e108770b34c964427e4fd0"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:23:35.955Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e108b40b34c964427e4fd1"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:24:36.037Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e108f00b34c964427e4fd2"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:25:36.136Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1092b0b34c964427e4fd3"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:26:35.975Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e109670b34c964427e4fd4"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:27:35.982Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e109a30b34c964427e4fd5"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:28:35.957Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e109df0b34c964427e4fd6"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:29:35.944Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10a1c0b34c964427e4fd7"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:30:36.098Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10a570b34c964427e4fd8"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:31:35.960Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10a930b34c964427e4fd9"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:32:35.967Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10acf0b34c964427e4fda"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:33:35.961Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10b0b0b34c964427e4fdb"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:34:35.969Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10b470b34c964427e4fdc"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 28.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:35:35.968Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10b830b34c964427e4fdd"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:36:35.964Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10bbf0b34c964427e4fde"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:37:35.968Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10bfb0b34c964427e4fdf"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:38:35.958Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10c380b34c964427e4fe0"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:39:36.074Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10c740b34c964427e4fe1"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:40:36.009Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10ecc713b792fb0a4498b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:50:36.130Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10f07713b792fb0a4498c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T07:51:35.972Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10f43713b792fb0a4498d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T07:52:35.982Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10f7f713b792fb0a4498e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T07:53:35.980Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10fbb713b792fb0a4498f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.3,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T07:54:35.980Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e10ff7713b792fb0a44990"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T07:55:35.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11033713b792fb0a44991"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 165,
+  "Timestamp": {
+    "$date": "2025-03-24T07:56:35.955Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1106f713b792fb0a44992"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 50,
+  "Brightness": 0,
+  "AirQuality": 161,
+  "Timestamp": {
+    "$date": "2025-03-24T07:57:35.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e110ab713b792fb0a44993"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 39,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T07:58:35.967Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e110e7713b792fb0a44994"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 40,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T07:59:35.941Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11123713b792fb0a44995"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 39,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:00:35.964Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1115f713b792fb0a44a1c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 37,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:01:35.941Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1119b713b792fb0a44a1d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 37,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:02:35.966Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e111d8713b792fb0a44a1e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 34,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:03:36.001Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11213713b792fb0a44a1f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:04:35.965Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11250713b792fb0a44a20"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:05:36.005Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1128b713b792fb0a44a21"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:06:35.968Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e112c8713b792fb0a44a22"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:07:36.046Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11303713b792fb0a44a23"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:08:35.968Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1133f713b792fb0a44a24"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:09:35.966Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1137b713b792fb0a44a25"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:10:35.986Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e113b7713b792fb0a44a26"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:11:35.981Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e113f4713b792fb0a44a27"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:12:36.072Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11430713b792fb0a44a28"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.1,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:13:36.012Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1146c713b792fb0a44a29"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T08:14:36.211Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e114a8713b792fb0a44a2a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T08:15:36.156Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e114e4713b792fb0a44a2b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.1,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T08:16:36.027Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11520713b792fb0a44a2c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:17:36.054Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1155c713b792fb0a44a2d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:18:36.042Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11598713b792fb0a44a2e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:19:36.051Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e115d4713b792fb0a44a2f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T08:20:36.068Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11610713b792fb0a44a30"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:21:36.058Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1164c713b792fb0a44a31"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:22:36.146Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11688713b792fb0a44a32"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:23:36.065Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e116c4713b792fb0a44a33"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:24:36.075Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11700713b792fb0a44a34"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:25:36.053Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1173c713b792fb0a44a35"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:26:36.069Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11778713b792fb0a44a36"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:27:36.056Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e117b4713b792fb0a44a37"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:28:36.192Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e117f0713b792fb0a44a38"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:29:36.060Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1182c713b792fb0a44a39"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:30:36.113Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11868713b792fb0a44a3a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:31:36.156Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e118a4713b792fb0a44a3b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 155,
+  "Timestamp": {
+    "$date": "2025-03-24T08:32:36.047Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e118e0713b792fb0a44a3c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 152,
+  "Timestamp": {
+    "$date": "2025-03-24T08:33:36.064Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e1191c713b792fb0a44a3d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:34:36.094Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11958713b792fb0a44a3e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:35:36.042Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11994713b792fb0a44a3f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:36:36.156Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e119d0713b792fb0a44a40"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.9,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:37:36.133Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11a0c713b792fb0a44a41"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:38:36.067Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11a48713b792fb0a44a42"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:39:36.095Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11a84713b792fb0a44a43"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:40:36.071Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11ac0713b792fb0a44a44"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:41:36.131Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11afc713b792fb0a44a45"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T08:42:36.078Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11b38713b792fb0a44a46"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T08:43:36.064Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11b74713b792fb0a44a47"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 33,
+  "Brightness": 0,
+  "AirQuality": 161,
+  "Timestamp": {
+    "$date": "2025-03-24T08:44:36.045Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11bb0713b792fb0a44a48"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:45:36.187Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11bec713b792fb0a44a49"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:46:36.069Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11c28713b792fb0a44a4a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T08:47:36.135Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11c64713b792fb0a44a4b"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T08:48:36.066Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11ca0713b792fb0a44a4c"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 158,
+  "Timestamp": {
+    "$date": "2025-03-24T08:49:36.482Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11cdc713b792fb0a44a4d"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:50:36.310Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11d18713b792fb0a44a4e"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:51:36.354Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11d54713b792fb0a44a4f"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:52:36.313Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11d95713b792fb0a44a50"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:53:41.622Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11dd1713b792fb0a44a51"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:54:41.343Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11e0d713b792fb0a44a52"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 154,
+  "Timestamp": {
+    "$date": "2025-03-24T08:55:41.316Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11e49713b792fb0a44a53"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:56:41.321Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11e85713b792fb0a44a54"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T08:57:41.409Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11ec1713b792fb0a44a55"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:58:41.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11efd713b792fb0a44a56"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T08:59:41.561Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e11f39713b792fb0a44a57"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T09:00:41.446Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e12065713b792fb0a44a58"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T09:05:41.390Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e120a1713b792fb0a44a59"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T09:06:41.427Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e120dd713b792fb0a44a5a"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 159,
+  "Timestamp": {
+    "$date": "2025-03-24T09:07:41.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e12155f06a055d0dfa2247"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 30.2,
+  "Humidity": 31,
+  "Brightness": 0,
+  "AirQuality": 157,
+  "Timestamp": {
+    "$date": "2025-03-24T09:09:41.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e12191f06a055d0dfa2248"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 156,
+  "Timestamp": {
+    "$date": "2025-03-24T09:10:41.377Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e121cdf06a055d0dfa2249"
+  },
+  "DeviceId": "ESP-01A293",
+  "Area": "KV001",
+  "Temperature": 29.8,
+  "Humidity": 32,
+  "Brightness": 0,
+  "AirQuality": 160,
+  "Timestamp": {
+    "$date": "2025-03-24T09:11:41.551Z"
+  }
+}]

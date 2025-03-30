@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Khu vực 1",
+    "location": "KV1",
+    "latitude": 11.954688,
+    "longitude": 108.441553,
+    "description": "Khu vực trồng cà chua"
+  },
+  {
+    "id": 2,
+    "name": "Khu vực 2",
+    "location": "KV2",
+    "latitude": 11.954123,
+    "longitude": 108.442345,
+    "description": "Khu vực trồng dưa leo"
+  },
+  {
+    "id": 3,
+    "name": "Khu vực 3",
+    "location": "KV3",
+    "latitude": 11.953876,
+    "longitude": 108.440987,
+    "description": "Khu vực trồng rau muống"
+  }
+]

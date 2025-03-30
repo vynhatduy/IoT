@@ -1,0 +1,46 @@
+<ion-header [translucent]="true" mode="ios">
+  <ion-toolbar color="primary">
+    <ion-title>Báo cáo cảm biến</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" mode="ios">
+  <ion-card color="success">
+    <ion-card-header><strong>Chọn ngày</strong></ion-card-header>
+    <ion-card-content>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        id="datetime"
+        presentation="date"
+        [value]="currentDate"
+        [max]="currentDate"
+        (ionChange)="dateChanged($event)"
+        [formatOptions]="{
+      date: { day: '2-digit', month: '2-digit', year:'numeric'},
+    }"
+      >
+        <span slot="title">Select Date</span>
+      </ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Biểu đồ Nhiệt độ -->
+  <div class="chart-container">
+    <canvas #temperatureChart></canvas>
+  </div>
+
+  <!-- Biểu đồ Độ ẩm -->
+  <div class="chart-container">
+    <canvas #humidityChart></canvas>
+  </div>
+
+  <!-- Biểu đồ Độ sáng -->
+  <div class="chart-container">
+    <canvas #brightnessChart></canvas>
+  </div>
+</ion-content>

@@ -1,0 +1,29 @@
+# Node modules và build output (chung)
+node_modules/
+dist/
+build/
+
+# File môi trường và log
+.env
+.env.local
+.env.development.local
+.env.production.local
+*.log
+*.cache
+*.tmp
+
+# Hệ điều hành
+.DS_Store
+Thumbs.db
+
+# Lock file của package manager
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Thư mục cá nhân của IDE
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
