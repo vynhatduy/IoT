@@ -11,6 +11,7 @@ dist/
 out/
 .cache/
 *.tsbuildinfo
+.vite/
 
 # Editor & OS
 .idea/

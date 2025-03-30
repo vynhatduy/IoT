@@ -22,7 +22,7 @@ import { Formik } from 'formik';
 import IconButton from '../../components/@extended/IconButton';
 import AnimateButton from '../../components/@extended/AnimateButton';
 
-import { strengthColor, strengthIndicator } from 'utils/password-strength';
+import { strengthColor, strengthIndicator } from '../../utils/password-strength';
 
 // assets
 import EyeOutlined from '@ant-design/icons/EyeOutlined';
