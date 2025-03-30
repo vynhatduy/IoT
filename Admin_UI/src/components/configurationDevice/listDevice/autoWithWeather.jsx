@@ -1,29 +1,8 @@
 import React, { useState } from 'react';
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableContainer, 
-  TableHead, 
-  TableRow, 
-  Paper, 
-  Button, 
-  TextField 
-} from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, TextField } from '@mui/material';
 
 const ListWeather = () => {
-  const headers = [
-    'STT',
-    'TÊN',
-    'LOẠI',
-    'KHU VỰC',
-    'SỐ THIẾT BỊ',
-    'ĐẾN GIÁ TRỊ',
-    'TỪ NGÀY',
-    'ĐẾN NGÀY',
-    'TÌNH TRẠNG',
-    'THAO TÁC'
-  ];
+  const headers = ['STT', 'TÊN', 'LOẠI', 'KHU VỰC', 'SỐ THIẾT BỊ', 'ĐẾN GIÁ TRỊ', 'TỪ NGÀY', 'ĐẾN NGÀY', 'TÌNH TRẠNG', 'THAO TÁC'];
 
   const [data, setData] = useState([
     {
@@ -32,9 +11,8 @@ const ListWeather = () => {
       type: 'Đèn',
       region: 'KV1',
       devices: 5,
-      toValue: 100,
-      fromDate: '01/01/2024',
-      toDate: '01/02/2024',
+      fromDate: '03/30/2025 06:00 AM',
+      toDate: '03/30/2025 01:00 PM',
       status: 'Hoạt động',
       isEditing: false
     },
@@ -44,9 +22,8 @@ const ListWeather = () => {
       type: 'Camera',
       region: 'KV2',
       devices: 3,
-      toValue: 200,
-      fromDate: '02/01/2024',
-      toDate: '02/02/2024',
+      fromDate: '03/30/2025 03:39 PM',
+      toDate: '03/30/2025 06:00 PM',
       status: 'Bảo trì',
       isEditing: false
     }
@@ -79,7 +56,7 @@ const ListWeather = () => {
   };
 
   return (
-    <TableContainer sx={{margin:'0px 0px 0px 0px'}} component={Paper}>  
+    <TableContainer sx={{ margin: '0px 0px 0px 0px' }} component={Paper}>
       <Table aria-label="editable table">
         <TableHead>
           <TableRow>
@@ -94,37 +71,15 @@ const ListWeather = () => {
           {data.map((row, rowIndex) => (
             <TableRow key={rowIndex} hover>
               <TableCell align="center">{row.id}</TableCell>
-              <TableCell>
-                {renderEditableCell(row.name, rowIndex, 'name')}
-              </TableCell>
-              <TableCell>
-                {renderEditableCell(row.type, rowIndex, 'type')}
-              </TableCell>
-              <TableCell>
-                {renderEditableCell(row.region, rowIndex, 'region')}
-              </TableCell>
+              <TableCell>{renderEditableCell(row.name, rowIndex, 'name')}</TableCell>
+              <TableCell>{renderEditableCell(row.type, rowIndex, 'type')}</TableCell>
+              <TableCell>{renderEditableCell(row.region, rowIndex, 'region')}</TableCell>
+              <TableCell align="center">{renderEditableCell(row.devices, rowIndex, 'devices')}</TableCell>
+              <TableCell align="center">{renderEditableCell(row.fromDate, rowIndex, 'fromDate')}</TableCell>
+              <TableCell align="center">{renderEditableCell(row.toDate, rowIndex, 'toDate')}</TableCell>
+              <TableCell align="center">{renderEditableCell(row.status, rowIndex, 'status')}</TableCell>
               <TableCell align="center">
-                {renderEditableCell(row.devices, rowIndex, 'devices')}
-              
-              </TableCell>
-              <TableCell align="center">
-                {renderEditableCell(row.toValue, rowIndex, 'toValue')}
-              </TableCell>
-              <TableCell align="center">
-                {renderEditableCell(row.fromDate, rowIndex, 'fromDate')}
-              </TableCell>
-              <TableCell align="center">
-                {renderEditableCell(row.toDate, rowIndex, 'toDate')}
-              </TableCell>
-              <TableCell align="center">
-                {renderEditableCell(row.status, rowIndex, 'status')}
-              </TableCell>
-              <TableCell align="center">
-                <Button 
-                  color="primary" 
-                  size="small" 
-                  onClick={() => handleEditToggle(rowIndex)}
-                >
+                <Button color="primary" size="small" onClick={() => handleEditToggle(rowIndex)}>
                   {row.isEditing ? 'Lưu' : 'Chỉnh sửa'}
                 </Button>
               </TableCell>

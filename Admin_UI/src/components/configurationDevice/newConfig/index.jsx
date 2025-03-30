@@ -8,12 +8,12 @@ import Calender from './calender';
 import Weather from './weather';
 
 const Index = ({ onClose }) => {
-    const [value, setValue] = useState('thoitiet');
-   
-     const handleChange = (event, newValue) => {
-       setValue(newValue);
-     };
-    return (
+  const [value, setValue] = useState('thoitiet');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  return (
     <Container sx={{ margin: '16px 0px', width: 700 }}>
       <Typography variant="h3" mb={2}>
         Cấu hình thiết bị mới
@@ -28,11 +28,15 @@ const Index = ({ onClose }) => {
             </TabList>
           </Box>
           <TabPanel value="thoitiet">
-          <Box sx={{ flexGrow: 1 }}><Weather/></Box>
+            <Box sx={{ flexGrow: 1 }}>
+              <Weather />
+            </Box>
           </TabPanel>
 
           <TabPanel value="lich">
-          <Box sx={{ flexGrow: 1 }}><Calender/></Box>
+            <Box sx={{ flexGrow: 1 }}>
+              <Calender />
+            </Box>
           </TabPanel>
         </TabContext>
       </Box>

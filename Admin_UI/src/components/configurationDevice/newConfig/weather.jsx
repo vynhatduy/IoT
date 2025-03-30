@@ -3,36 +3,31 @@ import { Button, Box, Stack, Typography, Container, TextField } from '@mui/mater
 import Grid from '@mui/material/Grid2';
 import SelectArea from '../../dropdown/selectArea';
 import SelectDevice from '../../dropdown/selectDevice';
-import DatePicker from '../../date/pickerDate';
 import OnOffDropdown from '../../dropdown/switchOnOff';
-import { Refresh } from '../../button/refresh';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
-import CustomDatePicker from '../../CustomDatePicker';
+import CustomizedSwitches from '../../switch/customSwitch';
+import SelectHand from '../../dropdown/selectGroupHandInWeather';
 
-const Weather = ({ onClose }) => {
+const Weather = () => {
   const data = [
-    { id: 1, title: 'Tên',          component: <TextField fullWidth placeholder="Nhập tên..." /> },
-    { id: 3, title: 'Chọn loại',    component: <SelectDevice /> },
-    {id: 4,  title: 'Chọn khu vực', component: <SelectArea fullWidth onChange={(value) => console.log('Khu vực đã chọn:', value)} />},
-    { id: 6, title: 'Tình trạng',   component: <OnOffDropdown /> }
+    { id: 1, title: 'Tên', component: <TextField fullWidth placeholder="Nhập tên..." /> },
+    { id: 2, title: 'Chọn loại', component: <SelectDevice /> },
+    { id: 3, title: 'Chọn khu vực', component: <SelectArea fullWidth onChange={(value) => console.log('Khu vực đã chọn:', value)} /> },
+    { id: 4, title: 'tự động', component: <CustomizedSwitches /> }
   ];
 
   return (
-      <Box sx={{ width: '100%', typography: 'body1', mt: 3 }}>
-        {data.map((item) => (
-          <Grid container margin={'16px 0px'} spacing={2} alignItems="center" key={item.id}>
-            <Grid item size={2}>
-              <Typography variant="subtitle1">{item.title}</Typography>
-            </Grid>
-            <Grid item size={10}>
-              {item.component}
-            </Grid>
+    <Box sx={{ width: '100%', typography: 'body1', mt: 3 }}>
+      {data.map((item) => (
+        <Grid container margin={'16px 0px'} spacing={2} alignItems="center" key={item.id}>
+          <Grid item size={2}>
+            <Typography variant="subtitle1">{item.title}</Typography>
           </Grid>
-        ))}
-      </Box>
+          <Grid item size={10}>
+            {item.component}
+          </Grid>
+        </Grid>
+      ))}
+    </Box>
   );
 };
 
