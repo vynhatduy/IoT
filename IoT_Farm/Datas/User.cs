@@ -22,9 +22,9 @@ namespace IoT_Farm.Datas
         [BsonElement("role")]
         public string Role { get; set; }
         [BsonElement("created_at")]
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         [BsonElement("updated_at")]
-        public DateTime UpdatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; } = DateTime.Now;
         [BsonElement("address")]
         public string Address { get; set; }
 
@@ -39,5 +39,6 @@ namespace IoT_Farm.Datas
         {
             return Hasher.VerifyPasswordHash(password, PasswordHash);
         }
+        public List<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
     }
 }

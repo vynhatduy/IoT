@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import AuthWrapper from '../../sections/auth/AuthWrapper';
 import AuthLogin from '../../sections/auth/AuthLogin';
 
-
 // ================================|| JWT - LOGIN ||================================ //
 
 export default function Login() {

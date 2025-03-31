@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Stack, Typography, Box, CircularProgress } from '@mui/material';
 import { blue } from '@mui/material/colors';
 import dayjs from 'dayjs';
-
+import { Grid, padding } from '@mui/system';
 import StyleBackground from '../themes/stylePage/backgroundPage';
-import SelectArea from '../components/button/selectArea';
+import SelectArea from '../components/dropdown/selectArea';
 import CustomDatePicker from '../components/CustomDatePicker';
 // import SelectWeather from '../components/button/selectWeather';
 import { DownloadButtons } from '../components/button/download';
@@ -17,19 +17,16 @@ const ThongKeChiTiet = () => {
   const [to, setTo] = useState(dayjs());
   const [fetchData, setFetchData] = useState(false);
 
-  // Gọi API khi fetchData thay đổi
   const data = useEnvironmentData(area, from.format('YYYY-MM-DD'), to.format('YYYY-MM-DD'), fetchData);
 
-  // Reset fetchData sau khi tải xong để có thể tải lại
   useEffect(() => {
     if (fetchData) {
       setFetchData(false);
     }
   }, [data]);
 
-  // Xử lý tải dữ liệu
   const handleDownload = () => {
-    setFetchData(true); // Đảm bảo giá trị thay đổi để kích hoạt tải
+    setFetchData(true);
   };
   console.log('chart data:', data);
   return (
@@ -39,27 +36,28 @@ const ThongKeChiTiet = () => {
       </Typography>
 
       <StyleBackground>
-        {/* Chọn khu vực và thời gian */}
         <Box>
           <Typography variant="button">THỐNG KÊ THEO KHU VỰC</Typography>
           <Box sx={{ margin: '10px 0px' }}>
             <SelectArea
               onChange={(value) => {
-                console.log('Khu vực đã chọn:', value); // Kiểm tra log
+                console.log('Khu vực đã chọn:', value);
                 setArea(value);
               }}
             />
           </Box>
 
-          <Stack direction="row" spacing={2} alignItems="center">
-            <CustomDatePicker label="Ngày bắt đầu" value={from} onChange={setFrom} />
-            <CustomDatePicker label="Ngày kết thúc" value={to} onChange={setTo} />
-            <DownloadButtons onClick={handleDownload} />
-          </Stack>
+          <Grid container direction="row" alignItems="center" justifyContent="space-between">
+            <Grid item xs={12} md={6} spacing={3}>
+              <CustomDatePicker label="Ngày bắt đầu" value={from} onChange={setFrom} />
+              <CustomDatePicker label="Ngày kết thúc" value={to} onChange={setTo} />
+            </Grid>
+            <Grid item xs={12} md={2} display="flex" justifyContent="center">
+              <DownloadButtons onClick={handleDownload} />
+            </Grid>
+          </Grid>
         </Box>
-
-        {/* Hiển thị dữ liệu và biểu đồ */}
-        <Box sx={{marginTop: '10px', padding: 2 }}>
+        <Box sx={{ marginTop: '10px', padding: 2 }}>
           {data.length === 0 ? (
             <Typography>Chưa có dữ liệu, vui lòng tải dữ liệu.</Typography>
           ) : (

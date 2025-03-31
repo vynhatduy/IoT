@@ -17,10 +17,10 @@ const dashboard = {
       id: 'dashboard',
       title: 'Bảng điều khiển',
       type: 'item',
-      url: '/',
+      url: '/admin/dashboard',
       icon: DashboardOutlined,
       breadcrumbs: false
-    },
+    }
   ]
 };
 

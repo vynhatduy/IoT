@@ -68,5 +68,33 @@
         "THAO TÁC"
       ]
     }
+  ],
+  "device": [
+    { "id": "den", "name": "Đèn", "icon": "💡", "description": "Điều khiển đèn chiếu sáng", "unit": "W" },
+    { "id": "maysuoi", "name": "Máy Sưởi", "icon": "🔥", "description": "Điều khiển máy sưởi", "unit": "W" },
+    { "id": "quat", "name": "Quạt", "icon": "🌀", "description": "Điều khiển quạt gió", "unit": "RPM" },
+    { "id": "maybom", "name": "Máy Bơm", "icon": "💧", "description": "Điều khiển máy bơm nước", "unit": "L/min" }
+  ],
+  "temperature": [
+    {
+      "id": "Nhiệt độ",
+      "title": ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90"],
+      "unit": "°C"
+    },
+    {
+      "id": "Độ ẩm",
+      "title": ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90"],
+      "unit": "%"
+    },
+    {
+      "id": "Không khí",
+      "title": ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90"],
+      "unit": "lux"
+    },
+    {
+      "id": "Ánh sáng",
+      "title": ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90"],
+      "unit": "ppm"
+    }
   ]
 }
