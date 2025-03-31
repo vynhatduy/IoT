@@ -1,0 +1,100 @@
+{
+  "results": {
+    "0": {
+      "id": 1,
+      "name": "Khu vực 2",
+      "location": "KV2",
+      "deviceStatusCode": "kv2_status",
+      "devices": [
+        {
+          "id": 1,
+          "name": "Máy bơm",
+          "order": 0,
+          "controllerCode": "kv2_pump"
+        },
+        {
+          "id": 2,
+          "name": "Đèn UV",
+          "order": 1,
+          "controllerCode": "kv2_light"
+        },
+        {
+          "id": 3,
+          "name": "Quạt thông gió",
+          "order": 2,
+          "controllerCode": "kv2_fan"
+        },
+        {
+          "id": 4,
+          "name": "Máy sưởi",
+          "order": 3,
+          "controllerCode": "kv2_heater"
+        }
+      ]
+    },
+    "1": {
+      "id": 2,
+      "name": "Khu vực 1",
+      "location": "KV1",
+      "deviceStatusCode": "kv1_status",
+      "devices": [
+        {
+          "id": 5,
+          "name": "Máy bơm",
+          "order": 0,
+          "controllerCode": "kv1_pump"
+        },
+        {
+          "id": 6,
+          "name": "Đèn UV",
+          "order": 1,
+          "controllerCode": "kv1_light"
+        },
+        {
+          "id": 7,
+          "name": "Quạt thông gió",
+          "order": 2,
+          "controllerCode": "kv1_fan"
+        },
+        {
+          "id": 8,
+          "name": "Máy sưởi",
+          "order": 3,
+          "controllerCode": "kv1_heater"
+        }
+      ]
+    },
+    "2": {
+      "id": 3,
+      "name": "Khu vực 3",
+      "location": "KV3",
+      "deviceStatusCode": "kv3_status",
+      "devices": [
+        {
+          "id": 9,
+          "name": "Máy bơm",
+          "order": 0,
+          "controllerCode": "kv3_pump"
+        },
+        {
+          "id": 10,
+          "name": "Đèn UV",
+          "order": 1,
+          "controllerCode": "kv3_light"
+        },
+        {
+          "id": 11,
+          "name": "Quạt thông gió",
+          "order": 2,
+          "controllerCode": "kv3_fan"
+        },
+        {
+          "id": 12,
+          "name": "Máy sưởi",
+          "order": 3,
+          "controllerCode": "kv3_heater"
+        }
+      ]
+    }
+  }
+}
