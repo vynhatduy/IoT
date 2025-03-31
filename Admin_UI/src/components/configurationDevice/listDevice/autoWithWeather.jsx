@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, TextField } from '@mui/material';
 
 const ListWeather = () => {
-  const headers = ['STT', 'TÊN', 'LOẠI', 'KHU VỰC', 'SỐ THIẾT BỊ', 'ĐẾN GIÁ TRỊ', 'TỪ NGÀY', 'ĐẾN NGÀY', 'TÌNH TRẠNG', 'THAO TÁC'];
+  const headers = ['STT', 'TÊN', 'LOẠI', 'KHU VỰC', 'SỐ THIẾT BỊ', 'TỪ NGÀY', 'ĐẾN NGÀY', 'TÌNH TRẠNG', 'THAO TÁC'];
 
   const [data, setData] = useState([
     {

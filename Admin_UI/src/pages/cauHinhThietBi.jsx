@@ -12,11 +12,11 @@ const cauHinhThietBi = () => {
         <CreateButtonConfig />
         <Box sx={{ margin: '20px 0px 0px 0px' }}>
           <Typography>Danh sách thiết bị tự động theo thời tiết</Typography>
-          <ListCalender />
+          <ListWeather />
         </Box>
         <Box sx={{ margin: '20px 0px 0px 0px' }}>
           <Typography>Danh sách thiết bị tự động theo lịch</Typography>
-          <ListWeather />
+          <ListCalender />
         </Box>
       </StyleBackground>
     </Box>

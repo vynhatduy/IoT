@@ -3,6 +3,7 @@ import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
 import WaterfallChartIcon from '@mui/icons-material/WaterfallChart';
 import PieChartOutlineIcon from '@mui/icons-material/PieChartOutline';
 import CameraOutdoorIcon from '@mui/icons-material/CameraOutdoor';
+import WebIcon from '@mui/icons-material/Web';
 import VrpanoIcon from '@mui/icons-material/Vrpano';
 import UpcomingIcon from '@mui/icons-material/Upcoming';
 import MediationIcon from '@mui/icons-material/Mediation';
@@ -22,6 +23,14 @@ const deviceManagement = {
       breadcrumbs: false
     },
     {
+      id: 'khuvuc',
+      title: 'Khu vực',
+      type: 'item',
+      url: '/admin/manage/quan-ly-khu-vuc',
+      icon: WebIcon,
+      breadcrumbs: false
+    },
+    {
       id: 'quanLyThongSoMoiTruong',
       title: 'Thông số môi trường',
       type: 'item',
@@ -37,14 +46,14 @@ const deviceManagement = {
       icon: UpcomingIcon,
       breadcrumbs: false
     },
-    {
-      id: 'quanLyQuyTrinhHoatDong',
-      title: 'Quy trình hoạt động',
-      type: 'item',
-      url: '/admin/manage/quy-trinh-hoat-dong',
-      icon: MediationIcon,
-      breadcrumbs: false
-    }
+    // {
+    //   id: 'quanLyQuyTrinhHoatDong',
+    //   title: 'Quy trình hoạt động',
+    //   type: 'item',
+    //   url: '/admin/manage/quy-trinh-hoat-dong',
+    //   icon: MediationIcon,
+    //   breadcrumbs: false
+    // }
   ]
 };
 export default deviceManagement;
