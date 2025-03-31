@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import axios from 'axios';
-import { environment } from '../../../environments/environment.prod';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 import { IonRefresher } from '@ionic/angular';
 import * as signalR from '@microsoft/signalr';
+import { MockSignalRService } from '../../core/services/mock-signalr.service';
 
 @Component({
   selector: 'app-control-devices',
@@ -18,36 +20,76 @@ export class ControlDevicesPage implements OnInit {
   fetchDataCompleted = false;
   sensorData: any = { Status: [] };
   connection: signalR.HubConnection | null = null;
+  mockSignalRService: MockSignalRService | null = null;
+  useMockData = environment.useMockData;
 
-  constructor() {}
+  constructor(
+    private http: HttpClient,
+    private mockSignalR: MockSignalRService
+  ) {
+    this.mockSignalRService = mockSignalR;
+  }
 
   ngOnInit() {
     this.loadData().then(() => {
-      this.connectSignalR();
+      if (this.useMockData) {
+        this.connectMockSignalR();
+      } else {
+        this.connectSignalR();
+      }
     });
   }
 
   async loadData() {
     try {
-      const response = await axios.get(`${environment.api_url}/farms`);
-      this.locations = response.data.results[this.sensorLocation];
-      this.deviceStatusCode =
-        response.data.results[this.sensorLocation].deviceStatusCode;
+      if (this.useMockData) {
+        // Use sample data
+        const response = await this.http
+          .get('./assets/mock-data/control-devices.json')
+          .toPromise();
+        this.locations = (response as any).results[this.sensorLocation];
+        this.deviceStatusCode = (response as any).results[
+          this.sensorLocation
+        ].deviceStatusCode;
+      } else {
+        // Use real API
+        const response = await axios.get(`${environment.api_url}/farms`);
+        this.locations = response.data.results[this.sensorLocation];
+        this.deviceStatusCode =
+          response.data.results[this.sensorLocation].deviceStatusCode;
+      }
       this.fetchDataCompleted = true;
     } catch (error) {
       console.error('Error fetching data: ', error);
     }
   }
 
+  // Connect to mock SignalR when using sample data
+  connectMockSignalR() {
+    if (!this.fetchDataCompleted || !this.mockSignalRService) return;
+
+    this.mockSignalRService.on(this.deviceStatusCode ?? '', (dataString) => {
+      try {
+        const data = JSON.parse(dataString);
+        console.log('Mock SignalR data:', data);
+        this.sensorData = data;
+      } catch (error) {
+        console.error('Error parsing mock data string:', error);
+      }
+    });
+
+    console.log('Mock SignalR connected!');
+  }
+
+  // Connect to real SignalR
   async connectSignalR() {
-    if (!this.fetchDataCompleted) return;
+    if (!this.fetchDataCompleted || this.useMockData) return;
     try {
       const connect = new signalR.HubConnectionBuilder()
         .withUrl(`${environment.base_url}/farmhub`)
         .withAutomaticReconnect()
         .build();
 
-      //  esp8266/ledStatus
       await connect.on(this.deviceStatusCode ?? '', (dataString) => {
         try {
           const data = JSON.parse(dataString);
@@ -71,7 +113,13 @@ export class ControlDevicesPage implements OnInit {
   }
 
   doRefresh(event: any) {
-    this.loadData();
+    this.loadData().then(() => {
+      if (this.useMockData) {
+        this.connectMockSignalR();
+      } else {
+        this.connectSignalR();
+      }
+    });
 
     setTimeout(() => {
       event.target.complete();
@@ -79,6 +127,25 @@ export class ControlDevicesPage implements OnInit {
   }
 
   async controlDevice(device: any, statusDevice: boolean) {
+    if (this.useMockData) {
+      // Handle with sample data
+      console.log(
+        `Controlling device ${device.id} (${device.name}): set to ${statusDevice}`
+      );
+
+      // Update device status in mock service
+      if (this.mockSignalRService && this.deviceStatusCode) {
+        this.mockSignalRService.updateDeviceStatus(
+          this.deviceStatusCode,
+          device.order,
+          statusDevice
+        );
+      }
+
+      return;
+    }
+
+    // Handle with real API
     const postData = {
       topicName: device.controllerCode,
       payload: {
@@ -99,6 +166,12 @@ export class ControlDevicesPage implements OnInit {
   // select sensorLocation => ex: kv2
   onSensorLocationChange(event: any) {
     this.sensorLocation = event.detail.value;
-    console.log(this.sensorLocation);
+    this.loadData().then(() => {
+      if (this.useMockData) {
+        this.connectMockSignalR();
+      } else {
+        this.connectSignalR();
+      }
+    });
   }
 }

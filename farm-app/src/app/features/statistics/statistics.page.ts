@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import Chart from 'chart.js/auto';
 import { StatisticsService } from '../../core/services/api/statistics.service';
+import { MockStatisticsService } from '../../core/services/mock-statistics.service';
 import DataTypeEnum from '../../models/enums/DataTypeEnum';
+import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-statistics',
@@ -18,8 +21,13 @@ export class StatisticsPage implements OnInit {
   temChart!: Chart;
   humiChart!: Chart;
   brightChart!: Chart;
+  useMockData = environment.useMockData;
 
-  constructor(private statisticsService: StatisticsService) {}
+  constructor(
+    private statisticsService: StatisticsService,
+    private mockStatisticsService: MockStatisticsService,
+    private http: HttpClient
+  ) {}
 
   ngAfterViewInit() {
     this.createCharts();
@@ -31,15 +39,29 @@ export class StatisticsPage implements OnInit {
   }
 
   getSpecifiedDateList(day: any) {
-    this.statisticsService
-      .getSpecifiedDateData(DataTypeEnum.SENSORLOCATION.KV2, day)
-      .then((data) => {
-        this.SpecifiedData = data;
-        this.createCharts();
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    if (this.useMockData) {
+      // Use sample API
+      this.mockStatisticsService
+        .getSpecifiedDateData(DataTypeEnum.SENSORLOCATION.KV2, day)
+        .then((data) => {
+          this.SpecifiedData = data;
+          this.createCharts();
+        })
+        .catch((error) => {
+          console.error('Error fetching mock data:', error);
+        });
+    } else {
+      // Use real API
+      this.statisticsService
+        .getSpecifiedDateData(DataTypeEnum.SENSORLOCATION.KV2, day)
+        .then((data) => {
+          this.SpecifiedData = data;
+          this.createCharts();
+        })
+        .catch((error) => {
+          console.error('Error fetching API data:', error);
+        });
+    }
   }
 
   getCurrentDate(): string {
@@ -83,7 +105,7 @@ export class StatisticsPage implements OnInit {
       this.brightChart.destroy();
     }
 
-    // Kiểm tra xem dữ liệu có tồn tại không
+    // Check data
     const noDataCtx = this.temperatureChart.nativeElement.getContext('2d');
     if (!this.SpecifiedData || this.SpecifiedData.length === 0) {
       noDataCtx.font = '30px Arial';
@@ -92,7 +114,7 @@ export class StatisticsPage implements OnInit {
       return;
     }
 
-    // Biểu đồ nhiệt độ
+    //Temperature chart
     const temperatureCtx = this.temperatureChart.nativeElement.getContext('2d');
     const temperatureLabels = this.SpecifiedData.map((entry: any) =>
       this.formatDate(entry.createAt)
@@ -101,7 +123,7 @@ export class StatisticsPage implements OnInit {
       (entry: any) => entry.temperature
     );
 
-    // Tạo biểu đồ nhiệt độ
+    // Create temperature chart
     this.temChart = new Chart(temperatureCtx, {
       type: 'line',
       data: {
@@ -129,14 +151,14 @@ export class StatisticsPage implements OnInit {
       },
     });
 
-    // Biểu đồ độ ẩm
+    // Humidity chart
     const humidityCtx = this.humidityChart.nativeElement.getContext('2d');
     const humidityLabels = this.SpecifiedData.map((entry: any) =>
       this.formatDate(entry.createAt)
     );
     const humidityData = this.SpecifiedData.map((entry: any) => entry.humidity);
 
-    // Tạo biểu đồ độ ẩm
+    // Create humidity chart
     this.humiChart = new Chart(humidityCtx, {
       type: 'line',
       data: {
@@ -164,7 +186,7 @@ export class StatisticsPage implements OnInit {
       },
     });
 
-    // Biểu đồ độ sáng
+    // Brightness chart
     const brightnessCtx = this.brightnessChart.nativeElement.getContext('2d');
     const brightnessLabels = this.SpecifiedData.map((entry: any) =>
       this.formatDate(entry.createAt)
@@ -173,7 +195,7 @@ export class StatisticsPage implements OnInit {
       (entry: any) => entry.brightness
     );
 
-    // Tạo biểu đồ độ sáng
+    // Create a brightness chart
     this.brightChart = new Chart(brightnessCtx, {
       type: 'line',
       data: {
