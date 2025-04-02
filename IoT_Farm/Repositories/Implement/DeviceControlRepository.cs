@@ -16,6 +16,12 @@ namespace IoT_Farm.Repositories.Implement
             return result;
         }
 
+        public async Task<DeviceCommand> GetCommandHistoryLatestAsync(string deviceId)
+        {
+            var result = await _databaseAdapter.GetAsync(cmd => cmd.DeviceId == deviceId);
+            return result.OrderByDescending(x => x.Timestamp).First();
+        }
+
         public async Task SaveCommandAsync(DeviceCommand command)
         {
             await _databaseAdapter.InsertOneAsync(command);

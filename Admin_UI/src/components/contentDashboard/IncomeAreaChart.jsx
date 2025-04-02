@@ -36,13 +36,21 @@ export default function IncomeAreaChart({ data }) {
   const theme = useTheme();
 
   // Format lại dữ liệu thành từng giờ
-  const formattedData = data.map((item) => ({
-    hour: new Date(item.timestamp).getHours() + ':00',
-    temperature: item.temperature,
-    humidity: item.humidity,
-    airQuality: item.airQuality,
-    brightness: item.brightness
-  }));
+  const formattedData = data.map((item) => {
+    const adjustedTimestamp = new Date(item.timestamp); // Chuyển đổi timestamp sang Date
+    adjustedTimestamp.setHours(adjustedTimestamp.getHours() - 7); // Trừ 7 giờ
+
+    return {
+      hour: adjustedTimestamp.getHours().toString().padStart(2, '0') + ':00',
+      temperature: item.temperature,
+      humidity: item.humidity,
+      airQuality: item.airQuality,
+      brightness: item.light
+    };
+  });
+
+  console.log('Data response: ', data);
+  console.log('formattedData: ', formattedData);
 
   // Trạng thái hiển thị
   const [visibility, setVisibility] = useState({
