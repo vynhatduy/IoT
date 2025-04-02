@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import axios from 'axios';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { IonRefresher } from '@ionic/angular';
 import * as signalR from '@microsoft/signalr';
@@ -22,6 +22,9 @@ export class ControlDevicesPage implements OnInit {
   connection: signalR.HubConnection | null = null;
   mockSignalRService: MockSignalRService | null = null;
   useMockData = environment.useMockData;
+  deviceId: string = '';
+  loading: boolean = true;
+  errorMessage: string = '';
 
   constructor(
     private http: HttpClient,
@@ -173,5 +176,38 @@ export class ControlDevicesPage implements OnInit {
         this.connectSignalR();
       }
     });
+  }
+  fetchLatestData() {
+    this.loading = true;
+    this.errorMessage = '';
+
+    const params = new HttpParams().set(
+      'deviceId',
+      this.deviceId ?? 'ESP-effddf'
+    );
+
+    this.http
+      .get<any>(`${environment.be_api}/area/history/latest`, { params })
+      .subscribe(
+        (response) => {
+          this.sensorData = response;
+          console.log('Dữ liệu mới nhất:', response);
+          this.loading = false;
+        },
+        (error) => {
+          console.error('Lỗi khi lấy dữ liệu:', error);
+          this.sensorData = this.getDefaultSensorData();
+          this.errorMessage = 'Không thể tải dữ liệu từ máy chủ!';
+          this.loading = false;
+        }
+      );
+  }
+  getDefaultSensorData() {
+    return {
+      temperature: 0,
+      humidity: 0,
+      light: 0,
+      airQuality: 0,
+    };
   }
 }

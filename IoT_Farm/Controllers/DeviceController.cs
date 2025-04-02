@@ -24,10 +24,16 @@ namespace IoT_Farm.Controllers
             await _service.SendCommandAsync(model);
             return Ok(new { message = "Command sent successfully", model });
         }
-        [HttpGet("history/{deviceId}")]
+        [HttpGet("history")]
         public async Task<IActionResult> GetCommandHistory(string deviceId)
         {
             var history = await _service.GetCommandHistoryAsync(deviceId);
+            return Ok(history);
+        }
+        [HttpGet("history/latest")]
+        public async Task<IActionResult> GetCommandHistoryLatest(string deviceId)
+        {
+            var history = await _service.GetCommandHistoryLatestAsync(deviceId);
             return Ok(history);
         }
     }

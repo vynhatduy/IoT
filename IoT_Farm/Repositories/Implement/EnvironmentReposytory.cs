@@ -66,7 +66,6 @@ namespace IoT_Farm.Repositories.Implement
         {
             try
             {
-
                 await _databaseAdapter.AddAsync(data);
                 return true;
             }

@@ -9,5 +9,6 @@ namespace IoT_Farm.Services.Interface
         Task SaveCommandAsync(DeviceCommand command);
         Task<List<DeviceCommand>> GetCommandHistoryAsync(string deviceId);
         Task HandleDeviceResponse(string topic, string payload);
+        Task<DeviceCommand> GetCommandHistoryLatestAsync(string deviceId);
     }
 }
