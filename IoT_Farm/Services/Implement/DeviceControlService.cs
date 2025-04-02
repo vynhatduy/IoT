@@ -28,7 +28,11 @@ namespace IoT_Farm.Services.Implement
             var result = await _repo.GetCommandHistoryAsync(deviceId);
             return result;
         }
-
+        public async Task<DeviceCommand> GetCommandHistoryLatestAsync(string deviceId)
+        {
+            var result = await _repo.GetCommandHistoryLatestAsync(deviceId);
+            return result;
+        }
         public async Task SaveCommandAsync(DeviceCommand command)
         {
             await _repo.SaveCommandAsync(command);
@@ -56,7 +60,7 @@ namespace IoT_Farm.Services.Implement
                 heater = model.Heater
             };
             var payload = JsonSerializer.Serialize(sendData);
-            Console.WriteLine($"Device service send data: {payload}");
+            //Console.WriteLine($"Device service send data: {payload}");
 
             await _mqttService.PublishAsync($"Device/{command.DeviceId}/Control", payload);
         }
@@ -72,5 +76,6 @@ namespace IoT_Farm.Services.Implement
                 await _hub.Clients.All.SendAsync("ReceiveDeviceStatus", result);
             }
         }
+
     }
 }
