@@ -5,8 +5,10 @@ import StyleBackground from '../themes/stylePage/backgroundPage';
 const quanLyThietBi = () => {
   return (
     <Box>
-      <Typography>QUAN LY THIET BI</Typography>
-      <StyleBackground></StyleBackground>
+      <Typography>Danh Sách Thiết Bị</Typography>
+      <StyleBackground>
+        
+      </StyleBackground>
     </Box>
   );
 };
