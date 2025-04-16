@@ -7,15 +7,15 @@ import ListWeather from '../components/configurationDevice/listDevice/autoWithWe
 const cauHinhThietBi = () => {
   return (
     <Box>
-      <Typography>CAU HINH THIET BI</Typography>
+      <Typography variant="subtitle1">CAU HINH THIET BI</Typography>
       <StyleBackground>
         <CreateButtonConfig />
         <Box sx={{ margin: '20px 0px 0px 0px' }}>
-          <Typography>Danh sách thiết bị tự động theo thời tiết</Typography>
+          <Typography variant="subtitle1">Danh sách thiết bị tự động theo thời tiết</Typography>
           <ListWeather />
         </Box>
         <Box sx={{ margin: '20px 0px 0px 0px' }}>
-          <Typography>Danh sách thiết bị tự động theo lịch</Typography>
+          <Typography variant="subtitle1">Danh sách thiết bị tự động theo lịch</Typography>
           <ListCalender />
         </Box>
       </StyleBackground>
