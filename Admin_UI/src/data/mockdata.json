@@ -43,7 +43,9 @@
     { "id": "KV2", "name": "Khu Vực 2" },
     { "id": "KV3", "name": "Khu Vực 3" },
     { "id": "KV4", "name": "Khu Vực 4" },
-    { "id": "KV5", "name": "Khu Vực 5" }
+    { "id": "KV5", "name": "Khu Vực 5" },
+    { "id": "KV6", "name": "Khu Vực 6" },
+    { "id": "KV7", "name": "Khu Vực 7" }
   ],
 
   "weather": [
@@ -74,7 +76,7 @@
     { "id": 2, "name": "Máy Sưởi", "icon": "🔥", "description": "Điều khiển máy sưởi", "unit": "W" },
     { "id": 3, "name": "Quạt", "icon": "🌀", "description": "Điều khiển quạt gió", "unit": "RPM" },
     { "id": 4, "name": "Máy Bơm", "icon": "💧", "description": "Điều khiển máy bơm nước", "unit": "L/min" }
-  ],  
+  ],
   "temperature": [
     {
       "id": "Nhiệt độ",
@@ -97,26 +99,20 @@
       "unit": "ppm"
     }
   ],
-  
- 
 
-    "dataDeviceManager": [
-      {"name": "Lights", "data": [ { "id": 1, "ten": "Đèn A", "khuvuc": "KV1", "switch": "on" }]},
-      {
-        "name": "Fans",
-        "data": [
-          { "id": 2, "ten": "Quạt B", "khuvuc": "KV2", "switch": "off" }
-        ]
-      },
-      {
-        "name": "Pump",
-        "data": [
-          { "id": 3, "ten": "Bơm", "khuvuc": "KV1", "switch": "on" }
-        ]
-      }
-    ],
-  
-   "alldevices": [
+  "dataDeviceManager": [
+    { "name": "Lights", "data": [{ "id": 1, "ten": "Đèn A", "khuvuc": "KV1", "switch": "on" }] },
+    {
+      "name": "Fans",
+      "data": [{ "id": 2, "ten": "Quạt B", "khuvuc": "KV2", "switch": "off" }]
+    },
+    {
+      "name": "Pump",
+      "data": [{ "id": 3, "ten": "Bơm", "khuvuc": "KV1", "switch": "on" }]
+    }
+  ],
+
+  "alldevices": [
     {
       "loai": "light",
       "data": [
@@ -213,7 +209,5 @@
         }
       ]
     }
-   
   ]
-  
 }
