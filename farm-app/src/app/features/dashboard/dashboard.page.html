@@ -56,11 +56,11 @@
         <ion-card-content>Humidity</ion-card-content>
       </ion-card>
 
-      <ion-card *ngIf="sensorData.brightness !== undefined" color="warning">
+      <ion-card *ngIf="sensorData.light !== undefined" color="warning">
         <ion-card-header>
           <ion-card-title>
             <ion-icon size="large" name="sunny-outline"></ion-icon>
-            <strong>{{ sensorData.brightness }}</strong>
+            <strong>{{ sensorData.light }}</strong>
           </ion-card-title>
         </ion-card-header>
         <ion-card-content>Brightness</ion-card-content>

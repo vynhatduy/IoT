@@ -11,7 +11,7 @@ export class DashboardPage implements OnInit {
   sensorData: any;
   loading: boolean = true;
   errorMessage: string = '';
-  sensorLocation: string = ''; // Default location
+  sensorLocation: string = '';
   areas: any[] = [];
 
   constructor(private http: HttpClient) {}
@@ -23,7 +23,7 @@ export class DashboardPage implements OnInit {
   fetchSensorData() {
     this.loading = true;
     this.errorMessage = '';
-    const params = new HttpParams().set('area', this.sensorLocation ?? 'KV001'); // Thêm tham số area vào request
+    const params = new HttpParams().set('area', this.sensorLocation ?? 'KV001');
 
     this.http
       .get<any>(`${environment.be_api}/environment/latest`, { params })
@@ -35,7 +35,7 @@ export class DashboardPage implements OnInit {
         },
         (error) => {
           console.error('Lỗi lấy dữ liệu cảm biến:', error);
-          this.sensorData = this.getDefaultSensorData(); // Đặt về 0
+          this.sensorData = this.getDefaultSensorData();
           this.errorMessage = 'Không thể lấy dữ liệu từ máy chủ!';
           this.loading = false;
         }
@@ -46,8 +46,8 @@ export class DashboardPage implements OnInit {
       (data) => {
         this.areas = data;
         if (this.areas.length > 0) {
-          this.sensorLocation = this.areas[0].name; // Chọn khu vực đầu tiên làm mặc định
-          this.fetchSensorData(); // Lấy dữ liệu cảm biến cho khu vực mặc định
+          this.sensorLocation = this.areas[0].name;
+          this.fetchSensorData();
         }
       },
       (error) => {
@@ -65,7 +65,7 @@ export class DashboardPage implements OnInit {
     return {
       temperature: 0,
       humidity: 0,
-      brightness: 0,
+      light: 0,
       airQuality: 0,
     };
   }

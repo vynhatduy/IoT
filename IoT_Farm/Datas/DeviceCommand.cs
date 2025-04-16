@@ -25,6 +25,6 @@ namespace IoT_Farm.Datas
         public int Heater { get; set; }
 
         [BsonElement("Timestamp")]
-        public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+        public DateTime Timestamp { get; set; } = DateTime.UtcNow.AddHours(7);
     }
 }

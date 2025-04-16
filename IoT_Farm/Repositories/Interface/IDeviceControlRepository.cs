@@ -6,5 +6,6 @@ namespace IoT_Farm.Repositories.Interface
     {
         Task SaveCommandAsync(DeviceCommand command);
         Task<List<DeviceCommand>> GetCommandHistoryAsync(string deviceId);
+        Task<DeviceCommand> GetCommandHistoryLatestAsync(string deviceId);
     }
 }
