@@ -1,69 +1,61 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Paper,
-  Grid,
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  Table,
+import { 
+  Box, 
+  Paper, 
+  Grid, 
+  Table, 
   TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Grid2,
-  Stack
+  TableCell, 
+  TableContainer, 
+  TableHead, 
+  TableRow, 
+  Typography,
+  Checkbox
 } from '@mui/material';
-import DeviceSwitch from '../switch/customSwitch2';
-import Switch from '@mui/material/Switch';
-import DeleteDevice from '../button/deleteDevice';
+import DeviceSwitch from '../switch/deviceSwitch'; // Giả sử component này đã tồn tại
 import AddDevicelButtons from '../button/addDevice';
-import Checkbox from '@mui/material/Checkbox';
-import { maxHeight } from '@mui/system';
-import mockdata from '../../data/mockdata.json';
-// Mock data for demonstration
-const { lightdata } = mockdata;
+import DeleteDevice from '../button/deleteDevice';
 
-const DeviceContainer = () => {
-  const [deviceData, setDeviceData] = useState([]);
-
+const ContainerDevice = ({ deviceInfo, deviceData }) => {
+  const [localDeviceData, setLocalDeviceData] = useState([]);
+  
   useEffect(() => {
-    // mock API call
+    // Giả lập API call để lấy dữ liệu
     setTimeout(() => {
-      setDeviceData(lightdata);
+      setLocalDeviceData(deviceData);
     }, 500);
-  }, []);
+  }, [deviceData]);
 
-  // create from check in list device
+  // Xử lý sự kiện khi checkbox thay đổi
   const handleCheckboxChange = (deviceId) => {
-    const updated = deviceData.map((group) => ({
-      ...group,
-      data: group.data.map((device) => (device.id === deviceId ? { ...device, checked: !device.checked } : device))
+    const updated = localDeviceData.map((area) => ({
+      ...area,
+      devices: area.devices.map((device) => 
+        device.id === deviceId ? { ...device, checked: !device.checked } : device
+      )
     }));
-    setDeviceData(updated);
+    setLocalDeviceData(updated);
   };
 
-  // Create flattened array of all devices
-  const allDevices = deviceData.flatMap((group) =>
-    group.data.map((device) => ({
+  // Tạo mảng phẳng chứa tất cả thiết bị
+  const allDevices = localDeviceData.flatMap((area) =>
+    area.devices.map((device) => ({
       ...device,
-      groupkhuvuc: group.khuvuc
+      groupkhuvuc: area.khuvuc
     }))
   );
-  //create switch on/off
+
+  // Thống kê trạng thái thiết bị
   const onDevices = allDevices.filter((d) => d.switch === 'on').length;
   const offDevices = allDevices.filter((d) => d.switch === 'off').length;
-  const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
   return (
-    // TableLeft
     <Paper elevation={3} sx={{ p: 3, borderRadius: 2 }}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={8}>
           <TableContainer component={Paper}>
             <Box sx={{ maxHeight: 360, overflowY: 'auto' }}>
-              <Table stickyHeader sx={{ minWidth: 300 }} aria-label="device table">
+              <Table sx={{ minWidth: 300 }} aria-label="device table">
                 <TableHead>
                   <TableRow sx={{ bgcolor: 'rgba(0, 0, 0, 0.04)' }}>
                     <TableCell>Chọn thiết bị</TableCell>
@@ -74,10 +66,13 @@ const DeviceContainer = () => {
                 </TableHead>
                 <TableBody>
                   {allDevices.length > 0 ? (
-                    allDevices.map((device) => (
-                      <TableRow key={device.id} hover>
+                    allDevices.map((device, idx) => (
+                      <TableRow key={`${device.id}-${idx}`} hover>
                         <TableCell>
-                          <Checkbox checked={device.checked} onChange={() => handleCheckboxChange(device.id)} />
+                          <Checkbox 
+                            checked={device.checked} 
+                            onChange={() => handleCheckboxChange(device.id)} 
+                          />
                         </TableCell>
                         <TableCell>{device.ten}</TableCell>
                         <TableCell>{device.groupkhuvuc}</TableCell>
@@ -98,49 +93,20 @@ const DeviceContainer = () => {
             </Box>
           </TableContainer>
         </Grid>
-        {/* Table right */}
         <Grid item xs={12} md={4}>
-          <Card variant="outlined">
-            <CardContent>
-              <Typography variant="subtitle1" fontWeight="medium" gutterBottom>
-                Thống kê
-              </Typography>
-              <Box sx={{ mt: 2 }}>
-                <Typography variant="body2" color="text.secondary">
-                  Tổng số thiết bị: {allDevices.length}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                  Số thiết bị đang bật: {onDevices}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                  Số thiết bị đang tắt: {offDevices}
-                </Typography>
-              </Box>
-            </CardContent>
-          </Card>
-          <Grid2>
-            <Stack direction="row" spacing={2} alignItems={'center'} justifyContent="center">
-              <Switch {...label} />
-              <Typography>Bật toàn bộ</Typography>
-            </Stack>
-
-            <Stack direction="row" spacing={2} alignItems={'center'} justifyContent="center">
-              <Switch {...label} />
-              <Typography>Tắt toàn bộ</Typography>
-            </Stack>
-
-            <Grid2>
-              <AddDevicelButtons />
-            </Grid2>
-
-            <Grid2>
-              <DeleteDevice />
-            </Grid2>
-          </Grid2>
+          <Box sx={{ bgcolor: 'background.paper', p: 2, borderRadius: 1 }}>
+            <Typography variant="h6" gutterBottom>Thông tin {deviceInfo.name}</Typography>
+            <Typography>
+              Đang bật: {onDevices} thiết bị<br />
+              Đang tắt: {offDevices} thiết bị
+            </Typography>
+          </Box>
+          <Box><AddDevicelButtons/></Box>
+          <Box><DeleteDevice/></Box>
         </Grid>
       </Grid>
     </Paper>
   );
 };
 
-export default DeviceContainer;
+export default ContainerDevice;

@@ -116,66 +116,103 @@
       }
     ],
   
-    "lightdata": [
-      {
-        "khuvuc": "KV1",
-        "data": [
-          { "id": 1, "ten": "Đèn trần", "switch": "on", "checked": false },
-          { "id": 2, "ten": "Đèn bàn", "switch": "on", "checked": false },
-          { "id": 3, "ten": "Đèn trần", "switch": "on", "checked": false }
-        ]
-      },
-      {
-        "khuvuc": "KV2",
-        "data": [
-          { "id": 4, "ten": "Đèn ngủ", "switch": "on", "checked": false },
-          { "id": 5, "ten": "Đèn ngủ", "switch": "on", "checked": false }
-        ]
-      },
-      {
-        "khuvuc": "KV3",
-        "data": [
-          { "id": 4, "ten": "Đèn ngủ", "switch": "on", "checked": false },
-          { "id": 5, "ten": "Đèn ngủ", "switch": "on", "checked": false },
-          { "id": 4, "ten": "Đèn ngủ", "switch": "on", "checked": false },
-          { "id": 5, "ten": "Đèn ngủ", "switch": "on", "checked": false }
-        ]
-      }
-    ],
-
-    "fandata": [
-      {
-        "khuvuc": "KV1",
-        "data": [
-          { "id": 1, "ten": "Quạt trần", "switch": "on", "checked": false },
-          { "id": 2, "ten": "Quạt bàn", "switch": "on", "checked": false },
-          { "id": 3, "ten": "Quạt trần", "switch": "on", "checked": false }
-        ]
-      },
-      {
-        "khuvuc": "KV2",
-        "data": [
-          { "id": 4, "ten": "Quạt trần", "switch": "on", "checked": false },
-          { "id": 5, "ten": "Quạt trần", "switch": "on", "checked": false }
-        ]
-      }
-    ],
-    "suoidata": [
-      {
-        "khuvuc": "KV1",
-        "data": [
-          { "id": 1, "ten": "May sưởi", "switch": "on", "checked": false },
-          { "id": 2, "ten": "May sưởi", "switch": "on", "checked": false },
-          { "id": 3, "ten": "May sưởi", "switch": "on", "checked": false }
-        ]
-      },
-      {
-        "khuvuc": "KV2",
-        "data": [
-          { "id": 4, "ten": "May sưởi", "switch": "on", "checked": false },
-          { "id": 5, "ten": "May sưởi", "switch": "on", "checked": false }
-        ]
-      }
-    ]
+   "alldevices": [
+    {
+      "loai": "light",
+      "data": [
+        {
+          "khuvuc": "KV1",
+          "devices": [
+            { "id": 1, "ten": "Đèn trần", "switch": "on", "checked": false },
+            { "id": 2, "ten": "Đèn bàn", "switch": "on", "checked": false },
+            { "id": 3, "ten": "Đèn trần", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV2",
+          "devices": [
+            { "id": 4, "ten": "Đèn ngủ", "switch": "on", "checked": false },
+            { "id": 5, "ten": "Đèn ngủ", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV3",
+          "devices": [
+            { "id": 4, "ten": "Đèn ngủ", "switch": "on", "checked": false },
+            { "id": 5, "ten": "Đèn ngủ", "switch": "on", "checked": false },
+            { "id": 4, "ten": "Đèn ngủ", "switch": "on", "checked": false },
+            { "id": 5, "ten": "Đèn ngủ", "switch": "on", "checked": false }
+          ]
+        }
+      ]
+    },
+    {
+      "loai": "fan",
+      "data": [
+        {
+          "khuvuc": "KV1",
+          "devices": [
+            { "id": 1, "ten": "Quạt trần", "switch": "on", "checked": false },
+            { "id": 2, "ten": "Quạt bàn", "switch": "on", "checked": false },
+            { "id": 3, "ten": "Quạt trần", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV2",
+          "devices": [
+            { "id": 4, "ten": "Quạt trần", "switch": "on", "checked": false },
+            { "id": 5, "ten": "Quạt trần", "switch": "on", "checked": false }
+          ]
+        }
+      ]
+    },
+    {
+      "loai": "suoi",
+      "data": [
+        {
+          "khuvuc": "KV1",
+          "devices": [
+            { "id": 1, "ten": "May sưởi", "switch": "on", "checked": false },
+            { "id": 2, "ten": "May sưởi", "switch": "on", "checked": false },
+            { "id": 3, "ten": "May sưởi", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV2",
+          "devices": [
+            { "id": 4, "ten": "May sưởi", "switch": "on", "checked": false },
+            { "id": 5, "ten": "May sưởi", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV3",
+          "devices": [
+            { "id": 4, "ten": "May sưởi", "switch": "on", "checked": false },
+            { "id": 5, "ten": "May sưởi", "switch": "on", "checked": false }
+          ]
+        }
+      ]
+    },
+    {
+      "loai": "maybom",
+      "data": [
+        {
+          "khuvuc": "KV1",
+          "devices": [
+            { "id": 1, "ten": "Quạt trần", "switch": "on", "checked": false },
+            { "id": 2, "ten": "Quạt bàn", "switch": "on", "checked": false },
+            { "id": 3, "ten": "Quạt trần", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV2",
+          "devices": [
+            { "id": 4, "ten": "Quạt trần", "switch": "on", "checked": false },
+            { "id": 5, "ten": "Quạt trần", "switch": "on", "checked": false }
+          ]
+        }
+      ]
+    }
+  ]
   
 }
