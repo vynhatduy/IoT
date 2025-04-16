@@ -70,11 +70,11 @@
     }
   ],
   "device": [
-    { "id": "den", "name": "Đèn", "icon": "💡", "description": "Điều khiển đèn chiếu sáng", "unit": "W" },
-    { "id": "maysuoi", "name": "Máy Sưởi", "icon": "🔥", "description": "Điều khiển máy sưởi", "unit": "W" },
-    { "id": "quat", "name": "Quạt", "icon": "🌀", "description": "Điều khiển quạt gió", "unit": "RPM" },
-    { "id": "maybom", "name": "Máy Bơm", "icon": "💧", "description": "Điều khiển máy bơm nước", "unit": "L/min" }
-  ],
+    { "id": 1, "name": "Đèn", "icon": "💡", "description": "Điều khiển đèn chiếu sáng", "unit": "W" },
+    { "id": 2, "name": "Máy Sưởi", "icon": "🔥", "description": "Điều khiển máy sưởi", "unit": "W" },
+    { "id": 3, "name": "Quạt", "icon": "🌀", "description": "Điều khiển quạt gió", "unit": "RPM" },
+    { "id": 4, "name": "Máy Bơm", "icon": "💧", "description": "Điều khiển máy bơm nước", "unit": "L/min" }
+  ],  
   "temperature": [
     {
       "id": "Nhiệt độ",
@@ -96,5 +96,123 @@
       "title": ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90"],
       "unit": "ppm"
     }
+  ],
+  
+ 
+
+    "dataDeviceManager": [
+      {"name": "Lights", "data": [ { "id": 1, "ten": "Đèn A", "khuvuc": "KV1", "switch": "on" }]},
+      {
+        "name": "Fans",
+        "data": [
+          { "id": 2, "ten": "Quạt B", "khuvuc": "KV2", "switch": "off" }
+        ]
+      },
+      {
+        "name": "Pump",
+        "data": [
+          { "id": 3, "ten": "Bơm", "khuvuc": "KV1", "switch": "on" }
+        ]
+      }
+    ],
+  
+   "alldevices": [
+    {
+      "loai": "light",
+      "data": [
+        {
+          "khuvuc": "KV1",
+          "devices": [
+            { "id": 1, "ten": "Đèn trần", "switch": "on", "checked": false },
+            { "id": 2, "ten": "Đèn bàn", "switch": "on", "checked": false },
+            { "id": 3, "ten": "Đèn trần", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV2",
+          "devices": [
+            { "id": 4, "ten": "Đèn ngủ", "switch": "on", "checked": false },
+            { "id": 5, "ten": "Đèn ngủ", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV3",
+          "devices": [
+            { "id": 4, "ten": "Đèn ngủ", "switch": "on", "checked": false },
+            { "id": 5, "ten": "Đèn ngủ", "switch": "on", "checked": false },
+            { "id": 4, "ten": "Đèn ngủ", "switch": "on", "checked": false },
+            { "id": 5, "ten": "Đèn ngủ", "switch": "on", "checked": false }
+          ]
+        }
+      ]
+    },
+    {
+      "loai": "fan",
+      "data": [
+        {
+          "khuvuc": "KV1",
+          "devices": [
+            { "id": 1, "ten": "Quạt trần", "switch": "on", "checked": false },
+            { "id": 2, "ten": "Quạt bàn", "switch": "on", "checked": false },
+            { "id": 3, "ten": "Quạt trần", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV2",
+          "devices": [
+            { "id": 4, "ten": "Quạt trần", "switch": "on", "checked": false },
+            { "id": 5, "ten": "Quạt trần", "switch": "on", "checked": false }
+          ]
+        }
+      ]
+    },
+    {
+      "loai": "suoi",
+      "data": [
+        {
+          "khuvuc": "KV1",
+          "devices": [
+            { "id": 1, "ten": "May sưởi", "switch": "on", "checked": false },
+            { "id": 2, "ten": "May sưởi", "switch": "on", "checked": false },
+            { "id": 3, "ten": "May sưởi", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV2",
+          "devices": [
+            { "id": 4, "ten": "May sưởi", "switch": "on", "checked": false },
+            { "id": 5, "ten": "May sưởi", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV3",
+          "devices": [
+            { "id": 4, "ten": "May sưởi", "switch": "on", "checked": false },
+            { "id": 5, "ten": "May sưởi", "switch": "on", "checked": false }
+          ]
+        }
+      ]
+    },
+    {
+      "loai": "maybom",
+      "data": [
+        {
+          "khuvuc": "KV1",
+          "devices": [
+            { "id": 1, "ten": "Quạt trần", "switch": "on", "checked": false },
+            { "id": 2, "ten": "Quạt bàn", "switch": "on", "checked": false },
+            { "id": 3, "ten": "Quạt trần", "switch": "on", "checked": false }
+          ]
+        },
+        {
+          "khuvuc": "KV2",
+          "devices": [
+            { "id": 4, "ten": "Quạt trần", "switch": "on", "checked": false },
+            { "id": 5, "ten": "Quạt trần", "switch": "on", "checked": false }
+          ]
+        }
+      ]
+    }
   ]
+  
 }
