@@ -63,10 +63,10 @@ namespace IoT_Farm.Services.MQTT
                 var payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
 
                 // In ra màn hình console
-                Console.WriteLine($"[MQTT RECEIVED] Topic: {topic} | Payload: {payload}");
+                //Console.WriteLine($"[MQTT RECEIVED] Topic: {topic} | Payload: {payload}");
 
                 // Ghi log
-                _logger.LogInformation($"Received Message: Topic = {topic}, Payload = {payload}");
+                //_logger.LogInformation($"Received Message: Topic = {topic}, Payload = {payload}");11
 
                 await HandleReceivedMessage(e);
 
@@ -124,7 +124,7 @@ namespace IoT_Farm.Services.MQTT
                 string topic = e.ApplicationMessage.Topic;
                 string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
 
-                _logger.LogInformation($"[MQTT RECEIVED] Topic: {topic} | Payload: {payload}");
+                //_logger.LogInformation($"[MQTT RECEIVED] Topic: {topic} | Payload: {payload}");
 
                 // Regex kiểm tra topic có dạng "KhuVuc/KV000-KV009/data"
                 if (!Regex.IsMatch(topic, @"^KhuVuc/KV00[0-9]/data$"))

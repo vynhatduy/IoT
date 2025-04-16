@@ -104,6 +104,9 @@ builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddScoped<IDeviceControlRepository, DeviceControlRepository>();
 builder.Services.AddScoped<IDeviceControlService, DeviceControlService>();
+
+builder.Services.AddScoped<IAreaDeviceRepository, AreaDeviceRepository>();
+builder.Services.AddScoped<IAreaDeviceService, AreaDeviceService>();
 // Add AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
 

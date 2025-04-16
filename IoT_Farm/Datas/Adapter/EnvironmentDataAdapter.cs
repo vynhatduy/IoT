@@ -76,7 +76,7 @@ namespace IoT_Farm.Datas.Adapter
                     Humidity = g.Average(d => d.Humidity),
                     AirQuality = g.Average(d => d.AirQuality),
                     Temperature = g.Average(d => d.Temperature),
-                    Brightness = g.Average(d => d.Brightness)
+                    Brightness = g.Average(d => d.Light)
                 })
                 .FirstOrDefaultAsync();
 
