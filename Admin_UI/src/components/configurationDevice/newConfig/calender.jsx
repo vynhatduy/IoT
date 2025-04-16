@@ -3,8 +3,6 @@ import { Button, Box, Stack, Typography, Container, TextField } from '@mui/mater
 import Grid from '@mui/material/Grid2';
 import SelectArea from '../../dropdown/selectArea';
 import SelectDevice from '../../dropdown/selectDevice';
-import DatePicker from '../../date/pickerDate';
-import OnOffDropdown from '../../dropdown/switchOnOff';
 import DateTimePickerValue from '../../date/pickerDateAndTime';
 
 const Calender = () => {
