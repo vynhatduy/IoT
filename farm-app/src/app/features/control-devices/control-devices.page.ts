@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { IonRefresher } from '@ionic/angular';
-import { SocketService } from 'src/app/core/services/socket/socket.service';
 import { v4 as uuid } from 'uuid';
 
 interface DeviceItem {
@@ -37,7 +36,7 @@ export class ControlDevicesPage implements OnInit {
 
   deviceStatus: { [key: string]: boolean } = {};
 
-  constructor(private http: HttpClient, private socketService: SocketService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.fetchAreas();
