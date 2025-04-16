@@ -12,6 +12,7 @@ namespace IoT_Farm.Datas
 
         public string Name { get; set; }
         public DeviceType Type { get; set; }
+        public List<Dictionary<string, bool>> Details { get; set; }
 
     }
     public enum DeviceType
@@ -19,5 +20,12 @@ namespace IoT_Farm.Datas
         ESP8266,
         ESP32,
         ARDUINO,
+    }
+    public static class DeviceDetail
+    {
+        public const string Light = "light";
+        public const string Fan = "fan";
+        public const string Pump = "pump";
+        public const string Heater = "heater";
     }
 }

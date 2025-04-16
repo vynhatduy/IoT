@@ -81,6 +81,16 @@ namespace IoT_Farm.Datas.Adapter
         {
             throw new NotImplementedException();
         }
+
+        public Task<List<T>> FindAsync(Expression<Func<T, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> ReplaceOneAsync(FilterDefinition<T> filter, T model)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

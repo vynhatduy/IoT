@@ -1,6 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-
 namespace IoT_Farm.Datas
 {
     public class AreaDevice
@@ -8,13 +7,15 @@ namespace IoT_Farm.Datas
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; } = ObjectId.GenerateNewId().ToString();
-
-        [BsonRepresentation(BsonType.ObjectId)]
         public string AreaId { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public List<string> DeviceIds { get; set; } = new();
+        public string Topic { get; set; }
+        public List<Device> DeviceDetails { get; set; }
     }
 
-
+    public enum DeviceCategory
+    {
+        Collector,
+        Response
+    }
 }

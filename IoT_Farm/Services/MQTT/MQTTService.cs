@@ -66,7 +66,7 @@ namespace IoT_Farm.Services.MQTT
                 //Console.WriteLine($"[MQTT RECEIVED] Topic: {topic} | Payload: {payload}");
 
                 // Ghi log
-                //_logger.LogInformation($"Received Message: Topic = {topic}, Payload = {payload}");
+                //_logger.LogInformation($"Received Message: Topic = {topic}, Payload = {payload}");11
 
                 await HandleReceivedMessage(e);
 

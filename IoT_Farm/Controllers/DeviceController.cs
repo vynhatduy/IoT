@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IoT_Farm.Controllers
 {
-    [Route("api/area")]
+    [Route("api/device")]
     [ApiController]
     public class DeviceController : ControllerBase
     {
@@ -15,14 +15,14 @@ namespace IoT_Farm.Controllers
             _service = service;
         }
         [HttpPost("control")]
-        public async Task<IActionResult> ControlDevice([FromForm] DeviceRequestModel model)
+        public async Task<IActionResult> ControlDevice(DeviceRequestModel model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            await _service.SendCommandAsync(model);
-            return Ok(new { message = "Command sent successfully", model });
+            var result = await _service.SendCommandAsync(model);
+            return result.Status ? Ok(result) : BadRequest(result);
         }
         [HttpGet("history")]
         public async Task<IActionResult> GetCommandHistory(string deviceId)

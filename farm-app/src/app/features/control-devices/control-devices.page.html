@@ -3,47 +3,141 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-card color="primary">
-    <ion-card-header>
-      <ion-card-title class="center">
-        <ion-list lines="none">
-          <ion-item>
-            <ion-select
-              aria-label="Sensor Location"
-              (ionChange)="onSensorLocationChange($event)"
-              value="0"
-              interface="action-sheet"
-              color="primary"
-            >
-              <ion-select-option value="1">KV1</ion-select-option>
-              <ion-select-option value="0">KV2</ion-select-option>
-              <ion-select-option value="2">KV3</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-list>
-      </ion-card-title>
-    </ion-card-header>
-
+  <!-- Chọn khu vực -->
+  <ion-card>
     <ion-card-content>
-      <div *ngIf="locations && locations.devices">
-        <ion-card *ngFor="let device of locations.devices" color="danger">
-          <ion-card-header>
-            <ion-card-title>
-              <ion-toggle
-                [checked]="sensorData.Status[device.order]"
-                (ionChange)="controlDevice(device, !sensorData.Status[device.order])"
-                color="tertiary"
-              ></ion-toggle>
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <strong>{{device.name}}</strong>
-          </ion-card-content>
-        </ion-card>
+      <ion-item>
+        <ion-label>Chọn khu vực</ion-label>
+        <ion-select
+          placeholder="Chọn khu vực"
+          (ionChange)="onLocationChange($event.detail.value)"
+        >
+          <ion-select-option
+            *ngFor="let location of areas"
+            [value]="location.id"
+          >
+            {{ location.name }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Hiện lỗi nếu có -->
+  <ion-card *ngIf="errorMessage">
+    <ion-card-content class="ion-text-center">
+      <ion-icon name="alert-circle-outline" color="danger"></ion-icon>
+      <p>{{ errorMessage }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Loading indicator -->
+  <div
+    class="ion-padding ion-text-center"
+    *ngIf="loading && !sensorData?.length"
+  >
+    <ion-spinner></ion-spinner>
+    <p>Đang tải dữ liệu...</p>
+  </div>
+
+  <!-- Hiển thị dữ liệu thiết bị -->
+  <ion-card *ngFor="let area of sensorData">
+    <ion-card-content>
+      <div *ngIf="area.deviceDetails?.length > 0">
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              size="12"
+              size-md="12"
+              *ngFor="let device of area.deviceDetails"
+              class="device-col"
+            >
+              <ion-card class="device-card">
+                <ion-card-header>
+                  <ion-card-title>
+                    Vi điều khiển: {{ device.name }}
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card *ngIf="warning">
+                  <ion-card-content class="ion-text-center">
+                    <ion-icon
+                      name="alert-circle-outline"
+                      color="danger"
+                    ></ion-icon>
+                    <p>{{ warning }}</p>
+                  </ion-card-content>
+                </ion-card>
+                <ion-card-content class="device-content">
+                  <ion-grid>
+                    <ion-row class="ion-text-center">
+                      <ion-col
+                        size="12"
+                        size-md=""
+                        class="device-item"
+                        *ngFor="let dev of deviceList"
+                      >
+                        <ion-card
+                          *ngIf="device.details?.[0]?.[dev.key] !== undefined"
+                        >
+                          <ion-card-content class="device-content">
+                            <div class="device-info">
+                              <div class="device-icon">
+                                <img
+                                  [src]="dev.icon"
+                                  alt="{{ dev.label }}"
+                                  class="device-img"
+                                />
+                              </div>
+                              <div class="device-label">{{ dev.label }}</div>
+                            </div>
+                            <ion-toggle
+                              [checked]="device.details?.[0] ?.[dev.key]"
+                              (ionChange)="toggleDevice(device.id, dev.key, $event.detail.checked)"
+                              color="success"
+                            ></ion-toggle>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+
+                  <ion-button
+                    expand="block"
+                    color="primary"
+                    (click)="sendDeviceData(device)"
+                  >
+                    Gửi dữ liệu
+                  </ion-button></ion-card-content
+                >
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div
+        class="ion-text-center ion-padding"
+        *ngIf="area.deviceDetails?.length === 0"
+      >
+        <ion-icon name="alert-circle-outline" size="large"></ion-icon>
+        <p>Không có thiết bị nào trong khu vực này</p>
       </div>
     </ion-card-content>
-    <ion-list *ngIf="!locations">
-      <ion-item lines="none">Data is not available</ion-item>
-    </ion-list>
   </ion-card>
+
+  <!-- Hiển thị thông báo khi chưa chọn khu vực -->
+  <div
+    class="ion-padding ion-text-center"
+    *ngIf="!sensorLocationId && !loading"
+  >
+    <ion-icon name="hand-left-outline" size="large"></ion-icon>
+    <p>Vui lòng chọn khu vực để xem thiết bị</p>
+  </div>
+
+  <ion-loading
+    [isOpen]="loading"
+    message="Đang xử lý..."
+    translucent
+    duration="3000"
+  ></ion-loading>
 </ion-content>
