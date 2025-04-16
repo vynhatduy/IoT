@@ -1,17 +1,38 @@
 <ion-header [translucent]="true" mode="ios">
   <ion-toolbar color="primary">
-    <ion-title>Báo cáo cảm biến</ion-title>
+    <ion-title>Phân tích & Dự báo</ion-title>
+  </ion-toolbar>
+
+  <!-- Thanh công cụ thứ hai cho bộ lọc -->
+  <ion-toolbar color="light">
+    <ion-row>
+      <ion-col size="6">
+        <ion-item lines="none">
+          <ion-label>Khu vực:</ion-label>
+          <ion-select
+            aria-label="Khu vực"
+            [(ngModel)]="sensorLocation"
+            (ionChange)="onSensorLocationChange($event)"
+            interface="popover"
+            placeholder="Chọn khu vực"
+          >
+            <ion-select-option *ngFor="let loc of locations" [value]="loc.value"
+              >{{loc.text}}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item lines="none">
+          <ion-label>Ngày:</ion-label>
+          <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" mode="ios">
-  <ion-card color="success">
-    <ion-card-header><strong>Chọn ngày</strong></ion-card-header>
-    <ion-card-content>
-      <ion-datetime-button datetime="datetime"></ion-datetime-button>
-    </ion-card-content>
-  </ion-card>
-
   <ion-modal [keepContentsMounted]="true">
     <ng-template>
       <ion-datetime
@@ -21,26 +42,99 @@
         [max]="currentDate"
         (ionChange)="dateChanged($event)"
         [formatOptions]="{
-      date: { day: '2-digit', month: '2-digit', year:'numeric'},
-    }"
+          date: { day: '2-digit', month: '2-digit', year:'numeric'},
+        }"
       >
-        <span slot="title">Select Date</span>
+        <span slot="title">Chọn ngày phân tích</span>
       </ion-datetime>
     </ng-template>
   </ion-modal>
 
-  <!-- Temperature chart -->
-  <div class="chart-container">
-    <canvas #temperatureChart></canvas>
-  </div>
+  <!-- Hệ thống cảnh báo tự động -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Cảnh báo hệ thống</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let alert of alerts" [color]="alert.severity">
+          <ion-icon [name]="alert.icon" slot="start"></ion-icon>
+          <ion-label>
+            <h2>{{ alert.title }}</h2>
+            <p>{{ alert.message }}</p>
+            <p class="time">{{ alert.time }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item *ngIf="alerts.length === 0">
+          <ion-label>Không có cảnh báo nào hiện tại</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
-  <!-- Humidity chart -->
-  <div class="chart-container">
-    <canvas #humidityChart></canvas>
-  </div>
+  <!-- Dự đoán xu hướng -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Dự đoán xu hướng</ion-card-title>
+      <ion-segment
+        [(ngModel)]="selectedForecastType"
+        (ionChange)="updateForecastView()"
+      >
+        <ion-segment-button value="temperature">
+          <ion-label>Nhiệt độ</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="humidity">
+          <ion-label>Độ ẩm</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="airQuality">
+          <ion-label>Chất lượng không khí</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="chart-container">
+        <canvas #forecastChart></canvas>
+      </div>
+      <div class="forecast-analysis">
+        <h3>Phân tích xu hướng</h3>
+        <p>{{ forecastAnalysis }}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
 
-  <!-- Brightness chart -->
-  <div class="chart-container">
-    <canvas #brightnessChart></canvas>
-  </div>
+  <!-- Phân tích rủi ro -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Phân tích rủi ro</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let risk of risks">
+          <ion-icon
+            [name]="risk.icon"
+            slot="start"
+            [color]="risk.level"
+          ></ion-icon>
+          <ion-label>
+            <h2>{{ risk.title }}</h2>
+            <p>
+              Mức độ:
+              <ion-text [color]="risk.level">{{ risk.levelText }}</ion-text>
+            </p>
+            <p>{{ risk.description }}</p>
+          </ion-label>
+          <ion-button
+            slot="end"
+            size="small"
+            (click)="viewPreventiveMeasures(risk)"
+          >
+            Biện pháp
+          </ion-button>
+        </ion-item>
+        <ion-item *ngIf="risks.length === 0">
+          <ion-label>Không phát hiện rủi ro tiềm ẩn</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

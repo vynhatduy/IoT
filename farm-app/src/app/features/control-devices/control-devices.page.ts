@@ -166,6 +166,7 @@ export class ControlDevicesPage implements OnInit {
   // select sensorLocation => ex: kv2
   onSensorLocationChange(event: any) {
     this.sensorLocation = event.detail.value;
+    // Removed call to undefined method 'loadEnvironmentData'
     this.loadData().then(() => {
       if (this.useMockData) {
         this.connectMockSignalR();
