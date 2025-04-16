@@ -10,7 +10,7 @@ import Weather from './weather';
 const Index = ({ onClose }) => {
   const [value, setValue] = useState('thoitiet');
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (  newValue) => {
     setValue(newValue);
   };
   return (

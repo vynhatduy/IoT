@@ -101,8 +101,7 @@ const ContainerDevice = ({ deviceInfo, deviceData }) => {
               Đang tắt: {offDevices} thiết bị
             </Typography>
           </Box>
-          <Box><AddDevicelButtons/></Box>
-          <Box><DeleteDevice/></Box>
+          {/* <Box><DeleteDevice/></Box> */}
         </Grid>
       </Grid>
     </Paper>

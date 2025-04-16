@@ -11,7 +11,7 @@ const deviceTypeMapping = {
   'light': 'Đèn',
   'fan': 'Quạt',
   'suoi': 'Máy Sưởi',
-  'maybom': 'Máy Bơm'
+  'maybom': 'Máy Bơm',
   // Thêm các mapping khác nếu cần
 };
 

@@ -1,12 +1,19 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import StyleBackground from '../themes/stylePage/backgroundPage';
-import ListAllDevice from '../components/deviceDetails/listAllDevice';
+import ListAllDevice from '../components/deviceManager/listAllDevice';
+import AddDevicelButtons from '../components/button/addDevice';
+import DeleteDevice from '../components/button/deleteDevice';
 
 const quanLyThietBi = () => {
   return (
     <Box>
+      <AddDevicelButtons />
+      <DeleteDevice/>
+      <Box marginTop={2}>
       <Typography>Danh Sách Thiết Bị</Typography>
+
+      </Box>
       <StyleBackground>
         <ListAllDevice />
       </StyleBackground>

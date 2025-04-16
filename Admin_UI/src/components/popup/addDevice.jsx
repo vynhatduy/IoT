@@ -2,15 +2,13 @@ import { Container, Typography } from '@mui/material';
 import { Button, Stack, TextField, Box } from '@mui/material';
 import { Grid } from '@mui/system';
 import SelectArea from '../dropdown/selectArea';
-import React, { useState } from 'react';
+import React from 'react';
 
 const AddDevice = (onClose) => {
   const data = [
     { id: 1, title: 'Tên', component: <TextField fullWidth placeholder="Nhập tên..." /> },
     { id: 2, title: 'Chọn khu vực', component: <SelectArea fullWidth /> }
   ];
-
-
 
   return (
     <Container>
