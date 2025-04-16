@@ -9,10 +9,9 @@ const quanLyThietBi = () => {
   return (
     <Box>
       <AddDevicelButtons />
-      <DeleteDevice/>
+      <DeleteDevice />
       <Box marginTop={2}>
-      <Typography>Danh Sách Thiết Bị</Typography>
-
+        <Typography variant="subtitle1">Danh Sách Thiết Bị</Typography>
       </Box>
       <StyleBackground>
         <ListAllDevice />
