@@ -15,7 +15,7 @@ export default function SelectWeather() {
   };
 
   return (
-    <FormControl sx={{ width:120,paddingLeft:'10px', padding:'8px' }}>
+    <FormControl fullWidth>
       <InputLabel id="select-weather-label">Thời tiết</InputLabel>
       <Select
         labelId="select-weather-label"

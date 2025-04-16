@@ -8,10 +8,10 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 // Project Imports
-import MainCard from '../../components/MainCard';
+import MainCard from '../MainCard';
 import IncomeAreaChart from '../contentDashboard/IncomeAreaChart';
 import useDailyEnvironmentData from '../../service/useDailyEnvironmentData';
-import SelectArea from '../../components/button/selectArea';
+import SelectArea from '../../components/dropdown/selectArea';
 
 export default function UniqueVisitorCard() {
   const [area, setArea] = useState('');

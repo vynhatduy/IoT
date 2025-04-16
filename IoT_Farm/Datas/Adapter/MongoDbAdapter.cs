@@ -72,5 +72,17 @@ namespace IoT_Farm.Datas.Adapter
         {
             return await _collection.Find(filter).FirstOrDefaultAsync();
         }
+
+        public async Task<List<T>> FindAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _collection.Find(predicate).ToListAsync();
+        }
+
+        public async Task<bool> ReplaceOneAsync(FilterDefinition<T> filter, T model)
+        {
+            var result = await _collection.ReplaceOneAsync(filter, model);
+            Console.WriteLine($"MatchedCount: {result.MatchedCount}, ModifiedCount{result.ModifiedCount}");
+            return result.ModifiedCount > 0;
+        }
     }
 }

@@ -1,11 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useDemoRouter } from '@toolpad/core/internal';
-import {
-  PageContainer,
-  PageHeader,
-  PageHeaderToolbar,
-} from '@toolpad/core/PageContainer';
+import { PageContainer, PageHeader, PageHeaderToolbar } from '@toolpad/core/PageContainer';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { LocalizationProvider } from '@mui/x-date-pickers-pro/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
@@ -16,20 +12,20 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import dayjs from 'dayjs';
 import { useTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import PageContent from './PageContent';
+import PageContent from './pageContent';
 
 const NAVIGATION = [
-  { segment: '', title: 'Weather' },
-  { segment: 'orders', title: 'Orders' },
+  { segment: '', title: 'Thời tiết' },
+  { segment: 'orders', title: 'Orders' }
 ];
 
 // Custom Toolbar Component
 function CustomPageToolbar({ status }) {
   return (
     <PageHeaderToolbar>
-      <p>Current status: {status}</p>
+      <p>Trạng thái hiện tại: {status}</p>
       <Button startIcon={<FileDownloadIcon />} color="inherit">
-        Export
+        Xuất
       </Button>
 
       <DateRangePicker
@@ -44,38 +40,32 @@ function CustomPageToolbar({ status }) {
 }
 
 CustomPageToolbar.propTypes = {
-  status: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired
 };
 
 // Custom Header Component
 function CustomPageHeader({ status }) {
-  const CustomPageToolbarComponent = React.useCallback(
-    () => <CustomPageToolbar status={status} />,
-    [status]
-  );
+  const CustomPageToolbarComponent = React.useCallback(() => <CustomPageToolbar status={status} />, [status]);
 
   return <PageHeader slots={{ toolbar: CustomPageToolbarComponent }} />;
 }
 
 CustomPageHeader.propTypes = {
-  status: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired
 };
 
 // Main Page Container Component
 export default function ActionsPageContainer() {
-  const {router} = useDemoRouter();
+  const { router } = useDemoRouter();
   const status = 'Active';
   const theme = useTheme();
 
-  const CustomPageHeaderComponent = React.useCallback(
-    () => <CustomPageHeader status={status} />,
-    [status]
-  );
+  const CustomPageHeaderComponent = React.useCallback(() => <CustomPageHeader status={status} />, [status]);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <AppProvider navigation={NAVIGATION} router={router} theme={theme}>
-        <Paper sx={{ width: '100%'}}>
+        <Paper sx={{ width: '100%' }}>
           <PageContainer slots={{ header: CustomPageHeaderComponent }}>
             <PageContent />
           </PageContainer>

@@ -1,15 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
-const OutlinedButtons = ({ onClick }) => {
+export const DownloadButtons = ({ onClick }) => {
   return (
-    <Stack direction="row" spacing={2} sx={{ paddingLeft: 60, height: 50 }}>
-      <Button variant="contained" onClick={onClick}>
+    <Stack direction="row" sx={{ height: 50 }}>
+      <Button variant="contained" onClick={onClick} sx={{ width: 100 }}>
         Tải xuống
       </Button>
     </Stack>
   );
 };
-
-export default OutlinedButtons;

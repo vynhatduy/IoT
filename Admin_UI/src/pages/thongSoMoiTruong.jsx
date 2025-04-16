@@ -7,7 +7,6 @@ const thongSoMoiTruong = () => {
     <Box>
     <Typography sx={{}}>THONG SO MOI TRUONG</Typography>
     <StyleBackground>
-      <ActionsPageContainer/>
     </StyleBackground>
   </Box>
   );

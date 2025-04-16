@@ -22,9 +22,9 @@ namespace IoT_Farm.Datas
         public string Area { get; set; }
         public double Temperature { get; set; }
         public double Humidity { get; set; }
-        public double Brightness { get; set; }
+        public double Light { get; set; }
         public double AirQuality { get; set; }
         [BsonElement("Timestamp")]
-        public DateTime Timestamp { get; set; } = DateTime.Now;
+        public DateTime Timestamp { get; set; } = DateTime.UtcNow.AddHours(7);
     }
 }

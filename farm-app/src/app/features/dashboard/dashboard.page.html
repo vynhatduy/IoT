@@ -9,6 +9,13 @@
     <ion-spinner></ion-spinner>
   </div>
 
+  <ion-card *ngIf="errorMessage">
+    <ion-card-content class="ion-text-center">
+      <ion-icon name="alert-circle-outline" color="danger"></ion-icon>
+      <p>{{ errorMessage }}</p>
+    </ion-card-content>
+  </ion-card>
+
   <ion-card *ngIf="sensorData">
     <ion-card-header>
       <ion-list lines="none">
@@ -20,9 +27,9 @@
             mode="ios"
             color="primary"
           >
-            <ion-select-option value="KV001">KV001</ion-select-option>
-            <ion-select-option value="KV002">KV002</ion-select-option>
-            <ion-select-option value="KV003">KV003</ion-select-option>
+            <ion-select-option *ngFor="let area of areas" [value]="area.name">
+              {{ area.name }}
+            </ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>
@@ -49,14 +56,23 @@
         <ion-card-content>Humidity</ion-card-content>
       </ion-card>
 
-      <ion-card *ngIf="sensorData.brightness !== undefined" color="warning">
+      <ion-card *ngIf="sensorData.light !== undefined" color="warning">
         <ion-card-header>
           <ion-card-title>
             <ion-icon size="large" name="sunny-outline"></ion-icon>
-            <strong>{{ sensorData.brightness }}</strong>
+            <strong>{{ sensorData.light }}</strong>
           </ion-card-title>
         </ion-card-header>
         <ion-card-content>Brightness</ion-card-content>
+      </ion-card>
+      <ion-card *ngIf="sensorData.airQuality !== undefined" color="success">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon size="large" name="sunny-outline"></ion-icon>
+            <strong>{{ sensorData.airQuality }}</strong>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>AirQuality</ion-card-content>
       </ion-card>
     </ion-card-content>
   </ion-card>

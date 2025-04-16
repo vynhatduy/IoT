@@ -38,9 +38,9 @@ namespace IoT_Farm.Controllers
         /// Lấy dữ liệu mới nhất (1 bản ghi gần nhất)
         /// </summary>
         [HttpGet("latest")]
-        public async Task<IActionResult> GetLatestData()
+        public async Task<IActionResult> GetLatestData(string area)
         {
-            var data = await _environmentService.GetLatestEnvironmentData();
+            var data = await _environmentService.GetLatestEnvironmentData(area);
             if (data == null)
                 return NotFound("No data available.");
 

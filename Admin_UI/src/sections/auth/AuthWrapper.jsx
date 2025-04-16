@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid2';
 import Box from '@mui/material/Box';
 
 // project imports
-import AuthFooter from 'components/cards/AuthFooter';
+import AuthFooter from '../../components/cards/AuthFooter';
 // import Logo from 'components/logo';
 import AuthCard from './AuthCard';
 

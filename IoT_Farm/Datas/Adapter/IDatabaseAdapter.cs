@@ -16,6 +16,8 @@ namespace IoT_Farm.Datas.Adapter
         Task<bool> ExistsAsync(FilterDefinition<T> filter);
         Task InsertOneAsync(T document);
         Task<T?> FindOneAsync(FilterDefinition<T> filter);
+        Task<List<T>> FindAsync(Expression<Func<T, bool>> predicate);
+        Task<bool> ReplaceOneAsync(FilterDefinition<T> filter, T model);
 
     }
 }
