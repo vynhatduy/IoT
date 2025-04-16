@@ -128,26 +128,32 @@ export class ControlDevicesPage implements OnInit {
     const deviceDetails = device.details?.[0] || {};
     const deviceId = device.id;
 
+    const supportedKeys = ['light', 'fan', 'pump', 'heater'];
     const payload: any = { deviceId: device.name };
 
-    if (this.pendingDeviceStatus[deviceId]?.['light'] !== undefined) {
-      payload.light = this.pendingDeviceStatus[deviceId]['light'] ? 1 : 0;
-    }
-    if (this.pendingDeviceStatus[deviceId]?.['fan'] !== undefined) {
-      payload.fan = this.pendingDeviceStatus[deviceId]['fan'] ? 1 : 0;
-    }
-    if (this.pendingDeviceStatus[deviceId]?.['pump'] !== undefined) {
-      payload.pump = this.pendingDeviceStatus[deviceId]['pump'] ? 1 : 0;
-    }
-    if (this.pendingDeviceStatus[deviceId]?.['heater'] !== undefined) {
-      payload.heater = this.pendingDeviceStatus[deviceId]['heater'] ? 1 : 0;
-    }
+    let hasChanges = false;
 
-    const deviceStatus = deviceDetails || {};
-    const hasChanges = Object.keys(payload).some(
-      (key) =>
-        key !== 'deviceId' && payload[key] !== (deviceStatus[key] ? 1 : 0)
-    );
+    for (const key of supportedKeys) {
+      const pending = this.pendingDeviceStatus[deviceId]?.[key];
+      const current = deviceDetails?.[key];
+
+      if (pending !== undefined) {
+        const value = pending ? 1 : 0;
+        const currentValue = current ? 1 : 0;
+
+        if (value !== currentValue) {
+          // Nếu có thay đổi → dùng pending
+          payload[key] = value;
+          hasChanges = true;
+        } else {
+          // Nếu giống nhau → dùng current
+          payload[key] = currentValue;
+        }
+      } else if (current !== undefined) {
+        // Nếu không có pending → giữ nguyên current
+        payload[key] = current ? 1 : 0;
+      }
+    }
 
     if (hasChanges) {
       try {
@@ -168,9 +174,7 @@ export class ControlDevicesPage implements OnInit {
       this.warning = 'Vui lòng bật hoặc tắt thiết bị để thực hiện thay đổi!';
     }
   }
-  showNoChangesAlert() {
-    alert('Vui lòng bật hoặc tắt thiết bị để thực hiện thay đổi!');
-  }
+
   getDefaultSensorData() {
     return {
       temperature: 0,
