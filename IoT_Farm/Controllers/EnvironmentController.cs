@@ -33,6 +33,12 @@ namespace IoT_Farm.Controllers
 
             return Ok(data);
         }
+        [HttpGet("dataForReport")]
+        public async Task<IActionResult> GetDataForReport(string areaId, DateTime date)
+        {
+            var result = await _environmentService.GetDataForReportByAreaDateType(areaId, date);
+            return result.Status ? Ok(result) : NoContent();
+        }
 
         /// <summary>
         /// Lấy dữ liệu mới nhất (1 bản ghi gần nhất)

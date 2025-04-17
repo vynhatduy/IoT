@@ -4,7 +4,7 @@ import { StatisticsService } from '../../core/services/api/statistics.service';
 import DataTypeEnum from '../../models/enums/DataTypeEnum';
 import { environment } from '../../../environments/environment';
 import { AlertController, ModalController } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-statistics',
@@ -20,23 +20,38 @@ export class StatisticsPage implements OnInit {
   forecastChartObj!: Chart;
   useMockData = environment.useMockData;
 
-  sensorLocation: string = '2'; // Mặc định là KV2 (giống như trong control-devices)
+  sensorData: any;
+  loading: boolean = true;
+  errorMessage: string = '';
+  sensorLocation: string = '';
+  areas: any[] = [];
+
+  getAllArea() {
+    this.http.get<any[]>(`${environment.be_api}/area`).subscribe(
+      (data) => {
+        this.areas = data;
+        if (this.areas.length > 0) {
+          this.sensorLocation = this.areas[0].name;
+          this.currentDate = this.getCurrentDate();
+          this.loadEnvironmentData(this.sensorLocation, this.currentDate);
+        }
+      },
+      (error) => {
+        console.error('Lỗi lấy danh sách khu vực:', error);
+        this.errorMessage = 'Không thể tải danh sách khu vực!';
+      }
+    );
+  }
   getSelectedAreaText(): string {
     // Tìm text tương ứng với sensorLocation từ mảng locations
-    const selectedLocation = this.locations.find(
+    const selectedLocation = this.areas.find(
       (loc) => loc.value === this.sensorLocation
     );
-    return selectedLocation ? selectedLocation.text : 'KV2';
+    return selectedLocation ? selectedLocation.text : 'KV001';
   }
 
-  locations: any[] = [
-    { value: '1', text: 'KV1' },
-    { value: '2', text: 'KV2' },
-    { value: '3', text: 'KV3' },
-  ];
   // Chọn khu vực
-  selectedArea: string = 'KV2'; // Giá trị mặc định là KV2
-  availableAreas: string[] = ['KV1', 'KV2', 'KV3']; // Danh sách các khu vực có sẵn
+  selectedArea: string = 'KV001'; // Giá trị mặc định là KV001
 
   // Cảnh báo hệ thống
   alerts: any[] = [];
@@ -67,32 +82,34 @@ export class StatisticsPage implements OnInit {
   }
 
   ngOnInit() {
-    this.currentDate = this.getCurrentDate();
-    this.loadEnvironmentData(this.currentDate);
+    this.getAllArea();
   }
 
   // Xử lý khi có thay đổi khu vực
   areaChanged(event: CustomEvent) {
     this.selectedArea = event.detail.value;
-    this.loadEnvironmentData(this.currentDate);
+    this.loadEnvironmentData(this.selectedArea, this.currentDate);
   }
 
-  // Hàm chuyển đổi string thành DataTypeEnum
-  getAreaEnum(area: string): any {
-    // Hoặc sử dụng kiểu trả về chính xác nếu biết
-    switch (area) {
-      case 'KV1':
-        return DataTypeEnum.SENSORLOCATION.KV1;
-      case 'KV2':
-        return DataTypeEnum.SENSORLOCATION.KV2;
-      case 'KV3':
-        return DataTypeEnum.SENSORLOCATION.KV3;
-      default:
-        return DataTypeEnum.SENSORLOCATION.KV2; // Mặc định
-    }
-  }
+  // // Hàm chuyển đổi string thành DataTypeEnum
+  // getAreaEnum(area: string): any {
+  //   // Hoặc sử dụng kiểu trả về chính xác nếu biết
+  //   switch (area) {
+  //     case 'KV1':
+  //       return DataTypeEnum.SENSORLOCATION.KV1;
+  //     case 'KV2':
+  //       return DataTypeEnum.SENSORLOCATION.KV2;
+  //     case 'KV3':
+  //       return DataTypeEnum.SENSORLOCATION.KV3;
+  //     default:
+  //       return DataTypeEnum.SENSORLOCATION.KV2; // Mặc định
+  //   }
+  // }
 
-  async loadEnvironmentData(day: string) {
+  async loadEnvironmentData(areaId: string, day: string) {
+    this.loading = true;
+    this.errorMessage = '';
+    this.environmentData = [];
     try {
       if (this.useMockData) {
         // Sử dụng dữ liệu mẫu
@@ -105,42 +122,24 @@ export class StatisticsPage implements OnInit {
 
         if (areaData && areaData.length > 0) {
           this.environmentData = areaData;
+          this.loading = false;
         } else {
           this.environmentData = [];
           this.showNoDataMessage();
+          this.loading = false;
           return; // Thoát sớm nếu không có dữ liệu
         }
       } else {
         // Sử dụng API thật với khu vực đã chọn
-        let location;
-        switch (this.sensorLocation) {
-          case '1':
-            location = DataTypeEnum.SENSORLOCATION.KV1;
-            break;
-          case '2':
-            location = DataTypeEnum.SENSORLOCATION.KV2;
-            break;
-          case '3':
-            location = DataTypeEnum.SENSORLOCATION.KV3;
-            break;
-          default:
-            location = DataTypeEnum.SENSORLOCATION.KV2;
-        }
+        const params = new HttpParams()
+          .set('areaId', areaId ?? 'KV001')
+          .set('date', day);
+        const res: any = await this.http
+          .get(`${environment.be_api}/environment/dataForReport`, { params })
+          .toPromise();
 
-        const data = await this.statisticsService.getSpecifiedDateData(
-          location,
-          day
-        );
-
-        if (data && data.length > 0) {
-          this.environmentData = data;
-        } else {
-          this.environmentData = [];
-          this.showNoDataMessage();
-          return; // Thoát sớm nếu không có dữ liệu
-        }
+        this.environmentData = res?.data ?? [];
       }
-
       // Phát hiện và tạo cảnh báo
       this.generateAlerts();
 
@@ -223,11 +222,11 @@ export class StatisticsPage implements OnInit {
 
   dateChanged(event: CustomEvent) {
     const selectedDate: string = event.detail.value;
-    this.loadEnvironmentData(selectedDate);
+    this.loadEnvironmentData(this.sensorLocation, selectedDate);
   }
   onSensorLocationChange(event: any) {
     this.sensorLocation = event.detail.value;
-    this.loadEnvironmentData(this.currentDate);
+    this.loadEnvironmentData(this.sensorLocation, this.currentDate);
   }
 
   formatDate(dateString: string): string {
@@ -248,7 +247,7 @@ export class StatisticsPage implements OnInit {
 
     // Lấy dữ liệu mới nhất
     const latestData = this.environmentData[this.environmentData.length - 1];
-
+    console.log('latestData', latestData);
     // Kiểm tra nhiệt độ
     if (latestData.temperature > this.safeThresholds.temperature.max) {
       this.alerts.push({
@@ -256,7 +255,7 @@ export class StatisticsPage implements OnInit {
         message: `Nhiệt độ hiện tại (${latestData.temperature}°C) vượt quá ngưỡng an toàn (${this.safeThresholds.temperature.max}°C)`,
         severity: 'danger',
         icon: 'thermometer-outline',
-        time: this.formatDate(latestData.createAt),
+        time: this.formatDate(latestData.timestamp),
       });
     } else if (latestData.temperature < this.safeThresholds.temperature.min) {
       this.alerts.push({
@@ -264,7 +263,7 @@ export class StatisticsPage implements OnInit {
         message: `Nhiệt độ hiện tại (${latestData.temperature}°C) dưới ngưỡng an toàn (${this.safeThresholds.temperature.min}°C)`,
         severity: 'warning',
         icon: 'thermometer-outline',
-        time: this.formatDate(latestData.createAt),
+        time: this.formatDate(latestData.timestamp),
       });
     }
 
@@ -275,7 +274,7 @@ export class StatisticsPage implements OnInit {
         message: `Độ ẩm hiện tại (${latestData.humidity}%) vượt quá ngưỡng an toàn (${this.safeThresholds.humidity.max}%)`,
         severity: 'warning',
         icon: 'water-outline',
-        time: this.formatDate(latestData.createAt),
+        time: this.formatDate(latestData.timestamp),
       });
     } else if (latestData.humidity < this.safeThresholds.humidity.min) {
       this.alerts.push({
@@ -283,13 +282,13 @@ export class StatisticsPage implements OnInit {
         message: `Độ ẩm hiện tại (${latestData.humidity}%) dưới ngưỡng an toàn (${this.safeThresholds.humidity.min}%)`,
         severity: 'warning',
         icon: 'water-outline',
-        time: this.formatDate(latestData.createAt),
+        time: this.formatDate(latestData.timestamp),
       });
     }
 
     // Kiểm tra chất lượng không khí (Giả định brightness là chỉ số chất lượng không khí)
     const airQuality = this.convertBrightnessToAirQuality(
-      latestData.brightness
+      latestData.airQuality
     );
     if (airQuality > this.safeThresholds.airQuality.max) {
       this.alerts.push({
@@ -297,16 +296,16 @@ export class StatisticsPage implements OnInit {
         message: `Chất lượng không khí hiện tại (${airQuality}) không đạt tiêu chuẩn an toàn`,
         severity: 'danger',
         icon: 'leaf-outline',
-        time: this.formatDate(latestData.createAt),
+        time: this.formatDate(latestData.timestamp),
       });
     }
   }
 
   // Hàm chuyển đổi brightness thành chỉ số chất lượng không khí (đơn giản hóa)
-  convertBrightnessToAirQuality(brightness: number): number {
+  convertBrightnessToAirQuality(airQuality: number): number {
     // Giả định: brightness cao = ít bụi mịn = chất lượng không khí tốt hơn
     // Công thức đơn giản: AQI = 100 - (brightness/10)
-    const aqi = Math.round(100 - brightness / 10);
+    const aqi = Math.round(100 - airQuality / 10);
     return Math.max(0, Math.min(100, aqi)); // Giới hạn trong khoảng 0-100
   }
 
@@ -332,9 +331,8 @@ export class StatisticsPage implements OnInit {
       const humidityForecast = this.linearRegressionForecast('humidity', i);
 
       // Dự báo chất lượng không khí
-      const brightnessForcast = this.linearRegressionForecast('brightness', i);
-      const airQualityForecast =
-        this.convertBrightnessToAirQuality(brightnessForcast);
+      const brightnessForcast = this.linearRegressionForecast('light', i);
+      const airQualityForecast = this.linearRegressionForecast('airQuality', i);
 
       this.forecastData.push({
         time: forecastTime,
@@ -361,13 +359,19 @@ export class StatisticsPage implements OnInit {
 
     // Chuyển đổi thời gian thành giờ để tính toán
     for (let i = 0; i < n; i++) {
-      const x = i; // x là chỉ số thời gian (0, 1, 2...)
-      const y =
-        dataType === 'temperature'
-          ? recentData[i].temperature
-          : dataType === 'humidity'
-          ? recentData[i].humidity
-          : recentData[i].brightness;
+      const x = i;
+      let y = 0;
+
+      const record = recentData[i];
+      if (dataType === 'temperature') {
+        y = record.temperature;
+      } else if (dataType === 'humidity') {
+        y = record.humidity;
+      } else if (dataType === 'brightness') {
+        y = record.brightness;
+      } else if (dataType === 'airQuality') {
+        y = record.airQuality;
+      }
 
       sumX += x;
       sumY += y;
@@ -429,6 +433,7 @@ export class StatisticsPage implements OnInit {
     } else {
       // Chất lượng không khí
       const aqDiff = lastPoint.airQuality - firstPoint.airQuality;
+
       if (Math.abs(aqDiff) < 5) {
         this.forecastAnalysis =
           'Chất lượng không khí dự kiến giữ ổn định trong 12 giờ tới.';
@@ -615,9 +620,10 @@ export class StatisticsPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Biện pháp phòng ngừa',
       subHeader: risk.title,
-      message: risk.preventiveMeasures
-        .map((measure: string) => `- ${measure}`)
-        .join('<br>'),
+      message: risk.preventiveMeasures.map(
+        (measure: string) => `\n- ${measure}`
+      ),
+
       buttons: ['Đóng'],
     });
 
@@ -681,7 +687,7 @@ export class StatisticsPage implements OnInit {
         dataPoints.unshift(latestData.humidity);
       } else {
         dataPoints.unshift(
-          this.convertBrightnessToAirQuality(latestData.brightness)
+          this.convertBrightnessToAirQuality(latestData.airQuality)
         );
       }
     }
