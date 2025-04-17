@@ -1,4 +1,5 @@
 ﻿using IoT_Farm.Datas;
+using IoT_Farm.Models.Response;
 
 namespace IoT_Farm.Services.Interface
 {
@@ -13,5 +14,6 @@ namespace IoT_Farm.Services.Interface
         Task<EnvironmentData?> GetLatestEnvironmentData(string area);
         Task<List<EnvironmentData>> GetEnvironmentDataByDate(DateTime date, string area);
         Task<(double Humidity, double AirQuality, double Temperature, double Brightness)> GetAverageEnvironmentData(DateTime date);
+        Task<ResultModel> GetDataForReportByAreaDateType(string areaId, DateTime date);
     }
 }

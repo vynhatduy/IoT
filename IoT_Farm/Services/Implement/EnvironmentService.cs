@@ -1,4 +1,5 @@
 ﻿using IoT_Farm.Datas;
+using IoT_Farm.Models.Response;
 using IoT_Farm.Repositories.Interface;
 using IoT_Farm.Services.Interface;
 using MongoDB.Driver;
@@ -67,5 +68,82 @@ namespace IoT_Farm.Services.Implement
         {
             return await _repository.GetAverageEnvironmentData(date);
         }
+
+        public async Task<ResultModel> GetDataForReportByAreaDateType(string areaId, DateTime date)
+        {
+            try
+            {
+                var now = DateTime.Now;
+
+                if (date.Date > now.Date)
+                {
+                    return new ResultModel
+                    {
+                        Status = false,
+                        Message = "Ngày không hợp lệ. Không thể chọn ngày trong tương lai",
+                        Data = null
+                    };
+                }
+
+                var fromDate = date.Date.AddDays(-5);
+                var toDate = date;
+
+                var result = await _repository.GetDataForReportByAreaDateType(areaId, fromDate, toDate);
+
+                if (result == null || result.Count < 1)
+                {
+                    return new ResultModel
+                    {
+                        Status = false,
+                        Message = "Không có dữ liệu. Vui lòng thử lại.",
+                        Data = null
+                    };
+                }
+
+                //var filteredData = await FilterData(result, type);
+
+                return new ResultModel
+                {
+                    Status = true,
+                    Message = "Lấy dữ liệu thành công",
+                    //Data = filteredData
+                    Data = result
+                };
+            }
+            catch (Exception ex)
+            {
+                return new ResultModel
+                {
+                    Status = false,
+                    Message = "Lỗi: " + ex.Message,
+                    Data = null
+                };
+            }
+        }
+        private async Task<List<object>> FilterData(List<EnvironmentData> data, string filter)
+        {
+            return await Task.Run(() =>
+            {
+                return data.Select(x => new
+                {
+                    x.DeviceId,
+                    x.Area,
+                    Value = filter switch
+                    {
+                        "Temperature" => (object)x.Temperature,
+                        "Humidity" => (object)x.Humidity,
+                        "AirQuality" => (object)x.AirQuality,
+                        "Light" => (object)x.Light,
+                        _ => null
+                    },
+                    x.Timestamp
+                })
+                .Where(x => x.Value != null)
+                .Cast<object>()
+                .ToList();
+            });
+        }
+
+
     }
 }

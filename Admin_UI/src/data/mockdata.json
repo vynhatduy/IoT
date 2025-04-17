@@ -163,7 +163,7 @@
       ]
     },
     {
-      "loai": "suoi",
+      "loai": "heater",
       "data": [
         {
           "khuvuc": "KV1",
@@ -190,7 +190,7 @@
       ]
     },
     {
-      "loai": "maybom",
+      "loai": "pump",
       "data": [
         {
           "khuvuc": "KV1",

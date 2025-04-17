@@ -10,5 +10,6 @@ namespace IoT_Farm.Repositories.Interface
         Task<bool> AddAsync(EnvironmentData data);
         Task<List<EnvironmentData>> GetEnvironmentDataByDate(DateTime date, string area);
         Task<(double Humidity, double AirQuality, double Temperature, double Brightness)> GetAverageEnvironmentData(DateTime date);
+        Task<List<EnvironmentData>> GetDataForReportByAreaDateType(string areaId, DateTime fromDate, DateTime toDate);
     }
 }
