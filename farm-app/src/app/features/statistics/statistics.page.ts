@@ -15,6 +15,7 @@ export class StatisticsPage implements OnInit {
   @ViewChild('forecastChart') forecastChart!: ElementRef;
 
   currentDate!: string;
+  currentTime!: string;
   environmentData!: any;
   forecastData: any[] = [];
   forecastChartObj!: Chart;
@@ -33,7 +34,11 @@ export class StatisticsPage implements OnInit {
         if (this.areas.length > 0) {
           this.sensorLocation = this.areas[0].name;
           this.currentDate = this.getCurrentDate();
-          this.loadEnvironmentData(this.sensorLocation, this.currentDate);
+          this.currentTime = this.getCurrentTime();
+          this.loadEnvironmentData(
+            this.sensorLocation,
+            `${this.currentDate} ${this.currentTime}`
+          );
         }
       },
       (error) => {
@@ -88,23 +93,11 @@ export class StatisticsPage implements OnInit {
   // Xử lý khi có thay đổi khu vực
   areaChanged(event: CustomEvent) {
     this.selectedArea = event.detail.value;
-    this.loadEnvironmentData(this.selectedArea, this.currentDate);
+    this.loadEnvironmentData(
+      this.selectedArea,
+      `${this.currentDate} ${this.currentTime}`
+    );
   }
-
-  // // Hàm chuyển đổi string thành DataTypeEnum
-  // getAreaEnum(area: string): any {
-  //   // Hoặc sử dụng kiểu trả về chính xác nếu biết
-  //   switch (area) {
-  //     case 'KV1':
-  //       return DataTypeEnum.SENSORLOCATION.KV1;
-  //     case 'KV2':
-  //       return DataTypeEnum.SENSORLOCATION.KV2;
-  //     case 'KV3':
-  //       return DataTypeEnum.SENSORLOCATION.KV3;
-  //     default:
-  //       return DataTypeEnum.SENSORLOCATION.KV2; // Mặc định
-  //   }
-  // }
 
   async loadEnvironmentData(areaId: string, day: string) {
     this.loading = true;
@@ -208,25 +201,40 @@ export class StatisticsPage implements OnInit {
     // Cập nhật biểu đồ (sẽ hiển thị trống)
     this.updateForecastView();
   }
+
+  getCurrentTime(): string {
+    const today: Date = new Date();
+    const hours: string = today.getHours().toString().padStart(2, '0');
+    const minutes: string = today.getMinutes().toString().padStart(2, '0');
+    const seconds: string = today.getSeconds().toString().padStart(2, '0');
+
+    // Trả về giờ dưới dạng chuỗi 'HH:mm:ss'
+    return `${hours}:${minutes}:${seconds}`;
+  }
+
   getCurrentDate(): string {
     const today: Date = new Date();
     const year: number = today.getFullYear();
-    const month: number = today.getMonth() + 1;
-    const day: number = today.getDate();
+    const month: string = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day: string = today.getDate().toString().padStart(2, '0');
+    const hours: string = today.getHours().toString().padStart(2, '0');
+    const minutes: string = today.getMinutes().toString().padStart(2, '0');
+    const seconds: string = today.getSeconds().toString().padStart(2, '0');
 
-    const formattedMonth: string = month < 10 ? '0' + month : '' + month;
-    const formattedDay: string = day < 10 ? '0' + day : '' + day;
-
-    return year + '-' + formattedMonth + '-' + formattedDay;
+    return `${year}-${month}-${day}`;
   }
 
   dateChanged(event: CustomEvent) {
     const selectedDate: string = event.detail.value;
+    console.log(selectedDate);
     this.loadEnvironmentData(this.sensorLocation, selectedDate);
   }
   onSensorLocationChange(event: any) {
     this.sensorLocation = event.detail.value;
-    this.loadEnvironmentData(this.sensorLocation, this.currentDate);
+    this.loadEnvironmentData(
+      this.sensorLocation,
+      `${this.currentDate} ${this.currentTime}`
+    );
   }
 
   formatDate(dateString: string): string {
@@ -247,7 +255,7 @@ export class StatisticsPage implements OnInit {
 
     // Lấy dữ liệu mới nhất
     const latestData = this.environmentData[this.environmentData.length - 1];
-    console.log('latestData', latestData);
+
     // Kiểm tra nhiệt độ
     if (latestData.temperature > this.safeThresholds.temperature.max) {
       this.alerts.push({
@@ -614,17 +622,17 @@ export class StatisticsPage implements OnInit {
       });
     }
   }
-
-  // Hiển thị biện pháp phòng ngừa
   async viewPreventiveMeasures(risk: any) {
+    const message = risk.preventiveMeasures.map(
+      (measure: string) => `${measure}. `
+    );
+
     const alert = await this.alertController.create({
       header: 'Biện pháp phòng ngừa',
       subHeader: risk.title,
-      message: risk.preventiveMeasures.map(
-        (measure: string) => `\n- ${measure}`
-      ),
-
+      message: message,
       buttons: ['Đóng'],
+      mode: 'ios', // hoặc 'md' tùy thiết bị
     });
 
     await alert.present();
