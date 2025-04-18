@@ -19,10 +19,8 @@ export default function useArea() {
         setLoading(false);
       }
     }
-
     fetchAreas();
   }, []);
-
 
   return { areas, loading, error };
 }
