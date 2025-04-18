@@ -1,0 +1,345 @@
+[{
+  "_id": {
+    "$oid": "67e6b91cc46c0ef3b163f445"
+  },
+  "first_name": "Vy Nhat",
+  "last_name": "Duy",
+  "email": "2115201@dlu.edu.vn",
+  "PasswordHash": "$2a$11$rXaUMbcafeIqHWIH5Z.yi.9UMxXpyK7qu7w6n5I/AnFYwHu7wQv3C",
+  "role": "User",
+  "created_at": {
+    "$date": "2025-03-28T14:58:36.227Z"
+  },
+  "updated_at": {
+    "$date": "2025-03-28T14:58:36.227Z"
+  },
+  "address": "Da Lat",
+  "phone": "0987654321",
+  "RefreshTokens": [
+    {
+      "_id": 0,
+      "Token": "2HBS6VB39a+cetlg+JLnWgIasDaQcX52LubCpRYCIWFRQ1Rqg9um4l9wQqgWZsWBLYGrd6E0g0K/BWTPAi0sEw==",
+      "Expires": {
+        "$date": "2025-04-04T15:33:05.585Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T15:33:05.585Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "rNqkGqlUGLV7l524l29s3ZJg8B9jHeUyW0eRNY8D3R+oFxfcY5dA2xkaQc/MK8FTYaq/xCO6KE9y6jh+s1/KXw==",
+      "Expires": {
+        "$date": "2025-04-04T16:33:00.863Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:33:00.863Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "5oYlCpo17cBbV4d4nT4/GGlDwouERNqG5rmwcpv4YjUHAUjPgrpqfvY5v0ge4yyaLqzN0A4VIzgR+fEGei3q/A==",
+      "Expires": {
+        "$date": "2025-04-04T16:34:37.157Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:34:37.157Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "X6ZC8EaiEkQ0MCb6UbX2XMUuqwUY7jYh50Qgl/sAWYRVQ171Mjo/vbXZTdhcknDYkL1OZVcOY4kT7sZUt2E4dg==",
+      "Expires": {
+        "$date": "2025-04-04T16:35:13.676Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:35:13.676Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "Ifut/SS5wDsunc46wgWhRdeTvb9TWM13PyRaMtl1sMa6m1S3LbZt/zv07z+nrcby19WlKCm3PPAYusq+Tmn2Zg==",
+      "Expires": {
+        "$date": "2025-04-04T16:37:54.528Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:37:54.528Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "kZcYCO/JjyvunzR44mUIQaX460wNgTracIyGkZEFbu/ZDn+eGByg6s6UI3R8v399GxFzjKRB4WVwfpX5JsxsZg==",
+      "Expires": {
+        "$date": "2025-04-04T16:39:13.500Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:39:13.500Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "RpcUVmkDzZIGuWzW0R+R3Y42BbM33SaAP7Dsnv2hO8nfYf7H/x/hdesbFGaLtCDCC+/h20FvMwjei7mvobiTHg==",
+      "Expires": {
+        "$date": "2025-04-04T16:39:16.797Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:39:16.797Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "CZ82RtkHKqSEivtlwv7v7YX9s7YlNH45jhhWZvYcdQiyzWgTqYBxwrlvXI5CyFVxKXC9wC9TdeGFV8vqq/QRhg==",
+      "Expires": {
+        "$date": "2025-04-04T16:39:20.441Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:39:20.441Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "5NcE+nGQdxgqR7LuhHxoWbH6XDeGVJAfGALq/Co9BXFmtFG77xalfxwL9QmyHH60ZCPhwggKhi1NpZxGaRiYdg==",
+      "Expires": {
+        "$date": "2025-04-04T16:53:09.898Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:53:09.898Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "h51aUs+2aMu+ANxzZXCVp4YAZfEUTJ/Krbr6ymCdEZA9D63Nxi4Tr9kZJ7gULv1Y3SFlM4N2Q9GSSDp4uwH+rQ==",
+      "Expires": {
+        "$date": "2025-04-04T16:53:43.747Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:53:43.747Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "VOfQDlj3rzs4qel6VLB5FlctWS/mgco1c8mVbAoGaon/lQRXDQhojykB1MBqTqcfvhVlmxu3FYtvjPY7yNYfYA==",
+      "Expires": {
+        "$date": "2025-04-04T16:55:15.186Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:55:15.186Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "0XKIPhmKiSW7jGYcvoHVZrSXlk2N3ivzUxfV/K/EUmqsFeXMD3IW7YNNYavoYO9g9G3Fvt03r0HuLLSZZWrqAQ==",
+      "Expires": {
+        "$date": "2025-04-04T16:55:18.664Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:55:18.664Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "kYKtPtBFumdv9iADC8lZpnlp0URHiiTPtsIxnJaXI3db23frKZiP05gyH0izsN3d8KhEsR7P5kVgcqC1QlPzJQ==",
+      "Expires": {
+        "$date": "2025-04-04T16:55:45.075Z"
+      },
+      "Created": {
+        "$date": "2025-03-28T16:55:45.075Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "KpWD253l3Y+YnYsA6RKa+WN8wzh3h6L+BcoCE8aEgVmE2ZKXRyV076MnDVVTD/g/coj7q+j9nS7mtUdls9Hq5w==",
+      "Expires": {
+        "$date": "2025-04-05T04:42:42.477Z"
+      },
+      "Created": {
+        "$date": "2025-03-29T04:42:42.477Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "CYYo1Cey4S5EfrxXSxfd36iNs+Ou6jwMlJR/iYPs+erIzlxjlLUNu2jWR7OVl1VOdHWBHdE8ot4HGiYXTugOWw==",
+      "Expires": {
+        "$date": "2025-04-05T04:43:23.093Z"
+      },
+      "Created": {
+        "$date": "2025-03-29T04:43:23.093Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "FKgLTOfwJxtzxtW+hjqpnq5TgTn2PKqWmBzNarxbYFkU+s+jTDmD7fs3YX4vteZtzEnV/urS21O+NGuMCUw18w==",
+      "Expires": {
+        "$date": "2025-04-05T04:55:11.885Z"
+      },
+      "Created": {
+        "$date": "2025-03-29T04:55:11.885Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "VieuklzPTAEoymfggSaExXDoepufFAywuPZFVxZR7b4WSiZKcBNrXsnp0BHSE1L8i033bY358vcxElvijTcSzA==",
+      "Expires": {
+        "$date": "2025-04-06T15:00:18.751Z"
+      },
+      "Created": {
+        "$date": "2025-03-30T15:00:18.751Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "bGtRz8yjqSwbsIJajqWudzK9eZ9/VOhA+FOGoWqmY4d2zXgzJin78CEhVTqUV/ATogIi6rC2OXgfraWlrmtCvw==",
+      "Expires": {
+        "$date": "2025-04-06T15:03:58.925Z"
+      },
+      "Created": {
+        "$date": "2025-03-30T15:03:58.925Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "aPnKHPCsw9KXYwuK6JAdwkrFgeAL4bQDKkUjTGCZEzBbTJJaYsDALea06xtemvbTmRNAVRDyD1vVooHuWtPquA==",
+      "Expires": {
+        "$date": "2025-04-06T15:19:20.833Z"
+      },
+      "Created": {
+        "$date": "2025-03-30T15:19:20.833Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "YjF/TrnVsm/vmBzP41EhB2zeHKvH1TGk6VvoHDqExhc5Y2Y/IF0KFeHSOl90QoA703c2Iaj58SqaK2w1wzkwqw==",
+      "Expires": {
+        "$date": "2025-04-06T15:20:41.231Z"
+      },
+      "Created": {
+        "$date": "2025-03-30T15:20:41.231Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "ksheCz/TlXjDFnX9jJ0u42HmGxkIcmjANF0bLIAO/iwn7VMWIt+WaoQooqmWJyER+FMurUxI0x3F4zaPIq9HwA==",
+      "Expires": {
+        "$date": "2025-04-06T15:47:57.636Z"
+      },
+      "Created": {
+        "$date": "2025-03-30T15:47:57.636Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "mDr8z0+fKEs1IE6MZ1FbMuQnjw9YOUWftaKUvvqVbLF6WlxHlbDYToiodJ4syFB+DuqScf/OEiHDLLMqraa+Tg==",
+      "Expires": {
+        "$date": "2025-04-09T04:05:56.503Z"
+      },
+      "Created": {
+        "$date": "2025-04-02T04:05:56.503Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "13kcdoswTfVVdIIoF1Jh3gkq7keWquXa88rlnfbRU4h3z/yvdhKBrUzgpJyulTmnkcit0ooDEYPDQ8sUvCBMwA==",
+      "Expires": {
+        "$date": "2025-04-09T04:16:59.708Z"
+      },
+      "Created": {
+        "$date": "2025-04-02T04:16:59.708Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "9aOy0hOYRMIkreFXD+M0Z5f2YjTJ6orlRlji7VwSWTZlAWGHYrY+C99TluYnU8bc8/DmQk9KxijwQeqEjJsyYQ==",
+      "Expires": {
+        "$date": "2025-04-23T08:13:04.956Z"
+      },
+      "Created": {
+        "$date": "2025-04-16T08:13:04.956Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    },
+    {
+      "_id": 0,
+      "Token": "UuLoV2eG/qJ15rlJ6mvpy6RA0ZBE8i0At6GMmiReaIDmzw0auZSflXY/4K4RvHzFbm/OzxHM9FVFi5bhcD45Sg==",
+      "Expires": {
+        "$date": "2025-04-25T01:38:03.891Z"
+      },
+      "Created": {
+        "$date": "2025-04-18T01:38:03.892Z"
+      },
+      "CreatedByIp": "::1",
+      "Revoked": null,
+      "RevokedByIp": null
+    }
+  ]
+}]

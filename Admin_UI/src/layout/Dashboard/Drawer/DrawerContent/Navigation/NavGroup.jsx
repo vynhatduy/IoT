@@ -21,8 +21,6 @@ export default function NavGroup({ item }) {
   // Hàm đệ quy để hiển thị toàn bộ menu
   const renderMenuItems = (menuItems, level = 1) => {
     return menuItems.map((menuItem) => {
-      console.log('menu item: ', menuItem);
-
       switch (menuItem.type) {
         case 'collapse':
         case 'group':
