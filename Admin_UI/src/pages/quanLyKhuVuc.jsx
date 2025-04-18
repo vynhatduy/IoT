@@ -9,7 +9,6 @@ const KhuVuc = () => {
       <Typography variant="subtitle1">Quản lý khu vực</Typography>
       <StyleBackground>
         <AddArea />
-        <></>
         <Typography variant="subtitle1" sx={{ mt: 2, mb: 2 }}>
           Danh sách khu vực
         </Typography>
