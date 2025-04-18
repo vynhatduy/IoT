@@ -1,12 +1,8 @@
-import { DashboardOutlined } from '@ant-design/icons';
 import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
-import WaterfallChartIcon from '@mui/icons-material/WaterfallChart';
-import PieChartOutlineIcon from '@mui/icons-material/PieChartOutline';
 import CameraOutdoorIcon from '@mui/icons-material/CameraOutdoor';
 import WebIcon from '@mui/icons-material/Web';
-import VrpanoIcon from '@mui/icons-material/Vrpano';
 import UpcomingIcon from '@mui/icons-material/Upcoming';
-import MediationIcon from '@mui/icons-material/Mediation';
+
 const deviceManagement = {
   id: 'deviceManagement',
   title: 'Quản lý',
@@ -28,6 +24,14 @@ const deviceManagement = {
       type: 'item',
       url: '/admin/manage/quan-ly-khu-vuc',
       icon: WebIcon,
+      breadcrumbs: false
+    },
+    {
+      id: 'giamSatCamera',
+      title: 'Camera',
+      type: 'item',
+      url: '/admin/manage/giam-sat-camera',
+      icon: CameraOutdoorIcon,
       breadcrumbs: false
     },
     // {

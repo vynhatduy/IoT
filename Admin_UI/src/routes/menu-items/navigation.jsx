@@ -23,20 +23,20 @@ export default navigation = {
     },
     {
       id: 'thongKeChiTiet',
-      title: 'Thống kê chi tiết',
+      title: 'Thống kê',
       type: 'item',
       url: '/admin/navigation/thong-ke-chi-tiet',
       icon: WaterfallChartIcon,
       breadcrumbs: false
     },
-    {
-      id: 'giamSatCamera',
-      title: 'Giám sát Camera',
-      type: 'item',
-      url: '/admin/navigation/giam-sat-camera',
-      icon: CameraOutdoorIcon,
-      breadcrumbs: false
-    },
+    // {
+    //   id: 'giamSatCamera',
+    //   title: 'Giám sát Camera',
+    //   type: 'item',
+    //   url: '/admin/navigation/giam-sat-camera',
+    //   icon: CameraOutdoorIcon,
+    //   breadcrumbs: false
+    // },
     {
       id: 'lienHeHoTro',
       title: 'Liên hệ & Hỗ trợ',
