@@ -3,21 +3,12 @@
     <ion-title>Phân tích & Dự báo</ion-title>
   </ion-toolbar>
 
-  <ion-card *ngIf="errorMessage">
-    <ion-card-content class="ion-text-center">
-      <ion-icon name="alert-circle-outline" color="danger"></ion-icon>
-      <p>{{ errorMessage }}</p>
-    </ion-card-content>
-  </ion-card>
-
   <!-- Thanh công cụ thứ hai cho bộ lọc -->
   <ion-toolbar color="light">
     <ion-row>
       <ion-col size="6">
         <ion-item lines="none">
-          <ion-label class="ion-text-wrap" style="width: 60px">
-            Khu vực:
-          </ion-label>
+          <ion-label>Khu vực:</ion-label>
           <ion-select
             aria-label="Khu vực"
             [(ngModel)]="sensorLocation"
@@ -25,13 +16,12 @@
             interface="popover"
             placeholder="Chọn khu vực"
           >
-            <ion-select-option *ngFor="let area of areas" [value]="area.name">
-              {{ area.name }}
-            </ion-select-option>
+            <ion-select-option *ngFor="let loc of locations" [value]="loc.value"
+              >{{loc.text}}</ion-select-option
+            >
           </ion-select>
         </ion-item>
       </ion-col>
-
       <ion-col size="6">
         <ion-item lines="none">
           <ion-label>Ngày:</ion-label>
