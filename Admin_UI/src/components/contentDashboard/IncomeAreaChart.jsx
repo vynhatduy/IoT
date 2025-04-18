@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 // Material UI
-import { alpha, useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 // Biểu đồ
 import { LineChart } from '@mui/x-charts/LineChart';
@@ -28,6 +29,43 @@ function Legend({ items, onToggle }) {
         </Stack>
       ))}
     </Stack>
+  );
+}
+
+// Component hiển thị biểu đồ riêng lẻ
+function SingleChart({ title, data, xAxisData, dataKey, color, visible }) {
+  const theme = useTheme();
+
+  if (!visible) {
+    return null;
+  }
+
+  return (
+    <Box sx={{ width: '100%', height: '100%' }}>
+      <Typography variant="h6" align="center" sx={{ mb: 1 }}>
+        {title}
+      </Typography>
+      <LineChart
+        xAxis={[{ scaleType: 'point', data: xAxisData }]}
+        yAxis={[{ label: 'Giá trị đo' }]}
+        height={220}
+        margin={{ top: 20, bottom: 30, right: 20, left: 40 }}
+        series={[
+          {
+            type: 'line',
+            data: data.map((item) => item[dataKey]),
+            label: title,
+            color: color,
+            stroke: color,
+            strokeWidth: 2
+          }
+        ]}
+        slotProps={{ legend: { hidden: true } }}
+        sx={{
+          '& .MuiChartsAxis-directionX .MuiChartsAxis-tick': { stroke: theme.palette.divider }
+        }}
+      />
+    </Box>
   );
 }
 
@@ -69,11 +107,11 @@ export default function IncomeAreaChart({ data }) {
   };
 
   // Tạo dữ liệu hiển thị trên biểu đồ
-  const visibleSeries = [
-    { key: 'temperature', label: 'Nhiệt độ', color: colorMap['Nhiệt độ'], visible: visibility['Nhiệt độ'] },
-    { key: 'humidity', label: 'Độ ẩm', color: colorMap['Độ ẩm'], visible: visibility['Độ ẩm'] },
-    { key: 'brightness', label: 'Ánh sáng', color: colorMap['Ánh sáng'], visible: visibility['Ánh sáng'] },
-    { key: 'airQuality', label: 'Không khí', color: colorMap['Không khí'], visible: visibility['Không khí'] }
+  const chartConfig = [
+    { key: 'temperature', dataKey: 'temperature', label: 'Nhiệt độ', color: colorMap['Nhiệt độ'], visible: visibility['Nhiệt độ'] },
+    { key: 'humidity', dataKey: 'humidity', label: 'Độ ẩm', color: colorMap['Độ ẩm'], visible: visibility['Độ ẩm'] },
+    { key: 'brightness', dataKey: 'brightness', label: 'Ánh sáng', color: colorMap['Ánh sáng'], visible: visibility['Ánh sáng'] },
+    { key: 'airQuality', dataKey: 'airQuality', label: 'Không khí', color: colorMap['Không khí'], visible: visibility['Không khí'] }
   ];
 
   // Toggle hiển thị từng đường trong biểu đồ
@@ -83,31 +121,74 @@ export default function IncomeAreaChart({ data }) {
 
   return (
     <>
-      <LineChart
-        xAxis={[{ scaleType: 'point', data: formattedData.map((item) => item.hour) }]}
-        yAxis={[{ label: 'Giá trị đo',}]}
-        height={450}
-        margin={{ top: 40, bottom: 20, right: 20 }}
-        series={visibleSeries
-          .filter((series) => series.visible)
-          .map((series) => ({
-            type: 'line',
-            data: formattedData.map((item) => item[series.key]),
-            label: series.label,
-            color: series.color,
-            stroke: series.color,
-            strokeWidth: 2
-          }))}
-        slotProps={{ legend: { hidden: true } }}
-        sx={{
-          '& .MuiChartsAxis-directionX .MuiChartsAxis-tick': { stroke: theme.palette.divider }
-          
-        }}
-      />
-      <Legend items={visibleSeries} onToggle={toggleVisibility} />
+      <Grid container spacing={2} sx={{ mb: 3 }}>
+        <Grid item xs={12} md={6}>
+          <Stack>
+            <SingleChart
+              title="Nhiệt độ"
+              data={formattedData}
+              xAxisData={formattedData.map((item) => item.hour)}
+              dataKey="temperature"
+              color={colorMap['Nhiệt độ']}
+              visible={visibility['Nhiệt độ']}
+            />
+          </Stack>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <SingleChart
+            title="Độ ẩm"
+            data={formattedData}
+            xAxisData={formattedData.map((item) => item.hour)}
+            dataKey="humidity"
+            color={colorMap['Độ ẩm']}
+            visible={visibility['Độ ẩm']}
+          />
+        </Grid>
+      </Grid>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+          <SingleChart
+            title="Ánh sáng"
+            data={formattedData}
+            xAxisData={formattedData.map((item) => item.hour)}
+            dataKey="brightness"
+            color={colorMap['Ánh sáng']}
+            visible={visibility['Ánh sáng']}
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <SingleChart
+            title="Không khí"
+            data={formattedData}
+            xAxisData={formattedData.map((item) => item.hour)}
+            dataKey="airQuality"
+            color={colorMap['Không khí']}
+            visible={visibility['Không khí']}
+          />
+        </Grid>
+      </Grid>
+
+      {/* Legend chung cho tất cả biểu đồ */}
+      <Legend items={chartConfig} onToggle={toggleVisibility} />
     </>
   );
 }
 
-Legend.propTypes = { items: PropTypes.array, onToggle: PropTypes.func };
-IncomeAreaChart.propTypes = { data: PropTypes.array.isRequired };
+// PropTypes
+Legend.propTypes = {
+  items: PropTypes.array.isRequired,
+  onToggle: PropTypes.func.isRequired
+};
+
+SingleChart.propTypes = {
+  title: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
+  xAxisData: PropTypes.array.isRequired,
+  dataKey: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  visible: PropTypes.bool.isRequired
+};
+
+IncomeAreaChart.propTypes = {
+  data: PropTypes.array.isRequired
+};

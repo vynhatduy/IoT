@@ -30,14 +30,14 @@ const deviceManagement = {
       icon: WebIcon,
       breadcrumbs: false
     },
-    {
-      id: 'quanLyThongSoMoiTruong',
-      title: 'Thông số môi trường',
-      type: 'item',
-      url: '/admin/manage/thong-so-moi-truong',
-      icon: VrpanoIcon,
-      breadcrumbs: false
-    },
+    // {
+    //   id: 'quanLyThongSoMoiTruong',
+    //   title: 'Thông số môi trường',
+    //   type: 'item',
+    //   url: '/admin/manage/thong-so-moi-truong',
+    //   icon: VrpanoIcon,
+    //   breadcrumbs: false
+    // },
     {
       id: 'quanLyThongBaoCanhBao',
       title: 'Thông báo & cảnh báo',
@@ -45,7 +45,7 @@ const deviceManagement = {
       url: '/admin/manage/thong-bao-canh-bao',
       icon: UpcomingIcon,
       breadcrumbs: false
-    },
+    }
     // {
     //   id: 'quanLyQuyTrinhHoatDong',
     //   title: 'Quy trình hoạt động',
