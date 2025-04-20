@@ -36,8 +36,7 @@ namespace IoT_Farm.Datas
         [BsonElement("__v")]
         public int Version { get; set; }
 
-        [BsonElement("roomList")]
-        public List<string> RoomList { get; set; }
+
     }
 
     public class Image
