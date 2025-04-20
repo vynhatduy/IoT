@@ -8,7 +8,7 @@ import SelectArea from '../components/dropdown/selectArea';
 import CustomDatePicker from '../components/CustomDatePicker';
 // import SelectWeather from '../components/button/selectWeather';
 import { DownloadButtons } from '../components/button/download';
-import useEnvironmentData from '../service/useEnvironmentData';
+import { useEnvironmentData } from '../service/useEnvironmentData';
 import ChartComponent from '../components/ChartComponent';
 
 const ThongKeChiTiet = () => {
