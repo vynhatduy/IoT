@@ -209,7 +209,7 @@ const AreaDashboard = () => {
                   <Typography variant="subtitle1" sx={{ mb: 1 }}>
                     CAMERA
                   </Typography>
-                  <Paper sx={{ height: '93%', bgcolor: 'background.paper' }}>{/* Display list animal */}</Paper>
+                  <Paper sx={{ height: '65%', bgcolor: 'background.paper' }}>{/* Display list animal */}</Paper>
                 </Grid>
 
                 {/* Device Controls */}
