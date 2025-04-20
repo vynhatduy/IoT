@@ -20,6 +20,17 @@ export class DashboardPage implements OnInit {
     this.fetchAreas();
   }
 
+  // Thêm hàm doRefresh ở đây
+  doRefresh(event: any) {
+    console.log('Begin async operation');
+    this.fetchSensorData();
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+
   fetchSensorData() {
     this.loading = true;
     this.errorMessage = '';

@@ -1,14 +1,31 @@
 <ion-header [translucent]="true" mode="ios">
   <ion-toolbar color="primary">
-    <ion-title>Tổng quan</ion-title>
+    <ion-title>Tổng quan Nông trại</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" mode="ios">
-  <div *ngIf="loading" class="ion-text-center">
-    <ion-spinner></ion-spinner>
-  </div>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
+  <!-- Chọn khu vực (đã cập nhật giống control-device) -->
+  <ion-card-content>
+    <ion-item style="border-radius: 16px">
+      <ion-label>Chọn khu vực:</ion-label>
+      <ion-select
+        placeholder="Chọn khu vực"
+        (ionChange)="onSensorLocationChange($event)"
+        [value]="sensorLocation"
+      >
+        <ion-select-option *ngFor="let area of areas" [value]="area.name">
+          {{ area.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-card-content>
+
+  <!-- Hiện lỗi nếu có -->
   <ion-card *ngIf="errorMessage">
     <ion-card-content class="ion-text-center">
       <ion-icon name="alert-circle-outline" color="danger"></ion-icon>
@@ -16,68 +33,77 @@
     </ion-card-content>
   </ion-card>
 
+  <!-- Loading indicator -->
+  <div class="ion-padding ion-text-center" *ngIf="loading">
+    <ion-spinner></ion-spinner>
+    <p>Đang tải dữ liệu...</p>
+  </div>
+
+  <!-- Hiển thị dữ liệu cảm biến -->
   <ion-card *ngIf="sensorData">
-    <ion-card-header>
-      <ion-list lines="none">
-        <ion-item>
-          <ion-select
-            (ionChange)="onSensorLocationChange($event)"
-            [value]="sensorLocation"
-            interface="action-sheet"
-            mode="ios"
-            color="primary"
-          >
-            <ion-select-option *ngFor="let area of areas" [value]="area.name">
-              {{ area.name }}
-            </ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="6">
+          <ion-card *ngIf="sensorData.temperature !== undefined" color="danger">
+            <ion-card-header>
+              <ion-card-title>
+                <ion-icon size="large" name="thermometer-outline"></ion-icon>
+                <strong>{{ sensorData.temperature }}°C</strong>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>Nhiệt độ</ion-card-content>
+          </ion-card>
+        </ion-col>
 
-    <ion-card-content>
-      <ion-card *ngIf="sensorData.temperature !== undefined" color="danger">
-        <ion-card-header>
-          <ion-card-title>
-            <ion-icon size="large" name="thermometer-outline"></ion-icon>
-            <strong>{{ sensorData.temperature }}°C</strong>
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>Temperature</ion-card-content>
-      </ion-card>
+        <ion-col size="12" size-md="6">
+          <ion-card *ngIf="sensorData.humidity !== undefined" color="tertiary">
+            <ion-card-header>
+              <ion-card-title>
+                <ion-icon size="large" name="water-outline"></ion-icon>
+                <strong>{{ sensorData.humidity }}%</strong>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>Độ ẩm</ion-card-content>
+          </ion-card>
+        </ion-col>
 
-      <ion-card *ngIf="sensorData.humidity !== undefined" color="tertiary">
-        <ion-card-header>
-          <ion-card-title>
-            <ion-icon size="large" name="water-outline"></ion-icon>
-            <strong>{{ sensorData.humidity }}%</strong>
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>Humidity</ion-card-content>
-      </ion-card>
+        <ion-col size="12" size-md="6">
+          <ion-card *ngIf="sensorData.light !== undefined" color="warning">
+            <ion-card-header>
+              <ion-card-title>
+                <ion-icon size="large" name="sunny-outline"></ion-icon>
+                <strong>{{ sensorData.light }}</strong>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>Cường độ ánh sáng</ion-card-content>
+          </ion-card>
+        </ion-col>
 
-      <ion-card *ngIf="sensorData.light !== undefined" color="warning">
-        <ion-card-header>
-          <ion-card-title>
-            <ion-icon size="large" name="sunny-outline"></ion-icon>
-            <strong>{{ sensorData.light }}</strong>
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>Brightness</ion-card-content>
-      </ion-card>
-      <ion-card *ngIf="sensorData.airQuality !== undefined" color="success">
-        <ion-card-header>
-          <ion-card-title>
-            <ion-icon size="large" name="sunny-outline"></ion-icon>
-            <strong>{{ sensorData.airQuality }}</strong>
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>AirQuality</ion-card-content>
-      </ion-card>
-    </ion-card-content>
+        <ion-col size="12" size-md="6">
+          <ion-card *ngIf="sensorData.airQuality !== undefined" color="success">
+            <ion-card-header>
+              <ion-card-title>
+                <ion-icon size="large" name="leaf-outline"></ion-icon>
+                <strong>{{ sensorData.airQuality }}</strong>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>Chất lượng không khí</ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
 
-  <ion-card *ngIf="!loading && !sensorData">
-    <ion-card-content>Data is not available</ion-card-content>
-  </ion-card>
+  <!-- Hiển thị thông báo khi chưa chọn khu vực hoặc không có dữ liệu -->
+  <div class="ion-padding ion-text-center" *ngIf="!loading && !sensorData">
+    <ion-icon name="hand-left-outline" size="large"></ion-icon>
+    <p>Vui lòng chọn khu vực để xem dữ liệu</p>
+  </div>
+
+  <ion-loading
+    [isOpen]="loading"
+    message="Đang xử lý..."
+    translucent
+    duration="3000"
+  ></ion-loading>
 </ion-content>
