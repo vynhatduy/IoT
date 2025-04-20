@@ -5,28 +5,25 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import mockdata from '../../data/mockdata.json';
 
-const { weather } = mockdata;
+const weather = mockdata.weather;
 
 export default function SelectWeather() {
-  const [selectedWeather, setSelectedWeather] = React.useState('');
+  const [selectedValue, setSelectedValue] = React.useState('');
 
   const handleChange = (event) => {
-    setSelectedWeather(event.target.value);
+    setSelectedValue(event.target.value);
   };
 
   return (
-    <FormControl fullWidth>
-      <InputLabel id="select-weather-label">Thời tiết</InputLabel>
-      <Select
-        labelId="select-weather-label"
-        id="select-weather"
-        value={selectedWeather}
-        onChange={handleChange}
-        label="Thời tiết"
-      >
+    <FormControl sx={{ ml: 2, paddingTop: 1, minWidth: 120 }} size="small">
+      <InputLabel id="weather-select-label">Chọn thời tiết</InputLabel>
+      <Select labelId="weather-select-label" id="weather-select" value={selectedValue} label="Weather" onChange={handleChange}>
+        {/* <MenuItem value="">
+          <em>None</em>
+        </MenuItem> */}
         {weather.map((item) => (
           <MenuItem key={item.id} value={item.id}>
-             {item.name} ({item.unit})
+            {item.name}
           </MenuItem>
         ))}
       </Select>
