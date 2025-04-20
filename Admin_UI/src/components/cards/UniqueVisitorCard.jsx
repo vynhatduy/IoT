@@ -22,7 +22,9 @@ export default function UniqueVisitorCard() {
     <>
       <Grid container alignItems="center" justifyContent="space-between">
         <Grid item>
-          <Typography variant="h5">Thống kê</Typography>
+          <Typography mt={1} mb={1} variant="h5">
+            Thống kê
+          </Typography>
           <SelectArea sx={{ margin: '10px 0px' }} onChange={(value) => setArea(value)} />
         </Grid>
       </Grid>

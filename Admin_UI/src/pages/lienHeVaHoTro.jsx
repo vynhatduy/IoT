@@ -4,8 +4,9 @@ import StyleBackground from '../themes/stylePage/backgroundPage';
 const lienHeHoTro = () => {
   return (
     <Box>
-      <Typography variant="subtitle1">LIEN HE HO TRO</Typography>
-      <StyleBackground></StyleBackground>
+      <StyleBackground>
+        <Typography variant="subtitle1">LIEN HE HO TRO</Typography>
+      </StyleBackground>
     </Box>
   );
 };

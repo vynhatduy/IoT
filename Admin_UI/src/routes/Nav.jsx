@@ -16,7 +16,7 @@ const ThongKeChiTiet = Loadable(lazy(() => import('../pages/thongKeChiTiet')));
 const ThongSoMoiTruong = Loadable(lazy(() => import('../pages/thongSoMoiTruong')));
 const QuyTrinhHoatDong = Loadable(lazy(() => import('../pages/quyTrinhHoatDong')));
 const ThongBaoCanhBao = Loadable(lazy(() => import('../pages/thongBaoCanhBao')));
-const KhuVuc = Loadable(lazy(()=>import('../pages/quanLyKhuVuc')))
+const KhuVuc = Loadable(lazy(() => import('../pages/quanLyKhuVuc')));
 const MainRoutes = {
   path: '/admin',
   element: <ProtectedRoute />, // Chỉ kiểm tra token cho Admin
@@ -31,7 +31,7 @@ const MainRoutes = {
           children: [
             { path: 'cau-hinh-thiet-bi', element: <CauHinhThietBi /> },
             { path: 'thong-ke-chi-tiet', element: <ThongKeChiTiet /> },
-            { path: 'giam-sat-camera', element: <GiamSatCamera /> },
+            // { path: 'giam-sat-camera', element: <GiamSatCamera /> },
             { path: 'lien-he-ho-tro', element: <LienHeHoTro /> }
           ]
         },
@@ -39,10 +39,11 @@ const MainRoutes = {
           path: 'manage',
           children: [
             { path: 'quan-ly-thiet-bi', element: <QuanLyThietBi /> },
-            { path: 'quan-ly-khu-vuc', element: <KhuVuc/> },
+            { path: 'quan-ly-khu-vuc', element: <KhuVuc /> },
             { path: 'thong-so-moi-truong', element: <ThongSoMoiTruong /> },
-            { path: 'thong-bao-canh-bao', element: <ThongBaoCanhBao /> },
-            { path: 'quy-trinh-hoat-dong', element: <QuyTrinhHoatDong /> }
+            { path: 'giam-sat-camera', element: <GiamSatCamera /> },
+            { path: 'thong-bao-canh-bao', element: <ThongBaoCanhBao /> }
+            // { path: 'quy-trinh-hoat-dong', element: <QuyTrinhHoatDong /> }
           ]
         }
       ]

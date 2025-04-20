@@ -1,12 +1,8 @@
-import { DashboardOutlined } from '@ant-design/icons';
 import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
-import WaterfallChartIcon from '@mui/icons-material/WaterfallChart';
-import PieChartOutlineIcon from '@mui/icons-material/PieChartOutline';
 import CameraOutdoorIcon from '@mui/icons-material/CameraOutdoor';
 import WebIcon from '@mui/icons-material/Web';
-import VrpanoIcon from '@mui/icons-material/Vrpano';
 import UpcomingIcon from '@mui/icons-material/Upcoming';
-import MediationIcon from '@mui/icons-material/Mediation';
+
 const deviceManagement = {
   id: 'deviceManagement',
   title: 'Quản lý',
@@ -31,13 +27,21 @@ const deviceManagement = {
       breadcrumbs: false
     },
     {
-      id: 'quanLyThongSoMoiTruong',
-      title: 'Thông số môi trường',
+      id: 'giamSatCamera',
+      title: 'Camera',
       type: 'item',
-      url: '/admin/manage/thong-so-moi-truong',
-      icon: VrpanoIcon,
+      url: '/admin/manage/giam-sat-camera',
+      icon: CameraOutdoorIcon,
       breadcrumbs: false
     },
+    // {
+    //   id: 'quanLyThongSoMoiTruong',
+    //   title: 'Thông số môi trường',
+    //   type: 'item',
+    //   url: '/admin/manage/thong-so-moi-truong',
+    //   icon: VrpanoIcon,
+    //   breadcrumbs: false
+    // },
     {
       id: 'quanLyThongBaoCanhBao',
       title: 'Thông báo & cảnh báo',
@@ -45,7 +49,7 @@ const deviceManagement = {
       url: '/admin/manage/thong-bao-canh-bao',
       icon: UpcomingIcon,
       breadcrumbs: false
-    },
+    }
     // {
     //   id: 'quanLyQuyTrinhHoatDong',
     //   title: 'Quy trình hoạt động',
