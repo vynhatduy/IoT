@@ -1,25 +1,13 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
+import React from 'react';
+import { Box, Button, Stack, Dialog, IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import Stack from '@mui/material/Stack';
-import Dialog from '@mui/material/Dialog';
-import AddDevice from '../popup/addDevice'
+import AddDevice from '../../components/popup/addDevice';
 
-export default function AddDevicelButtons() {
+export const AddDevicelButtons = ({ onAddSuccess }) => {
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleConfirmDelete = () => {
-    console.log('Đã xác nhận xóa');
-    setOpen(false);
-  };
+  const handleClickOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <Stack direction="row" spacing={2} marginBottom={2}>
@@ -39,8 +27,8 @@ export default function AddDevicelButtons() {
       </Button>
 
       <Dialog open={open} onClose={handleClose}>
-        <AddDevice onClose={handleClose} />
+        <AddDevice onClose={handleClose} onAddSuccess={onAddSuccess} />
       </Dialog>
     </Stack>
   );
-}
+};

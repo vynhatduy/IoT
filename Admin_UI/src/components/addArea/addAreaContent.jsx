@@ -3,9 +3,8 @@ import { Box, Button, Stack, Grid, TextField, Typography } from '@mui/material';
 
 const AddAreaContent = ({ onClose, onSubmit }) => {
   const [formData, setFormData] = useState({
-    areaName: '',
-    topic: '',
-    camera: ''
+    name: '',
+    topic: ''
   });
 
   const handleChange = (field) => (event) => {
@@ -23,7 +22,7 @@ const AddAreaContent = ({ onClose, onSubmit }) => {
 
   const handleSubmit = () => {
     // Kiểm tra xem tất cả các trường đã được nhập
-    if (formData.areaName && formData.topic && formData.camera) {
+    if (formData.name && formData.topic) {
       // In dữ liệu ra console
       console.log('Dữ liệu form đã gửi:', formData);
       // Gọi onSubmit nếu được cung cấp
@@ -33,8 +32,7 @@ const AddAreaContent = ({ onClose, onSubmit }) => {
       // Làm trống tất cả các trường
       setFormData({
         areaName: '',
-        topic: '',
-        camera: ''
+        topic: ''
       });
     } else {
       // Hiển thị thông báo nếu thiếu thông tin
@@ -43,9 +41,8 @@ const AddAreaContent = ({ onClose, onSubmit }) => {
   };
 
   const formFields = [
-    { id: 1, title: 'Tên Khu vực', field: 'areaName', placeholder: 'Nhập tên...' },
-    { id: 2, title: 'Topic', field: 'topic', placeholder: 'Nhập Topic...' },
-    { id: 3, title: 'Camera', field: 'camera', placeholder: 'Nhập tên camera...' }
+    { id: 1, title: 'Tên Khu vực', field: 'name', placeholder: 'Nhập tên...' },
+    { id: 2, title: 'Topic', field: 'topic', placeholder: 'Nhập topic để quản lý...' }
   ];
 
   return (

@@ -19,13 +19,21 @@ namespace IoT_Farm.Repositories.Implement
 
         public async Task<Area> CreateAsync(Area area)
         {
-            if (string.IsNullOrEmpty(area.Id))
+            try
             {
-                area.Id = ObjectId.GenerateNewId().ToString();
-            }
+                if (string.IsNullOrEmpty(area.Id))
+                {
+                    area.Id = ObjectId.GenerateNewId().ToString();
+                }
 
-            await _databaseAdapter.AddAsync(area);
-            return area;
+                await _databaseAdapter.AddAsync(area);
+                return area;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
         }
     }
 }

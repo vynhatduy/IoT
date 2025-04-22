@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "@mui/material": "^7.0.2",
-    "date-fns": "^4.1.0"
+    "bson": "^6.10.3"
   }
 }
