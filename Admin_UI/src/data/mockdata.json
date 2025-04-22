@@ -209,5 +209,77 @@
         }
       ]
     }
+  ],
+  "data": [
+    {
+      "date": "2025-04-10",
+      "areas": [
+        { "name": "Khu vực 1", "temperature": 28, "humidity": 65, "light": 850 },
+        { "name": "Khu vực 2", "temperature": 30, "humidity": 70, "light": 900 }
+      ]
+    },
+    {
+      "date": "2025-04-11",
+      "areas": [
+        { "name": "Khu vực 1", "temperature": 27, "humidity": 63, "light": 820 },
+        { "name": "Khu vực 2", "temperature": 31, "humidity": 72, "light": 920 }
+      ]
+    },
+    {
+      "date": "2025-04-12",
+      "areas": [
+        { "name": "Khu vực 1", "temperature": 29, "humidity": 67, "light": 870 },
+        { "name": "Khu vực 2", "temperature": 32, "humidity": 74, "light": 940 }
+      ]
+    },
+    {
+      "date": "2025-04-13",
+      "areas": [
+        { "name": "Khu vực 1", "temperature": 30, "humidity": 68, "light": 880 },
+        { "name": "Khu vực 2", "temperature": 33, "humidity": 75, "light": 950 }
+      ]
+    },
+    {
+      "date": "2025-04-14",
+      "areas": [
+        { "name": "Khu vực 1", "temperature": 31, "humidity": 70, "light": 900 },
+        { "name": "Khu vực 2", "temperature": 34, "humidity": 76, "light": 960 }
+      ]
+    },
+    {
+      "date": "2025-04-15",
+      "areas": [
+        { "name": "Khu vực 1", "temperature": 30, "humidity": 69, "light": 890 },
+        { "name": "Khu vực 2", "temperature": 33, "humidity": 74, "light": 940 }
+      ]
+    },
+    {
+      "date": "2025-04-16",
+      "areas": [
+        { "name": "Khu vực 1", "temperature": 29, "humidity": 66, "light": 860 },
+        { "name": "Khu vực 2", "temperature": 32, "humidity": 72, "light": 920 }
+      ]
+    },
+    {
+      "date": "2025-04-17",
+      "areas": [
+        { "name": "Khu vực 1", "temperature": 28, "humidity": 64, "light": 830 },
+        { "name": "Khu vực 2", "temperature": 31, "humidity": 70, "light": 900 }
+      ]
+    },
+    {
+      "date": "2025-04-18",
+      "areas": [
+        { "name": "Khu vực 1", "temperature": 27, "humidity": 62, "light": 810 },
+        { "name": "Khu vực 2", "temperature": 30, "humidity": 68, "light": 880 }
+      ]
+    },
+    {
+      "date": "2025-04-19",
+      "areas": [
+        { "name": "Khu vực 1", "temperature": 26, "humidity": 60, "light": 790 },
+        { "name": "Khu vực 2", "temperature": 29, "humidity": 66, "light": 860 }
+      ]
+    }
   ]
 }
