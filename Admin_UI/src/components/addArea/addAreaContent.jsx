@@ -3,7 +3,7 @@ import { Box, Button, Stack, Grid, TextField, Typography } from '@mui/material';
 
 const AddAreaContent = ({ onClose, onSubmit }) => {
   const [formData, setFormData] = useState({
-    areaName: '',
+    name: '',
     topic: ''
   });
 
@@ -22,7 +22,7 @@ const AddAreaContent = ({ onClose, onSubmit }) => {
 
   const handleSubmit = () => {
     // Kiểm tra xem tất cả các trường đã được nhập
-    if (formData.areaName && formData.topic) {
+    if (formData.name && formData.topic) {
       // In dữ liệu ra console
       console.log('Dữ liệu form đã gửi:', formData);
       // Gọi onSubmit nếu được cung cấp
@@ -41,7 +41,7 @@ const AddAreaContent = ({ onClose, onSubmit }) => {
   };
 
   const formFields = [
-    { id: 1, title: 'Tên Khu vực', field: 'areaName', placeholder: 'Nhập tên...' },
+    { id: 1, title: 'Tên Khu vực', field: 'name', placeholder: 'Nhập tên...' },
     { id: 2, title: 'Topic', field: 'topic', placeholder: 'Nhập topic để quản lý...' }
   ];
 

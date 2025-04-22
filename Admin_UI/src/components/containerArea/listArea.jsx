@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button, Container, Grid, Paper, Typography, Box, Card, CardContent, Backdrop, CircularProgress } from '@mui/material';
 import IOSSwitch from '../switch/customSwitchIos';
-import useArea from '../../service/useArea';
+import { useArea } from '../../service/useArea';
 import { useEnvironmentDataLatestByArea } from '../../service/useEnvironmentData';
 import { useAreaDevice } from '../../service/useAreaDevice';
 import { useControlDevice } from '../../service/useControlDevice';
@@ -114,6 +114,10 @@ const AreaDashboard = () => {
   const { controlDevice } = useControlDevice();
 
   const handleSubmit = async (data, deviceName, deviceId) => {
+    console.log('data', data);
+    console.log('deviceName', deviceName);
+    console.log('deviceId', deviceId);
+
     const controlValues = deviceStates[deviceId];
     if (!controlValues) return;
 

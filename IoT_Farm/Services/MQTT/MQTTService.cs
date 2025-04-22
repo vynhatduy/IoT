@@ -1,5 +1,6 @@
 ﻿using DotNetEnv;
 using IoT_Farm.Datas;
+using IoT_Farm.Models.Request;
 using IoT_Farm.Services.Interface;
 using MQTTnet;
 using System.Text;
@@ -118,12 +119,33 @@ namespace IoT_Farm.Services.MQTT
         {
             try
             {
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                 using var scope = _serviceProvider.CreateScope();
                 var environmentService = scope.ServiceProvider.GetRequiredService<IEnvironmentService>();
+                var iotDeviceService = scope.ServiceProvider.GetRequiredService<IIoTDeviceService>();
 
                 string topic = e.ApplicationMessage.Topic;
+                _logger.LogInformation($"Topic: {topic} ");
                 string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+                if (topic == "Device/Status")
+                {
+                    var ioTDevice = JsonSerializer.Deserialize<IoTDeviceRequestModel>(payload, options);
+                    if (ioTDevice == null)
+                    {
+                        _logger.LogWarning("IoT Device Data is null");
+                        return;
+                    }
+                    var isSave = await iotDeviceService.SaveData(ioTDevice);
+                    if (isSave)
+                    {
+                        _logger.LogInformation($"Saved data from {topic} to MongoDB.");
+                    }
+                    else
+                    {
+                        _logger.LogInformation($"Data invalid ${topic} | ${JsonSerializer.Serialize(ioTDevice)}");
 
+                    }
+                }
                 //_logger.LogInformation($"[MQTT RECEIVED] Topic: {topic} | Payload: {payload}");
 
                 // Regex kiểm tra topic có dạng "KhuVuc/KV000-KV009/data"
@@ -133,7 +155,6 @@ namespace IoT_Farm.Services.MQTT
                     return;
                 }
 
-                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                 var data = JsonSerializer.Deserialize<EnvironmentData>(payload, options);
 
                 if (data != null)

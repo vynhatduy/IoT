@@ -35,7 +35,7 @@ export const useCreateArea = () => {
     try {
       const response = await API.post('area', data);
       setSuccess(true);
-      return response.data;
+      return response.data.status;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Đã xảy ra lỗi không xác định');
     } finally {

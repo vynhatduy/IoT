@@ -10,10 +10,12 @@ namespace IoT_Farm.Controllers
     public class AreaDeviceController : ControllerBase
     {
         private readonly IAreaDeviceService _service;
+        private readonly IIoTDeviceService _ioTDevice;
 
-        public AreaDeviceController(IAreaDeviceService service)
+        public AreaDeviceController(IAreaDeviceService service, IIoTDeviceService ioTDevice)
         {
             _service = service;
+            _ioTDevice = ioTDevice;
         }
 
         [HttpPost("create")]
@@ -38,6 +40,23 @@ namespace IoT_Farm.Controllers
             var success = await _service.DeleteAsync(id);
             if (!success) return NotFound(new { message = "Không tìm thấy thiết bị để xoá." });
             return Ok(new { message = "Xoá thành công." });
+        }
+        [HttpDelete("deleteDevices")]
+        public async Task<IActionResult> Deletes([FromBody] List<DeviceToDeleteRequestModel> model)
+        {
+            if (model == null || !model.Any())
+            {
+                return BadRequest("Không có thiết bị nào để xóa.");
+            }
+            try
+            {
+                var result = await _service.DeleteDevicesAsync(model);
+                return result.Status ? Ok(result) : BadRequest(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Đã xảy ra lỗi: " + ex.Message });
+            }
         }
 
         [HttpGet("get-all")]
@@ -67,6 +86,12 @@ namespace IoT_Farm.Controllers
         {
             var result = await _service.GetByDeviceIdAsync(deviceId);
             return Ok(result);
+        }
+        [HttpGet("iot-device")]
+        public async Task<IActionResult> GetIoTDeviceByArea()
+        {
+            var result = await _ioTDevice.GetIoTDeviceByArea();
+            return result.Status ? Ok(result) : BadRequest(result);
         }
     }
 }

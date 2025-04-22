@@ -1,4 +1,5 @@
 ﻿using IoT_Farm.Datas;
+using IoT_Farm.Models.Request;
 using IoT_Farm.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,11 +32,11 @@ namespace IoT_Farm.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Area>> Create([FromBody] Area area)
+        public async Task<IActionResult> Create(AreaRequestModel area)
         {
             if (area == null) return BadRequest();
             var createdArea = await _areaService.CreateAsync(area);
-            return CreatedAtAction(nameof(GetById), new { id = createdArea.Id }, createdArea);
+            return createdArea.Status ? Ok(createdArea) : BadRequest(createdArea);
         }
 
         [HttpPut("{id}")]
