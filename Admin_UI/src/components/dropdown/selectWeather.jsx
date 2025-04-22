@@ -1,35 +1,58 @@
-import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import mockdata from '../../data/mockdata.json';
+// import * as React from 'react';
+// import InputLabel from '@mui/material/InputLabel';
+// import MenuItem from '@mui/material/MenuItem';
+// import FormControl from '@mui/material/FormControl';
+// import Select from '@mui/material/Select';
+// import mockdata from '../../data/mockdata.json';
 
-const { weather } = mockdata;
+// const weathers = mockdata.weather;
 
-export default function SelectWeather() {
-  const [selectedWeather, setSelectedWeather] = React.useState('');
+// export default function SelectWeather() {
+//   const [weather, setweather] = React.useState('');
+
+//   const handleChange = (event) => {
+//     setweather(event.target.value);
+//   };
+
+//   return (
+//     <FormControl sx={{ ml: 2, paddingTop: 1, minWidth: 120 }} size="small">
+//       <InputLabel id="weather-select-label">Chọn thời tiết</InputLabel>
+//       <Select labelId="weather-select-label" id="weather-select" value={weather} label="Weather" onChange={handleChange}>
+//         {/* <MenuItem value="">
+//           <em>None</em>
+//         </MenuItem> */}
+//         {weathers.map((item) => (
+//           <MenuItem key={item.id} value={item.id}>
+//             {item.name}
+//           </MenuItem>
+//         ))}
+//       </Select>
+//     </FormControl>
+//   );
+// }
+import React, { useState } from 'react';
+import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+
+const SelectWeather = ({ onWeatherChange }) => {
+  const [weather, setWeather] = useState('temperature');
 
   const handleChange = (event) => {
-    setSelectedWeather(event.target.value);
+    const value = event.target.value;
+    setWeather(value);
+    if (onWeatherChange) {
+      onWeatherChange(value);
+    }
   };
 
   return (
-    <FormControl fullWidth>
-      <InputLabel id="select-weather-label">Thời tiết</InputLabel>
-      <Select
-        labelId="select-weather-label"
-        id="select-weather"
-        value={selectedWeather}
-        onChange={handleChange}
-        label="Thời tiết"
-      >
-        {weather.map((item) => (
-          <MenuItem key={item.id} value={item.id}>
-             {item.name} ({item.unit})
-          </MenuItem>
-        ))}
+    <FormControl sx={{ minWidth: 150, ml: 2 }}>
+      <InputLabel id="weather-select-label">Chỉ số thời tiết</InputLabel>
+      <Select labelId="weather-select-label" id="weather-select" value={weather} label="Chỉ số thời tiết" onChange={handleChange}>
+        <MenuItem value="temperature">Nhiệt độ (°C)</MenuItem>
+        <MenuItem value="humidity">Độ ẩm (%)</MenuItem>
+        <MenuItem value="light">Ánh sáng (Lux)</MenuItem>
       </Select>
     </FormControl>
   );
-}
+};
+export default SelectWeather;

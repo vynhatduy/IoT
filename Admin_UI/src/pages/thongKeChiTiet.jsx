@@ -10,6 +10,8 @@ import CustomDatePicker from '../components/CustomDatePicker';
 import { DownloadButtons } from '../components/button/download';
 import { useEnvironmentData } from '../service/useEnvironmentData';
 import ChartComponent from '../components/ChartComponent';
+// import Statistics from '../components/statisticsContainer/statistics';
+import Statistics from '../components/statisticsContainer/mainGraph';
 
 const ThongKeChiTiet = () => {
   const [area, setArea] = useState('');
@@ -35,7 +37,9 @@ const ThongKeChiTiet = () => {
         THỐNG KÊ CHI TIẾT
       </Typography>
 
-      <StyleBackground></StyleBackground>
+      <StyleBackground>
+        <Statistics />
+      </StyleBackground>
     </Box>
   );
 };
