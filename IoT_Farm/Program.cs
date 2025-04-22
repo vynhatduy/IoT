@@ -107,6 +107,11 @@ builder.Services.AddScoped<IDeviceControlService, DeviceControlService>();
 
 builder.Services.AddScoped<IAreaDeviceRepository, AreaDeviceRepository>();
 builder.Services.AddScoped<IAreaDeviceService, AreaDeviceService>();
+
+builder.Services.AddScoped<IIoTDeviceRepository, IoTDeviceRepository>();
+builder.Services.AddScoped<IIoTDeviceService, IoTDeviceService>();
+
+
 // Add AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
 

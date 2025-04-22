@@ -6,7 +6,7 @@ namespace IoT_Farm.Services.Interface
 {
     public interface IAreaDeviceService
     {
-        Task<List<ResultModel>> GetAllAsync();
+        Task<ResultModel> GetAllAsync();
         Task<ResultModel> CreateAsync(AreaDeviceRequestModel model);
 
         Task<List<AreaDevice>> GetByAreaIdAsync(string areaId);
@@ -14,5 +14,6 @@ namespace IoT_Farm.Services.Interface
         Task<AreaDevice?> GetByIdAsync(string id);
         Task<bool> UpdateAsync(string id, AreaDevice model);
         Task<bool> DeleteAsync(string id);
+        Task<ResultModel> DeleteDevicesAsync(List<DeviceToDeleteRequestModel> model);
     }
 }

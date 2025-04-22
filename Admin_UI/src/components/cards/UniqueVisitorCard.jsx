@@ -15,8 +15,9 @@ import SelectArea from '../../components/dropdown/selectArea';
 
 export default function UniqueVisitorCard() {
   const [area, setArea] = useState('');
+
   const today = new Date().toISOString().split('T')[0];
-  const { data, loading, error } = useDailyEnvironmentData(area ? today : null, area);
+  const { data, loading, error } = useDailyEnvironmentData(area ? today : null, area.name);
 
   return (
     <>

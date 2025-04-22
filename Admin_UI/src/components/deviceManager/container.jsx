@@ -1,66 +1,110 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Paper, Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Checkbox } from '@mui/material';
-import DeviceSwitch from '../switch/deviceSwitch'; // Giả sử component này đã tồn tại
-// import AddDevicelButtons from '../button/addDevice';
-// import DeleteDevice from '../button/deleteDevice';
+import {
+  Box,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+  Checkbox,
+  Grid,
+  Button
+} from '@mui/material';
+import { PowerSettingsNew } from '@mui/icons-material';
 
-const ContainerDevice = ({ deviceInfo, deviceData }) => {
+const ContainerDevice = ({ deviceInfo, deviceData, selectedDevices = [], onDeleteSelected }) => {
   const [localDeviceData, setLocalDeviceData] = useState([]);
+  const [selectedList, setSelectedList] = useState([]);
 
   useEffect(() => {
-    // Giả lập API call để lấy dữ liệu
-    setTimeout(() => {
-      setLocalDeviceData(deviceData);
-    }, 500);
-  }, [deviceData]);
+    if (deviceData && Array.isArray(deviceData)) {
+      const updatedData = deviceData.map((device) => {
+        const isChecked = selectedDevices.some((d) => d.originalId === device.originalId && d.groupType === device.groupType);
+        return { ...device, checked: isChecked };
+      });
+      setLocalDeviceData(updatedData);
+    }
+  }, [deviceData, selectedDevices]);
 
-  // Xử lý sự kiện khi checkbox thay đổi
   const handleCheckboxChange = (deviceId) => {
-    const updated = localDeviceData.map((area) => ({
-      ...area,
-      devices: area.devices.map((device) => (device.id === deviceId ? { ...device, checked: !device.checked } : device))
-    }));
-    setLocalDeviceData(updated);
+    const targetDevice = localDeviceData.find((d) => d.id === deviceId);
+    if (!targetDevice) return;
+
+    const { originalId } = targetDevice;
+    const isChecked = !targetDevice.checked;
+
+    const updatedDeviceData = localDeviceData.map((device) =>
+      device.originalId === originalId ? { ...device, checked: isChecked } : device
+    );
+    setLocalDeviceData(updatedDeviceData);
+
+    const selected = updatedDeviceData
+      .filter((d) => d.checked)
+      .map((d) => ({
+        areaId: d.areaId,
+        id: d.deviceId,
+        groupType: d.groupType,
+        originalId: d.originalId
+      }));
+    setSelectedList(selected);
+
+    // Gửi danh sách đã chọn ra component cha
+    onDeleteSelected?.(selected);
   };
 
-  // Tạo mảng phẳng chứa tất cả thiết bị
-  const allDevices = localDeviceData.flatMap((area) =>
-    area.devices.map((device) => ({
-      ...device,
-      groupkhuvuc: area.khuvuc
-    }))
-  );
-
-  // Thống kê trạng thái thiết bị
-  const onDevices = allDevices.filter((d) => d.switch === 'on').length;
-  const offDevices = allDevices.filter((d) => d.switch === 'off').length;
+  const onDevices = localDeviceData.filter((d) => d.status === true).length;
+  const offDevices = localDeviceData.length - onDevices;
 
   return (
     <Paper elevation={3} sx={{ p: 3, borderRadius: 2 }}>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={8}>
+        {/* Bảng bên trái */}
+        <Grid item xs={12} md={10}>
           <TableContainer component={Paper}>
-            <Box sx={{ maxHeight: 360, overflowY: 'auto' }}>
-              <Table sx={{ minWidth: 300 }} aria-label="device table">
+            <Box sx={{ height: 360, overflowY: 'auto' }}>
+              <Table sx={{ height: 300 }} aria-label="device table">
                 <TableHead>
                   <TableRow sx={{ bgcolor: 'rgba(0, 0, 0, 0.04)' }}>
-                    <TableCell>Chọn thiết bị</TableCell>
-                    <TableCell>Tên thiết bị</TableCell>
+                    <TableCell>Chọn</TableCell>
+                    <TableCell>Tên</TableCell>
                     <TableCell>Khu vực</TableCell>
                     <TableCell>Trạng thái</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {allDevices.length > 0 ? (
-                    allDevices.map((device, idx) => (
+                  {localDeviceData.length > 0 ? (
+                    localDeviceData.map((device, idx) => (
                       <TableRow key={`${device.id}-${idx}`} hover>
                         <TableCell>
                           <Checkbox checked={device.checked} onChange={() => handleCheckboxChange(device.id)} />
                         </TableCell>
-                        <TableCell>{device.ten}</TableCell>
-                        <TableCell>{device.groupkhuvuc}</TableCell>
+                        <TableCell>{device.name}</TableCell>
+                        <TableCell>{device.topic}</TableCell>
                         <TableCell>
-                          <DeviceSwitch initialStatus={device.switch} deviceId={device.id} />
+                          <Box display="flex" alignItems="center" gap={1}>
+                            <span
+                              style={{
+                                width: 12,
+                                height: 12,
+                                borderRadius: '50%',
+                                backgroundColor: device.status ? 'green' : 'gray',
+                                display: 'inline-block'
+                              }}
+                            />
+                            <Typography
+                              variant="body2"
+                              sx={{
+                                minWidth: 80,
+                                color: device.status ? 'text.primary' : 'gray'
+                              }}
+                            >
+                              {device.status ? 'Đang bật' : 'Đang tắt'}
+                            </Typography>
+                            <PowerSettingsNew fontSize="small" sx={{ color: device.status ? 'green' : 'gray' }} />
+                          </Box>
                         </TableCell>
                       </TableRow>
                     ))
@@ -76,18 +120,19 @@ const ContainerDevice = ({ deviceInfo, deviceData }) => {
             </Box>
           </TableContainer>
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Box sx={{ bgcolor: 'background.paper', p: 2, borderRadius: 1 }}>
+
+        {/* Bảng bên phải */}
+        <Grid item xs={12} md={2}>
+          <Box sx={{ bgcolor: 'background.paper', p: 1, borderRadius: 1 }}>
             <Typography variant="h6" gutterBottom>
-              Thông tin {deviceInfo.name}
+              Thông tin {deviceInfo.name || 'Thiết bị'}
             </Typography>
-            <Typography>
-              Đang bật: {onDevices} thiết bị
+            <Typography style={{ textAlign: 'center' }}>
+              Đang bật: {onDevices}
               <br />
-              Đang tắt: {offDevices} thiết bị
+              Đang tắt: {offDevices}
             </Typography>
           </Box>
-          {/* <Box><DeleteDevice/></Box> */}
         </Grid>
       </Grid>
     </Paper>
