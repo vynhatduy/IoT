@@ -24,3 +24,101 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+/* Thiết lập hình nền toàn cục */
+ion-content {
+  --background: url("/assets/images/background.jpg") no-repeat center center /
+    cover fixed;
+}
+
+/* Thêm style cho các card để phù hợp với theme nông trại */
+ion-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 4px 15px;
+}
+
+ion-card-header {
+  padding-bottom: 2px;
+}
+
+ion-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ion-color-primary);
+}
+
+ion-card-content {
+  padding: 10px !important;
+}
+
+/* Style cho các thiết bị trong trang điều khiển */
+.device-card {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.device-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.device-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.device-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.device-img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.device-label {
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Style cho tab bar và toolbar */
+ion-tab-bar {
+  --background: rgba(255, 255, 255, 0.85);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+ion-toolbar {
+  --background: transparent;
+  --color: var(--ion-color-primary);
+}
+
+/* Style cho các button */
+ion-button {
+  --border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Style cho thông báo lỗi và cảnh báo */
+ion-spinner {
+  margin: 20px auto;
+  display: block;
+}
+
+/* Dropdown select */
+ion-select {
+  max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+}
