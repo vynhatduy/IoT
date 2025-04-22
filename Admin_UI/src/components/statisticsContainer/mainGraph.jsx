@@ -89,7 +89,7 @@ const Statistics = () => {
   // Tạo danh sách các Bar cho biểu đồ
   const renderBars = () => {
     if (selectedArea === 'all') {
-      const areas = ['Khu vực 1'];
+      const areas = ['KV001'];
       const colors = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042'];
 
       return areas.map((area, index) => <Bar key={area} dataKey={area} name={area} fill={colors[index]} />);
