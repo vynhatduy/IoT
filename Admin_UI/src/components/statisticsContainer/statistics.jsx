@@ -4,10 +4,11 @@ import DatePickeronly from '../date/pickerDate';
 import { DownloadButtons } from '../button/download';
 import SelectWeather from '../dropdown/selectWeather';
 import SelectArea from '../dropdown/selectArea';
-const Statistics = () => {
+import mainStatis from './mainGraph';
+const Statisticss = () => {
   return (
     <Box>
-      <Typography mt={1} mb={1}>
+      {/* <Typography mt={1} mb={1}>
         Tìm kiếm dữ liệu theo
       </Typography>
       <Stack justifyContent={'center'} alignItems={'center'} direction={'row'}>
@@ -22,9 +23,11 @@ const Statistics = () => {
       </Stack>
       <Container sx={{ mt: 2 }}>
         <Typography>Biểu đồ</Typography>
-      </Container>
+      </Container> */}
+
+      <mainStatis />
     </Box>
   );
 };
 
-export default Statistics;
+export default Statisticss;
