@@ -45,3 +45,18 @@ export const useCreateArea = () => {
 
   return { createArea, loading, error, success };
 };
+
+// export const UseDeleteArea = () => {
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState(null);
+//   const [success, setSuccess] = useState(false);
+
+//   const DeleteArea = async (data) => {
+
+//     try {
+
+//     } catch (error) {
+
+//     }
+//   };
+// };
