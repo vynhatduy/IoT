@@ -2,6 +2,7 @@ import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
 import CameraOutdoorIcon from '@mui/icons-material/CameraOutdoor';
 import WebIcon from '@mui/icons-material/Web';
 import UpcomingIcon from '@mui/icons-material/Upcoming';
+import InfoIcon from '@mui/icons-material/Info';
 
 const deviceManagement = {
   id: 'deviceManagement',
@@ -34,6 +35,14 @@ const deviceManagement = {
       icon: CameraOutdoorIcon,
       breadcrumbs: false
     },
+    {
+      id: 'lienHeHoTro',
+      title: 'Liên hệ & Hỗ trợ',
+      type: 'item',
+      url: '/admin/manage/lien-he-ho-tro',
+      icon: InfoIcon,
+      breadcrumbs: false
+    }
     // {
     //   id: 'quanLyThongSoMoiTruong',
     //   title: 'Thông số môi trường',
@@ -42,14 +51,14 @@ const deviceManagement = {
     //   icon: VrpanoIcon,
     //   breadcrumbs: false
     // },
-    {
-      id: 'quanLyThongBaoCanhBao',
-      title: 'Thông báo & cảnh báo',
-      type: 'item',
-      url: '/admin/manage/thong-bao-canh-bao',
-      icon: UpcomingIcon,
-      breadcrumbs: false
-    }
+    // {
+    //   id: 'quanLyThongBaoCanhBao',
+    //   title: 'Thông báo & cảnh báo',
+    //   type: 'item',
+    //   url: '/admin/manage/thong-bao-canh-bao',
+    //   icon: UpcomingIcon,
+    //   breadcrumbs: false
+    // }
     // {
     //   id: 'quanLyQuyTrinhHoatDong',
     //   title: 'Quy trình hoạt động',

@@ -30,9 +30,8 @@ const MainRoutes = {
           path: 'navigation',
           children: [
             { path: 'cau-hinh-thiet-bi', element: <CauHinhThietBi /> },
-            { path: 'thong-ke-chi-tiet', element: <ThongKeChiTiet /> },
+            { path: 'thong-ke-chi-tiet', element: <ThongKeChiTiet /> }
             // { path: 'giam-sat-camera', element: <GiamSatCamera /> },
-            { path: 'lien-he-ho-tro', element: <LienHeHoTro /> }
           ]
         },
         {
@@ -42,7 +41,8 @@ const MainRoutes = {
             { path: 'quan-ly-khu-vuc', element: <KhuVuc /> },
             { path: 'thong-so-moi-truong', element: <ThongSoMoiTruong /> },
             { path: 'giam-sat-camera', element: <GiamSatCamera /> },
-            { path: 'thong-bao-canh-bao', element: <ThongBaoCanhBao /> }
+            { path: 'lien-he-ho-tro', element: <LienHeHoTro /> }
+            // { path: 'thong-bao-canh-bao', element: <ThongBaoCanhBao /> }
             // { path: 'quy-trinh-hoat-dong', element: <QuyTrinhHoatDong /> }
           ]
         }

@@ -97,7 +97,7 @@ export default function Profile() {
         <Stack direction="row" sx={{ gap: 1.25, alignItems: 'center', p: 0.5 }}>
           <Avatar alt="profile user" src={avatar1} size="sm" />
           <Typography variant="subtitle1" sx={{ textTransform: 'capitalize' }}>
-            Đăng nhập
+            Admin
           </Typography>
         </Stack>
       </ButtonBase>
@@ -130,24 +130,24 @@ export default function Profile() {
                         <Stack direction="row" sx={{ gap: 1.25, alignItems: 'center' }}>
                           <Avatar alt="profile user" src={avatar1} sx={{ width: 32, height: 32 }} />
                           <Stack>
-                            <Typography variant="h6">John Doe</Typography>
+                            <Typography variant="h6">admin</Typography>
                             <Typography variant="body2" color="text.secondary">
-                              tired
+                              làm việc từ 8:00 AM đến 5:00 PM
                             </Typography>
                           </Stack>
                         </Stack>
                       </Grid>
-                      <Grid>
+                      {/* <Grid>
                         <Tooltip title="Logout">
                           <IconButton size="large" sx={{ color: 'text.primary' }} onClick={handleLogout}>
                             <LogoutOutlined />
                           </IconButton>
                         </Tooltip>
-                      </Grid>
+                      </Grid> */}
                     </Grid>
                   </CardContent>
 
-                  <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                  {/* <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <Tabs variant="fullWidth" value={value} onChange={handleChange} aria-label="profile tabs">
                       <Tab
                         sx={{
@@ -182,13 +182,13 @@ export default function Profile() {
                         {...a11yProps(1)}
                       />
                     </Tabs>
-                  </Box>
+                  </Box> */}
                   <TabPanel value={value} index={0} dir={theme.direction}>
                     <ProfileTab />
                   </TabPanel>
-                  <TabPanel value={value} index={1} dir={theme.direction}>
+                  {/* <TabPanel value={value} index={1} dir={theme.direction}>
                     <SettingTab />
-                  </TabPanel>
+                  </TabPanel> */}
                 </MainCard>
               </ClickAwayListener>
             </Paper>
