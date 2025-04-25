@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   Button,
   Box,
@@ -19,6 +19,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import Calender from './calender';
 import Weather from './weather';
 import { useDeviceConfigWeatherCreate } from '../../../service/useDeviceConfigWeather';
+import { useDeviceConfigCalenderCreate } from '../../../service/useCalenderConfig';
 
 const Index = ({ onClose }) => {
   const [value, setValue] = useState('thoitiet');
@@ -28,7 +29,7 @@ const Index = ({ onClose }) => {
   const [openConfirmDialog, setOpenConfirmDialog] = useState(false); // Dialog xác nhận
 
   const { createWeather, createError, createSuccess, loadingCreate } = useDeviceConfigWeatherCreate();
-
+  const { createCalender, createCalenderError, createCalenderSuccess, loadingCalenderCreate } = useDeviceConfigCalenderCreate();
   const handleChange = (event, newValue) => {
     setValue(newValue);
     setErrorMessage('');
@@ -40,7 +41,6 @@ const Index = ({ onClose }) => {
   };
 
   const handleCheckBeforeSubmit = () => {
-    console.log('weatherConfig', weatherConfig);
     setErrorMessage('');
     if (value === 'thoitiet') {
       if (!weatherConfig || !weatherConfig.name || !weatherConfig.area || !weatherConfig.device || !weatherConfig.conditions) {
@@ -48,7 +48,16 @@ const Index = ({ onClose }) => {
         return;
       }
     } else if (value === 'lich') {
-      if (!calendarConfig) {
+      if (
+        !calendarConfig ||
+        !calendarConfig.name ||
+        !calendarConfig.date ||
+        !calendarConfig.device ||
+        !calendarConfig.fan ||
+        !calendarConfig.heater ||
+        !calendarConfig.light ||
+        !calendarConfig.pump
+      ) {
         setErrorMessage('Vui lòng điền đầy đủ thông tin cấu hình theo lịch.');
         return;
       }
@@ -64,7 +73,9 @@ const Index = ({ onClose }) => {
       if (result) onClose();
       else setErrorMessage('Tạo cấu hình thất bại. Vui lòng thử lại.');
     } else if (value === 'lich') {
-      console.log('Submit calendar config:', calendarConfig);
+      const result = await createCalender(calendarConfig);
+      if (result) onClose();
+      else setErrorMessage('Tạo cấu hình thất bại. Vui lòng thử lại.');
     }
   };
 

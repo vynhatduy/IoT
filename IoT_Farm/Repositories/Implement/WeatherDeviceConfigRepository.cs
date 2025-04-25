@@ -5,9 +5,9 @@ using IoT_Farm.Repositories.Interface;
 
 namespace IoT_Farm.Repositories.Implement
 {
-    public class DeviceConfigRepository : GenericRepository<DeviceConfigWeather>, IDeviceConfigRepository
+    public class WeatherDeviceConfigRepository : GenericRepository<DeviceConfigWeather>, IWeatherDeviceConfigRepository
     {
-        public DeviceConfigRepository(DatabaseAdapterFactory adapterFactory) : base(adapterFactory)
+        public WeatherDeviceConfigRepository(DatabaseAdapterFactory adapterFactory) : base(adapterFactory)
         {
         }
 

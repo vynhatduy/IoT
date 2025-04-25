@@ -2,7 +2,7 @@
 
 namespace IoT_Farm.Models.Request
 {
-    public class DeviceConditionAccordingToWeatherConfigRequestModel
+    public class WeatherConfigDeviceRequestModel
     {
         public string Area { get; set; }
         public string Device { get; set; }

@@ -18,8 +18,8 @@ export const SelectIoTDevice = ({ areaId, onChange }) => {
       <FormControl fullWidth sx={{ minWidth: 120 }}>
         <InputLabel id="select-device-label">Thiết bị điều khiển</InputLabel>
         <Select labelId="select-device-label" id="select-device" value={selectedDevice} onChange={handleChange} label="Thiết bị điều khiển">
-          {dataAreaDevice.map((device) => (
-            <MenuItem key={device} value={device}>
+          {dataAreaDevice.map((device, deviceIdx) => (
+            <MenuItem key={deviceIdx} value={device}>
               {device.nameDevice}
             </MenuItem>
           ))}
