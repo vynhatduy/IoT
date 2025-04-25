@@ -2,18 +2,20 @@ import { useState } from 'react';
 import { Stack, Button, Dialog } from '@mui/material';
 // import Index from '../configurationDevice/newConfig/weather';
 import Index from '../configurationDevice/newConfig';
-const CreateButtonConfig = () => {
+
+const CreateButtonConfig = ({ onRefresh }) => {
   const [open, setOpen] = useState(false);
-  const handOpend = () => setOpen(true);
-  const handClose = () => setOpen(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
-    <Stack direction="row" sx={{height: 50 }}>
-      <Button variant="contained" onClick={handOpend} sx={{ width: 120 }}>
+    <Stack direction="row" sx={{ height: 50 }}>
+      <Button variant="contained" onClick={handleOpen} sx={{ width: 120 }}>
         Tạo cấu hình
       </Button>
-      <Dialog open={open} onClose={handClose}>
-        <Index  onClose={handClose}/>
+      <Dialog open={open} onClose={handleClose}>
+        <Index onClose={handleClose} onRefresh={onRefresh} />
       </Dialog>
     </Stack>
   );

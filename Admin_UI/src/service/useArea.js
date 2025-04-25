@@ -46,17 +46,31 @@ export const useCreateArea = () => {
   return { createArea, loading, error, success };
 };
 
-// export const UseDeleteArea = () => {
-//   const [loading, setLoading] = useState(false);
-//   const [error, setError] = useState(null);
-//   const [success, setSuccess] = useState(false);
+export const UseDeleteArea = () => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
 
-//   const DeleteArea = async (data) => {
+  const deleteArea = async (areaId) => {
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
+    try {
+      const response = await API.delete(`area/${areaId}`);
+      console.log(response);
+      if (response.status === 200) {
+        setSuccess(true);
+        return true;
+      } else {
+        setError('Không thể xóa khu vực');
+        return false;
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Đã xảy ra lỗi không xác định');
+    } finally {
+      setLoading(false);
+    }
+  };
 
-//     try {
-
-//     } catch (error) {
-
-//     }
-//   };
-// };
+  return { deleteArea, loading, error, success };
+};

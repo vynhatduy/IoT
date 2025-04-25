@@ -12,7 +12,7 @@ export const useAllDeviceConfigWeather = (refreshFlag = 0) => {
     setError(null);
     try {
       const response = await API.get('/deviceConfig/according-weather/all');
-      setData(response.data.data);
+      setData(response.data);
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Lỗi không xác định';
       setError(message);

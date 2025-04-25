@@ -3,7 +3,7 @@ import { Container, Typography, Button, Stack, Box, Grid, Paper, Snackbar, Alert
 import { Lightbulb, AcUnit, Opacity, Whatshot, CheckCircleOutline, ErrorOutline } from '@mui/icons-material';
 import SelectArea from '../dropdown/selectArea';
 import { useAreaDeviceCreate, useIoTDeviceByArea } from '../../service/useAreaDevice';
-import { SelectIoTDevice } from '../dropdown/selectIoTDevice';
+import { SelectAllIoTDevice, SelectIoTDevice } from '../dropdown/selectIoTDevice';
 
 const AddDevice = ({ onClose, onAddSuccess }) => {
   const [selectedArea, setSelectedArea] = useState(null);
@@ -56,7 +56,7 @@ const AddDevice = ({ onClose, onAddSuccess }) => {
     {
       id: 2,
       title: 'Thiết bị điều khiển',
-      component: <SelectIoTDevice areaId={selectedArea} onChange={(deviceObj) => setSelectedDevice(deviceObj)} />
+      component: <SelectAllIoTDevice areaId={selectedArea} onChange={(deviceObj) => setSelectedDevice(deviceObj)} />
     }
   ];
 

@@ -1,33 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, TextField } from '@mui/material';
+import { useAllDeviceConfigCalender } from '../../../service/useCalenderConfig';
 
-const ListCalender = () => {
-  const headers = ['STT', 'TÊN', 'LOẠI', 'KHU VỰC', 'SỐ THIẾT BỊ', 'TỪ NGÀY', 'ĐẾN NGÀY', 'TÌNH TRẠNG', 'THAO TÁC'];
-
-  const [data, setData] = useState([
-    {
-      id: 1,
-      name: 'Thiết bị A',
-      type: 'Đèn',
-      region: 'KV1',
-      devices: 5,
-      fromDate: '03/30/2025 06:00 AM',
-      toDate: '03/30/2025 01:00 PM',
-      status: 'Hoạt động',
-      isEditing: false
-    },
-    {
-      id: 2,
-      name: 'Thiết bị B',
-      type: 'Camera',
-      region: 'KV2',
-      devices: 3,
-      fromDate: '03/30/2025 03:39 PM',
-      toDate: '03/30/2025 06:00 PM',
-      status: 'Bảo trì',
-      isEditing: false
-    }
-  ]);
+const ListCalender = ({ refresh }) => {
+  const headers = ['STT', 'TÊN', 'MODULE', 'KHU VỰC', 'TỪ NGÀY', 'ĐẾN NGÀY', 'TÌNH TRẠNG'];
+  const { refetchFetchData, data, error, loading } = useAllDeviceConfigCalender();
+  console.log(data);
+  useEffect(() => {
+    refetchFetchData();
+  }, refresh);
 
   const handleEditToggle = (index) => {
     const newData = [...data];
@@ -70,19 +51,13 @@ const ListCalender = () => {
         <TableBody>
           {data.map((row, rowIndex) => (
             <TableRow key={rowIndex} hover>
-              <TableCell align="center">{row.id}</TableCell>
+              <TableCell align="center">{rowIndex + 1}</TableCell>
               <TableCell>{renderEditableCell(row.name, rowIndex, 'name')}</TableCell>
-              <TableCell>{renderEditableCell(row.type, rowIndex, 'type')}</TableCell>
-              <TableCell>{renderEditableCell(row.region, rowIndex, 'region')}</TableCell>
-              <TableCell align="center">{renderEditableCell(row.devices, rowIndex, 'devices')}</TableCell>
-              <TableCell align="center">{renderEditableCell(row.fromDate, rowIndex, 'fromDate')}</TableCell>
-              <TableCell align="center">{renderEditableCell(row.toDate, rowIndex, 'toDate')}</TableCell>
-              <TableCell align="center">{renderEditableCell(row.status, rowIndex, 'status')}</TableCell>
-              <TableCell align="center">
-                <Button color="primary" size="small" onClick={() => handleEditToggle(rowIndex)}>
-                  {row.isEditing ? 'Lưu' : 'Chỉnh sửa'}
-                </Button>
-              </TableCell>
+              <TableCell>{renderEditableCell(row.device, rowIndex, 'device')}</TableCell>
+              <TableCell>{renderEditableCell(row.area, rowIndex, 'area')}</TableCell>
+              <TableCell align="center">{new Date(row.date.start).toLocaleDateString('vi-VN')}</TableCell>
+              <TableCell align="center">{new Date(row.date.end).toLocaleDateString('vi-VN')}</TableCell>
+              <TableCell align="center">{row.status ? 'Hoạt động' : 'Tạm tắt'}</TableCell>
             </TableRow>
           ))}
         </TableBody>

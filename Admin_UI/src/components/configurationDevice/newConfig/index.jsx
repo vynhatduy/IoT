@@ -21,7 +21,7 @@ import Weather from './weather';
 import { useDeviceConfigWeatherCreate } from '../../../service/useDeviceConfigWeather';
 import { useDeviceConfigCalenderCreate } from '../../../service/useCalenderConfig';
 
-const Index = ({ onClose }) => {
+const Index = ({ onClose, onRefresh }) => {
   const [value, setValue] = useState('thoitiet');
   const [weatherConfig, setWeatherConfig] = useState(null);
   const [calendarConfig, setCalendarConfig] = useState(null);
@@ -70,12 +70,16 @@ const Index = ({ onClose }) => {
     setOpenConfirmDialog(false); // Đóng dialog
     if (value === 'thoitiet') {
       const result = await createWeather(weatherConfig);
-      if (result) onClose();
-      else setErrorMessage('Tạo cấu hình thất bại. Vui lòng thử lại.');
+      if (result) {
+        onClose();
+        onRefresh?.();
+      } else setErrorMessage('Tạo cấu hình thất bại. Vui lòng thử lại.');
     } else if (value === 'lich') {
       const result = await createCalender(calendarConfig);
-      if (result) onClose();
-      else setErrorMessage('Tạo cấu hình thất bại. Vui lòng thử lại.');
+      if (result) {
+        onClose();
+        onRefresh?.();
+      } else setErrorMessage('Tạo cấu hình thất bại. Vui lòng thử lại.');
     }
   };
 

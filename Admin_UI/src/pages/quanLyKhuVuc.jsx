@@ -18,7 +18,7 @@ const KhuVuc = () => {
       <StyleBackground>
         <Stack direction={'row'} spacing={2}>
           <AddArea onRefresh={handleRefresh} />
-          <DeleteArea />
+          <DeleteArea onRefresh={handleRefresh} />
         </Stack>
         <Typography variant="subtitle1" sx={{ mt: 2, mb: 2 }}>
           Danh sách khu vực
