@@ -28,7 +28,7 @@ export default navigation = {
       url: '/admin/navigation/thong-ke-chi-tiet',
       icon: WaterfallChartIcon,
       breadcrumbs: false
-    },
+    }
     // {
     //   id: 'giamSatCamera',
     //   title: 'Giám sát Camera',
@@ -37,13 +37,13 @@ export default navigation = {
     //   icon: CameraOutdoorIcon,
     //   breadcrumbs: false
     // },
-    {
-      id: 'lienHeHoTro',
-      title: 'Liên hệ & Hỗ trợ',
-      type: 'item',
-      url: '/admin/navigation/lien-he-ho-tro',
-      icon: InfoIcon,
-      breadcrumbs: false
-    }
+    // {
+    //   id: 'lienHeHoTro',
+    //   title: 'Liên hệ & Hỗ trợ',
+    //   type: 'item',
+    //   url: '/admin/navigation/lien-he-ho-tro',
+    //   icon: InfoIcon,
+    //   breadcrumbs: false
+    // }
   ]
 };
