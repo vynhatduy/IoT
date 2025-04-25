@@ -51,6 +51,7 @@ const SelectWeather = ({ onWeatherChange }) => {
         <MenuItem value="temperature">Nhiệt độ (°C)</MenuItem>
         <MenuItem value="humidity">Độ ẩm (%)</MenuItem>
         <MenuItem value="light">Ánh sáng (Lux)</MenuItem>
+        <MenuItem value="airQuality">Không khí (AQI)</MenuItem>
       </Select>
     </FormControl>
   );

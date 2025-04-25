@@ -50,6 +50,17 @@ namespace IoT_Farm.Services.Implement
 
         public async Task<bool> UpdateAsync(string id, Area area) => await _areaRepository.UpdateAsync(id, area);
 
-        public async Task<bool> DeleteAsync(string id) => await _areaRepository.DeleteAsync(id);
+        public async Task<bool> DeleteAsync(string id)
+        {
+            try
+            {
+                return await _areaRepository.DeleteAreaAsync(id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
     }
 }

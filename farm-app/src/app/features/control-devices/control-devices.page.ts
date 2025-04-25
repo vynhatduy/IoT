@@ -122,13 +122,23 @@ export class ControlDevicesPage implements OnInit {
     );
     return selectedArea ? selectedArea.name : '';
   }
+  getSelectedAreaId(): string {
+    if (!this.sensorLocationId) return '';
+    const selectedArea = this.areas.find(
+      (area) => area.id === this.sensorLocationId
+    );
+    return selectedArea ? selectedArea.id : '';
+  }
 
   async sendDeviceData(device: any) {
     const deviceDetails = device.details?.[0] || {};
     const deviceId = device.id;
 
     const supportedKeys = ['light', 'fan', 'pump', 'heater'];
-    const payload: any = { deviceId: device.name };
+    const payload: any = {
+      deviceId: device.name,
+      area: this.getSelectedAreaId(),
+    };
 
     let hasChanges = false;
 

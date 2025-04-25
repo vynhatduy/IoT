@@ -76,5 +76,12 @@ namespace IoT_Farm.Controllers
             var data = await _environmentService.GetAverageEnvironmentData(date);
             return Ok(new { Humidity = data.Humidity, Temperature = data.Temperature, Brightness = data.Brightness, AirQuality = data.AirQuality });
         }
+        [HttpGet("statistics")]
+        public async Task<IActionResult> GetDataForStatistics(DateTime from, DateTime to, string area, string type)
+        {
+            var data = await _environmentService.GetDataForStatistics(from, to, area, type);
+            return data.Status ? Ok(data) : NotFound(data);
+        }
     }
+
 }

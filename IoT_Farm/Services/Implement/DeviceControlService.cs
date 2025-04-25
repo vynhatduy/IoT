@@ -54,7 +54,16 @@ namespace IoT_Farm.Services.Implement
                 };
                 var payload = JsonSerializer.Serialize(sendData);
 
-                //await _mqttService.PublishAsync($"Device/{model.DeviceId}/Control", payload);
+                var publishSuccess = await _mqttService.PublishAsync($"Device/{model.DeviceId}/Control", payload);
+                if (!publishSuccess)
+                {
+                    return new ResultModel
+                    {
+                        Status = false,
+                        Message = "Failed to publish MQTT message.",
+                        Data = null
+                    };
+                }
                 Console.WriteLine("Đã gửi data đến thiết bị");
                 var result = await _areaDeviceRepo.SaveDeviceControlAsync(model);
                 return result == true ? new ResultModel

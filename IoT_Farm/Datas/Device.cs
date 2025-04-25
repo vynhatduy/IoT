@@ -11,6 +11,7 @@ namespace IoT_Farm.Datas
         public string Id { get; set; } = ObjectId.GenerateNewId().ToString();
 
         public string Name { get; set; }
+        public string NameDevice { get; set; }
         public DeviceType Type { get; set; }
         public List<Dictionary<string, bool>> Details { get; set; }
 

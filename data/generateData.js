@@ -2,7 +2,7 @@ const fs = require("fs");
 const { ObjectId } = require("bson");
 
 // Cấu hình dữ liệu đầu vào
-const areas = ["KV001"];
+const areas = ["KV002"];
 const deviceIds = ["ESP-01A293"];
 
 // Ngày cần tạo dữ liệu (1 ngày = 1440 phút)

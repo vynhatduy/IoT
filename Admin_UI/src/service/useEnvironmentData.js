@@ -47,3 +47,36 @@ export const useEnvironmentDataLatestByArea = (areaId) => {
   }, [areaId]);
   return { dataEnvironment, dataEnvironmentLoading, dataEnvironmentError };
 };
+
+export const useEnvironmentDataStatistics = (area, from, to, type, fetchData) => {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    if (!fetchData || !area || !from || !to || !type) return;
+
+    const fetchDataFromAPI = async () => {
+      setLoading(true);
+      setError(null);
+      setData(null);
+      try {
+        const response = await API.get(
+          `environment/statistics?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}&area=${encodeURIComponent(area)}&type=${type}`
+        );
+        if (!response.data.data) {
+          setError(response.data.message);
+        }
+        setData(response.data.data);
+      } catch (err) {
+        setError(`Lỗi: ${err}`);
+        setData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDataFromAPI();
+  }, [fetchData, area, from, to, type]);
+
+  return { data, error, loading };
+};
