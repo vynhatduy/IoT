@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions, Typography } from '@mui/material';
-import AddAreaContent from '../addArea/addAreaContent';
+import AddAreaContent from '../containerArea/addAreaContent';
 import { useCreateArea } from '../../service/useArea';
 
 const AddArea = ({ onRefresh }) => {

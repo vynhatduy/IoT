@@ -45,20 +45,20 @@ export const DownloadButtons = ({ data }) => {
     document.body.removeChild(link);
   };
 
-  const downloadJSON = () => {
-    if (!data || data.length === 0) return;
+  // const downloadJSON = () => {
+  //   if (!data || data.length === 0) return;
 
-    const jsonContent = JSON.stringify(data, null, 2);
-    const blob = new Blob([jsonContent], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', `weather_data_${new Date().toISOString().split('T')[0]}.json`);
-    link.style.visibility = 'hidden';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  //   const jsonContent = JSON.stringify(data, null, 2);
+  //   const blob = new Blob([jsonContent], { type: 'application/json' });
+  //   const url = URL.createObjectURL(blob);
+  //   const link = document.createElement('a');
+  //   link.setAttribute('href', url);
+  //   link.setAttribute('download', `weather_data_${new Date().toISOString().split('T')[0]}.json`);
+  //   link.style.visibility = 'hidden';
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   return (
     <Stack direction="row" spacing={1}>

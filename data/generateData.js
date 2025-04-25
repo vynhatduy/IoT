@@ -6,7 +6,7 @@ const areas = ["KV002"];
 const deviceIds = ["ESP-01A293"];
 
 // Ngày cần tạo dữ liệu (1 ngày = 1440 phút)
-const dateString = "2025-04-22"; // YYYY-MM-DD
+const dateString = "2025-04-23"; // YYYY-MM-DD
 
 function getRandomFromArray(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
