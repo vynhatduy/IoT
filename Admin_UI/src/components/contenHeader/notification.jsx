@@ -22,11 +22,9 @@ import IconButton from '../../components/@extended/IconButton';
 import Transitions from '../../components/@extended/Transitions';
 
 // assets
-import BellOutlined from '@ant-design/icons/BellOutlined';
-import CheckCircleOutlined from '@ant-design/icons/CheckCircleOutlined';
-import GiftOutlined from '@ant-design/icons/GiftOutlined';
-import MessageOutlined from '@ant-design/icons/MessageOutlined';
-import SettingOutlined from '@ant-design/icons/SettingOutlined';
+import { BellOutlined, CheckCircleOutlined, MessageOutlined } from '@ant-design/icons';
+import { Dialog } from '@mui/material';
+import ViewAllNotification from './account/viewAllNotification';
 
 // sx styles
 const avatarSX = {
@@ -41,18 +39,69 @@ const actionSX = {
   top: 'auto',
   right: 'auto',
   alignSelf: 'flex-start',
-
   transform: 'none'
 };
 
-// ==============================|| HEADER CONTENT - NOTIFICATION ||============================== //
-
 export default function Notification() {
   const downMD = useMediaQuery((theme) => theme.breakpoints.down('md'));
-
   const anchorRef = useRef(null);
-  const [read, setRead] = useState(2);
   const [open, setOpen] = useState(false);
+  const [openViewAll, setOpenViewAll] = useState(false);
+
+  // Mảng dữ liệu thông báo
+  const dataNotification = [
+    {
+      time: '3:00 AM',
+      avt: <MessageOutlined />,
+      description: 'Cảm biến độ ẩm phát hiện đất quá khô ở khu vực A.',
+      timehistory: '2 phút trước'
+    },
+    {
+      time: '4:15 AM',
+      avt: <MessageOutlined />,
+      description: 'Cảnh báo: Hệ thống tưới tiêu sẽ bảo trì lúc 2 giờ chiều.',
+      timehistory: '10 phút trước'
+    },
+    {
+      time: '6:45 AM',
+      avt: <MessageOutlined />,
+      description: 'Nhân viên mới đã được thêm vào nhóm quản lý chuồng trại.',
+      timehistory: '20 phút trước'
+    },
+    {
+      time: '7:30 AM',
+      avt: <MessageOutlined />,
+      description: 'Bạn nhận được báo cáo từ cảm biến nhiệt độ khu nhà kính.',
+      timehistory: '30 phút trước'
+    },
+    {
+      time: '8:00 AM',
+      avt: <MessageOutlined />,
+      description: 'Tự động tưới tiêu tại khu B đã hoàn tất thành công.',
+      timehistory: '45 phút trước'
+    },
+    {
+      time: '7:30 AM',
+      avt: <MessageOutlined />,
+      description: 'Bạn nhận được báo cáo từ cảm biến nhiệt độ khu nhà kính.',
+      timehistory: '30 phút trước'
+    },
+    {
+      time: '8:00 AM',
+      avt: <MessageOutlined />,
+      description: 'Tự động tưới tiêu tại khu B đã hoàn tất thành công.',
+      timehistory: '45 phút trước'
+    }
+  ];
+
+  // Calculate countNotifi after dataNotification is defined
+  const countNotifi = dataNotification.length;
+
+  // Now use countNotifi after it's defined
+  const [read, setRead] = useState(countNotifi);
+
+  const latestNotifications = dataNotification.slice(0, 3);
+
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -63,6 +112,9 @@ export default function Notification() {
     }
     setOpen(false);
   };
+
+  const handleOpenView = () => setOpenViewAll(true);
+  const handleCloseView = () => setOpenViewAll(false);
 
   return (
     <Box sx={{ flexShrink: 0, ml: 0.75 }}>
@@ -127,116 +179,36 @@ export default function Notification() {
                       }
                     }}
                   >
-                    <ListItem
-                      component={ListItemButton}
-                      divider
-                      selected={read > 0}
-                      secondaryAction={
-                        <Typography variant="caption" noWrap>
-                          3:00 AM
-                        </Typography>
-                      }
-                    >
-                      <ListItemAvatar>
-                        <Avatar sx={{ color: 'success.main', bgcolor: 'success.lighter' }}>
-                          <MessageOutlined />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary={
-                          <Typography variant="h6">
-                            It&apos;s{' '}
-                            <Typography component="span" variant="subtitle1">
-                              Cristina danny&apos;s
-                            </Typography>{' '}
-                            birthday today.
+                    {/* Hiển thị chỉ 3 thông báo mới nhất */}
+                    {latestNotifications.map((item, index) => (
+                      <ListItem
+                        key={index}
+                        component={ListItemButton}
+                        divider={index < latestNotifications.length - 1}
+                        selected={read > 0}
+                        secondaryAction={
+                          <Typography variant="caption" noWrap>
+                            {item.time}
                           </Typography>
                         }
-                        secondary="2 min ago"
-                      />
-                    </ListItem>
-                    <ListItem
-                      component={ListItemButton}
-                      divider
-                      secondaryAction={
-                        <Typography variant="caption" noWrap>
-                          6:00 AM
-                        </Typography>
-                      }
-                    >
-                      <ListItemAvatar>
-                        <Avatar sx={{ color: 'primary.main', bgcolor: 'primary.lighter' }}>
-                          <GiftOutlined />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary={
-                          <Typography variant="h6">
+                      >
+                        <ListItemAvatar>
+                          <Avatar sx={{ color: 'success.main', bgcolor: 'success.lighter' }}>{item.avt}</Avatar>
+                        </ListItemAvatar>
+                        <ListItemText
+                          primary={
                             <Typography component="span" variant="subtitle1">
-                              Aida Burg
-                            </Typography>{' '}
-                            commented your post.
-                          </Typography>
-                        }
-                        secondary="5 August"
-                      />
-                    </ListItem>
-                    <ListItem
-                      component={ListItemButton}
-                      divider
-                      selected={read > 0}
-                      secondaryAction={
-                        <Typography variant="caption" noWrap>
-                          2:45 PM
-                        </Typography>
-                      }
-                    >
-                      <ListItemAvatar>
-                        <Avatar sx={{ color: 'error.main', bgcolor: 'error.lighter' }}>
-                          <SettingOutlined />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary={
-                          <Typography variant="h6">
-                            Your Profile is Complete &nbsp;
-                            <Typography component="span" variant="subtitle1">
-                              60%
-                            </Typography>{' '}
-                          </Typography>
-                        }
-                        secondary="7 hours ago"
-                      />
-                    </ListItem>
-                    <ListItem
-                      component={ListItemButton}
-                      divider
-                      secondaryAction={
-                        <Typography variant="caption" noWrap>
-                          9:10 PM
-                        </Typography>
-                      }
-                    >
-                      <ListItemAvatar>{<Avatar sx={{ color: 'primary.main', bgcolor: 'primary.lighter' }}>C</Avatar>}</ListItemAvatar>
-                      <ListItemText
-                        primary={
-                          <Typography variant="h6">
-                            <Typography component="span" variant="subtitle1">
-                              Cristina Danny
-                            </Typography>{' '}
-                            invited to join{' '}
-                            <Typography component="span" variant="subtitle1">
-                              Meeting.
+                              {item.description}
                             </Typography>
-                          </Typography>
-                        }
-                        secondary="Daily scrum meeting time"
-                      />
-                    </ListItem>
+                          }
+                          secondary={item.timehistory}
+                        />
+                      </ListItem>
+                    ))}
                     <ListItemButton sx={{ textAlign: 'center', py: `${12}px !important` }}>
                       <ListItemText
                         primary={
-                          <Typography variant="h6" color="primary">
+                          <Typography variant="h6" color="primary" onClick={handleOpenView}>
                             View All
                           </Typography>
                         }
@@ -249,6 +221,10 @@ export default function Notification() {
           </Transitions>
         )}
       </Popper>
+      {/* display all list notification */}
+      <Dialog open={openViewAll} onClose={handleCloseView}>
+        <ViewAllNotification dataNotification={dataNotification} read={read} />
+      </Dialog>
     </Box>
   );
 }
