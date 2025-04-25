@@ -37,7 +37,6 @@ namespace IoT_Farm.Repositories.Implement
                     return await _databaseAdapter.InsertOneAsync(model);
                 }
 
-                item.Name = $"Thiết bị {count + 1}";
                 item.KhuVuc = model.KhuVuc;
                 item.WiFiSignal = model.WiFiSignal;
                 item.Status = model.Status;

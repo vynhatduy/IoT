@@ -25,6 +25,7 @@ const AddDevice = ({ onClose, onAddSuccess }) => {
       deviceDetails: [
         {
           name: selectedDevice.deviceID,
+          nameDevice: selectedDevice.name,
           model: selectedDevice.espModel,
           type: 0,
           details: [
@@ -78,7 +79,7 @@ const AddDevice = ({ onClose, onAddSuccess }) => {
 
       <Snackbar open={!!createError} autoHideDuration={3000} onClose={() => {}} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
         <Alert severity="error" icon={<ErrorOutline fontSize="inherit" />} sx={{ width: '100%' }}>
-          {`Lỗi: ${createError?.message ?? 'Tạo thiết bị thất bại'}`}
+          {`Không thể tạo thiết bị vui lòng kiểm tra lại.`}
         </Alert>
       </Snackbar>
 
@@ -124,28 +125,28 @@ const AddDevice = ({ onClose, onAddSuccess }) => {
           </Typography>
 
           <Stack direction="row" spacing={2} mt={2} flexWrap="wrap">
-            {selectedDevice.light && (
+            {selectedDevice.light !== undefined && (
               <Stack direction="row" spacing={1} alignItems="center">
                 <Lightbulb color="warning" />
                 <Typography>Đèn</Typography>
               </Stack>
             )}
 
-            {selectedDevice.fan && (
+            {selectedDevice.fan !== undefined && (
               <Stack direction="row" spacing={1} alignItems="center">
                 <AcUnit color="primary" />
                 <Typography>Quạt</Typography>
               </Stack>
             )}
 
-            {selectedDevice.pump && (
+            {selectedDevice.pump !== undefined && (
               <Stack direction="row" spacing={1} alignItems="center">
                 <Opacity color="info" />
                 <Typography>Máy bơm</Typography>
               </Stack>
             )}
 
-            {selectedDevice.heater && (
+            {selectedDevice.heater !== undefined && (
               <Stack direction="row" spacing={1} alignItems="center">
                 <Whatshot color="error" />
                 <Typography>Sưởi</Typography>

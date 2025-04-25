@@ -35,5 +35,20 @@ namespace IoT_Farm.Repositories.Implement
                 return null;
             }
         }
+
+        public async Task<bool> DeleteAreaAsync(string id)
+        {
+            try
+            {
+
+                return await _databaseAdapter.DeleteAsync(id);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
     }
 }

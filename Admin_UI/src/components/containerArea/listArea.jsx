@@ -114,14 +114,11 @@ const AreaDashboard = () => {
   const { controlDevice } = useControlDevice();
 
   const handleSubmit = async (data, deviceName, deviceId) => {
-    console.log('data', data);
-    console.log('deviceName', deviceName);
-    console.log('deviceId', deviceId);
-
     const controlValues = deviceStates[deviceId];
     if (!controlValues) return;
 
     const payload = {
+      area: selectedAreaId,
       deviceId: deviceName,
       ...Object.fromEntries(Object.entries(controlValues).map(([k, v]) => [k, v ? 1 : 0]))
     };

@@ -144,6 +144,95 @@ namespace IoT_Farm.Services.Implement
             });
         }
 
+        public async Task<ResultModel> GetDataForStatistics(DateTime from, DateTime to, string area, string type)
+        {
+            to = to.Date.AddDays(1).AddTicks(-1);
+            try
+            {
+                var listData = await _repository.GetDataForReportByAreaDateType(area, from, to);
+                if (listData == null || !listData.Any())
+                {
+                    return new ResultModel
+                    {
+                        Message = "Không có dữ liệu",
+                        Data = null,
+                        Status = false
+                    };
+                }
+
+                var result = new List<EnvironmentResponseModel>();
+                string typeLower = type.ToLower().Trim();
+
+                var groupData = listData.GroupBy(x => x.Timestamp.Date).OrderBy(g => g.Key);
+
+
+                switch (typeLower)
+                {
+                    case "humidity":
+                        result = groupData.Select(x => new EnvironmentResponseModel
+                        {
+                            Area = area,
+                            TimeStamp = x.Key,
+                            Type = "Humidity",
+                            Value = Math.Round(x.Average(x => x.Humidity), 3)
+                        }).ToList();
+                        break;
+
+                    case "light":
+                        result = groupData.Select(x => new EnvironmentResponseModel
+                        {
+                            Area = area,
+                            TimeStamp = x.Key,
+                            Type = "Light",
+                            Value = Math.Round(x.Average(x => x.Light), 3)
+                        }).ToList();
+                        break;
+
+                    case "airquality":
+                        result = groupData.Select(x => new EnvironmentResponseModel
+                        {
+                            Area = area,
+                            TimeStamp = x.Key,
+                            Type = "AirQuality",
+                            Value = Math.Round(x.Average(x => x.AirQuality), 3)
+                        }).ToList();
+                        break;
+
+                    case "temperature":
+                        result = groupData.Select(x => new EnvironmentResponseModel
+                        {
+                            Area = area,
+                            TimeStamp = x.Key,
+                            Type = "Temperature",
+                            Value = Math.Round(x.Average(x => x.Temperature), 3)
+                        }).ToList();
+                        break;
+
+                    default:
+                        return new ResultModel
+                        {
+                            Status = false,
+                            Message = "Không có loại dữ liệu yêu cầu"
+                        };
+                }
+
+                return new ResultModel
+                {
+                    Data = result,
+                    Status = true
+                };
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new ResultModel
+                {
+                    Message = ex.Message,
+                    Data = null,
+                    Status = false
+                };
+            }
+        }
 
     }
 }

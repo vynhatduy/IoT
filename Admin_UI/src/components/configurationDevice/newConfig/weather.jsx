@@ -1,19 +1,74 @@
-import React, { useState } from 'react';
-import { Button, Box, Stack, Typography, Container, TextField } from '@mui/material';
-import Grid from '@mui/material/Grid2';
+import React, { useEffect, useState } from 'react';
+import { Box, Typography, TextField, Paper, Grid } from '@mui/material';
 import SelectArea from '../../dropdown/selectArea';
-import SelectDevice from '../../dropdown/selectDevice';
-import OnOffDropdown from '../../dropdown/switchOnOff';
-import CustomizedSwitches from '../../switch/customSwitch';
-import SelectHand from '../../dropdown/selectGroupHandInWeather';
+import { SelectIoTDevice } from '../../dropdown/selectIoTDevice';
+import DeviceConfigPanel from '../../cards/deviceConditionCard';
 
-const Weather = () => {
+// Define the data options
+const lightDataOptions = [20, 30, 40, 50, 60, 70, 80];
+const airQualityDataOptions = [150, 200, 300, 500, 600, 700, 800, 900];
+const temperatureDataOptions = [15, 20, 25, 30];
+const humidityDataOptions = [20, 30, 40, 50, 60, 70, 80];
+
+const Weather = ({ onChange }) => {
+  const [selectedArea, setSelectedArea] = useState(null);
+  const [selectedDevice, setSelectedDevice] = useState(null);
+  const [name, setName] = useState(null);
+  // State for light
+  const [lightValue, setLightValue] = useState();
+
+  // State for fan
+  const [fanTemp, setFanTemp] = useState();
+  const [fanAqi, setFanAqi] = useState();
+  const [fanHum, setFanHum] = useState();
+  // State for pump
+  const [pumpTemp, setPumpTemp] = useState();
+
+  // State for heater
+  const [heaterTemp, setHeaterTemp] = useState();
+
+  // Event handlers
+
+  const handleLightChange = (value) => setLightValue(value);
+  const handleFanTempChange = (value) => setFanTemp(value);
+  const handleFanAqiChange = (value) => setFanAqi(value);
+  const handleFanHumChange = (value) => setFanHum(value);
+  const handlePumpTempChange = (value) => setPumpTemp(value);
+  const handleHeaterTempChange = (value) => setHeaterTemp(value);
+
+  const handleChangeName = (event) => setName(event.target.value);
+
   const data = [
-    { id: 1, title: 'Tên', component: <TextField fullWidth placeholder="Nhập tên..." /> },
-    { id: 2, title: 'Chọn loại', component: <SelectDevice /> },
-    { id: 3, title: 'Chọn khu vực', component: <SelectArea fullWidth onChange={(value) => console.log('Khu vực đã chọn:', value)} /> },
-    { id: 4, title: 'tự động', component: <CustomizedSwitches /> }
+    { id: 1, title: 'Tên', component: <TextField fullWidth value={name ?? ''} placeholder="Nhập tên..." onChange={handleChangeName} /> },
+    { id: 2, title: 'Chọn khu vực', component: <SelectArea fullWidth onChange={(area) => setSelectedArea(area)} /> },
+    {
+      id: 3,
+      title: 'Chọn loại',
+      component: <SelectIoTDevice areaId={selectedArea} onChange={(deviceObj) => setSelectedDevice(deviceObj)} />
+    }
   ];
+
+  useEffect(() => {
+    const configData = {
+      name: name,
+      area: selectedArea?.name ?? '',
+      device: selectedDevice?.name ?? '',
+      conditions: {
+        light: lightValue,
+        fan: {
+          temperature: fanTemp,
+          aqi: fanAqi,
+          humidity: fanHum
+        },
+        heater: heaterTemp,
+        pump: pumpTemp
+      }
+    };
+
+    if (onChange) {
+      onChange(configData);
+    }
+  }, [selectedArea, selectedDevice, name, lightValue, fanTemp, fanAqi, fanHum, pumpTemp, heaterTemp]);
 
   return (
     <Box sx={{ width: '100%', typography: 'body1', mt: 3 }}>
@@ -27,6 +82,50 @@ const Weather = () => {
           </Grid>
         </Grid>
       ))}
+
+      {selectedDevice && (
+        <Paper variant="outlined" sx={{ p: 2, mt: 2 }}>
+          <Typography variant="subtitle1" gutterBottom>
+            Thông tin thiết bị:
+          </Typography>
+          <Typography>
+            <strong>Tên:</strong> {selectedDevice.nameDevice}
+          </Typography>
+          <Typography>
+            <strong>Model:</strong> {selectedDevice.name}
+          </Typography>
+
+          <DeviceConfigPanel
+            selectedDevice={selectedDevice.details[0]}
+            // Light
+            lightValue={lightValue}
+            handleLightChange={handleLightChange}
+            // Fan
+            fanTemp={fanTemp}
+            handleFanTempChange={handleFanTempChange}
+            fanAqi={fanAqi}
+            handleFanAqiChange={handleFanAqiChange}
+            fanHum={fanHum}
+            handleFanHumChange={handleFanHumChange}
+            //Pump
+            pumpTemp={pumpTemp}
+            handlePumpTempChange={handlePumpTempChange}
+            // Heater
+            heaterTemp={heaterTemp}
+            handleHeaterTempChange={handleHeaterTempChange}
+            // Options
+            lightDataOptions={lightDataOptions}
+            temperatureDataOptions={temperatureDataOptions}
+            airQualityDataOptions={airQualityDataOptions}
+            humidityDataOptions={humidityDataOptions}
+          />
+
+          <Typography mt={2}>
+            <strong style={{ color: 'red' }}>Lưu ý: </strong> Ngưỡng thông số cần thiết để tự động bật thiết bị <br />{' '}
+            <strong>Giá trị vượt quá ngược thiết lập sẽ tự động bật.</strong>
+          </Typography>
+        </Paper>
+      )}
     </Box>
   );
 };

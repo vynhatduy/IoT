@@ -5,7 +5,6 @@ using IoT_Farm.Repositories.Interface;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Linq.Expressions;
-using System.Text.Json;
 
 namespace IoT_Farm.Repositories.Implement
 {
@@ -88,20 +87,21 @@ namespace IoT_Farm.Repositories.Implement
                     updateDetails.Add(deviceDetails);
                 }
 
-                var filter = Builders<AreaDevice>.Filter.ElemMatch(x => x.DeviceDetails, d => d.Name == model.DeviceId);
+                var filter = Builders<AreaDevice>.Filter.And(
+                 Builders<AreaDevice>.Filter.Eq(a => a.AreaId, model.Area),
+                 Builders<AreaDevice>.Filter.ElemMatch(a => a.DeviceDetails, d => d.Name == model.DeviceId)
+                );
+
 
                 var areaDevice = await _databaseAdapter.FindOneAsync(filter);
-                Console.WriteLine($"Area device:{JsonSerializer.Serialize(areaDevice)}");
+
 
                 if (areaDevice == null) return false;
                 var device = areaDevice.DeviceDetails.FirstOrDefault(d => d.Name == model.DeviceId);
-                Console.WriteLine($"device:{JsonSerializer.Serialize(device)}");
 
 
                 if (device == null) return false;
                 device.Details = updateDetails;
-                Console.WriteLine($"updateDetails:{JsonSerializer.Serialize(updateDetails)}");
-                Console.WriteLine($" device:{JsonSerializer.Serialize(device)}");
 
                 var updateFilter = Builders<AreaDevice>.Filter.Eq("_id", ObjectId.Parse(areaDevice.Id));
 
@@ -115,6 +115,29 @@ namespace IoT_Farm.Repositories.Implement
                 return false;
             }
         }
+
+        public async Task<bool> CheckDeviceValid(string areaId, string deviceName)
+        {
+            try
+            {
+                var areaDevices = await _databaseAdapter.FindAsync(ad => ad.AreaId == areaId);
+                foreach (var device in areaDevices)
+                {
+                    if (device.DeviceDetails.Any(d => d.Name == deviceName))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
 
     }
 }

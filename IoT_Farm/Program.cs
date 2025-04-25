@@ -53,6 +53,10 @@ builder.Services.AddScoped<IEnvironmentService, EnvironmentService>();
 builder.Services.AddScoped<IAreaRepository, AreaRepository>();
 builder.Services.AddScoped<IAreaService, AreaService>();
 
+builder.Services.AddScoped<IDeviceConfigRepository, DeviceConfigRepository>();
+builder.Services.AddScoped<IDeviceConfigService, DeviceConfigService>();
+
+
 builder.Services.AddScoped<EnvironmentDataAdapter>();
 
 // Try to register MQTT Service, but catch any errors

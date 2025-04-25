@@ -21,11 +21,22 @@ namespace IoT_Farm.Services.Implement
             // Lấy khu vực có AreaId trùng
             var existingAreas = await _repo.GetByAreaIdAsync(model.AreaId);
             var existingArea = existingAreas.FirstOrDefault();
+            foreach (var item in model.DeviceDetails)
+            {
+                if (!await _repo.CheckDeviceValid(model.AreaId, item.Name))
+                    return new ResultModel
+                    {
+                        Status = false,
+                        Data = item,
+                        Message = "Thiết bị đã tồn tại"
 
+                    };
+            }
             // Chuyển danh sách DeviceDetailRequestModel sang Device
             var newDevices = model.DeviceDetails.Select(d => new Device
             {
                 Name = d.Name,
+                NameDevice = d.NameDevice,
                 Type = d.Type,
                 Details = d.Details
             }).ToList();
@@ -53,7 +64,7 @@ namespace IoT_Farm.Services.Implement
                     Id = ObjectId.GenerateNewId().ToString(),
                     AreaId = model.AreaId,
                     Topic = model.Topic,
-                    DeviceDetails = newDevices
+                    DeviceDetails = newDevices,
                 };
 
                 await _repo.AddAsync(newAreaDevice);
