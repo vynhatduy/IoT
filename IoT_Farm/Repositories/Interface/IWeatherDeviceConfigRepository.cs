@@ -3,7 +3,7 @@ using IoT_Farm.Models.Response;
 
 namespace IoT_Farm.Repositories.Interface
 {
-    public interface IDeviceConfigRepository : IGenericRepository<DeviceConfigWeather>
+    public interface IWeatherDeviceConfigRepository : IGenericRepository<DeviceConfigWeather>
     {
         Task<List<DeviceConfigWeather>> GetAllDeviceConfigAsync();
         Task<List<DeviceConfigWeather>> GetByAreaAsync(string area);

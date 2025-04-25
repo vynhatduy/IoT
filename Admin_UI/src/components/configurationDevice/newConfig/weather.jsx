@@ -53,22 +53,33 @@ const Weather = ({ onChange }) => {
       name: name,
       area: selectedArea?.name ?? '',
       device: selectedDevice?.name ?? '',
-      conditions: {
-        light: lightValue,
-        fan: {
-          temperature: fanTemp,
-          aqi: fanAqi,
-          humidity: fanHum
-        },
-        heater: heaterTemp,
-        pump: pumpTemp
-      }
+      conditions: {}
     };
+
+    if (lightValue) {
+      configData.conditions.light = lightValue;
+    }
+
+    if (fanTemp || fanAqi || fanHum) {
+      configData.conditions.fan = {
+        temperature: fanTemp,
+        aqi: fanAqi,
+        humidity: fanHum
+      };
+    }
+
+    if (heaterTemp) {
+      configData.conditions.heater = heaterTemp;
+    }
+
+    if (pumpTemp) {
+      configData.conditions.pump = pumpTemp;
+    }
 
     if (onChange) {
       onChange(configData);
     }
-  }, [selectedArea, selectedDevice, name, lightValue, fanTemp, fanAqi, fanHum, pumpTemp, heaterTemp]);
+  }, [selectedArea, selectedDevice, name, lightValue, fanTemp, fanAqi, fanHum, heaterTemp, pumpTemp, onChange]);
 
   return (
     <Box sx={{ width: '100%', typography: 'body1', mt: 3 }}>

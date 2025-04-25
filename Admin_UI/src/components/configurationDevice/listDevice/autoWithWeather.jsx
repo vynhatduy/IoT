@@ -1,40 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, TextField } from '@mui/material';
+import { useAllDeviceConfigWeather } from '../../../service/useDeviceConfigWeather';
 
-const ListWeather = () => {
-  const headers = ['STT', 'TÊN', 'LOẠI', 'KHU VỰC', 'SỐ THIẾT BỊ', 'TỪ NGÀY', 'ĐẾN NGÀY', 'TÌNH TRẠNG', 'THAO TÁC'];
+const ListWeather = ({ refresh }) => {
+  const { data, error, loading, refetchFetchData } = useAllDeviceConfigWeather();
+  const headers = ['STT', 'TÊN', 'MODULE', 'KHU VỰC', 'THIẾT BỊ', 'TỪ NGÀY', 'ĐẾN NGÀY', 'TÌNH TRẠNG'];
 
-  const [data, setData] = useState([
-    {
-      id: 1,
-      name: 'Thiết bị A',
-      type: 'Đèn',
-      region: 'KV1',
-      devices: 5,
-      fromDate: '03/30/2025 06:00 AM',
-      toDate: '03/30/2025 01:00 PM',
-      status: 'Hoạt động',
-      isEditing: false
-    },
-    {
-      id: 2,
-      name: 'Thiết bị B',
-      type: 'Camera',
-      region: 'KV2',
-      devices: 3,
-      fromDate: '03/30/2025 03:39 PM',
-      toDate: '03/30/2025 06:00 PM',
-      status: 'Bảo trì',
-      isEditing: false
-    }
-  ]);
-
-  const handleEditToggle = (index) => {
-    const newData = [...data];
-    newData[index].isEditing = !newData[index].isEditing;
-    setData(newData);
-  };
-
+  useEffect(() => {
+    refetchFetchData();
+  }, [refresh]);
   const handleInputChange = (index, field, value) => {
     const newData = [...data];
     newData[index][field] = value;
@@ -70,19 +44,38 @@ const ListWeather = () => {
         <TableBody>
           {data.map((row, rowIndex) => (
             <TableRow key={rowIndex} hover>
-              <TableCell align="center">{row.id}</TableCell>
+              <TableCell align="center">{rowIndex + 1}</TableCell>
+
               <TableCell>{renderEditableCell(row.name, rowIndex, 'name')}</TableCell>
-              <TableCell>{renderEditableCell(row.type, rowIndex, 'type')}</TableCell>
-              <TableCell>{renderEditableCell(row.region, rowIndex, 'region')}</TableCell>
-              <TableCell align="center">{renderEditableCell(row.devices, rowIndex, 'devices')}</TableCell>
-              <TableCell align="center">{renderEditableCell(row.fromDate, rowIndex, 'fromDate')}</TableCell>
-              <TableCell align="center">{renderEditableCell(row.toDate, rowIndex, 'toDate')}</TableCell>
-              <TableCell align="center">{renderEditableCell(row.status, rowIndex, 'status')}</TableCell>
-              <TableCell align="center">
-                <Button color="primary" size="small" onClick={() => handleEditToggle(rowIndex)}>
-                  {row.isEditing ? 'Lưu' : 'Chỉnh sửa'}
-                </Button>
+
+              <TableCell>{renderEditableCell(row.deviceName, rowIndex, 'deviceName')}</TableCell>
+
+              <TableCell>{renderEditableCell(row.area, rowIndex, 'area')}</TableCell>
+
+              <TableCell>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                  {row.conditions.light !== undefined && <div>Đèn-LUX: {row.conditions.light}</div>}
+                  {row.conditions.pump !== undefined && <div>Máy bơm: {row.conditions.pump}°C</div>}
+                  {row.conditions.heater !== undefined && <div>Sưởi: {row.conditions.heater}°C</div>}
+                  {row.conditions.fan && (
+                    <>
+                      {row.conditions.fan.temperature !== undefined && <div>Quạt - Nhiệt độ: {row.conditions.fan.temperature}°C</div>}
+                      {row.conditions.fan.humidity !== undefined && <div>Quạt - Độ ẩm: {row.conditions.fan.humidity}%</div>}
+                      {row.conditions.fan.aqi !== undefined && <div>Quạt - AQI: {row.conditions.fan.aqi}</div>}
+                    </>
+                  )}
+                </div>
               </TableCell>
+
+              <TableCell align="center">
+                {renderEditableCell(new Date(row.createAt).toLocaleString('vi-VN'), rowIndex, 'createAt')}
+              </TableCell>
+
+              <TableCell align="center">
+                {renderEditableCell(new Date(row.updateAt).toLocaleString('vi-VN'), rowIndex, 'updateAt')}
+              </TableCell>
+
+              <TableCell align="center">{renderEditableCell(row.status ? 'Hoạt động' : 'Tắt', rowIndex, 'status')}</TableCell>
             </TableRow>
           ))}
         </TableBody>

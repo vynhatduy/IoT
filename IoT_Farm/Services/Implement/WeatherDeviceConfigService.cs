@@ -7,16 +7,16 @@ using MongoDB.Bson;
 
 namespace IoT_Farm.Services.Implement
 {
-    public class DeviceConfigService : IDeviceConfigService
+    public class WeatherDeviceConfigService : IWeatherDeviceConfigService
     {
-        private readonly IDeviceConfigRepository _repo;
+        private readonly IWeatherDeviceConfigRepository _repo;
 
-        public DeviceConfigService(IDeviceConfigRepository repo)
+        public WeatherDeviceConfigService(IWeatherDeviceConfigRepository repo)
         {
             _repo = repo;
         }
 
-        public async Task<ResultModel> CreateAsync(DeviceConditionAccordingToWeatherConfigRequestModel model)
+        public async Task<ResultModel> CreateAsync(WeatherConfigDeviceRequestModel model)
         {
             try
             {

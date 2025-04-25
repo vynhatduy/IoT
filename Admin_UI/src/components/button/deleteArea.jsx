@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
 import { Button, Container, Dialog } from '@mui/material';
 import DeleteAreaContent from '../containerArea/deleteAreaContent';
-// import { UseDeleteArea } from '../../service/useArea';
-const DeleteArea = () => {
+
+const DeleteArea = ({ onRefresh }) => {
   const [open, setOpenForm] = useState(false);
+
   const handleOpen = () => setOpenForm(true);
-  const handleClose = () => setOpenForm(false);
-  // const { DeleteArea, loading, succes, error } = UseDeleteArea();
+  const handleClose = () => {
+    setOpenForm(false);
+    if (onRefresh) {
+      onRefresh(); // Gọi hàm refresh khi dialog đóng (sau khi xóa thành công)
+    }
+  };
+
   return (
     <Container>
-      <Button variant="contained" onClick={handleOpen} sx={{ width: 150 }}>
+      <Button style={{ backgroundColor: 'red' }} variant="contained" onClick={handleOpen} sx={{ width: 150 }}>
         Xóa khu vực
       </Button>
+
       <Dialog open={open} onClose={handleClose}>
-        <DeleteAreaContent />
+        <DeleteAreaContent onClose={handleClose} onRefresh={onRefresh} />
       </Dialog>
     </Container>
   );

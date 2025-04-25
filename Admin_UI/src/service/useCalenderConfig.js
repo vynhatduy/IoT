@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, use } from 'react';
 import API from './useAPI';
 import axios from 'axios';
 
-export const useAllDeviceConfigWeather = (refreshFlag = 0) => {
+export const useAllDeviceConfigCalender = (refreshFlag = 0) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ export const useAllDeviceConfigWeather = (refreshFlag = 0) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await API.get('/deviceConfig/according-weather/all');
+      const response = await API.get('/deviceConfig/according-calender/all');
       setData(response.data);
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Lỗi không xác định';
@@ -27,7 +27,7 @@ export const useAllDeviceConfigWeather = (refreshFlag = 0) => {
 
   useEffect(() => {
     fetchData();
-  }, [refreshFlag]); // Thêm refreshFlag vào dependencies
+  }, [refreshFlag]);
 
   return {
     refetchFetchData,
@@ -37,7 +37,7 @@ export const useAllDeviceConfigWeather = (refreshFlag = 0) => {
   };
 };
 
-export const useDeviceConfigByArea = (areaId, refreshFlag = 0) => {
+export const useCalenderDeviceConfigByArea = (areaId, refreshFlag = 0) => {
   const [dataAreaDevice, setDataAreaDevice] = useState([]);
   const [loadingAreaDevice, setLoadingAreaDevice] = useState(false);
   const [errorAreaDevice, setErrorAreaDevice] = useState(null);
@@ -52,7 +52,7 @@ export const useDeviceConfigByArea = (areaId, refreshFlag = 0) => {
     setErrorAreaDevice(null);
 
     try {
-      const response = await API.get(`/deviceConfig/according-weather/area?area=${areaId}`);
+      const response = await API.get(`/deviceConfig/according-calender/area?area=${areaId}`);
       const data = response.data[0];
       if (data) {
         setDataAreaDevice(data?.deviceDetails || []);
@@ -69,24 +69,22 @@ export const useDeviceConfigByArea = (areaId, refreshFlag = 0) => {
     }
   }, [areaId]);
 
-  // Thêm hàm refetch để có thể gọi thủ công
   const refetchAreaDevice = useCallback(() => {
     fetchAreaDevice();
   }, [fetchAreaDevice]);
 
   useEffect(() => {
     fetchAreaDevice();
-  }, [fetchAreaDevice, refreshFlag]); // Thêm refreshFlag vào dependencies
-
+  }, [fetchAreaDevice, refreshFlag]);
   return {
     dataAreaDevice,
     loadingAreaDevice,
     errorAreaDevice,
-    refetchAreaDevice // Export hàm refetch
+    refetchAreaDevice
   };
 };
 
-export const useDeviceConfigByStatus = (status, refreshFlag = 0) => {
+export const useCalenderDeviceConfigByStatus = (status, refreshFlag = 0) => {
   const [dataAreaDevice, setDataAreaDevice] = useState([]);
   const [loadingAreaDevice, setLoadingAreaDevice] = useState(false);
   const [errorAreaDevice, setErrorAreaDevice] = useState(null);
@@ -101,7 +99,7 @@ export const useDeviceConfigByStatus = (status, refreshFlag = 0) => {
     setErrorAreaDevice(null);
 
     try {
-      const response = await API.get(`/deviceConfig/according-weather?status=${status}`);
+      const response = await API.get(`/deviceConfig/according-calender?status=${status}`);
       const data = response.data[0];
       if (data) {
         setDataAreaDevice(data?.deviceDetails || []);
@@ -118,34 +116,33 @@ export const useDeviceConfigByStatus = (status, refreshFlag = 0) => {
     }
   }, [areaId]);
 
-  // Thêm hàm refetch để có thể gọi thủ công
   const refetchAreaDevice = useCallback(() => {
     fetchAreaDevice();
   }, [fetchAreaDevice]);
 
   useEffect(() => {
     fetchAreaDevice();
-  }, [fetchAreaDevice, refreshFlag]); // Thêm refreshFlag vào dependencies
+  }, [fetchAreaDevice, refreshFlag]);
 
   return {
     dataAreaDevice,
     loadingAreaDevice,
     errorAreaDevice,
-    refetchAreaDevice // Export hàm refetch
+    refetchAreaDevice
   };
 };
 
-export const useDeviceConfigWeatherCreate = () => {
-  const [createSuccess, setCreateSuccess] = useState(false);
-  const [loadingCreate, setLoadingCreate] = useState(false);
-  const [createError, setCreateError] = useState(null);
-  const createWeather = async (payload) => {
+export const useDeviceConfigCalenderCreate = () => {
+  const [createCalenderSuccess, setCreateSuccess] = useState(false);
+  const [loadingCalenderCreate, setLoadingCreate] = useState(false);
+  const [createCalenderError, setCreateError] = useState(null);
+  const createCalender = async (payload) => {
     if (!payload) return;
     setLoadingCreate(true);
     setCreateSuccess(false);
     setCreateError(null);
     try {
-      const response = await API.post('/deviceConfig/according-weather/create', payload);
+      const response = await API.post('/deviceConfig/according-calender/create', payload);
       setCreateSuccess(response.data.status);
       if (response?.data?.status) {
         return true;
@@ -162,13 +159,13 @@ export const useDeviceConfigWeatherCreate = () => {
     }
   };
   return {
-    createWeather,
-    createSuccess,
-    loadingCreate,
-    createError
+    createCalender,
+    createCalenderSuccess,
+    loadingCalenderCreate,
+    createCalenderError
   };
 };
-export const useDeviceUpdate = () => {
+export const useCalenderDeviceUpdate = () => {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [loadingUpdate, setLoadingUpdate] = useState(false);
   const [updateError, setUpdateError] = useState(null);
@@ -178,7 +175,7 @@ export const useDeviceUpdate = () => {
     setUpdateSuccess(false);
     setUpdateError(null);
     try {
-      const response = await API.delete('/deviceConfig/according-weather/update', {
+      const response = await API.delete('/deviceConfig/according-calender/update', {
         data: payload,
         headers: {
           'Content-Type': 'application/json'
@@ -208,7 +205,7 @@ export const useDeviceUpdate = () => {
   };
 };
 
-export const useDeviceDelete = () => {
+export const useCalenderDeviceDelete = () => {
   const [deleteSuccess, setDeleteSuccess] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
   const [deleteError, setDeleteError] = useState(null);
@@ -218,7 +215,7 @@ export const useDeviceDelete = () => {
     setDeleteSuccess(false);
     setDeleteError(null);
     try {
-      const response = await API.delete(`/deviceConfig/according-weather/delete?id=${id}`, {
+      const response = await API.delete(`/deviceConfig/according-calender/delete?id=${id}`, {
         data: payload,
         headers: {
           'Content-Type': 'application/json'
