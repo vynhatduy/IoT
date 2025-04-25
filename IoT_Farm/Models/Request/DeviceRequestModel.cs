@@ -2,7 +2,8 @@
 {
     public class DeviceRequestModel
     {
-        public string DeviceId { get; set; }
+        public string Area { get; set; } = null!;
+        public string DeviceId { get; set; } = null!;
 
         public int? Light { get; set; }
 

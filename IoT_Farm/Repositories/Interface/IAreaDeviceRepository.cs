@@ -13,5 +13,6 @@ namespace IoT_Farm.Repositories.Interface
         Task<bool> UpdateAsync(string id, AreaDevice model);
         Task<bool> DeleteAsync(string id);
         Task<bool> SaveDeviceControlAsync(DeviceRequestModel model);
+        Task<bool> CheckDeviceValid(string areaId, string deviceName);
     }
 }

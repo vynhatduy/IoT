@@ -93,8 +93,6 @@ namespace IoT_Farm.Repositories.Implement
         {
             try
             {
-                Console.WriteLine($"From date :{fromDate}");
-                Console.WriteLine($"To date :{toDate}");
                 var result = await _databaseAdapter.GetAsync(e => e.Area == area && e.Timestamp >= fromDate && e.Timestamp <= toDate);
                 return result.ToList();
             }

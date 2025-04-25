@@ -39,6 +39,7 @@
     "@toolpad/core": "^0.13.0",
     "@vitejs/plugin-react": "4.3.4",
     "axios": "^1.8.4",
+    "dayjs": "^1.11.13",
     "dotenv": "^16.4.7",
     "eslint-plugin-import": "^2.31.0",
     "formik": "2.4.6",

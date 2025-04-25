@@ -15,5 +15,6 @@ namespace IoT_Farm.Services.Interface
         Task<List<EnvironmentData>> GetEnvironmentDataByDate(DateTime date, string area);
         Task<(double Humidity, double AirQuality, double Temperature, double Brightness)> GetAverageEnvironmentData(DateTime date);
         Task<ResultModel> GetDataForReportByAreaDateType(string areaId, DateTime date);
+        Task<ResultModel> GetDataForStatistics(DateTime from, DateTime to, string area, string type);
     }
 }

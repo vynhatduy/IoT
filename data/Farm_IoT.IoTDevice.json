@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "6805d0f2bf3e49285fd7c37f"
+  },
+  "Name": "Thiết bị 1",
+  "DeviceID": "ESP-effddf",
+  "KhuVuc": "KV001",
+  "WiFiSignal": -65,
+  "Status": "Online",
+  "IpAddress": "192.168.1.105",
+  "Uptime": 42,
+  "EspModel": "ESP8266",
+  "FirmwareVersion": "1.0",
+  "Light": 1,
+  "Fan": 1,
+  "Pump": 1,
+  "Heater": 1
+},
+{
+  "_id": {
+    "$oid": "6805d105bf3e49285fd7c380"
+  },
+  "Name": "Thiết bị 2",
+  "DeviceID": "ESP-123123",
+  "KhuVuc": "KV001",
+  "WiFiSignal": -65,
+  "Status": "Online",
+  "IpAddress": "192.168.1.105",
+  "Uptime": 42,
+  "EspModel": "ESP8266",
+  "FirmwareVersion": "1.0",
+  "Light": 1,
+  "Fan": 1,
+  "Pump": 1,
+  "Heater": 1
+}]

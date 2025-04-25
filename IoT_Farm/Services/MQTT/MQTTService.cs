@@ -14,6 +14,9 @@ namespace IoT_Farm.Services.MQTT
         private readonly ILogger<MQTTService> _logger;
         private readonly IMqttClient _mqttClient;
         private readonly MqttClientOptions _mqttOptions;
+
+        private bool _isConnecting = false;
+
         public MQTTService(ILogger<MQTTService> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
@@ -53,9 +56,8 @@ namespace IoT_Farm.Services.MQTT
 
             _mqttClient.DisconnectedAsync += async (MqttClientDisconnectedEventArgs e) =>
             {
-                _logger.LogWarning("Disconnected from HiveMQ! Reconnecting in 5 seconds...");
-                await Task.Delay(TimeSpan.FromSeconds(5));
-                await _mqttClient.ConnectAsync(_mqttOptions, CancellationToken.None);
+                _logger.LogWarning("Disconnected from HiveMQ! Attempting to reconnect...");
+                await ReconnectAsync();
             };
 
             _mqttClient.ApplicationMessageReceivedAsync += async (MqttApplicationMessageReceivedEventArgs e) =>
@@ -89,6 +91,31 @@ namespace IoT_Farm.Services.MQTT
             catch (Exception ex)
             {
                 _logger.LogError($"Failed to start MQTT service: {ex.Message}");
+            }
+        }
+
+        private async Task ReconnectAsync()
+        {
+            int retryCount = 0;
+            while (!_mqttClient.IsConnected && retryCount < 5)
+            {
+                try
+                {
+                    _logger.LogInformation($"Reconnecting to MQTT... Attempt {retryCount + 1}");
+                    await Task.Delay(TimeSpan.FromSeconds(5)); // Thời gian chờ trước khi thử lại
+                    await _mqttClient.ConnectAsync(_mqttOptions, CancellationToken.None);
+                    _logger.LogInformation("Reconnected to HiveMQ!");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError($"Reconnect attempt failed: {ex.Message}");
+                    retryCount++;
+                }
+            }
+
+            if (!_mqttClient.IsConnected)
+            {
+                _logger.LogError("Failed to reconnect to MQTT after multiple attempts.");
             }
         }
 
@@ -175,9 +202,8 @@ namespace IoT_Farm.Services.MQTT
                 _logger.LogError($"Error processing MQTT message: {ex.Message}");
             }
         }
-        public async Task PublishAsync(string topic, string message)
+        public async Task<bool> PublishAsync(string topic, string message)
         {
-
             var payload = new MqttApplicationMessageBuilder()
                 .WithTopic(topic)
                 .WithPayload(message)
@@ -185,23 +211,34 @@ namespace IoT_Farm.Services.MQTT
                 .WithRetainFlag()
                 .Build();
 
-            if (!_mqttClient.IsConnected)
+            if (!_mqttClient.IsConnected && !_isConnecting)
             {
-                await StartAsync(CancellationToken.None);
+                _isConnecting = true;
+                try
+                {
+                    await StartAsync(CancellationToken.None);
+                }
+                finally
+                {
+                    _isConnecting = false;
+                }
 
                 if (!_mqttClient.IsConnected)
                 {
-                    throw new Exception("MQTT Client is still not connected after retry.");
+                    Console.WriteLine("❌ MQTT Client is still not connected after retry.");
+                    return false;
                 }
             }
 
             try
             {
                 await _mqttClient.PublishAsync(payload);
+                return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"❌ Failed to publish message: {ex.Message}");
+                return false;
             }
         }
 

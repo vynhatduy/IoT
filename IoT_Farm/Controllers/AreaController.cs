@@ -53,7 +53,7 @@ namespace IoT_Farm.Controllers
         {
             var deleted = await _areaService.DeleteAsync(id);
             if (!deleted) return NotFound();
-            return NoContent();
+            return Ok();
         }
     }
 }
