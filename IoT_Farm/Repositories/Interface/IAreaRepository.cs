@@ -7,5 +7,6 @@ namespace IoT_Farm.Repositories.Interface
         Task<List<Area>> GetAllAsync();
         Task<Area> CreateAsync(Area area);
         Task<bool> DeleteAreaAsync(string id);
+        Task<Area> GetByName(string areaId);
     }
 }

@@ -3,6 +3,7 @@ using IoT_Farm.Datas.Adapter;
 using IoT_Farm.Repositories.Implement;
 using IoT_Farm.Repositories.Interface;
 using IoT_Farm.Services;
+using IoT_Farm.Services.Background;
 using IoT_Farm.Services.Implement;
 using IoT_Farm.Services.Interface;
 using IoT_Farm.Services.MQTT;
@@ -59,7 +60,13 @@ builder.Services.AddScoped<IWeatherDeviceConfigService, WeatherDeviceConfigServi
 builder.Services.AddScoped<ICalenderConfigDeviceRepository, CalenderConfigDeviceRepository>();
 builder.Services.AddScoped<ICalenderDeviceConfigService, CalenderDeviceConfigService>();
 
+builder.Services.AddScoped<IDeviceScheduleRepository, DeviceScheduleRepository>();
+builder.Services.AddScoped<IDeviceScheduleService, DeviceScheduleService>();
+
 builder.Services.AddScoped<EnvironmentDataAdapter>();
+builder.Services.AddScoped<EnvironmentMonitorService>();
+builder.Services.AddHostedService<ScheduleWorker>();
+
 
 // Try to register MQTT Service, but catch any errors
 try

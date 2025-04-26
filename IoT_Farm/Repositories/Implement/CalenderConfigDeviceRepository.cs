@@ -55,6 +55,62 @@ namespace IoT_Farm.Repositories.Implement
             }
         }
 
+        public async Task<List<CalenderDeviceConfig>> GetActiveConfigs(DateTime now)
+        {
+            try
+            {
+                var today = now.Date;
+                var currentTime = now.TimeOfDay;
+                var configs = await _databaseAdapter.FindAsync(x => x.Status == true && x.Date.Start <= today && x.Date.End >= today);
+
+                var activeConfigs = new List<CalenderDeviceConfig>();
+                foreach (var config in configs)
+                {
+                    // Kiểm tra từng loại thiết bị có nằm trong khung giờ hoạt động
+                    bool lightInTime = config.Light?.Time != null &&
+                                       IsInTimeRange(config.Light.Time.Start.ToString(), config.Light.Time.End.ToString(), currentTime);
+
+                    bool fanInTime = config.Fan?.Time != null &&
+                                     IsInTimeRange(config.Fan.Time.Start.ToString(), config.Fan.Time.End.ToString(), currentTime);
+
+                    bool pumpInTime = config.Pump?.Time != null &&
+                                      IsInTimeRange(config.Pump.Time.Start.ToString(), config.Pump.Time.End.ToString(), currentTime);
+
+                    bool heaterInTime = config.Heater?.Time != null &&
+                                        IsInTimeRange(config.Heater.Time.Start.ToString(), config.Heater.Time.End.ToString(), currentTime);
+
+                    // Nếu ít nhất một thiết bị đang trong thời gian hoạt động thì đưa vào danh sách
+                    if (lightInTime || fanInTime || pumpInTime || heaterInTime)
+                    {
+                        activeConfigs.Add(config);
+                    }
+                }
+
+                return activeConfigs;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+        private bool IsInTimeRange(string start, string end, TimeSpan now)
+        {
+            if (TimeSpan.TryParse(start, out var startTime) && TimeSpan.TryParse(end, out var endTime))
+            {
+                if (startTime <= endTime)
+                {
+                    return now >= startTime && now <= endTime;
+                }
+                else
+                {
+                    // Trường hợp chạy qua nửa đêm, ví dụ 22:00 đến 02:00
+                    return now >= startTime || now <= endTime;
+                }
+            }
+            return false;
+        }
         public async Task<List<CalenderDeviceConfig>> GetAllDeviceConfigAsync()
         {
             try

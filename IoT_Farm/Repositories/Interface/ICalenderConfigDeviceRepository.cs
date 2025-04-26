@@ -11,5 +11,6 @@ namespace IoT_Farm.Repositories.Interface
         Task<ResultModel> CreateDeviceConfigAsync(CalenderDeviceConfig model);
         Task<ResultModel> UpdateDeviceConfigAsync(string id, CalenderDeviceConfig model);
         Task<ResultModel> DeleteDeviceConfigAsync(string id);
+        Task<List<CalenderDeviceConfig>> GetActiveConfigs(DateTime now);
     }
 }
