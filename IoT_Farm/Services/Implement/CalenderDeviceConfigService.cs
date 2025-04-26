@@ -71,6 +71,20 @@ namespace IoT_Farm.Services.Implement
             }
         }
 
+        public async Task<List<CalenderDeviceConfig>> GetActiveConfigs(DateTime now)
+        {
+            try
+            {
+                return await _repo.GetActiveConfigs(now);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
         public async Task<List<CalenderDeviceConfig>> GetAllAsync()
         {
             try

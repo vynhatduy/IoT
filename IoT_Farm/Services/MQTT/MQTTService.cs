@@ -34,7 +34,7 @@ namespace IoT_Farm.Services.MQTT
             _mqttClient = factory.CreateMqttClient();
 
             _mqttOptions = new MqttClientOptionsBuilder()
-                .WithClientId(Env.GetString("MQTT_CLIENT_ID"))
+                .WithClientId($"{Env.GetString("MQTT_CLIENT_ID")}_{Guid.NewGuid()}")
             .WithTcpServer(Env.GetString("MQTT_BROKER"), Env.GetInt("MQTT_PORT"))
             .WithCredentials(Env.GetString("MQTT_USERNAME"), Env.GetString("MQTT_PasswordHash")).WithTlsOptions(o =>
             {
@@ -42,7 +42,7 @@ namespace IoT_Farm.Services.MQTT
                 o.WithIgnoreCertificateChainErrors();
                 o.WithAllowUntrustedCertificates();
             })
-            .WithCleanSession()
+            .WithCleanSession(false).WithKeepAlivePeriod(TimeSpan.FromSeconds(30))
 
             .Build();
 
@@ -52,11 +52,16 @@ namespace IoT_Farm.Services.MQTT
                 await _mqttClient.SubscribeAsync(new MqttClientSubscribeOptionsBuilder()
                     .WithTopicFilter(f => f.WithTopic(mqttTopic))
                     .Build());
+                _logger.LogInformation("Re-subscribed to topic after reconnect.");
             };
 
             _mqttClient.DisconnectedAsync += async (MqttClientDisconnectedEventArgs e) =>
             {
-                _logger.LogWarning("Disconnected from HiveMQ! Attempting to reconnect...");
+                _logger.LogWarning($"Disconnected from MQTT. Reason: {e.Reason}");
+                if (e.Exception != null)
+                {
+                    _logger.LogError($"Exception: {e.Exception.Message}");
+                }
                 await ReconnectAsync();
             };
 
@@ -65,11 +70,6 @@ namespace IoT_Farm.Services.MQTT
                 var topic = e.ApplicationMessage.Topic;
                 var payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
 
-                // In ra màn hình console
-                //Console.WriteLine($"[MQTT RECEIVED] Topic: {topic} | Payload: {payload}");
-
-                // Ghi log
-                //_logger.LogInformation($"Received Message: Topic = {topic}, Payload = {payload}");11
 
                 await HandleReceivedMessage(e);
 
@@ -150,7 +150,7 @@ namespace IoT_Farm.Services.MQTT
                 using var scope = _serviceProvider.CreateScope();
                 var environmentService = scope.ServiceProvider.GetRequiredService<IEnvironmentService>();
                 var iotDeviceService = scope.ServiceProvider.GetRequiredService<IIoTDeviceService>();
-
+                var _environmentMonitorService = scope.ServiceProvider.GetRequiredService<EnvironmentMonitorService>();
                 string topic = e.ApplicationMessage.Topic;
                 _logger.LogInformation($"Topic: {topic} ");
                 string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
@@ -190,6 +190,7 @@ namespace IoT_Farm.Services.MQTT
                     if (isSaved)
                     {
                         _logger.LogInformation($"Saved data from {topic} to MongoDB.");
+                        await _environmentMonitorService.CheckAndTriggerAsync(data);
                     }
                     else
                     {
@@ -204,13 +205,6 @@ namespace IoT_Farm.Services.MQTT
         }
         public async Task<bool> PublishAsync(string topic, string message)
         {
-            var payload = new MqttApplicationMessageBuilder()
-                .WithTopic(topic)
-                .WithPayload(message)
-                .WithQualityOfServiceLevel(MQTTnet.Protocol.MqttQualityOfServiceLevel.AtLeastOnce)
-                .WithRetainFlag()
-                .Build();
-
             if (!_mqttClient.IsConnected && !_isConnecting)
             {
                 _isConnecting = true;
@@ -232,7 +226,15 @@ namespace IoT_Farm.Services.MQTT
 
             try
             {
+                var payload = new MqttApplicationMessageBuilder()
+                    .WithTopic(topic)
+                    .WithPayload(message)
+                    .WithQualityOfServiceLevel(MQTTnet.Protocol.MqttQualityOfServiceLevel.AtLeastOnce)
+                    .WithRetainFlag()
+                    .Build();
+
                 await _mqttClient.PublishAsync(payload);
+
                 return true;
             }
             catch (Exception ex)

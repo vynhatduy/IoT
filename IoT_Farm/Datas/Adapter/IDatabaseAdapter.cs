@@ -19,6 +19,6 @@ namespace IoT_Farm.Datas.Adapter
         Task<List<T>> FindAsync(Expression<Func<T, bool>> predicate);
         Task<bool> ReplaceOneAsync(FilterDefinition<T> filter, T model);
         Task<long> GetCount();
-
+        Task<long> CountDocumentsAsync(FilterDefinition<T> filter);
     }
 }
