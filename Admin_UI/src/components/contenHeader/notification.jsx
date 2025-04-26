@@ -20,11 +20,13 @@ import Box from '@mui/material/Box';
 import MainCard from '../../components/MainCard';
 import IconButton from '../../components/@extended/IconButton';
 import Transitions from '../../components/@extended/Transitions';
-
+import { formatDistanceToNow } from 'date-fns';
+import { vi } from 'date-fns/locale';
 // assets
 import { BellOutlined, CheckCircleOutlined, MessageOutlined } from '@ant-design/icons';
 import { Dialog } from '@mui/material';
 import ViewAllNotification from './account/viewAllNotification';
+import { useNotification } from '../../service/useNotification';
 
 // sx styles
 const avatarSX = {
@@ -48,52 +50,15 @@ export default function Notification() {
   const [open, setOpen] = useState(false);
   const [openViewAll, setOpenViewAll] = useState(false);
 
+  const { data } = useNotification();
+  console.log('notification', data);
   // Mảng dữ liệu thông báo
-  const dataNotification = [
-    {
-      time: '3:00 AM',
-      avt: <MessageOutlined />,
-      description: 'Cảm biến độ ẩm phát hiện đất quá khô ở khu vực A.',
-      timehistory: '2 phút trước'
-    },
-    {
-      time: '4:15 AM',
-      avt: <MessageOutlined />,
-      description: 'Cảnh báo: Hệ thống tưới tiêu sẽ bảo trì lúc 2 giờ chiều.',
-      timehistory: '10 phút trước'
-    },
-    {
-      time: '6:45 AM',
-      avt: <MessageOutlined />,
-      description: 'Nhân viên mới đã được thêm vào nhóm quản lý chuồng trại.',
-      timehistory: '20 phút trước'
-    },
-    {
-      time: '7:30 AM',
-      avt: <MessageOutlined />,
-      description: 'Bạn nhận được báo cáo từ cảm biến nhiệt độ khu nhà kính.',
-      timehistory: '30 phút trước'
-    },
-    {
-      time: '8:00 AM',
-      avt: <MessageOutlined />,
-      description: 'Tự động tưới tiêu tại khu B đã hoàn tất thành công.',
-      timehistory: '45 phút trước'
-    },
-    {
-      time: '7:30 AM',
-      avt: <MessageOutlined />,
-      description: 'Bạn nhận được báo cáo từ cảm biến nhiệt độ khu nhà kính.',
-      timehistory: '30 phút trước'
-    },
-    {
-      time: '8:00 AM',
-      avt: <MessageOutlined />,
-      description: 'Tự động tưới tiêu tại khu B đã hoàn tất thành công.',
-      timehistory: '45 phút trước'
-    }
-  ];
-
+  const dataNotification = (data ?? []).map((item) => ({
+    time: new Date(item.createAt).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }),
+    avt: <MessageOutlined />,
+    description: item.detail,
+    timehistory: formatDistanceToNow(new Date(item.createAt), { addSuffix: true, locale: vi })
+  }));
   // Calculate countNotifi after dataNotification is defined
   const countNotifi = dataNotification.length;
 
