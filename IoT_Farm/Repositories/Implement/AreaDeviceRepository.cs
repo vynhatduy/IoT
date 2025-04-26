@@ -10,8 +10,11 @@ namespace IoT_Farm.Repositories.Implement
 {
     public class AreaDeviceRepository : GenericRepository<AreaDevice>, IAreaDeviceRepository
     {
-        public AreaDeviceRepository(DatabaseAdapterFactory adapterFactory) : base(adapterFactory)
+        private readonly IAreaRepository _areaRepo;
+
+        public AreaDeviceRepository(DatabaseAdapterFactory adapterFactory, IAreaRepository areaRepo) : base(adapterFactory)
         {
+            _areaRepo = areaRepo;
         }
 
         public async Task<bool> AnyAsync(Expression<Func<AreaDevice, bool>> predicate)
@@ -58,6 +61,19 @@ namespace IoT_Farm.Repositories.Implement
         {
             try
             {
+                string areaId = model.Area;
+                if (!ObjectId.TryParse(model.Area, out _))
+                {
+                    var areaFilter = Builders<Area>.Filter.Eq(a => a.Name, model.Area);
+                    var area = await _areaRepo.GetByName(areaId);
+                    if (area == null)
+                    {
+                        Console.WriteLine($"Không tìm thấy Area với tên {model.Area}");
+                        return false;
+                    }
+
+                    areaId = area.Id;
+                }
                 var updateDetails = new List<Dictionary<string, bool>>();
 
                 var deviceDetails = new Dictionary<string, bool>();
@@ -88,7 +104,7 @@ namespace IoT_Farm.Repositories.Implement
                 }
 
                 var filter = Builders<AreaDevice>.Filter.And(
-                 Builders<AreaDevice>.Filter.Eq(a => a.AreaId, model.Area),
+                 Builders<AreaDevice>.Filter.Eq(a => a.AreaId, areaId),
                  Builders<AreaDevice>.Filter.ElemMatch(a => a.DeviceDetails, d => d.Name == model.DeviceId)
                 );
 

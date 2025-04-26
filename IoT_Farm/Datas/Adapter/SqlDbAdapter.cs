@@ -27,6 +27,11 @@ namespace IoT_Farm.Datas.Adapter
             throw new NotImplementedException();
         }
 
+        public Task<long> CountDocumentsAsync(FilterDefinition<T> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<bool> DeleteAsync(string id)
         {
             throw new NotImplementedException();

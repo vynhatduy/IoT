@@ -82,6 +82,18 @@ namespace IoT_Farm.Datas.Adapter
         {
             return await _collection.CountDocumentsAsync(FilterDefinition<T>.Empty);
         }
+        public async Task<long> CountDocumentsAsync(FilterDefinition<T> filter)
+        {
+            try
+            {
 
+                return await _collection.CountDocumentsAsync(filter);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Error counting documents: {ex.Message}");
+                return 0;
+            }
+        }
     }
 }

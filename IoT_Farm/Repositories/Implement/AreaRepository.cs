@@ -50,5 +50,20 @@ namespace IoT_Farm.Repositories.Implement
                 return false;
             }
         }
+
+        public async Task<Area> GetByName(string areaId)
+        {
+            try
+            {
+
+                return await _databaseAdapter.FindOneAsync(x => x.Name == areaId);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
     }
 }
