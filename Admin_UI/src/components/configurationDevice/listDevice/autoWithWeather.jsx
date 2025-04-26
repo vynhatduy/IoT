@@ -140,7 +140,7 @@ const ListWeather = ({ refresh }) => {
                   <TableCell align="center">{formatDate(row.updateAt)}</TableCell>
                   <TableCell align="center">{row.status ? 'Hoạt động' : 'Tắt'}</TableCell>
                   <TableCell align="center">
-                    <Button sx={{ '&:hover': { color: 'red' }, color: 'black' }} onClick={() => handleDelete(row.id)}>
+                    <Button sx={{ '&:hover': { color: 'red' }, color: 'black' }} onClick={() => handleDelete(data.id)}>
                       Xóa
                     </Button>
                   </TableCell>
