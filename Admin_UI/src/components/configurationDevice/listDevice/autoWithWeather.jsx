@@ -13,43 +13,31 @@ import {
   Alert,
   Snackbar
 } from '@mui/material';
-import { useAllDeviceConfigWeather } from '../../../service/useDeviceConfigWeather';
+import { useAllDeviceConfigWeather, useDeviceDelete } from '../../../service/useDeviceConfigWeather';
 
-const ListWeather = ({ refresh }) => {
-  const { data, error, loading, refetchFetchData } = useAllDeviceConfigWeather();
+const ListWeather = ({ refresh, onRefresh }) => {
+  const { data, error, loading, refetchFetchData } = useAllDeviceConfigWeather(refresh);
   const [notification, setNotification] = useState({ open: false, message: '', severity: 'success' });
+  const { deleteDeviceConfig, loadingDelete } = useDeviceDelete();
 
   const headers = ['STT', 'TÊN', 'MODULE', 'KHU VỰC', 'THIẾT BỊ', 'TỪ NGÀY', 'ĐẾN NGÀY', 'TÌNH TRẠNG', 'CHỈNH SỬA'];
-  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     refetchFetchData();
   }, [refresh]);
 
-  const handleInputChange = (index, field, value) => {
-    console.log(`Changed ${field} to ${value} for item at index ${index}`);
-  };
-
   const handleDelete = async (id) => {
     try {
-      console.log('Deleting with ID:', id);
-
-      const response = await fetch(`${apiUrl}deviceConfig/according-weather/delete`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ id })
-      });
-
-      if (response.ok) {
-        console.log('Delete successful');
-        setNotification({ open: true, message: 'Xóa thành công!', severity: 'success' });
-        refetchFetchData();
+      const result = await deleteDeviceConfig(id);
+      if (result) {
+        setNotification({ open: true, message: `Xóa thành công`, severity: 'success' });
+        if (onRefresh) {
+          onRefresh(); // gọi callback cho parent tự cập nhật refreshFlag
+        } else {
+          refetchFetchData(); // fallback nếu không có onRefresh
+        }
       } else {
-        const errorText = await response.text();
-        console.error('Server response:', response.status, errorText);
-        setNotification({ open: true, message: `Lỗi khi xóa: ${errorText}`, severity: 'error' });
+        setNotification({ open: true, message: `Hiện tại không thể xóa`, severity: 'warning' });
       }
     } catch (error) {
       console.error('Error deleting item:', error);
@@ -59,20 +47,6 @@ const ListWeather = ({ refresh }) => {
 
   const handleCloseNotification = () => {
     setNotification({ ...notification, open: false });
-  };
-
-  const renderEditableCell = (value, index, field) => {
-    return data[index]?.isEditing ? (
-      <TextField
-        fullWidth
-        value={value}
-        onChange={(e) => handleInputChange(index, field, e.target.value)}
-        variant="standard"
-        size="small"
-      />
-    ) : (
-      value
-    );
   };
 
   const formatDate = (dateString) => {
@@ -96,19 +70,19 @@ const ListWeather = ({ refresh }) => {
   if (error) {
     return (
       <Alert severity="error" sx={{ margin: '20px 0' }}>
-        Lỗi khi tải dữ liệu: {error.message}
+        Lỗi khi tải dữ liệu: {error}
       </Alert>
     );
   }
 
   return (
     <>
-      <TableContainer sx={{ margin: '0px 0px 0px 0px' }} component={Paper}>
-        <Table aria-label="editable table">
+      <TableContainer component={Paper}>
+        <Table>
           <TableHead>
             <TableRow>
               {headers.map((header, index) => (
-                <TableCell key={index} align="center" style={{ fontWeight: 'bold' }}>
+                <TableCell key={index} align="center" sx={{ fontWeight: 'bold' }}>
                   {header}
                 </TableCell>
               ))}
@@ -124,7 +98,7 @@ const ListWeather = ({ refresh }) => {
                   <TableCell>{row.area}</TableCell>
                   <TableCell>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                      {row.conditions?.light !== undefined && <div>Đèn-LUX: {row.conditions.light}</div>}
+                      {row.conditions?.light !== undefined && <div>Đèn - LUX: {row.conditions.light}</div>}
                       {row.conditions?.pump !== undefined && <div>Máy bơm: {row.conditions.pump}°C</div>}
                       {row.conditions?.heater !== undefined && <div>Sưởi: {row.conditions.heater}°C</div>}
                       {row.conditions?.fan && (
@@ -140,8 +114,12 @@ const ListWeather = ({ refresh }) => {
                   <TableCell align="center">{formatDate(row.updateAt)}</TableCell>
                   <TableCell align="center">{row.status ? 'Hoạt động' : 'Tắt'}</TableCell>
                   <TableCell align="center">
-                    <Button sx={{ '&:hover': { color: 'red' }, color: 'black' }} onClick={() => handleDelete(data.id)}>
-                      Xóa
+                    <Button
+                      sx={{ '&:hover': { color: 'red' }, border: '1px solid red', color: 'black' }}
+                      onClick={() => handleDelete(row.id)}
+                      disabled={loadingDelete}
+                    >
+                      {loadingDelete ? <CircularProgress size={20} /> : 'Xóa'}
                     </Button>
                   </TableCell>
                 </TableRow>
@@ -159,7 +137,7 @@ const ListWeather = ({ refresh }) => {
 
       <Snackbar
         open={notification.open}
-        autoHideDuration={6000}
+        autoHideDuration={4000}
         onClose={handleCloseNotification}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       >

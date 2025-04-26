@@ -52,7 +52,7 @@ namespace IoT_Farm.Controllers
             return result.Status ? Ok(result) : BadRequest(result);
         }
         [HttpPost("admin/create")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateAdmin(UserRequestModel model)
         {
             var result = await _service.CreateAdminAsync(model);

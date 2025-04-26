@@ -2,7 +2,7 @@ const fs = require("fs");
 const { ObjectId } = require("bson");
 
 // Cấu hình dữ liệu đầu vào
-const areas = ["KV003"];
+const areas = ["KV001"];
 const deviceIds = ["ESP-01A293"];
 
 // Ngày cần tạo dữ liệu (1 ngày = 1440 phút)
@@ -19,7 +19,9 @@ function getRandomNumber(min, max, decimal = 1) {
 function generateTimestampsForDay(dateStr) {
   const timestamps = [];
   const baseDate = new Date(`${dateStr}T00:00:00.000Z`);
-  for (let i = 0; i < 1440; i++) {
+  const minutesToGenerate = 20 * 60; // 20 giờ => 1200 phút
+
+  for (let i = 0; i < minutesToGenerate; i++) {
     const timestamp = new Date(baseDate.getTime() + i * 60 * 1000); // mỗi phút
     timestamps.push(timestamp.toISOString());
   }
@@ -30,19 +32,19 @@ function generateTimestampsForDay(dateStr) {
 const timestamps = generateTimestampsForDay(dateString);
 
 const data = timestamps.map((ts) => ({
-  _id: { $oid: new ObjectId().toString() }, // Tạo ObjectId thực sự với định dạng { "$oid": "ObjectId_string" }
+  _id: { $oid: new ObjectId().toString() },
   DeviceId: getRandomFromArray(deviceIds),
   Area: getRandomFromArray(areas),
   Temperature: getRandomNumber(20, 35),
   Humidity: getRandomNumber(20, 80),
   Light: getRandomNumber(0, 100, 0),
   AirQuality: getRandomNumber(0, 1000, 0),
-  Timestamp: { $date: ts }, // Tạo Timestamp với định dạng { "$date": "timestamp_string" }
+  Timestamp: { $date: ts },
 }));
 
 // Ghi ra file
 fs.writeFileSync("iot_data.json", JSON.stringify(data, null, 2), "utf-8");
 
 console.log(
-  `✅ Đã tạo ${data.length} bản ghi cho ngày ${dateString} và lưu vào file iot_data.json`
+  `✅ Đã tạo ${data.length} bản ghi từ 00h00 đến 20h00 ngày ${dateString} và lưu vào file iot_data.json`
 );

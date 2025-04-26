@@ -213,17 +213,12 @@ export const useDeviceDelete = () => {
   const [loadingDelete, setLoadingDelete] = useState(false);
   const [deleteError, setDeleteError] = useState(null);
   const deleteDeviceConfig = async (id) => {
-    if (!payload || payload.length === 0) return;
+    if (!id) return false;
     setLoadingDelete(true);
     setDeleteSuccess(false);
     setDeleteError(null);
     try {
-      const response = await API.delete(`/deviceConfig/according-weather/delete?id=${id}`, {
-        data: payload,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+      const response = await API.delete(`/deviceConfig/according-weather/delete?id=${id}`);
       setDeleteSuccess(response.data.status);
       if (response?.data?.status) {
         return true; // Nếu xóa thành công

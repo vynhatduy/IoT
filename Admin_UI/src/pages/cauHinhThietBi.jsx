@@ -17,11 +17,11 @@ const cauHinhThietBi = () => {
         <CreateButtonConfig onRefresh={handleRefresh} />
         <Box sx={{ margin: '20px 0px 0px 0px' }}>
           <Typography variant="subtitle1">Danh sách thiết bị tự động theo thời tiết</Typography>
-          <ListWeather refresh={refreshKey} />
+          <ListWeather refresh={refreshKey} onRefresh={handleRefresh} />
         </Box>
         <Box sx={{ margin: '20px 0px 0px 0px' }}>
           <Typography variant="subtitle1">Danh sách thiết bị tự động theo lịch</Typography>
-          <ListCalender refresh={refreshKey} />
+          <ListCalender refresh={refreshKey} onRefresh={handleRefresh} />
         </Box>
       </StyleBackground>
     </Box>
