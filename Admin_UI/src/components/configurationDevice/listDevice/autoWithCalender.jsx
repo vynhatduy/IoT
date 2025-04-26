@@ -3,7 +3,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 import { useAllDeviceConfigCalender } from '../../../service/useCalenderConfig';
 
 const ListCalender = ({ refresh }) => {
-  const headers = ['STT', 'TÊN', 'MODULE', 'KHU VỰC', 'TỪ NGÀY', 'ĐẾN NGÀY', 'TÌNH TRẠNG'];
+  const headers = ['STT', 'TÊN', 'MODULE', 'KHU VỰC', 'TỪ NGÀY', 'ĐẾN NGÀY', 'TÌNH TRẠNG', 'CHỈNH SỬA'];
   const { refetchFetchData, data, error, loading } = useAllDeviceConfigCalender();
   console.log(data);
   useEffect(() => {
@@ -58,6 +58,11 @@ const ListCalender = ({ refresh }) => {
               <TableCell align="center">{new Date(row.date.start).toLocaleDateString('vi-VN')}</TableCell>
               <TableCell align="center">{new Date(row.date.end).toLocaleDateString('vi-VN')}</TableCell>
               <TableCell align="center">{row.status ? 'Hoạt động' : 'Tạm tắt'}</TableCell>
+              <TableCell align="center">
+                <Button sx={{ '&:hover': { color: 'red' }, color: 'black' }} onClick={() => handleDelete(data.id)}>
+                  Xóa
+                </Button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
