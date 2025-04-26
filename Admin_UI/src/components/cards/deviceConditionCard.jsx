@@ -213,7 +213,7 @@ const DeviceConfigPanel = ({
           type: 'temperature'
         },
         {
-          label: 'Chất lượng không khí (AQI): Nhỏ hơn 150 là chất lượng tốt; Lớn hơn 700 là ôi nhiễm',
+          label: 'Chất lượng không khí (AQI): Nhỏ hơn 150 là chất lượng tốt; Lớn hơn 700 là ô nhiễm',
           options: airQualityDataOptions,
           value: fanAqi,
           onChange: handleFanAqiChange,
