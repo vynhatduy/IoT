@@ -11,12 +11,12 @@ const ContainerCamera = () => {
   return (
     <Box>
       <Typography mb={2}>Danh sách Camera</Typography>
-      <CreateButtonCamera />
+      <CreateButtonCamera refresh={refreshKey} onRefresh={handleRefresh} />
       <Box>
         <Typography variant="subtitle1" mt={2}>
           Danh sách Camera
         </Typography>
-        <ListCamera />
+        <ListCamera refresh={refreshKey} onRefresh={handleRefresh} />
       </Box>
     </Box>
   );
