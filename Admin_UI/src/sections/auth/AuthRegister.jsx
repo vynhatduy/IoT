@@ -116,14 +116,14 @@ export default function AuthRegister() {
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="firstname-signup">First Name*</InputLabel>
+              <InputLabel htmlFor="firstname-signup">Tên*</InputLabel>
               <OutlinedInput
                 id="firstname-signup"
                 type="text"
                 value={formData.firstname}
                 name="firstname"
                 onChange={handleChange}
-                placeholder="Le"
+                placeholder="Nghia"
                 fullWidth
                 error={Boolean(formErrors.firstname)}
               />
@@ -133,14 +133,14 @@ export default function AuthRegister() {
 
           <Grid item xs={12} md={6}>
             <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="lastname-signup">Last Name*</InputLabel>
+              <InputLabel htmlFor="lastname-signup">Họ*</InputLabel>
               <OutlinedInput
                 id="lastname-signup"
                 type="text"
                 value={formData.lastname}
                 name="lastname"
                 onChange={handleChange}
-                placeholder="Nghia"
+                placeholder="Le"
                 fullWidth
                 error={Boolean(formErrors.lastname)}
               />
@@ -150,14 +150,14 @@ export default function AuthRegister() {
 
           <Grid item xs={12}>
             <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="email-signup">Email Address*</InputLabel>
+              <InputLabel htmlFor="email-signup">Địa chỉ Email*</InputLabel>
               <OutlinedInput
                 id="email-signup"
                 type="email"
                 value={formData.email}
                 name="email"
                 onChange={handleChange}
-                placeholder="Lenghiadev81@gmail.com"
+                placeholder="2113005@dlu.edu.vn"
                 fullWidth
                 error={Boolean(formErrors.email)}
               />
@@ -167,7 +167,7 @@ export default function AuthRegister() {
 
           <Grid item xs={12}>
             <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="phoneNumber-signup">Phone Number*</InputLabel>
+              <InputLabel htmlFor="phoneNumber-signup">Số điện thoại*</InputLabel>
               <OutlinedInput
                 id="phoneNumber-signup"
                 type="text"
@@ -184,7 +184,7 @@ export default function AuthRegister() {
 
           <Grid item xs={12}>
             <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="address-signup">Address*</InputLabel>
+              <InputLabel htmlFor="address-signup">Địa chỉ*</InputLabel>
               <OutlinedInput
                 id="address-signup"
                 type="text"
@@ -201,7 +201,7 @@ export default function AuthRegister() {
 
           <Grid item xs={12}>
             <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="password-signup">Password</InputLabel>
+              <InputLabel htmlFor="password-signup">Mật khẩu</InputLabel>
               <OutlinedInput
                 id="password-signup"
                 type={showPassword ? 'text' : 'password'}
@@ -237,7 +237,7 @@ export default function AuthRegister() {
           <Grid item xs={12}>
             <AnimateButton>
               <Button fullWidth size="large" variant="contained" color="primary" type="submit" disabled={loading}>
-                {loading ? 'Đang tạo...' : 'Tạo quản trị viên'}
+                {loading ? 'Đang tạo...' : 'Đăng ký'}
               </Button>
             </AnimateButton>
           </Grid>
