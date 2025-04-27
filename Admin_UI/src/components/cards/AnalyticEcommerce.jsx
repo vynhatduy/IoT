@@ -31,11 +31,8 @@ export default function AnalyticEcommerce({ color = 'primary', title, count, per
         if (value < 30) return 'Ánh sáng mạnh!';
         return 'Ánh sáng vừa phải.';
       case 'Chất lượng không khí (AQI)':
-        if (value > 700) return 'Ô nhiễm cực cao';
-        if (value > 500) return 'Ô nhiễm nặng';
-        if (value > 300) return 'Ô nhiễm rõ rệt';
-        if (value > 200) return 'Không khí hơi ô nhiễm';
-        if (value > 100) return 'Không khí trong lành';
+        if (value > 700) return 'Không khí ô nhiễm';
+        if (value < 700) return 'Không khí trong lành';
         return 'Không khí trong lành ✅';
       default:
         return '';
