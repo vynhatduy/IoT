@@ -1,0 +1,147 @@
+/* Cải thiện vùng chọn khu vực */
+.area-selector {
+  --background: #f7f7f7;
+  border-radius: 8px;
+  margin: 12px 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.area-select {
+  max-width: 60%;
+  font-weight: 500;
+}
+/* Card styles */
+ion-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 16px;
+  overflow: hidden;
+}
+.controller-card {
+  border-left: 4px solid var(--ion-color-primary);
+}
+ion-card-header {
+  padding-bottom: 8px;
+}
+ion-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+/* Trạng thái rỗng */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--ion-color-medium);
+}
+.empty-state ion-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+.empty-state h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+.empty-state p {
+  margin: 0;
+  font-size: 15px;
+}
+/* Card thiết bị rỗng */
+.empty-device-card ion-card-content {
+  padding: 32px 16px;
+}
+.empty-device-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--ion-color-medium);
+}
+/* Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+}
+.loading-container p {
+  margin-top: 16px;
+  color: var(--ion-color-medium);
+}
+/* Thông báo lỗi */
+.error-card {
+  background-color: rgba(var(--ion-color-danger-rgb), 0.1);
+  border-left: 4px solid var(--ion-color-danger);
+}
+.error-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ion-color-danger);
+}
+/* Cảnh báo chip */
+.warning-chip {
+  margin: 0 16px 8px;
+}
+/* Grid thiết bị */
+.device-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.device-item {
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+  background-color: none;
+  border: 2px solid var(--ion-color-success);
+  box-shadow: 0 2px 8px rgba(var(--ion-color-success-rgb), 0.2);
+}
+
+.device-item:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+.device-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.device-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.device-name {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+.send-button {
+  margin-top: 16px;
+  --border-radius: 8px;
+  height: 44px;
+}
+/* Thiết bị bị vô hiệu hóa */
+.device-item.disabled {
+  display: none;
+}
+
+/* Thêm màu cho tất cả các toggle */
+.device-item ion-toggle {
+  --background-checked: var(--ion-color-success);
+  --handle-background-checked: white;
+}
