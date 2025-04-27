@@ -66,6 +66,10 @@ builder.Services.AddScoped<IDeviceScheduleService, DeviceScheduleService>();
 builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
 
+builder.Services.AddScoped<ICameraRepository, CameraRepository>();
+builder.Services.AddScoped<ICameraService, CameraService>();
+
+
 builder.Services.AddScoped<EnvironmentDataAdapter>();
 builder.Services.AddScoped<EnvironmentMonitorService>();
 builder.Services.AddHostedService<ScheduleWorker>();
