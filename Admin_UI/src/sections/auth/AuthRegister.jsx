@@ -1,246 +1,248 @@
-import { useEffect, useState } from 'react';
-import { Link as RouterLink, useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // material-ui
 import Button from '@mui/material/Button';
-import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import Grid from '@mui/material/Grid2';
-import Link from '@mui/material/Link';
 import InputAdornment from '@mui/material/InputAdornment';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-
-// third-party
-import * as Yup from 'yup';
-import { Formik } from 'formik';
-
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 // project imports
 import IconButton from '../../components/@extended/IconButton';
 import AnimateButton from '../../components/@extended/AnimateButton';
 
-import { strengthColor, strengthIndicator } from '../../utils/password-strength';
-
-// assets
-import EyeOutlined from '@ant-design/icons/EyeOutlined';
-import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined';
+import { useCreateAdmin } from '../../service/useAuth';
 
 // ============================|| JWT - REGISTER ||============================ //
 
 export default function AuthRegister() {
-  const [level, setLevel] = useState();
   const [showPassword, setShowPassword] = useState(false);
-  const handleClickShowPassword = () => {
-    setShowPassword(!showPassword);
+  const [error, setError] = useState(null); // Lưu trữ lỗi từ API
+  const { createAdmin, loading } = useCreateAdmin();
+  const navigate = useNavigate(); // Dùng useNavigate để điều hướng
+
+  const [formData, setFormData] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    phoneNumber: '',
+    address: '',
+    password: ''
+  });
+
+  const [formErrors, setFormErrors] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    phoneNumber: '',
+    address: '',
+    password: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
   };
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Kiểm tra validation
+    const errors = validateForm(formData);
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
+
+    try {
+      const result = await createAdmin({
+        firstName: formData.firstname,
+        lastName: formData.lastname,
+        email: formData.email,
+        phoneNumber: formData.phoneNumber,
+        address: formData.address,
+        password: formData.password
+      });
+
+      if (result) {
+        // Nếu thành công, chuyển hướng đến trang đăng nhập
+        navigate('/login');
+      } else {
+        // Nếu thất bại, hiển thị thông báo lỗi
+        setError('Đã có lỗi xảy ra, vui lòng thử lại.');
+      }
+    } catch (err) {
+      setError(err.message || 'Đã có lỗi xảy ra, vui lòng thử lại.');
+    }
   };
 
-  const changePassword = (value) => {
-    const temp = strengthIndicator(value);
-    setLevel(strengthColor(temp));
+  const validateForm = (data) => {
+    const errors = {};
+    if (!data.firstname) {
+      errors.firstname = 'First Name is required';
+    }
+    if (!data.lastname) {
+      errors.lastname = 'Last Name is required';
+    }
+    if (!data.email) {
+      errors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+      errors.email = 'Email is invalid';
+    }
+    if (!data.phoneNumber) {
+      errors.phoneNumber = 'Phone Number is required';
+    }
+    if (!data.address) {
+      errors.address = 'Address is required';
+    }
+    if (!data.password) {
+      errors.password = 'Password is required';
+    } else if (data.password.length < 6) {
+      errors.password = 'Password must be at least 6 characters';
+    }
+    return errors;
   };
-
-  const [searchParams] = useSearchParams();
-  const auth = searchParams.get('auth'); // get auth and set route based on that
-
-  useEffect(() => {
-    changePassword('');
-  }, []);
 
   return (
     <>
-      <Formik
-        initialValues={{
-          firstname: '',
-          lastname: '',
-          email: '',
-          company: '',
-          password: '',
-          submit: null
-        }}
-        validationSchema={Yup.object().shape({
-          firstname: Yup.string().max(255).required('First Name is required'),
-          lastname: Yup.string().max(255).required('Last Name is required'),
-          email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-          password: Yup.string()
-            .required('Password is required')
-            .test('no-leading-trailing-whitespace', 'Password cannot start or end with spaces', (value) => value === value.trim())
-            .max(10, 'Password must be less than 10 characters')
-        })}
-      >
-        {({ errors, handleBlur, handleChange, touched, values }) => (
-          <form noValidate>
-            <Grid container spacing={3}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Stack sx={{ gap: 1 }}>
-                  <InputLabel htmlFor="firstname-signup">First Name*</InputLabel>
-                  <OutlinedInput
-                    id="firstname-login"
-                    type="firstname"
-                    value={values.firstname}
-                    name="firstname"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    placeholder="Le"
-                    fullWidth
-                    error={Boolean(touched.firstname && errors.firstname)}
-                  />
-                </Stack>
-                {touched.firstname && errors.firstname && (
-                  <FormHelperText error id="helper-text-firstname-signup">
-                    {errors.firstname}
-                  </FormHelperText>
-                )}
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Stack sx={{ gap: 1 }}>
-                  <InputLabel htmlFor="lastname-signup">Last Name*</InputLabel>
-                  <OutlinedInput
-                    fullWidth
-                    error={Boolean(touched.lastname && errors.lastname)}
-                    id="lastname-signup"
-                    type="lastname"
-                    value={values.lastname}
-                    name="lastname"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    placeholder="Nghia"
-                    inputProps={{}}
-                  />
-                </Stack>
-                {touched.lastname && errors.lastname && (
-                  <FormHelperText error id="helper-text-lastname-signup">
-                    {errors.lastname}
-                  </FormHelperText>
-                )}
-              </Grid>
-              <Grid size={12}>
-                <Stack sx={{ gap: 1 }}>
-                  <InputLabel htmlFor="company-signup">Company</InputLabel>
-                  <OutlinedInput
-                    fullWidth
-                    error={Boolean(touched.company && errors.company)}
-                    id="company-signup"
-                    value={values.company}
-                    name="company"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    placeholder="Techtrio"
-                    inputProps={{}}
-                  />
-                </Stack>
-                {touched.company && errors.company && (
-                  <FormHelperText error id="helper-text-company-signup">
-                    {errors.company}
-                  </FormHelperText>
-                )}
-              </Grid>
-              <Grid size={12}>
-                <Stack sx={{ gap: 1 }}>
-                  <InputLabel htmlFor="email-signup">Email Address*</InputLabel>
-                  <OutlinedInput
-                    fullWidth
-                    error={Boolean(touched.email && errors.email)}
-                    id="email-login"
-                    type="email"
-                    value={values.email}
-                    name="email"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    placeholder="Lenghiadev81@gmail.com"
-                    inputProps={{}}
-                  />
-                </Stack>
-                {touched.email && errors.email && (
-                  <FormHelperText error id="helper-text-email-signup">
-                    {errors.email}
-                  </FormHelperText>
-                )}
-              </Grid>
-              <Grid size={12}>
-                <Stack sx={{ gap: 1 }}>
-                  <InputLabel htmlFor="password-signup">Password</InputLabel>
-                  <OutlinedInput
-                    fullWidth
-                    error={Boolean(touched.password && errors.password)}
-                    id="password-signup"
-                    type={showPassword ? 'text' : 'password'}
-                    value={values.password}
-                    name="password"
-                    onBlur={handleBlur}
-                    onChange={(e) => {
-                      handleChange(e);
-                      changePassword(e.target.value);
-                    }}
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
-                          onMouseDown={handleMouseDownPassword}
-                          edge="end"
-                          color="secondary"
-                        >
-                          {showPassword ? <EyeOutlined /> : <EyeInvisibleOutlined />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                    placeholder="******"
-                    inputProps={{}}
-                  />
-                </Stack>
-                {touched.password && errors.password && (
-                  <FormHelperText error id="helper-text-password-signup">
-                    {errors.password}
-                  </FormHelperText>
-                )}
-                <FormControl fullWidth sx={{ mt: 2 }}>
-                  <Grid container spacing={2} alignItems="center">
-                    <Grid>
-                      <Box sx={{ bgcolor: level?.color, width: 85, height: 8, borderRadius: '7px' }} />
-                    </Grid>
-                    <Grid>
-                      <Typography variant="subtitle1" fontSize="0.75rem">
-                        {level?.label}
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </FormControl>
-              </Grid>
-              <Grid size={12}>
-                <Typography variant="body2">
-                  By Signing up, you agree to our &nbsp;
-                  <Link variant="subtitle2" component={RouterLink} to="#">
-                    Terms of Service
-                  </Link>
-                  &nbsp; and &nbsp;
-                  <Link variant="subtitle2" component={RouterLink} to="#">
-                    Privacy Policy
-                  </Link>
-                </Typography>
-              </Grid>
-              {errors.submit && (
-                <Grid size={12}>
-                  <FormHelperText error>{errors.submit}</FormHelperText>
-                </Grid>
-              )}
-              <Grid size={12}>
-                <AnimateButton>
-                  <Button fullWidth size="large" variant="contained" color="primary">
-                    Create Account
-                  </Button>
-                </AnimateButton>
-              </Grid>
+      <form onSubmit={handleSubmit} noValidate>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6}>
+            <Stack sx={{ gap: 1 }}>
+              <InputLabel htmlFor="firstname-signup">First Name*</InputLabel>
+              <OutlinedInput
+                id="firstname-signup"
+                type="text"
+                value={formData.firstname}
+                name="firstname"
+                onChange={handleChange}
+                placeholder="Le"
+                fullWidth
+                error={Boolean(formErrors.firstname)}
+              />
+            </Stack>
+            {formErrors.firstname && <FormHelperText error>{formErrors.firstname}</FormHelperText>}
+          </Grid>
+
+          <Grid item xs={12} md={6}>
+            <Stack sx={{ gap: 1 }}>
+              <InputLabel htmlFor="lastname-signup">Last Name*</InputLabel>
+              <OutlinedInput
+                id="lastname-signup"
+                type="text"
+                value={formData.lastname}
+                name="lastname"
+                onChange={handleChange}
+                placeholder="Nghia"
+                fullWidth
+                error={Boolean(formErrors.lastname)}
+              />
+            </Stack>
+            {formErrors.lastname && <FormHelperText error>{formErrors.lastname}</FormHelperText>}
+          </Grid>
+
+          <Grid item xs={12}>
+            <Stack sx={{ gap: 1 }}>
+              <InputLabel htmlFor="email-signup">Email Address*</InputLabel>
+              <OutlinedInput
+                id="email-signup"
+                type="email"
+                value={formData.email}
+                name="email"
+                onChange={handleChange}
+                placeholder="Lenghiadev81@gmail.com"
+                fullWidth
+                error={Boolean(formErrors.email)}
+              />
+            </Stack>
+            {formErrors.email && <FormHelperText error>{formErrors.email}</FormHelperText>}
+          </Grid>
+
+          <Grid item xs={12}>
+            <Stack sx={{ gap: 1 }}>
+              <InputLabel htmlFor="phoneNumber-signup">Phone Number*</InputLabel>
+              <OutlinedInput
+                id="phoneNumber-signup"
+                type="text"
+                value={formData.phoneNumber}
+                name="phoneNumber"
+                onChange={handleChange}
+                placeholder="0987654321"
+                fullWidth
+                error={Boolean(formErrors.phoneNumber)}
+              />
+            </Stack>
+            {formErrors.phoneNumber && <FormHelperText error>{formErrors.phoneNumber}</FormHelperText>}
+          </Grid>
+
+          <Grid item xs={12}>
+            <Stack sx={{ gap: 1 }}>
+              <InputLabel htmlFor="address-signup">Address*</InputLabel>
+              <OutlinedInput
+                id="address-signup"
+                type="text"
+                value={formData.address}
+                name="address"
+                onChange={handleChange}
+                placeholder="123 Main St."
+                fullWidth
+                error={Boolean(formErrors.address)}
+              />
+            </Stack>
+            {formErrors.address && <FormHelperText error>{formErrors.address}</FormHelperText>}
+          </Grid>
+
+          <Grid item xs={12}>
+            <Stack sx={{ gap: 1 }}>
+              <InputLabel htmlFor="password-signup">Password</InputLabel>
+              <OutlinedInput
+                id="password-signup"
+                type={showPassword ? 'text' : 'password'}
+                value={formData.password}
+                name="password"
+                onChange={handleChange}
+                placeholder="******"
+                fullWidth
+                error={Boolean(formErrors.password)}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={() => setShowPassword(!showPassword)}
+                      onMouseDown={(event) => event.preventDefault()}
+                      edge="end"
+                    >
+                      {showPassword ? <PanoramaFishEyeIcon /> : <RemoveRedEyeIcon />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </Stack>
+            {formErrors.password && <FormHelperText error>{formErrors.password}</FormHelperText>}
+          </Grid>
+
+          {error && (
+            <Grid item xs={12}>
+              <FormHelperText error>{error}</FormHelperText>
             </Grid>
-          </form>
-        )}
-      </Formik>
+          )}
+
+          <Grid item xs={12}>
+            <AnimateButton>
+              <Button fullWidth size="large" variant="contained" color="primary" type="submit" disabled={loading}>
+                {loading ? 'Đang tạo...' : 'Tạo quản trị viên'}
+              </Button>
+            </AnimateButton>
+          </Grid>
+        </Grid>
+      </form>
     </>
   );
 }

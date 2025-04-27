@@ -63,6 +63,9 @@ builder.Services.AddScoped<ICalenderDeviceConfigService, CalenderDeviceConfigSer
 builder.Services.AddScoped<IDeviceScheduleRepository, DeviceScheduleRepository>();
 builder.Services.AddScoped<IDeviceScheduleService, DeviceScheduleService>();
 
+builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+
 builder.Services.AddScoped<EnvironmentDataAdapter>();
 builder.Services.AddScoped<EnvironmentMonitorService>();
 builder.Services.AddHostedService<ScheduleWorker>();
