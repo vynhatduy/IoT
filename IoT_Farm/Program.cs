@@ -39,6 +39,7 @@ if (dbType == "mongo")
     });
 }
 
+
 // Register DatabaseAdapterFactory
 builder.Services.AddSingleton(new DatabaseAdapterFactory(mongoDatabase, sqlConnection, dbType));
 

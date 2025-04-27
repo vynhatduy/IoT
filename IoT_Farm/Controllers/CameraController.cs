@@ -1,4 +1,5 @@
 ﻿using IoT_Farm.Datas;
+using IoT_Farm.Models.Request;
 using IoT_Farm.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,7 +34,7 @@ namespace IoT_Farm.Controllers
             return result != null ? Ok(result) : NotFound();
         }
         [HttpPost("create")]
-        public async Task<IActionResult> CreateCamera(Camera model)
+        public async Task<IActionResult> CreateCamera(CameraRequestModel model)
         {
             var result = await _service.CreateCameraAsync(model);
             return result.Status ? Ok(result) : NotFound();
@@ -50,5 +51,8 @@ namespace IoT_Farm.Controllers
             var result = await _service.DeleteCameraAsync(id);
             return result.Status ? Ok(result) : NotFound();
         }
+
+
     }
+
 }

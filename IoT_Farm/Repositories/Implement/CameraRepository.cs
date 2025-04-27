@@ -42,7 +42,7 @@ namespace IoT_Farm.Repositories.Implement
                 return new ResultModel
                 {
                     Data = cameraId,
-                    Message = result ? "Tạo thành công" : "Không thể tạo mới",
+                    Message = result ? "Xóa thành công" : "Không thể xóa mới",
                     Status = result
                 };
             }

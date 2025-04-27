@@ -1,4 +1,5 @@
 ﻿using IoT_Farm.Datas;
+using IoT_Farm.Models.Request;
 using IoT_Farm.Models.Response;
 using IoT_Farm.Repositories.Interface;
 using IoT_Farm.Services.Interface;
@@ -15,13 +16,25 @@ namespace IoT_Farm.Services.Implement
             _repo = repo;
         }
 
-        public async Task<ResultModel> CreateCameraAsync(Camera camera)
+        public async Task<ResultModel> CreateCameraAsync(CameraRequestModel camera)
         {
             try
             {
-                camera.Id = ObjectId.GenerateNewId().ToString();
+                var newItem = new Camera
+                {
+                    Area = camera.Area,
+                    Id = ObjectId.GenerateNewId().ToString(),
+                    Name = camera.Name,
+                    CreateAt = DateTime.Now,
+                    Password = camera.Password,
+                    Port = camera.Port,
+                    TypeConnect = camera.TypeConnect,
+                    UpdateAt = DateTime.Now,
+                    Url = camera.Url,
+                    Username = camera.Username
+                };
 
-                return await _repo.CreateCameraAsync(camera);
+                return await _repo.CreateCameraAsync(newItem);
 
             }
             catch (Exception ex)
