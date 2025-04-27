@@ -5,8 +5,8 @@ import dayjs from 'dayjs';
 import { Stack, Typography, TextField } from '@mui/material';
 
 const DatePickerOnly = ({ onDateChange }) => {
-  const [startDate, setStartDate] = useState(dayjs('2025-04-10'));
-  const [endDate, setEndDate] = useState(dayjs('2025-04-19'));
+  const [startDate, setStartDate] = useState(dayjs('2025-04-22'));
+  const [endDate, setEndDate] = useState(dayjs());
   const [endDateError, setEndDateError] = useState(false);
 
   useEffect(() => {
