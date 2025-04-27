@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // material-ui
+import { Box } from '@mui/material';
 import Button from '@mui/material/Button';
 import FormHelperText from '@mui/material/FormHelperText';
 import Grid from '@mui/material/Grid2';
@@ -114,16 +115,17 @@ export default function AuthRegister() {
     <>
       <form onSubmit={handleSubmit} noValidate>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="firstname-signup">First Name*</InputLabel>
+          <Grid item xs={12} md={12}>
+            <Stack sx={{ gap: 1, width: 400 }}>
+              <InputLabel htmlFor="firstname-signup">Tên*</InputLabel>
               <OutlinedInput
+                w
                 id="firstname-signup"
                 type="text"
                 value={formData.firstname}
                 name="firstname"
                 onChange={handleChange}
-                placeholder="Le"
+                placeholder="Nghia"
                 fullWidth
                 error={Boolean(formErrors.firstname)}
               />
@@ -132,15 +134,15 @@ export default function AuthRegister() {
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="lastname-signup">Last Name*</InputLabel>
+            <Stack sx={{ gap: 1, width: 400 }}>
+              <InputLabel htmlFor="lastname-signup">Họ*</InputLabel>
               <OutlinedInput
                 id="lastname-signup"
                 type="text"
                 value={formData.lastname}
                 name="lastname"
                 onChange={handleChange}
-                placeholder="Nghia"
+                placeholder="Le"
                 fullWidth
                 error={Boolean(formErrors.lastname)}
               />
@@ -149,15 +151,15 @@ export default function AuthRegister() {
           </Grid>
 
           <Grid item xs={12}>
-            <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="email-signup">Email Address*</InputLabel>
+            <Stack sx={{ gap: 1, width: 400 }}>
+              <InputLabel htmlFor="email-signup">Địa chỉ Email*</InputLabel>
               <OutlinedInput
                 id="email-signup"
                 type="email"
                 value={formData.email}
                 name="email"
                 onChange={handleChange}
-                placeholder="Lenghiadev81@gmail.com"
+                placeholder="2113005@dlu.edu.vn"
                 fullWidth
                 error={Boolean(formErrors.email)}
               />
@@ -166,8 +168,8 @@ export default function AuthRegister() {
           </Grid>
 
           <Grid item xs={12}>
-            <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="phoneNumber-signup">Phone Number*</InputLabel>
+            <Stack sx={{ gap: 1, width: 400 }}>
+              <InputLabel htmlFor="phoneNumber-signup">Số điện thoại*</InputLabel>
               <OutlinedInput
                 id="phoneNumber-signup"
                 type="text"
@@ -183,15 +185,15 @@ export default function AuthRegister() {
           </Grid>
 
           <Grid item xs={12}>
-            <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="address-signup">Address*</InputLabel>
+            <Stack sx={{ gap: 1, width: 400 }}>
+              <InputLabel htmlFor="address-signup">Địa chỉ*</InputLabel>
               <OutlinedInput
                 id="address-signup"
                 type="text"
                 value={formData.address}
                 name="address"
                 onChange={handleChange}
-                placeholder="123 Main St."
+                placeholder="95 Lý Nam Đế ..."
                 fullWidth
                 error={Boolean(formErrors.address)}
               />
@@ -200,8 +202,8 @@ export default function AuthRegister() {
           </Grid>
 
           <Grid item xs={12}>
-            <Stack sx={{ gap: 1 }}>
-              <InputLabel htmlFor="password-signup">Password</InputLabel>
+            <Stack sx={{ gap: 2, width: 400 }}>
+              <InputLabel htmlFor="password-signup">Mật khẩu</InputLabel>
               <OutlinedInput
                 id="password-signup"
                 type={showPassword ? 'text' : 'password'}
@@ -235,11 +237,13 @@ export default function AuthRegister() {
           )}
 
           <Grid item xs={12}>
-            <AnimateButton>
-              <Button fullWidth size="large" variant="contained" color="primary" type="submit" disabled={loading}>
-                {loading ? 'Đang tạo...' : 'Tạo quản trị viên'}
-              </Button>
-            </AnimateButton>
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <AnimateButton>
+                <Button sx={{ ml: 'auto' }} size="large" variant="contained" color="success" type="submit" disabled={loading}>
+                  {loading ? 'Đang tạo...' : 'Đăng ký'}
+                </Button>
+              </AnimateButton>
+            </Box>
           </Grid>
         </Grid>
       </form>
