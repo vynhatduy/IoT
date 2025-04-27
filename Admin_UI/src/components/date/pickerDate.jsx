@@ -24,7 +24,7 @@ const DatePickerOnly = ({ onDateChange }) => {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack direction="row" spacing={2} alignItems="flex-start">
         <Stack spacing={1}>
-          <Typography>Từ:</Typography>
+          {/* <Typography>Từ:</Typography> */}
           <DatePicker
             label="Ngày bắt đầu"
             value={startDate}
@@ -33,7 +33,7 @@ const DatePickerOnly = ({ onDateChange }) => {
           />
         </Stack>
         <Stack spacing={1}>
-          <Typography>Đến:</Typography>
+          {/* <Typography>Đến:</Typography> */}
           <DatePicker
             label="Ngày kết thúc"
             value={endDate}
