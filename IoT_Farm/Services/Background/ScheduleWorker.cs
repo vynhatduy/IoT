@@ -36,27 +36,35 @@ namespace IoT_Farm.Services.Background
                     foreach (var type in new[] { "Light", "Fan", "Pump", "Heater" })
                     {
                         var deviceConfig = GetDeviceConfigByType(config, type);
-                        if (deviceConfig != null &&
-                            IsInTimeRange(deviceConfig.Time.Start.ToString(), deviceConfig.Time.End.ToString(), currentTime) &&
-                            await scheduleService.IsDueScheduleAsync(config.Device, config.Area, type, deviceConfig.Schedule?.Hours, now))
+                        if (deviceConfig != null)
                         {
-                            switch (type)
+                            bool isInTime = IsInTimeRange(deviceConfig.Time.Start.ToString(), deviceConfig.Time.End.ToString(), currentTime);
+
+                            if (isInTime)
                             {
-                                case "Light": light = 1; break;
-                                case "Fan": fan = 1; break;
-                                case "Pump": pump = 1; break;
-                                case "Heater": heater = 1; break;
+                                // Nếu đang trong khung giờ, kiểm tra xem có đến thời điểm gửi chưa
+                                if (await scheduleService.IsDueScheduleAsync(config.Device, config.Area, type, deviceConfig.Schedule?.Hours, now))
+                                {
+                                    switch (type)
+                                    {
+                                        case "Light": light = 1; break;
+                                        case "Fan": fan = 1; break;
+                                        case "Pump": pump = 1; break;
+                                        case "Heater": heater = 1; break;
+                                    }
+                                    await scheduleService.SetLastSentAsync(config.Device, config.Area, type, now);
+                                }
                             }
-                            await scheduleService.SetLastSentAsync(config.Device, config.Area, type, now);
-                        }
-                        else
-                        {
-                            switch (type)
+                            else
                             {
-                                case "Light": light = 0; break;
-                                case "Fan": fan = 0; break;
-                                case "Pump": pump = 0; break;
-                                case "Heater": heater = 0; break;
+                                // Ngoài khung giờ -> luôn tắt thiết bị
+                                switch (type)
+                                {
+                                    case "Light": light = 0; break;
+                                    case "Fan": fan = 0; break;
+                                    case "Pump": pump = 0; break;
+                                    case "Heater": heater = 0; break;
+                                }
                             }
                         }
                     }
@@ -83,7 +91,7 @@ namespace IoT_Farm.Services.Background
                     }
                 }
                 // 1 phút lặp lại
-                await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+                await Task.Delay(TimeSpan.FromMinutes(0.5), stoppingToken);
             }
         }
 

@@ -6,8 +6,8 @@ import Statistics from '../components/statisticsContainer/mainGraph';
 const ThongKeChiTiet = () => {
   return (
     <Box>
-      <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: 2 }}>
-        THỐNG KÊ CHI TIẾT
+      <Typography variant="subtitle1" sx={{ fontWeight: 'bold', marginBottom: 2 }}>
+        THỐNG KÊ THÔNG SỐ MÔI TRƯỜNG
       </Typography>
 
       <StyleBackground>

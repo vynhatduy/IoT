@@ -22,7 +22,7 @@ const quanLyThietBi = () => {
       <AddDevicelButtons onAddSuccess={handleRefresh} />
       <DeleteDevice listDelete={selectedDevices} onAddSuccess={handleRefresh} />
       <Box marginTop={2}>
-        <Typography variant="subtitle1">Danh Sách Thiết Bị</Typography>
+        <Typography variant="subtitle1">DANH SÁCH THIẾT BỊ</Typography>
       </Box>
       <StyleBackground>
         <ListAllDevice refreshKey={refreshKey} onDeleteSelected={handleDeleteDevices} selectedDevices={selectedDevices} />

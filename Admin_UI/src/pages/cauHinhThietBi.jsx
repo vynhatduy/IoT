@@ -12,7 +12,7 @@ const cauHinhThietBi = () => {
   };
   return (
     <Box>
-      <Typography variant="subtitle1">CAU HINH THIET BI</Typography>
+      <Typography variant="subtitle1">CẤU HÌNH THIẾT BỊ</Typography>
       <StyleBackground>
         <CreateButtonConfig onRefresh={handleRefresh} />
         <Box sx={{ margin: '20px 0px 0px 0px' }}>

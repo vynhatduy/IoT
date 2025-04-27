@@ -115,24 +115,6 @@ export default function AuthRegister() {
     <>
       <form onSubmit={handleSubmit} noValidate>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={12}>
-            <Stack sx={{ gap: 1, width: 400 }}>
-              <InputLabel htmlFor="firstname-signup">Tên*</InputLabel>
-              <OutlinedInput
-                w
-                id="firstname-signup"
-                type="text"
-                value={formData.firstname}
-                name="firstname"
-                onChange={handleChange}
-                placeholder="Nghia"
-                fullWidth
-                error={Boolean(formErrors.firstname)}
-              />
-            </Stack>
-            {formErrors.firstname && <FormHelperText error>{formErrors.firstname}</FormHelperText>}
-          </Grid>
-
           <Grid item xs={12} md={6}>
             <Stack sx={{ gap: 1, width: 400 }}>
               <InputLabel htmlFor="lastname-signup">Họ*</InputLabel>
@@ -142,12 +124,29 @@ export default function AuthRegister() {
                 value={formData.lastname}
                 name="lastname"
                 onChange={handleChange}
-                placeholder="Le"
+                placeholder="Nhập họ..."
                 fullWidth
                 error={Boolean(formErrors.lastname)}
               />
             </Stack>
             {formErrors.lastname && <FormHelperText error>{formErrors.lastname}</FormHelperText>}
+          </Grid>
+
+          <Grid item xs={12} md={12}>
+            <Stack sx={{ gap: 1, width: 400 }}>
+              <InputLabel htmlFor="firstname-signup">Tên*</InputLabel>
+              <OutlinedInput
+                id="firstname-signup"
+                type="text"
+                value={formData.firstname}
+                name="firstname"
+                onChange={handleChange}
+                placeholder="Nhập tên..."
+                fullWidth
+                error={Boolean(formErrors.firstname)}
+              />
+            </Stack>
+            {formErrors.firstname && <FormHelperText error>{formErrors.firstname}</FormHelperText>}
           </Grid>
 
           <Grid item xs={12}>
@@ -159,7 +158,7 @@ export default function AuthRegister() {
                 value={formData.email}
                 name="email"
                 onChange={handleChange}
-                placeholder="2113005@dlu.edu.vn"
+                placeholder="Example@gmail.com"
                 fullWidth
                 error={Boolean(formErrors.email)}
               />
@@ -176,7 +175,7 @@ export default function AuthRegister() {
                 value={formData.phoneNumber}
                 name="phoneNumber"
                 onChange={handleChange}
-                placeholder="0987654321"
+                placeholder="Nhập số điện thoại..."
                 fullWidth
                 error={Boolean(formErrors.phoneNumber)}
               />
@@ -193,7 +192,7 @@ export default function AuthRegister() {
                 value={formData.address}
                 name="address"
                 onChange={handleChange}
-                placeholder="95 Lý Nam Đế ..."
+                placeholder="Nhập địa chỉ..."
                 fullWidth
                 error={Boolean(formErrors.address)}
               />

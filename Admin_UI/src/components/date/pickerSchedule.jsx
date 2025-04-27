@@ -54,7 +54,7 @@ const SchedulePicker = ({ onScheduleChange }) => {
 
         {mode === 'Khoảng thời gian' && (
           <Stack direction="row" spacing={2} alignItems="center">
-            <Typography>Khoảng thời gian (giờ):</Typography>
+            <Typography>Khoảng thời gian (ngày):</Typography>
             <Autocomplete
               freeSolo
               options={[]}

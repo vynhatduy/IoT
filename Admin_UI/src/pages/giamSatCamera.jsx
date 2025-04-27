@@ -6,7 +6,7 @@ import ContainerCamera from '../components/containerCamera/container';
 const giamSatCamera = () => {
   return (
     <Box>
-      <Typography>GIAM SAT CAMERA</Typography>
+      <Typography>GIÁM SÁT CAMERA</Typography>
       <StyleBackground>
         <ContainerCamera />
       </StyleBackground>

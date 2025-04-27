@@ -6,7 +6,7 @@ const lienHeHoTro = () => {
   return (
     <Box>
       <StyleBackground>
-        <Typography variant="subtitle1">LIEN HE HO TRO</Typography>
+        <Typography variant="subtitle1">LIÊN HỆ HỖ TRỢ</Typography>
         <Infor></Infor>
       </StyleBackground>
     </Box>
