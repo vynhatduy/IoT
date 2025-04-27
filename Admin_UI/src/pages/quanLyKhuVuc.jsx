@@ -14,7 +14,7 @@ const KhuVuc = () => {
 
   return (
     <Box>
-      <Typography variant="subtitle1">Quản lý khu vực</Typography>
+      <Typography variant="subtitle1">QUẢN LÝ KHU VỰC</Typography>
       <StyleBackground>
         <Stack direction={'row'} spacing={2}>
           <AddArea onRefresh={handleRefresh} />

@@ -93,7 +93,7 @@ namespace IoT_Farm.Repositories.Implement
         {
             try
             {
-                var result = await _databaseAdapter.GetAsync(e => e.Area == area && e.Timestamp >= fromDate && e.Timestamp <= toDate);
+                var result = await _databaseAdapter.GetAsync(e => e.Area == area && fromDate.Date <= e.Timestamp.Date && e.Timestamp <= toDate);
                 return result.ToList();
             }
             catch (Exception ex)

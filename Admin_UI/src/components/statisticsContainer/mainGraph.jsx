@@ -8,7 +8,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import { useEnvironmentDataStatistics } from '../../service/useEnvironmentData';
 import dayjs from 'dayjs';
 const Statistics = () => {
-  const [startDate, setStartDate] = useState(dayjs().subtract(10, 'day').format('YYYY/MM/DD'));
+  const [startDate, setStartDate] = useState(dayjs().format('YYYY/MM/DD'));
   const [endDate, setEndDate] = useState(dayjs().format('YYYY/MM/DD'));
 
   const [selectType, setSelectType] = useState('temperature');

@@ -54,7 +54,7 @@ export default function dashboardDefault() {
   return (
     <Grid container rowSpacing={4.5} columnSpacing={2.75}>
       <Grid sx={{ mb: -2.25 }} size={12}>
-        <Typography variant="subtitle1">Bảng điều khiển</Typography>
+        <Typography variant="subtitle1">BẢNG ĐIỀU KHIỂN</Typography>
       </Grid>
       {dataText.map((item) => {
         const isLoss = item.count < item.previousValue;

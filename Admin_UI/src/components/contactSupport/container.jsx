@@ -391,15 +391,22 @@ export default function DeveloperSupportPage() {
 
   return (
     <Box>
-      <Container sx={{ py: 8 }}>
+      <Container sx={{ py: 2 }}>
         <Paper sx={{ mb: 6, overflow: 'hidden' }}>
-          <Tabs value={tabValue} onChange={handleTabChange} variant="fullWidth" sx={{ bgcolor: '#2563eb', color: 'white' }}>
-            <Tab label="Người Phát Triển" icon={<User size={16} />} />
-            <Tab label="Hỗ Trợ Người Dùng" icon={<HelpCircle size={16} />} />
-            <Tab label="Hướng Dẫn Sử Dụng" icon={<Book size={16} />} />
+          <Tabs
+            value={tabValue}
+            onChange={handleTabChange}
+            variant="fullWidth"
+            sx={{ bgcolor: '#2563eb' }}
+            TabIndicatorProps={{
+              style: { backgroundColor: '#fff' } // màu gạch dưới (tuỳ chọn)
+            }}
+          >
+            <Tab label="Người Phát Triển" icon={<User size={16} />} sx={{ color: 'white', '&.Mui-selected': { color: '#fff' } }} />
+            <Tab label="Hỗ Trợ Người Dùng" icon={<HelpCircle size={16} />} sx={{ color: 'white', '&.Mui-selected': { color: '#fff' } }} />
+            <Tab label="Hướng Dẫn Sử Dụng" icon={<Book size={16} />} sx={{ color: 'white', '&.Mui-selected': { color: '#fff' } }} />
           </Tabs>
 
-          {/* Tab content render based on selected tab */}
           {tabValue === 0 && renderDeveloperTab()}
           {tabValue === 1 && renderSupportTab()}
           {tabValue === 2 && renderGuideTab()}
