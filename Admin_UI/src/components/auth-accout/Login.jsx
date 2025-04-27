@@ -19,7 +19,7 @@ export default function Login() {
           <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: { xs: -0.5, sm: 0.5 } }}>
             <Typography variant="h3">Đăng nhập</Typography>
             <Typography component={Link} to={'/register'} variant="body1" sx={{ textDecoration: 'none' }} color="primary">
-              Bạn không có tài khoản?
+              Bạn chưa có tài khoản?
             </Typography>
           </Stack>
         </Grid>
