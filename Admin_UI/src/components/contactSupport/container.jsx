@@ -152,7 +152,7 @@ const videoTutorials = [
     title: 'Làm quen với giao diện',
     description: 'Video Hướng Dẫn Cơ Bản',
     duration: '5:30 phút',
-    url: 'https://www.youtube.com/watch?v=NUs9lfAiTRk'
+    url: 'https://www.youtube.com/watch?v=sp6Lc8hazUs'
   }
 ];
 
@@ -345,7 +345,7 @@ export default function DeveloperSupportPage() {
       <Card sx={{ mt: 6 }}>
         <CardContent>
           <Typography variant="h5" sx={{ mb: 4 }}>
-            Video Hướng Dẫn
+            Video Giới thiệu
           </Typography>
           <Grid container spacing={3}>
             {videoTutorials.map((video, index) => (
