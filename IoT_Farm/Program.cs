@@ -7,6 +7,7 @@ using IoT_Farm.Services.Background;
 using IoT_Farm.Services.Implement;
 using IoT_Farm.Services.Interface;
 using IoT_Farm.Services.MQTT;
+using IoT_Farm.Services.SignalR;
 using IoT_Farm.Services.Token;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -144,6 +145,8 @@ builder.Services.AddSwaggerGen();
 var FE_URL = Env.GetString("FE_URL");
 
 builder.Services.AddSignalR();
+builder.Services.AddSingleton(typeof(ISignalRService<>), typeof(SignalRService<>));
+
 builder.Services.AddCors(otp =>
 {
     otp.AddDefaultPolicy(policy =>
@@ -214,12 +217,15 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseMiddleware<BlacklistMiddleware>();
+
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
     endpoints.MapHub<MyHub>("/ws");
 });
 
+app.MapHub<AppHub>("/hub");
 app.UseSwagger();
 app.UseSwaggerUI();
 

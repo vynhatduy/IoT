@@ -28,9 +28,10 @@ namespace IoT_Farm.Services.Implement
             }
         }
 
-        public Task<List<Notification>> GetAllNotification()
+        public async Task<List<Notification>> GetAllNotification()
         {
-            return _repo.GetAllNotification();
+            var result = await _repo.GetAllNotification();
+            return result.OrderByDescending(x => x.CreateAt).ToList();
         }
 
         public async void UpdateStatus(string id)

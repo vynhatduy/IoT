@@ -47,7 +47,7 @@ namespace IoT_Farm.Repositories.Implement
             return result;
         }
 
-
+        
         public async Task<bool> DeleteAsync(string id)
         {
             var existing = await _databaseAdapter.FindAsync(x => x.Id == id);

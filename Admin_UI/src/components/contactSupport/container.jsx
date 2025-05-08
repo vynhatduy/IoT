@@ -152,7 +152,7 @@ const videoTutorials = [
     title: 'Làm quen với giao diện',
     description: 'Video Hướng Dẫn Cơ Bản',
     duration: '5:30 phút',
-    url: 'https://www.youtube.com/watch?v=NUs9lfAiTRk'
+    url: 'https://www.youtube.com/watch?v=sp6Lc8hazUs'
   }
 ];
 
