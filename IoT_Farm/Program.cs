@@ -144,6 +144,7 @@ builder.Services.AddSwaggerGen();
 
 var FE_URL = Env.GetString("FE_URL");
 var APP_URL = Env.GetString("APP_URL");
+var APP_MOBILE_URL = Env.GetString("APP_MOBILE_URL");
 builder.Services.AddSignalR();
 builder.Services.AddSingleton(typeof(ISignalRService<>), typeof(SignalRService<>));
 
@@ -151,7 +152,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins(FE_URL, APP_URL) // phải là exact origin, không wildcard
+        policy.WithOrigins(FE_URL, APP_URL, APP_MOBILE_URL) // phải là exact origin, không wildcard
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials(); // Chỉ dùng được khi có WithOrigins

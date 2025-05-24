@@ -30,7 +30,7 @@
     "@capacitor/keyboard": "5.0.8",
     "@capacitor/status-bar": "5.0.7",
     "@ionic/angular": "^7.0.0",
-    "@microsoft/signalr": "^8.0.0",
+    "@microsoft/signalr": "^8.0.7",
     "@tensorflow/tfjs": "^4.22.0",
     "axios": "^1.6.8",
     "chart.js": "^4.4.2",
