@@ -1,26 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { SignalRService } from 'src/app/core/services/socket/signalr.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
 })
-export class DashboardPage implements OnInit {
+export class DashboardPage implements OnInit, OnDestroy {
   sensorData: any;
   loading: boolean = true;
   errorMessage: string = '';
   sensorLocation: string = '';
   areas: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private signalRService: SignalRService
+  ) {}
 
   ngOnInit() {
     this.fetchAreas();
+    this.setupSignalR();
   }
 
-  // Thêm hàm doRefresh ở đây
+  ngOnDestroy() {
+    this.signalRService.off('EnvironmentData');
+  }
+
   doRefresh(event: any) {
     console.log('Begin async operation');
     this.fetchSensorData();
@@ -41,7 +49,6 @@ export class DashboardPage implements OnInit {
       .subscribe(
         (data) => {
           this.sensorData = data;
-          this.errorMessage = '';
           this.loading = false;
         },
         (error) => {
@@ -52,6 +59,7 @@ export class DashboardPage implements OnInit {
         }
       );
   }
+
   fetchAreas() {
     this.http.get<any[]>(`${environment.be_api}/area`).subscribe(
       (data) => {
@@ -67,11 +75,13 @@ export class DashboardPage implements OnInit {
       }
     );
   }
+
   onSensorLocationChange(event: any) {
     this.sensorLocation = event.detail.value;
     console.log('New sensor location:', this.sensorLocation);
     this.fetchSensorData();
   }
+
   getDefaultSensorData() {
     return {
       temperature: 0,
@@ -79,5 +89,15 @@ export class DashboardPage implements OnInit {
       light: 0,
       airQuality: 0,
     };
+  }
+
+  setupSignalR() {
+    this.signalRService.start().then(() => {
+      this.signalRService.on('EnvironmentData', (data: any) => {
+        if (data.area === this.sensorLocation) {
+          this.sensorData = data;
+        }
+      });
+    });
   }
 }
