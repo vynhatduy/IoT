@@ -2,6 +2,7 @@
 using IoT_Farm.Models.Response;
 using IoT_Farm.Repositories.Interface;
 using IoT_Farm.Services.Interface;
+using IoT_Farm.Services.SignalR;
 using MongoDB.Driver;
 
 namespace IoT_Farm.Services.Implement
@@ -9,15 +10,23 @@ namespace IoT_Farm.Services.Implement
     public class EnvironmentService : IEnvironmentService
     {
         private readonly IEnvironmentRepository _repository;
+        private readonly ISignalRService<EnvironmentData> _signalR;
 
-        public EnvironmentService(IEnvironmentRepository repository)
+        public EnvironmentService(IEnvironmentRepository repository, ISignalRService<EnvironmentData> signalR)
         {
             _repository = repository;
+            _signalR = signalR;
         }
 
         public async Task<bool> SaveEnvironmentData(EnvironmentData data)
         {
-            return await _repository.AddAsync(data);
+            var result = await _repository.AddAsync(data);
+            if (result)
+            {
+
+                await _signalR.SendMessageToAllAsync("EnvironmentData", data);
+            }
+            return result;
         }
 
         public async Task<EnvironmentData> GetEnvironmentDataById(string id)

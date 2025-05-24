@@ -34,10 +34,10 @@ const ChartComponent = ({ from, to, data }) => {
         .pop(); // Lấy bản ghi mới nhất
       return latestItem ? latestItem[key] : null;
     });
-  console.log(
-    'Sorted Data:',
-    filteredData.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
-  );
+  // console.log(
+  //   'Sorted Data:',
+  //   filteredData.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
+  // );
 
   const seriesData = {
     temperature: getLatestData('temperature'),
@@ -45,7 +45,7 @@ const ChartComponent = ({ from, to, data }) => {
     brightness: getLatestData('brightness'),
     airQuality: getLatestData('airQuality')
   };
-  console.log('Series Data:', seriesData);
+  // console.log('Series Data:', seriesData);
   const colors = {
     temperature: theme.palette.primary.main,
     humidity: theme.palette.success.main,
@@ -64,9 +64,9 @@ const ChartComponent = ({ from, to, data }) => {
     setVisibility((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
-  console.log('Filtered Data:', filteredData);
-  console.log('Unique Days:', uniqueDays);
-  console.log('Series Data:', seriesData);
+  // console.log('Filtered Data:', filteredData);
+  // console.log('Unique Days:', uniqueDays);
+  // console.log('Series Data:', seriesData);
 
   return (
     <Box>

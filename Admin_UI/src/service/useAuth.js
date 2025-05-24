@@ -21,7 +21,7 @@ export const useLogin = () => {
         { headers: { 'Content-Type': 'application/json' } }
       );
 
-      console.log('response:', response);
+      // console.log('response:', response);
 
       if (response.status !== 200 || !response.data.status) {
         throw new Error(response.data.message || 'Đăng nhập thất bại.');

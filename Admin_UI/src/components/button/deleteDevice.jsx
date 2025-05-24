@@ -23,13 +23,13 @@ export const DeleteDevice = ({ listDelete, onAddSuccess }) => {
 
   const handleConfirmDelete = async () => {
     // Xử lý logic xóa thiết bị
-    console.log('Đã xác nhận xóa các thiết bị: ', listDelete);
+    // console.log('Đã xác nhận xóa các thiết bị: ', listDelete);
 
     // Gọi hook deleteDevices để xóa
     const success = await deleteDevices(listDelete);
 
     if (success) {
-      console.log('Xóa thiết bị thành công!');
+      // console.log('Xóa thiết bị thành công!');
       onAddSuccess(); // Gọi hàm onAddSuccess (có thể là để cập nhật lại dữ liệu sau khi xóa)
     } else {
       console.error('Xóa thiết bị thất bại:', deleteError);

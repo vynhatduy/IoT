@@ -7,6 +7,7 @@ using IoT_Farm.Services.Background;
 using IoT_Farm.Services.Implement;
 using IoT_Farm.Services.Interface;
 using IoT_Farm.Services.MQTT;
+using IoT_Farm.Services.SignalR;
 using IoT_Farm.Services.Token;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -142,21 +143,19 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var FE_URL = Env.GetString("FE_URL");
-
+var APP_URL = Env.GetString("APP_URL");
 builder.Services.AddSignalR();
-builder.Services.AddCors(otp =>
+builder.Services.AddSingleton(typeof(ISignalRService<>), typeof(SignalRService<>));
+
+builder.Services.AddCors(options =>
 {
-    otp.AddDefaultPolicy(policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins(FE_URL)
+        policy.WithOrigins(FE_URL, APP_URL) // phải là exact origin, không wildcard
               .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowCredentials();
+              .AllowCredentials(); // Chỉ dùng được khi có WithOrigins
     });
-    otp.AddPolicy("AllowAll",
-        policy => policy.AllowAnyOrigin()
-                       .AllowAnyMethod()
-                       .AllowAnyHeader());
 });
 
 // login bear token in swagger
@@ -214,12 +213,15 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseMiddleware<BlacklistMiddleware>();
+
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
-    endpoints.MapHub<MyHub>("/ws");
+    endpoints.MapHub<AppHub>("/hub");
 });
 
+//app.MapHub<MyHub>("/hub");
 app.UseSwagger();
 app.UseSwaggerUI();
 

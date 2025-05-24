@@ -173,7 +173,7 @@ export const useAreaDeviceDelete = () => {
     setDeleteSuccess(false);
     setDeleteError(null);
     try {
-      console.log('payload', payload);
+      // console.log('payload', payload);
       const response = await API.delete('/areaDevice/deleteDevices', {
         data: payload,
         headers: {

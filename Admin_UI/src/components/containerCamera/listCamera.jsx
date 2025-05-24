@@ -1,35 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, CircularProgress, Alert } from '@mui/material';
-import { useAllCamera } from '../../service/useCamera';
+import { useAllCamera, useDeleteCamera } from '../../service/useCamera';
 
 const ListCamera = ({ refresh, onRefresh }) => {
   const headers = ['STT', 'Tên', 'Url', 'Tên Tài Khoản', 'Kiểu kết nối', 'Khu Vực', 'Chỉnh Sửa'];
-
-  const { data, loading, error, refetchAreaDevice } = useAllCamera(refresh);
-  // const { deleteDeviceConfig, loadingDelete } = useCalenderDeviceDelete();
-
-  // useEffect(() => {
-  //   refetchFetchData();
-  // }, [refresh]);
+  const { data, loading, error } = useAllCamera(refresh);
+  const { deleteCamera, loading: loadingDelete } = useDeleteCamera();
+  const [notification, setNotification] = useState({ open: false, message: '', severity: '' });
 
   const handleDelete = async (id) => {
     try {
-      const result = await deleteDeviceConfig(id);
+      const result = await deleteCamera(id);
       if (result) {
-        setNotification({ open: true, message: `Xóa thành công`, severity: 'success' });
-        onRefresh(); // Gọi callback từ cha để cập nhật refreshFlag
+        setNotification({ open: true, message: 'Xóa thành công', severity: 'success' });
+        onRefresh();
       } else {
-        setNotification({ open: true, message: `Không thể xóa`, severity: 'warning' });
+        setNotification({ open: true, message: 'Không thể xóa', severity: 'warning' });
       }
-    } catch (error) {
-      console.error('Error deleting item:', error);
-      setNotification({ open: true, message: `Lỗi khi xóa: ${error.message}`, severity: 'error' });
+    } catch (err) {
+      console.error('Error deleting item:', err);
+      setNotification({ open: true, message: `Lỗi khi xóa: ${err.message}`, severity: 'error' });
     }
   };
 
   if (loading) {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', padding: 20 }}>
         <CircularProgress />
       </div>
     );
@@ -44,51 +40,52 @@ const ListCamera = ({ refresh, onRefresh }) => {
   }
 
   return (
-    <>
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              {headers.map((header, index) => (
-                <TableCell key={index} align="center" sx={{ fontWeight: 'bold' }}>
-                  {header}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {data && data.length > 0 ? (
-              data.map((row, index) => (
-                <TableRow key={index} hover>
-                  <TableCell align="center">{index + 1}</TableCell>
-                  <TableCell>{row.name}</TableCell>
-                  <TableCell>{row.url || '-'}</TableCell>
-                  <TableCell>{row.username || '-'}</TableCell>
-                  <TableCell>{row.typeConnect || '-'}</TableCell>
-                  <TableCell>{row.area || '-'}</TableCell>
-                  <TableCell align="center">
-                    <Button
-                      sx={{ '&:hover': { color: 'red' }, border: '1px solid red', color: 'black' }}
-                      // onClick={() => handleDelete(row.id)}
-                      // disabled={loadingDelete}
-                    >
-                      {/* {loadingDelete ? <CircularProgress size={20} /> : 'Xóa'} */}
-                      xóa
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell colSpan={headers.length} align="center">
-                  Không có dữ liệu
+    <TableContainer component={Paper}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            {headers.map((header, idx) => (
+              <TableCell key={idx} align="center" sx={{ fontWeight: 'bold' }}>
+                {header}
+              </TableCell>
+            ))}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data?.length ? (
+            data.map((camera, idx) => (
+              <TableRow key={camera.id || idx} hover>
+                <TableCell align="center">{idx + 1}</TableCell>
+                <TableCell>{camera.name}</TableCell>
+                <TableCell>{camera.url || '-'}</TableCell>
+                <TableCell>{camera.username || '-'}</TableCell>
+                <TableCell>{camera.typeConnect || '-'}</TableCell>
+                <TableCell>{camera.area || '-'}</TableCell>
+                <TableCell align="center">
+                  <Button
+                    sx={{
+                      '&:hover': { color: 'red' },
+                      border: '1px solid red',
+                      color: 'black'
+                    }}
+                    onClick={() => handleDelete(camera.id)}
+                    disabled={loadingDelete}
+                  >
+                    Xóa
+                  </Button>
                 </TableCell>
               </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </>
+            ))
+          ) : (
+            <TableRow>
+              <TableCell colSpan={headers.length} align="center">
+                Không có dữ liệu
+              </TableCell>
+            </TableRow>
+          )}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 

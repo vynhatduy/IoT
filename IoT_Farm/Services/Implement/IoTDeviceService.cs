@@ -75,7 +75,7 @@ namespace IoT_Farm.Services.Implement
                     FirmwareVersion = model.FirmwareVersion,
                     Heater = model.Heater,
                     IpAddress = model.IpAddress,
-                    KhuVuc = model.KhuVuc,
+                    KhuVuc = model.KhuVuc ?? "",
                     Light = model.Light,
                     Pump = model.Pump,
                     Status = model.Status,

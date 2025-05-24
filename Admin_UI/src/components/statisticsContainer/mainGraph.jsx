@@ -31,7 +31,7 @@ const Statistics = () => {
   };
 
   const handleAreaChange = (area) => {
-    setSelectedArea(area);
+    setSelectedArea(area.name);
   };
 
   const getTypeLabel = () => {
@@ -68,7 +68,7 @@ const Statistics = () => {
         <DatePickeronly onDateChange={handleDateChange} />
         <SelectWeather onWeatherChange={handleTypeChange} />
         <Box ml={2}>
-          <SelectArea onAreaChange={handleAreaChange} />
+          <SelectArea onChange={handleAreaChange} />
         </Box>
         <Box sx={{ ml: 'auto' }}>
           <DownloadButtons data={chartData} />
