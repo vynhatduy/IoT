@@ -7,6 +7,8 @@ import { useAreaDevice } from '../../service/useAreaDevice';
 import { useControlDevice } from '../../service/useControlDevice';
 import { useCameraByAreaId } from '../../service/useCamera';
 import ListCardCamera from '../cards/listCardCamera';
+import WebSocketService from '../../service/WebSocketService';
+import { da } from 'date-fns/locale';
 
 const AreaDashboard = () => {
   const [selectedArea, setSelectedArea] = useState(null);
@@ -15,6 +17,7 @@ const AreaDashboard = () => {
   const [changedDevices, setChangedDevices] = useState([]);
   const [refreshData, setRefreshData] = useState(0);
   const [isReloading, setIsReloading] = useState(false);
+  const [liveEnvironmentData, setLiveEnvironmentData] = useState(null);
 
   const { areas } = useArea();
   const { controlDevice } = useControlDevice();
@@ -23,7 +26,8 @@ const AreaDashboard = () => {
   const { dataAreaDevice, loadingAreaDevice, refetchAreaDevice } = useAreaDevice(selectedAreaId, refreshData);
   const { data: cameraData, loading: cameraLoading, error: cameraError, refetchData: refetchCamera } = useCameraByAreaId(selectedArea);
 
-  console.log('cameraData', cameraData);
+  const ws = new WebSocketService();
+  // console.log('cameraData', cameraData);
   const handleAreaClick = (areaName, areaId) => {
     setSelectedArea(areaName);
     setSelectedAreaId(areaId);
@@ -108,6 +112,16 @@ const AreaDashboard = () => {
     setChangedDevices(updatedChanged);
   }, [deviceStates, dataAreaDevice, selectedAreaId]);
 
+  useEffect(() => {
+    ws.start();
+
+    ws.on('EnvironmentData', (data) => {
+      if (data?.area === selectedArea) {
+        setLiveEnvironmentData(data);
+      }
+    });
+  }, [selectedAreaId]);
+
   return (
     <Container>
       {/* Chọn khu vực */}
@@ -143,10 +157,10 @@ const AreaDashboard = () => {
               {/* Hiển thị chỉ số môi trường */}
               <Grid container spacing={2} mb={2}>
                 {[
-                  { label: 'Độ ẩm', value: dataEnvironment?.humidity, unit: '%' },
-                  { label: 'Nhiệt độ', value: dataEnvironment?.temperature, unit: '°C' },
-                  { label: 'Ánh sáng', value: dataEnvironment?.light, unit: 'LUX' },
-                  { label: 'Không khí', value: dataEnvironment?.airQuality, unit: 'AQI' }
+                  { label: 'Độ ẩm', value: (liveEnvironmentData ?? dataEnvironment)?.humidity, unit: '%' },
+                  { label: 'Nhiệt độ', value: (liveEnvironmentData ?? dataEnvironment)?.temperature, unit: '°C' },
+                  { label: 'Ánh sáng', value: (liveEnvironmentData ?? dataEnvironment)?.light, unit: 'LUX' },
+                  { label: 'Không khí', value: (liveEnvironmentData ?? dataEnvironment)?.airQuality, unit: 'AQI' }
                 ].map((item, idx) => (
                   <Grid item xs={3} key={idx}>
                     <Paper sx={{ p: 2, textAlign: 'center' }}>

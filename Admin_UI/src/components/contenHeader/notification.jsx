@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 
 // material-ui
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -15,20 +15,23 @@ import Popper from '@mui/material/Popper';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { Dialog } from '@mui/material';
 
 // project imports
 import MainCard from '../../components/MainCard';
 import IconButton from '../../components/@extended/IconButton';
 import Transitions from '../../components/@extended/Transitions';
-import { formatDistanceToNow } from 'date-fns';
-import { vi } from 'date-fns/locale';
-// assets
-import { BellOutlined, CheckCircleOutlined, MessageOutlined } from '@ant-design/icons';
-import { Dialog } from '@mui/material';
 import ViewAllNotification from './account/viewAllNotification';
 import { useNotification } from '../../service/useNotification';
+import WebSocketService from '../../service/WebSocketService';
+import { formatDistanceToNow } from 'date-fns';
+import { vi } from 'date-fns/locale';
 
-// sx styles
+// icons
+import { BellOutlined, CheckCircleOutlined, MessageOutlined } from '@ant-design/icons';
+
+const ws = new WebSocketService();
+
 const avatarSX = {
   width: 36,
   height: 36,
@@ -50,36 +53,53 @@ export default function Notification() {
   const [open, setOpen] = useState(false);
   const [openViewAll, setOpenViewAll] = useState(false);
 
-  const { data } = useNotification();
-  console.log('notification', data);
-  // Mảng dữ liệu thông báo
-  const dataNotification = (data ?? []).map((item) => ({
-    time: new Date(item.createAt).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }),
-    avt: <MessageOutlined />,
-    description: item.detail,
-    timehistory: formatDistanceToNow(new Date(item.createAt), { addSuffix: true, locale: vi })
-  }));
-  // Calculate countNotifi after dataNotification is defined
-  const countNotifi = dataNotification.length;
+  const { data, refetch } = useNotification();
 
-  // Now use countNotifi after it's defined
-  const [read, setRead] = useState(countNotifi);
+  const dataNotification = useMemo(() => {
+    return (data ?? []).map((item) => ({
+      id: item.id || item.createAt, // fallback nếu không có id
+      time: new Date(item.createAt).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }),
+      avt: <MessageOutlined />,
+      description: item.detail,
+      timehistory: formatDistanceToNow(new Date(item.createAt), { addSuffix: true, locale: vi })
+    }));
+  }, [data]);
 
-  const latestNotifications = dataNotification.slice(0, 3);
+  const unreadCount = dataNotification.length;
+  const [readCount, setReadCount] = useState(0);
 
-  const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
+  useEffect(() => {
+    setReadCount(unreadCount);
+  }, [unreadCount]);
 
-  const handleClose = (event) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
-    }
+  const latestNotifications = useMemo(() => dataNotification.slice(0, 3), [dataNotification]);
+
+  const handleToggle = useCallback(() => {
+    setOpen((prev) => !prev);
+  }, []);
+
+  const handleClose = useCallback((event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) return;
     setOpen(false);
-  };
+  }, []);
 
-  const handleOpenView = () => setOpenViewAll(true);
-  const handleCloseView = () => setOpenViewAll(false);
+  const handleOpenView = useCallback(() => setOpenViewAll(true), []);
+  const handleCloseView = useCallback(() => setOpenViewAll(false), []);
+
+  useEffect(() => {
+    ws.start();
+
+    const handleNewNotification = (incomingData) => {
+      console.log('Notification received', incomingData);
+      refetch?.(); // Nếu hook hỗ trợ refetch (ví dụ React Query, SWR)
+    };
+
+    ws.on('Notification', handleNewNotification);
+
+    return () => {
+      ws.off?.('Notification', handleNewNotification); // hoặc ws.stop() nếu bạn có hàm ngắt kết nối
+    };
+  }, [refetch]);
 
   return (
     <Box sx={{ flexShrink: 0, ml: 0.75 }}>
@@ -97,10 +117,11 @@ export default function Notification() {
         aria-haspopup="true"
         onClick={handleToggle}
       >
-        <Badge badgeContent={read} color="primary">
+        <Badge badgeContent={readCount} color="primary">
           <BellOutlined />
         </Badge>
       </IconButton>
+
       <Popper
         placement={downMD ? 'bottom' : 'bottom-end'}
         open={open}
@@ -112,7 +133,14 @@ export default function Notification() {
       >
         {({ TransitionProps }) => (
           <Transitions type="grow" position={downMD ? 'top' : 'top-right'} in={open} {...TransitionProps}>
-            <Paper sx={(theme) => ({ boxShadow: theme.customShadows.z1, width: '100%', minWidth: 285, maxWidth: { xs: 285, md: 420 } })}>
+            <Paper
+              sx={(theme) => ({
+                boxShadow: theme.customShadows.z1,
+                width: '100%',
+                minWidth: 285,
+                maxWidth: { xs: 285, md: 420 }
+              })}
+            >
               <ClickAwayListener onClickAway={handleClose}>
                 <MainCard
                   title="Notification"
@@ -120,15 +148,13 @@ export default function Notification() {
                   border={false}
                   content={false}
                   secondary={
-                    <>
-                      {read > 0 && (
-                        <Tooltip title="Mark as all read">
-                          <IconButton color="success" size="small" onClick={() => setRead(0)}>
-                            <CheckCircleOutlined style={{ fontSize: '1.15rem' }} />
-                          </IconButton>
-                        </Tooltip>
-                      )}
-                    </>
+                    readCount > 0 && (
+                      <Tooltip title="Mark all as read">
+                        <IconButton color="success" size="small" onClick={() => setReadCount(0)}>
+                          <CheckCircleOutlined style={{ fontSize: '1.15rem' }} />
+                        </IconButton>
+                      </Tooltip>
+                    )
                   }
                 >
                   <List
@@ -144,13 +170,12 @@ export default function Notification() {
                       }
                     }}
                   >
-                    {/* Hiển thị chỉ 3 thông báo mới nhất */}
-                    {latestNotifications.map((item, index) => (
+                    {latestNotifications.map((item) => (
                       <ListItem
-                        key={index}
+                        key={item.id}
                         component={ListItemButton}
-                        divider={index < latestNotifications.length - 1}
-                        selected={read > 0}
+                        divider
+                        selected={readCount > 0}
                         secondaryAction={
                           <Typography variant="caption" noWrap>
                             {item.time}
@@ -186,9 +211,9 @@ export default function Notification() {
           </Transitions>
         )}
       </Popper>
-      {/* display all list notification */}
+
       <Dialog open={openViewAll} onClose={handleCloseView}>
-        <ViewAllNotification dataNotification={dataNotification} read={read} />
+        <ViewAllNotification dataNotification={dataNotification} read={readCount} />
       </Dialog>
     </Box>
   );

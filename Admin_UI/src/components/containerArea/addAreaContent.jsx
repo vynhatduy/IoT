@@ -24,7 +24,7 @@ const AddAreaContent = ({ onClose, onSubmit }) => {
     // Kiểm tra xem tất cả các trường đã được nhập
     if (formData.name && formData.topic) {
       // In dữ liệu ra console
-      console.log('Dữ liệu form đã gửi:', formData);
+      // console.log('Dữ liệu form đã gửi:', formData);
       // Gọi onSubmit nếu được cung cấp
       if (onSubmit) {
         onSubmit(formData);

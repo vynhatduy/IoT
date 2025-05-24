@@ -12,7 +12,7 @@ export const useAllCamera = (refreshFlag = 0) => {
 
     try {
       const response = await API.get(`camera/all`);
-      console.log(response.data);
+      // console.log(response.data);
       const data = response.data;
       if (data) {
         setData(data);
@@ -125,7 +125,7 @@ export const useDeleteCamera = () => {
     setSuccess(false);
     try {
       const response = await API.delete(`camera/delete?id=${id}`);
-      console.log(response);
+      // console.log(response);
       if (response.status === 200) {
         setSuccess(true);
         return true;

@@ -16,7 +16,7 @@ const DeviceSwitch = ({ initialStatus, deviceId }) => {
 
     try {
       const result = await updateDeviceStatus(deviceId, newStatus);
-      console.log('Kết quả cập nhật:', result);
+      // console.log('Kết quả cập nhật:', result);
     } catch (err) {
       console.error(err);
       // Rollback if error

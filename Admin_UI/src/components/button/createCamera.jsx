@@ -48,7 +48,7 @@ const CreateButtonCamera = ({ refresh, onRefresh }) => {
   const { createCamera, error } = useCreateCamera();
 
   const handleSubmit = async () => {
-    console.log('Form data:', formData);
+    // console.log('Form data:', formData);
     setErrorMessage(null);
     try {
       if (

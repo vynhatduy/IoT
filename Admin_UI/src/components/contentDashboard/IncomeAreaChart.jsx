@@ -87,8 +87,8 @@ export default function IncomeAreaChart({ data }) {
     };
   });
 
-  console.log('Data response: ', data);
-  console.log('formattedData: ', formattedData);
+  // console.log('Data response: ', data);
+  // console.log('formattedData: ', formattedData);
 
   // Trạng thái hiển thị
   const [visibility, setVisibility] = useState({

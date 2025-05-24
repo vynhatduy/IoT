@@ -39,7 +39,7 @@ const ListCardCamera = ({ cameras }) => {
           hls.attachMedia(videoElement);
 
           hls.on(window.Hls.Events.MANIFEST_PARSED, () => {
-            console.log(`Camera ${camera.id}: Stream sẵn sàng`);
+            // console.log(`Camera ${camera.id}: Stream sẵn sàng`);
             videoElement.play().catch((err) => {
               console.warn(`Camera ${camera.id}: Không thể tự động phát: ${err.message}`);
             });

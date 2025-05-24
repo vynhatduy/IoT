@@ -143,23 +143,19 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var FE_URL = Env.GetString("FE_URL");
-
+var APP_URL = Env.GetString("APP_URL");
 builder.Services.AddSignalR();
 builder.Services.AddSingleton(typeof(ISignalRService<>), typeof(SignalRService<>));
 
-builder.Services.AddCors(otp =>
+builder.Services.AddCors(options =>
 {
-    otp.AddDefaultPolicy(policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins(FE_URL)
+        policy.WithOrigins(FE_URL, APP_URL) // phải là exact origin, không wildcard
               .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowCredentials();
+              .AllowCredentials(); // Chỉ dùng được khi có WithOrigins
     });
-    otp.AddPolicy("AllowAll",
-        policy => policy.AllowAnyOrigin()
-                       .AllowAnyMethod()
-                       .AllowAnyHeader());
 });
 
 // login bear token in swagger
@@ -222,10 +218,10 @@ app.UseMiddleware<BlacklistMiddleware>();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
-    endpoints.MapHub<MyHub>("/ws");
+    endpoints.MapHub<AppHub>("/hub");
 });
 
-app.MapHub<AppHub>("/hub");
+//app.MapHub<MyHub>("/hub");
 app.UseSwagger();
 app.UseSwaggerUI();
 
