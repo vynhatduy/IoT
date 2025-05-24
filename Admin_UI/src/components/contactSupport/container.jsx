@@ -345,7 +345,7 @@ export default function DeveloperSupportPage() {
       <Card sx={{ mt: 6 }}>
         <CardContent>
           <Typography variant="h5" sx={{ mb: 4 }}>
-            Video Hướng Dẫn
+            Video Giới thiệu
           </Typography>
           <Grid container spacing={3}>
             {videoTutorials.map((video, index) => (
